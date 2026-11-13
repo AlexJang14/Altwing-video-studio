@@ -68,7 +68,9 @@ chirps, hologram, and impacts are included. There is no spoken narration.
 
 Every pose and camera transform derives from the requested Remotion frame.
 There are no uncontrolled wall-clock animation loops. The starfield and audio
-use fixed seeds. Final video files and QA images stay outside Git; source,
-exported models, font licenses, and regeneration scripts are versioned.
+use fixed seeds. Generated video and QA files are excluded from this implementation
+branch. Downloadable builds are kept on the separate
+[`episode-1-delivery` branch](https://github.com/AlexJang14/Altwing-video-studio/tree/episode-1-delivery).
+Source, exported models, font licenses, and regeneration scripts are versioned.
 
 See [ASSETS.md](ASSETS.md) for asset provenance and current creative limitations.
