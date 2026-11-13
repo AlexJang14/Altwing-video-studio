@@ -5,6 +5,7 @@ flower, and its reply awakens an ancient gateway.
 
 ## Downloads
 
+- [Watch or download the final 1080×1920 episode](episode2-final.mp4?raw=true)
 - [Watch or download the complete 25-second preview](episode2-preview.mp4?raw=true)
 - [See Wangdoo's softer, clearer new look](wangdoo-look.png)
 - [Download the complete studio project](altwing-video-studio-episode2-source.zip?raw=true)
@@ -13,8 +14,13 @@ flower, and its reply awakens an ancient gateway.
 - [View the episode contact sheet](episode2-contact-sheet.jpg)
 - [View validation results and checksums](validation.json)
 
-The native 1080×1920 export is rendering. It will be added here after its final
-validation.
+The final episode is rendered and verified: native 1080×1920, 30 fps,
+750 frames, 25.003 seconds, H.264/yuv420p Rec.709 video, and stereo AAC audio.
+Full-file decoding completed without errors. The contact sheet is extracted
+from the finished HD video.
+
+Source commit: `b53cfeb10357a27a2c27c750cdceff259d295882`.
+The implementation is in [pull request #2](https://github.com/AlexJang14/Altwing-video-studio/pull/2).
 
 Wangdoo keeps the original reference's happy curved eyes, yellow beak and feet,
 blush, navy robot flippers, gold trim, cyan details, and back thruster. His new

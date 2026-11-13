@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "file": "episode2-final.mp4",
+  "bytes": 11002345,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "frames": 750,
+  "duration": 25.003,
+  "video_codec": "h264",
+  "pixel_format": "yuv420p",
+  "audio_codec": "aac",
+  "audio_channels": 2,
+  "decode_errors": 0
+}
