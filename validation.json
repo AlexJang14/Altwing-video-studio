@@ -1,0 +1,91 @@
+{
+  "repository": "AlexJang14/Altwing-video-studio",
+  "source_commit": "4becaa93b3af54e492ef6607fea07fb5efdf5d06",
+  "render_code_commit": "5e366aefa230fa0ec94c3d815a2fcc5e7e966e19",
+  "final": {
+    "ok": true,
+    "file": "episode-final.mp4",
+    "bytes": 12598632,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 750,
+    "duration": 25.003,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_channels": 2,
+    "decode_errors": 0
+  },
+  "preview": {
+    "ok": true,
+    "file": "episode-preview.mp4",
+    "bytes": 3163038,
+    "width": 360,
+    "height": 640,
+    "fps": 30,
+    "frames": 750,
+    "duration": 25.0,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_channels": 2,
+    "decode_errors": 0
+  },
+  "models": {
+    "ok": true,
+    "models": [
+      {
+        "name": "wangdoo",
+        "bytes": 954240,
+        "meshes": 34,
+        "vertices": 20746,
+        "size": [
+          1.9855015433838226,
+          1.7950000000000002,
+          1.3560860497057439
+        ],
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "wave",
+          "curious",
+          "frightened",
+          "bounce"
+        ],
+        "ok": true
+      },
+      {
+        "name": "astronaut",
+        "bytes": 991000,
+        "meshes": 49,
+        "vertices": 21215,
+        "size": [
+          1.4186968137763767,
+          3.1398274730203393,
+          0.8975
+        ],
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "wake",
+          "look-down",
+          "reach",
+          "danger",
+          "hesitate"
+        ],
+        "ok": true
+      }
+    ]
+  },
+  "sha256": {
+    "episode-final.mp4": "62efa22d51e14d8856fbf95d58f4a331f1b837784e42243aa4b7e4c887a2b28b",
+    "episode-preview.mp4": "acc9e6935324c15e0f6b9ff02897698d8ae2dea4d19cb3c8ba678df3f66883cd",
+    "wangdoo.glb": "d9424d4b10cb4a3f0bce58b00a4541326f0c2b44d3e96951b2dc0463d51a9de1",
+    "astronaut.glb": "c7f1cb7858e77f4a6e2aa43bac404fb79acbb35c48dea5a378e0ca75c869204f"
+  },
+  "spoken_voices": false,
+  "audio": "Original synthesized music and sound effects; caption-led dialogue"
+}
