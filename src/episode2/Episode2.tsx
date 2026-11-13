@@ -17,9 +17,11 @@ const Stage:React.FC<{scene:number;t:number;time:number}>=({scene,t,time})=>{
  if(scene===0)return <><AlienPlanet time={time}/><LandingCraft time={t} descending/></>;
  if(scene===1){
   const p=ease((t-.55)/2.8),a=ease((t-1.05)/2.95);
+  const penguinZ=mix(-3.85,.4,p),astronautZ=mix(-4.1,-.55,a);
+  const rampHeight=(z:number)=>Math.max(0,Math.min(.72,(-.53-z)*Math.tan(.212)));
   return <><AlienPlanet time={time}/><LandingCraft time={time} ramp={ease(t/.85)}/>
-   <WangdooPenguin time={t} action={p>0&&p<1?'walk':'idle'} position={[mix(-.35,-.55,p),.72*(1-p),mix(-3.85,.4,p)]} rotation={.13}/>
-   <BlackAstronaut time={t} action={a>0&&a<1?'walk':'idle'} position={[mix(.40,.75,a),.72*(1-a),mix(-4.1,-.55,a)]} rotation={.08}/>
+   <WangdooPenguin time={t} action={p>0&&p<1?'walk':'idle'} position={[mix(-.35,-.55,p),rampHeight(penguinZ),penguinZ]} rotation={.13}/>
+   <BlackAstronaut time={t} action={a>0&&a<1?'walk':'idle'} position={[mix(.40,.75,a),rampHeight(astronautZ),astronautZ]} rotation={.08}/>
   </>;
  }
  if(scene===2)return <><AlienPlanet time={time}/><LandingCraft time={time} ramp={1}/>
