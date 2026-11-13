@@ -1,0 +1,47 @@
+{
+  "name": "altwing-video-studio",
+  "version": "1.0.0",
+  "description": "A 3D animated space-survival series created for AltWing.",
+  "main": "index.js",
+  "scripts": {
+    "start": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "audio": "python3 scripts/make_audio.py",
+    "preview": "remotion render src/index.ts TheLastWing-Episode1 out/the-last-wing-preview.mp4 --scale=0.3333333333333333",
+    "render": "remotion render src/index.ts TheLastWing-Episode1 out/the-last-wing-episode-1.mp4",
+    "characters": "remotion still src/index.ts CharacterPreview out/characters.png --frame=30",
+    "assets": "tsx scripts/export_characters.tsx",
+    "qa": "node scripts/render_qa.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexJang14/Altwing-video-studio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/issues"
+  },
+  "homepage": "https://github.com/AlexJang14/Altwing-video-studio#readme",
+  "dependencies": {
+    "@react-three/fiber": "9.8.2",
+    "@remotion/cli": "4.0.543",
+    "@remotion/three": "4.0.543",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.543",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "@react-three/test-renderer": "9.1.1",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.187.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  },
+  "private": true
+}

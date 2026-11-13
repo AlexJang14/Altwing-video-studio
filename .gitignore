@@ -1,0 +1,7 @@
+node_modules/
+work/
+out/
+dist/
+*.log
+public/audio/*.wav
+.DS_Store

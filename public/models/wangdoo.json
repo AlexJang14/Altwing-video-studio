@@ -1,0 +1,45 @@
+{
+  "name": "wangdoo",
+  "units": "meters",
+  "up": "+Y",
+  "front": "+Z",
+  "meshes": 34,
+  "animations": [
+    {
+      "name": "idle",
+      "duration": 3.141592653589793,
+      "tracks": 2
+    },
+    {
+      "name": "walk",
+      "duration": 0.6283185307179586,
+      "tracks": 8
+    },
+    {
+      "name": "run",
+      "duration": 0.36959913571644626,
+      "tracks": 8
+    },
+    {
+      "name": "wave",
+      "duration": 3.141592653589793,
+      "tracks": 3
+    },
+    {
+      "name": "curious",
+      "duration": 3.141592653589793,
+      "tracks": 3
+    },
+    {
+      "name": "frightened",
+      "duration": 3.141592653589793,
+      "tracks": 2
+    },
+    {
+      "name": "bounce",
+      "duration": 3.141592653589793,
+      "tracks": 2
+    }
+  ],
+  "source": "src/characters/WangdooPenguin.tsx"
+}
