@@ -11,7 +11,12 @@
     "render": "remotion render src/index.ts TheLastWing-Episode1 out/the-last-wing-episode-1.mp4",
     "characters": "remotion still src/index.ts CharacterPreview out/characters.png --frame=30",
     "assets": "tsx scripts/export_characters.tsx",
-    "qa": "node scripts/render_qa.mjs"
+    "qa": "node scripts/render_qa.mjs",
+    "episode2:audio": "python3 scripts/make_audio_episode2.py",
+    "episode2:assets": "tsx scripts/export_characters.tsx --episode2",
+    "episode2:qa": "node scripts/render_qa_episode2.mjs",
+    "episode2:preview": "node scripts/render.mjs preview 2",
+    "episode2:render": "node scripts/render.mjs final 2"
   },
   "repository": {
     "type": "git",
@@ -35,6 +40,7 @@
     "three": "0.187.0"
   },
   "devDependencies": {
+    "@napi-rs/canvas": "1.1.1",
     "@react-three/test-renderer": "9.1.1",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",

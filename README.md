@@ -1,5 +1,40 @@
 # THE LAST WING — Episode 1: The Signal
 
+## Episode 2 — First Contact
+
+Episode 2 follows choice B onto the unknown violet planet. The landing craft
+touches down, the crew exits, Wangdoo greets a living alien flower, and its reply
+awakens an ancient gateway. Viewers choose whether to enter the gate or return
+to the ship. Output: a complete 25-second vertical episode.
+
+Wangdoo's Episode 2 model follows the supplied robot-penguin reference with a
+continuous, rounded plush body, a smooth ivory face and belly, happy curved
+eyes, small warm beak, pink cheeks, short yellow feet, navy armor, fine gold
+trim, cyan details, and a compact back thruster. Closer, brighter character
+shots make his face readable. His original Episode 1 model is retained.
+
+```sh
+npm ci
+npm run episode2:audio
+npm run episode2:assets
+node scripts/verify_models.mjs --episode2
+npm run episode2:qa
+python3 scripts/contact_sheet_episode2.py
+npm run episode2:preview
+npm run episode2:render
+python3 scripts/verify_video.py work/episode2/renders/episode2-final.mp4 final
+```
+
+In Remotion Studio, select `TheLastWing-Episode2` for the film or
+`Wangdoo-Episode2` for the new character study. Episode 2 timing, dialogue, and
+choices live in `src/episode2/config.ts`; the new model lives in
+`src/characters/WangdooSoft.tsx`. `public/models/wangdoo-soft.glb` includes ten
+baked animation clips and the fabric bump texture.
+
+Both episodes are caption-led with original music and sound effects, without
+spoken voices. Episode 2 downloads are kept on the separate
+[`episode-2-delivery` branch](https://github.com/AlexJang14/Altwing-video-studio/tree/episode-2-delivery).
+
 A deterministic, fully 3D 25-second vertical episode for the original AltWing
 space-survival series. A black-suited astronaut and Wangdoo discover a signal,
 then ask viewers to choose between an abandoned station and an unknown planet.
