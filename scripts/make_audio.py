@@ -5,6 +5,7 @@ No sampled recordings, network services, API keys, or third-party music.
 """
 from pathlib import Path
 import wave
+import subprocess
 import numpy as np
 
 SR = 48000
@@ -101,4 +102,7 @@ path=Path(__file__).resolve().parents[1]/'public/audio/episode-score.wav'
 path.parent.mkdir(parents=True,exist_ok=True)
 with wave.open(str(path),'wb') as out:
     out.setnchannels(2);out.setsampwidth(2);out.setframerate(SR);out.writeframes(pcm.tobytes())
+master=path.with_name('episode-score.master.wav')
+subprocess.run(['ffmpeg','-v','error','-y','-i',str(path),'-af','loudnorm=I=-18:TP=-1.5:LRA=9','-ar',str(SR),'-c:a','pcm_s16le',str(master)],check=True)
+master.replace(path)
 print(f'{path}: {LENGTH}s, stereo {SR}Hz; original synthesized audio')
