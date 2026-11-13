@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "models": [
+    {
+      "name": "wangdoo-soft",
+      "bytes": 1816528,
+      "meshes": 36,
+      "vertices": 63688,
+      "size": [
+        1.9947648672573346,
+        1.7639999904632568,
+        1.4845883041602448
+      ],
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "wave",
+        "curious",
+        "frightened",
+        "bounce",
+        "touch",
+        "sniff",
+        "excited"
+      ],
+      "ok": true
+    }
+  ]
+}

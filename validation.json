@@ -1,0 +1,56 @@
+{
+  "episode": 2,
+  "title": "First Contact",
+  "repository": "AlexJang14/Altwing-video-studio",
+  "source_commit": "b53cfeb10357a27a2c27c750cdceff259d295882",
+  "models": {
+    "ok": true,
+    "models": [
+      {
+        "name": "wangdoo-soft",
+        "bytes": 1816528,
+        "meshes": 36,
+        "vertices": 63688,
+        "size": [
+          1.9947648672573346,
+          1.7639999904632568,
+          1.4845883041602448
+        ],
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "wave",
+          "curious",
+          "frightened",
+          "bounce",
+          "touch",
+          "sniff",
+          "excited"
+        ],
+        "ok": true
+      }
+    ]
+  },
+  "spoken_voices": false,
+  "audio": "Original synthesized score and effects; caption-led dialogue",
+  "sha256": {
+    "episode2-preview.mp4": "2871db836a972b91fdd7679cf228d968fafbcb737f67fea3a17a5c63045dfb1d",
+    "wangdoo-soft.glb": "6fb1e69edf75841fd0f5a0fc768ae188a1c4e0900ce21b62b60d83cb67403016"
+  },
+  "preview": {
+    "ok": true,
+    "file": "episode2-preview.mp4",
+    "bytes": 2646094,
+    "width": 360,
+    "height": 640,
+    "fps": 30,
+    "frames": 750,
+    "duration": 25.0,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_channels": 2,
+    "decode_errors": 0
+  }
+}
