@@ -1,0 +1,48 @@
+{
+  "ok": true,
+  "models": [
+    {
+      "name": "wangdoo",
+      "bytes": 954240,
+      "meshes": 34,
+      "vertices": 20746,
+      "size": [
+        1.9855015433838226,
+        1.7950000000000002,
+        1.3560860497057439
+      ],
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "wave",
+        "curious",
+        "frightened",
+        "bounce"
+      ],
+      "ok": true
+    },
+    {
+      "name": "astronaut",
+      "bytes": 991000,
+      "meshes": 49,
+      "vertices": 21215,
+      "size": [
+        1.4186968137763767,
+        3.1398274730203393,
+        0.8975
+      ],
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "wake",
+        "look-down",
+        "reach",
+        "danger",
+        "hesitate"
+      ],
+      "ok": true
+    }
+  ]
+}
