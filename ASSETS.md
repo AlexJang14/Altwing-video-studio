@@ -1,5 +1,16 @@
 # Assets and provenance
 
+Episode 2's revised Wangdoo retains the owner's original reference design,
+with a softer body, connected ivory face patch, smaller beak, warm cheek
+blush, fine gold armor trim, and brighter, closer staging. The fabric bump
+texture is procedurally generated with a fixed seed. It is embedded in
+`public/models/wangdoo-soft.glb`, with ten baked animation clips. The smooth
+surface subdivision uses shared edges to avoid cracks in close-up renders.
+
+The unknown planet, landing craft, responsive flower, gateway, and moon are
+original procedural geometry, materials, and shaders in `src/episode2/`.
+`scripts/make_audio_episode2.py` synthesizes its original score and effects.
+
 The astronaut, Wangdoo, spaceship, planet shader, hologram, geometry, animation,
 score, sound effects, and overlays are implemented in this repository. Wangdoo's
 design follows the character reference supplied by the project owner in chat.
