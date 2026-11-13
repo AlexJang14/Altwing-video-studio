@@ -1,4 +1,4 @@
-# THE LAST WING — Episode 1: The Signal
+# THE LAST WING — AltWing Video Studio
 
 ## Episode 2 — First Contact
 
@@ -34,6 +34,8 @@ baked animation clips and the fabric bump texture.
 Both episodes are caption-led with original music and sound effects, without
 spoken voices. Episode 2 downloads are kept on the separate
 [`episode-2-delivery` branch](https://github.com/AlexJang14/Altwing-video-studio/tree/episode-2-delivery).
+
+## Episode 1 — The Signal
 
 A deterministic, fully 3D 25-second vertical episode for the original AltWing
 space-survival series. A black-suited astronaut and Wangdoo discover a signal,
