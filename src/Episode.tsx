@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill,Audio,staticFile,useCurrentFrame,useVideoConfig} from 'remotion';
+import {AbsoluteFill,Audio,staticFile,useCurrentFrame,useVideoConfig,usePixelDensity} from 'remotion';
 import {ThreeCanvas} from '@remotion/three';
 import * as THREE from 'three';
 import {EPISODE,ease,mix} from './config';
@@ -20,11 +20,12 @@ const SceneContent:React.FC<{scene:number;t:number;globalTime:number}> = ({scene
 };
 export const Episode:React.FC=()=>{
   const frame=useCurrentFrame(),{fps,width,height}=useVideoConfig();
+  const pixelDensity=usePixelDensity();
   const scene=Math.max(0,EPISODE.scenes.findIndex(s=>frame>=s.start&&frame<s.end));
   const t=(frame-EPISODE.scenes[scene].start)/fps;
   return <AbsoluteFill style={{background:'#050b17'}}>
     <Fonts/>
-    <ThreeCanvas width={width} height={height} shadows camera={{position:[0,2,6],fov:43,near:.1,far:180}} gl={{antialias:true,alpha:false,powerPreference:'high-performance',toneMapping:THREE.ACESFilmicToneMapping,toneMappingExposure:1.15}}>
+    <ThreeCanvas width={width} height={height} dpr={pixelDensity} shadows camera={{position:[0,2,6],fov:43,near:.1,far:180}} gl={{antialias:true,alpha:false,powerPreference:'high-performance',toneMapping:THREE.ACESFilmicToneMapping,toneMappingExposure:1.15}}>
       <color attach="background" args={['#050b17']}/>
       {scene<3&&<fog attach="fog" args={['#0b172a',10,36]}/>}
       <CinematicCamera scene={scene} localTime={t} frame={frame}/>
@@ -36,8 +37,8 @@ export const Episode:React.FC=()=>{
   </AbsoluteFill>;
 };
 export const CharacterPreview:React.FC=()=>{
-  const frame=useCurrentFrame(),{width,height,fps}=useVideoConfig();const t=frame/fps;
-  return <AbsoluteFill style={{background:'#07111f'}}><Fonts/><ThreeCanvas width={width} height={height} shadows camera={{position:[3.8,2.4,7.8],fov:38}} gl={{antialias:true,toneMapping:THREE.ACESFilmicToneMapping,toneMappingExposure:1.15}}>
+  const frame=useCurrentFrame(),{width,height,fps}=useVideoConfig();const t=frame/fps;const pixelDensity=usePixelDensity();
+  return <AbsoluteFill style={{background:'#07111f'}}><Fonts/><ThreeCanvas width={width} height={height} dpr={pixelDensity} shadows camera={{position:[3.8,2.4,7.8],fov:38}} gl={{antialias:true,toneMapping:THREE.ACESFilmicToneMapping,toneMappingExposure:1.15}}>
     <color attach="background" args={['#0b1422']}/><CinematicCamera scene={0} localTime={t} frame={frame} preview/><CinematicLighting time={t}/>
     <mesh position={[0,-.12,0]} receiveShadow><boxGeometry args={[200,.2,200]}/><meshStandardMaterial color="#162336" metalness={.5} roughness={.4}/></mesh>
     <BlackAstronaut time={t} action={t<2?'idle':'walk'} position={[-.7,0,0]} rotation={.10}/><WangdooPenguin time={t} action={t<2?'wave':'walk'} position={[.78,0,.3]} rotation={.10}/>
