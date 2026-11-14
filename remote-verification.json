@@ -1,0 +1,34 @@
+[
+  {
+    "file": "the-last-wing-episode-01-do-not-dock-final.mp4",
+    "url": "https://raw.githubusercontent.com/AlexJang14/Altwing-video-studio/master-narrative-delivery/the-last-wing-episode-01-do-not-dock-final.mp4",
+    "bytes": 14921617,
+    "sha256": "ba5bba08990749c60b7bb3e7ae66b1c5b08f6b38291342094dcaed6fa8f8f1e5",
+    "remoteMatchesVerifiedLocal": true,
+    "verifiedAtUTC": "2026-11-14T07:58:27.428697+00:00"
+  },
+  {
+    "file": "the-last-wing-episode-02-that-ship-is-ours-final.mp4",
+    "url": "https://raw.githubusercontent.com/AlexJang14/Altwing-video-studio/master-narrative-delivery/the-last-wing-episode-02-that-ship-is-ours-final.mp4",
+    "bytes": 12127999,
+    "sha256": "cc52ce49abfab76e302d7a90cdb70723707186a1a30350a1509ff0a8fa8ceb72",
+    "remoteMatchesVerifiedLocal": true,
+    "verifiedAtUTC": "2026-11-14T07:58:27.823759+00:00"
+  },
+  {
+    "file": "the-last-wing-episode-03-not-your-first-mission-final.mp4",
+    "url": "https://raw.githubusercontent.com/AlexJang14/Altwing-video-studio/master-narrative-delivery/the-last-wing-episode-03-not-your-first-mission-final.mp4",
+    "bytes": 7464001,
+    "sha256": "fd5cb924a1015655bc22110a81a63053895b092cc82acbd494bc792b48b707bb",
+    "remoteMatchesVerifiedLocal": true,
+    "verifiedAtUTC": "2026-11-14T07:58:27.712437+00:00"
+  },
+  {
+    "file": "the-last-wing-editable-source.zip",
+    "url": "https://raw.githubusercontent.com/AlexJang14/Altwing-video-studio/master-narrative-delivery/the-last-wing-editable-source.zip",
+    "bytes": 14059491,
+    "sha256": "d89355592f698763d0a0cd1bd64e70e383e823af7ac47bb56966a2a1a6dee9b4",
+    "remoteMatchesVerifiedLocal": true,
+    "verifiedAtUTC": "2026-11-14T07:58:27.648091+00:00"
+  }
+]
