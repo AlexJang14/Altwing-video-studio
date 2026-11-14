@@ -19,6 +19,9 @@ and eight-second product transitions. `src/Root.tsx` registers the three native
   `work/rescue/segments`, copying the H.264 picture stream; encode one continuous
   AAC soundtrack and reset timestamps to zero.
 - `npm run rescue:verify -- 2`: inspect the actual exported file and fully decode it.
+- `python scripts/verify_rescue_audio.py 2`: measure the actual AAC mix.
+- `python scripts/rescue_contact_sheets.py --video 2`: extract final-film contact frames.
+- `python scripts/scan_rescue_frames.py 2`: review the largest frame changes within shots.
 
 `.github/workflows/rescue-render.yml` renders five independent 450-frame ranges
 per episode on standard GitHub-hosted Linux runners. The last range is shorter.
