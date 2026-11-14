@@ -1,0 +1,7 @@
+import {bundle} from '@remotion/bundler';import {openBrowser,selectComposition,renderStill} from '@remotion/renderer';import fs from 'node:fs';
+const options={browserExecutable:process.env.CHROME_PATH??'/usr/bin/chromium',timeoutInMilliseconds:90000,chromiumOptions:{gl:'swangle'}},serveUrl=await bundle({entryPoint:'src/index.ts'}),browser=await openBrowser('chrome',options),errors=[];
+const times={1:[.6,2.4,3.3,5.7,9.6,12.1,15.7,19.0,23.7,27.5,32.8,35.7,37.2,42.6,47.5,53.5,59.5,68.8],2:[2,7.5,10.7,14.1,18.8,23.5,30,34,38.5,43.3,48.1,52.7,59,69],3:[2,5.7,9.5,13.5,19.5,23.5,27.5,32.3,36.5,40,43.2,46.2,48.5,49.7,53,59.5,70]};
+try{for(const episode of process.argv[2]?[Number(process.argv[2])]:[1]){
+ const composition=await selectComposition({...options,serveUrl,puppeteerInstance:browser,id:`Rescue-Episode${episode}`}),dir=`work/rescue/qa/episode-${episode}`;fs.mkdirSync(dir,{recursive:true});
+ for(const time of times[episode]){if(process.env.QA_TIMES&&!process.env.QA_TIMES.split(',').map(Number).includes(time))continue;await renderStill({...options,composition,serveUrl,puppeteerInstance:browser,frame:Math.round(time*30),scale:.5,output:`${dir}/${time.toFixed(2).padStart(5,'0')}.png`,imageFormat:'png',onBrowserLog:l=>{if(l.type==='error')errors.push(l);}});console.log(episode,time);}
+}fs.writeFileSync('work/rescue/browser-errors.json',JSON.stringify(errors,null,2));if(errors.length)throw Error(JSON.stringify(errors));}finally{await browser.close({silent:true});}

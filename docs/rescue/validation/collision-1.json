@@ -1,0 +1,120 @@
+{
+  "frames": 2160,
+  "maxContactGap": 5.60334479738423e-16,
+  "minimumFootHeight": -3.9898639947466563e-16,
+  "maximumPlantedFootSlide": 0.00017030571469955902,
+  "minimumHeadCenterSeparation": 0.9809960829581214,
+  "errors": [],
+  "contacts": [
+    {
+      "time": 10,
+      "kind": "equipment-check",
+      "gap": 1.5700924586837752e-16
+    },
+    {
+      "time": 10.333333333333334,
+      "kind": "equipment-check",
+      "gap": 1.5700924586837752e-16
+    },
+    {
+      "time": 10.666666666666666,
+      "kind": "equipment-check",
+      "gap": 1.5700924586837752e-16
+    },
+    {
+      "time": 11,
+      "kind": "equipment-check",
+      "gap": 1.5700924586837752e-16
+    },
+    {
+      "time": 11.333333333333334,
+      "kind": "equipment-check",
+      "gap": 1.5700924586837752e-16
+    },
+    {
+      "time": 11.666666666666666,
+      "kind": "equipment-check",
+      "gap": 1.5700924586837752e-16
+    },
+    {
+      "time": 35.666666666666664,
+      "kind": "bulkhead-help",
+      "gap": 2.0816681711721685e-17
+    },
+    {
+      "time": 36,
+      "kind": "bulkhead-help",
+      "gap": 4.579669976578771e-16
+    },
+    {
+      "time": 36.333333333333336,
+      "kind": "bulkhead-help",
+      "gap": 1.3877787807814457e-16
+    },
+    {
+      "time": 36.666666666666664,
+      "kind": "bulkhead-help",
+      "gap": 3.3887102699122705e-16
+    },
+    {
+      "time": 37,
+      "kind": "bulkhead-help",
+      "gap": 6.938893903907228e-17
+    },
+    {
+      "time": 37.333333333333336,
+      "kind": "bulkhead-help",
+      "gap": 1.8463195827281384e-16
+    },
+    {
+      "time": 37.666666666666664,
+      "kind": "bulkhead-help",
+      "gap": 1.6435074526764696e-16
+    },
+    {
+      "time": 41.666666666666664,
+      "kind": "connector-repair",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 42,
+      "kind": "connector-repair",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 42.333333333333336,
+      "kind": "connector-repair",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 42.666666666666664,
+      "kind": "connector-repair",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 43,
+      "kind": "connector-repair",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 43.333333333333336,
+      "kind": "connector-repair",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 43.666666666666664,
+      "kind": "connector-repair",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 44,
+      "kind": "connector-repair",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 44.333333333333336,
+      "kind": "connector-repair",
+      "gap": 2.220446049250313e-16
+    }
+  ]
+}

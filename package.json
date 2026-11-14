@@ -20,7 +20,15 @@
     "episode2:assets": "tsx scripts/export_characters.tsx --episode2",
     "episode2:qa": "node scripts/render_qa_episode2.mjs",
     "episode2:preview": "node scripts/render.mjs preview 2",
-    "episode2:render": "node scripts/render.mjs final 2"
+    "episode2:render": "node scripts/render.mjs final 2",
+    "rescue:preview": "node scripts/rescue_render.mjs preview",
+    "rescue:render": "node scripts/rescue_render.mjs final",
+    "rescue:qa": "node scripts/rescue_qa.mjs",
+    "rescue:audio": "python3 scripts/rescue_audio.py",
+    "rescue:model": "tsx scripts/export_rescue_character.tsx",
+    "rescue:collision": "tsx scripts/rescue_collision.tsx",
+    "rescue:environment": "tsx scripts/rescue_environment_collision.tsx",
+    "rescue:verify": "python3 scripts/verify_rescue.py"
   },
   "repository": {
     "type": "git",

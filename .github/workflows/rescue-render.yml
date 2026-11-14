@@ -1,0 +1,41 @@
+name: Render silent rescue trilogy
+on:
+  push:
+    branches: ['render/rescue-*']
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        episode: [1, 2, 3]
+        chunk: [0, 1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - name: Render native segment
+        shell: bash
+        env:
+          EPISODE: ${{ matrix.episode }}
+          CHUNK: ${{ matrix.chunk }}
+        run: |
+          export CHROME_PATH="$(command -v google-chrome)"
+          start_frame=$(( CHUNK * 450 ))
+          total_frames=$(node -e 'const fs=require("fs");process.stdout.write(String(JSON.parse(fs.readFileSync("src/rescue/episodes.json")).episodes[Number(process.env.EPISODE)-1].duration*30))')
+          end_frame=$(( start_frame + 449 ))
+          if [ "$end_frame" -ge "$total_frames" ]; then end_frame=$(( total_frames - 1 )); fi
+          node scripts/rescue_render.mjs final "$EPISODE" "$start_frame-$end_frame"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rescue-episode-${{ matrix.episode }}-chunk-${{ matrix.chunk }}
+          path: work/rescue/renders/*.mp4
+          retention-days: 7
+          compression-level: 0

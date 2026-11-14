@@ -1,0 +1,16 @@
+{
+  "method": "Actual shared hull ellipsoids with convex GJK; conservative OBB tests for solid walls, consoles and crates; actual visible mesh vertex floor extents.",
+  "report": [
+    {
+      "episode": 2,
+      "checkedFrames": 1980,
+      "minimumVisibleMeshHeight": -0.0007892080432059662
+    },
+    {
+      "episode": 3,
+      "checkedFrames": 2157,
+      "minimumVisibleMeshHeight": -3.157196726277789e-16
+    }
+  ],
+  "errors": []
+}

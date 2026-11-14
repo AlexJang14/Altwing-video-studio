@@ -1,0 +1,657 @@
+{
+  "series": "THE LAST WING",
+  "year": 2189,
+  "ship": "ARK-07",
+  "mission": "HELIX-9 RESCUE",
+  "brand": {
+    "name": "AltWing",
+    "url": "https://junjang06.github.io/altwing/#/",
+    "bio": "LINK IN BIO",
+    "promise": "Find your own wings."
+  },
+  "episodes": [
+    {
+      "id": 1,
+      "title": "DO NOT DOCK",
+      "duration": 72,
+      "composition": "Rescue-Episode1",
+      "file": "the-last-wing-episode-01-do-not-dock-final.mp4",
+      "beats": [
+        {
+          "start": 0,
+          "end": 4,
+          "set": "docking",
+          "action": "Late self-sent warning; abort is already locked out; physical docking impact."
+        },
+        {
+          "start": 4,
+          "end": 13,
+          "set": "cockpit",
+          "action": "Seven missing, 48 hours; fictional plush/training archives; manual companion equipment check."
+        },
+        {
+          "start": 13,
+          "end": 22,
+          "set": "station",
+          "action": "Wangdoo guides, scans; astronaut checks empty crew terminal; unidentified movement."
+        },
+        {
+          "start": 22,
+          "end": 31,
+          "set": "security",
+          "action": "Actual rendered CCTV shows the same suit and crescent six hours before docking; AI cannot explain."
+        },
+        {
+          "start": 31,
+          "end": 40,
+          "set": "bulkhead",
+          "action": "Power/pressure failure, silhouette, closing door; astronaut turns back and guides Wangdoo through."
+        },
+        {
+          "start": 40,
+          "end": 49,
+          "set": "repair",
+          "action": "Wangdoo diagnoses/illuminates; astronaut reconnects and tests; surface distress signal matches their own ARK-07 plate."
+        },
+        {
+          "start": 49,
+          "end": 57,
+          "set": "decision",
+          "action": "One controlled descent, no return to orbit. Wangdoo presents uncertain alternatives and waits."
+        },
+        {
+          "start": 57,
+          "end": 64,
+          "set": "vote",
+          "action": "Station shelter versus the impossible planet signal; silhouette and unsafe station remain visible."
+        },
+        {
+          "start": 64,
+          "end": 72,
+          "set": "promotion",
+          "action": "Resource constraints connect to a verified aerospace/engineering activity, followed by broader AltWing invitation."
+        }
+      ],
+      "choices": [
+        {
+          "key": "A",
+          "title": "STAY ON HELIX-9",
+          "cost": "Repair the shelter. Risk what is inside.",
+          "color": "#f2c89a"
+        },
+        {
+          "key": "B",
+          "title": "FOLLOW THE SIGNAL",
+          "cost": "Descend to the planet. No way back.",
+          "color": "#9ed9db"
+        }
+      ],
+      "panels": [
+        {
+          "at": 1.05,
+          "end": 3.92,
+          "label": "INCOMING WARNING",
+          "title": "DO NOT DOCK.",
+          "lines": [
+            "SENDER: ARK-07",
+            "ABORT WINDOW CLOSED"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 4.12,
+          "end": 7.9,
+          "label": "2189 \u00b7 YOUR FIRST RESCUE MISSION",
+          "title": "HELIX-9 RESCUE",
+          "lines": [
+            "CONTACT LOST: 48 HOURS",
+            "MISSING PERSONNEL: 7",
+            "FIRST INDEPENDENT FIELD MISSION"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 11.1,
+          "end": 12.8,
+          "label": "WANGDOO",
+          "title": "PERSONAL EXPLORATION COMPANION",
+          "lines": [
+            "SCANNER READY \u00b7 AUX BATTERY 24 Wh"
+          ],
+          "tone": "warm"
+        },
+        {
+          "at": 17.0,
+          "end": 19.8,
+          "label": "CREW TERMINAL",
+          "title": "7 PERSONNEL UNLOCATED",
+          "lines": [
+            "LAST CHECK-IN: 48 HOURS AGO"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 20.0,
+          "end": 21.9,
+          "label": "LOCAL SCAN",
+          "title": "MOVEMENT DETECTED",
+          "lines": [
+            "IDENTITY: UNKNOWN"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 31.3,
+          "end": 34.0,
+          "label": "EMERGENCY",
+          "title": "PRESSURE LOSS",
+          "lines": [
+            "BULKHEAD SEAL CLOSING"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 40.5,
+          "end": 42.8,
+          "label": "WANGDOO / DIAGNOSTICS",
+          "title": "CONNECTION OPEN",
+          "lines": [
+            "ISOLATE \u2192 RECONNECT \u2192 TEST"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 43.5,
+          "end": 45.6,
+          "label": "MANUAL REPAIR",
+          "title": "BUS RESTORED",
+          "lines": [
+            "NAVIGATION: LIMITED"
+          ],
+          "tone": "warm"
+        },
+        {
+          "at": 46.0,
+          "end": 49.0,
+          "label": "DISTRESS SIGNAL",
+          "title": "TRANSMITTER: ARK-07",
+          "lines": [
+            "LOCATION: PLANET SURFACE",
+            "LOCAL SHIP ID: ARK-07"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 49.25,
+          "end": 52.6,
+          "label": "FUEL RESERVE",
+          "title": "ONE CONTROLLED DESCENT",
+          "lines": [
+            "RETURN TO ORBIT: UNAVAILABLE"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 53.0,
+          "end": 56.9,
+          "label": "OPTIONS: STATION SHELTER / PLANET SIGNAL",
+          "title": "RECOMMENDATION: INCONCLUSIVE",
+          "lines": [
+            "OXYGEN + COMMS / UNKNOWN PRESENCE",
+            "POSSIBLE SHELTER / UNVERIFIED SIGNAL"
+          ],
+          "tone": "neutral"
+        }
+      ],
+      "promotion": {
+        "at": 64,
+        "bridge": [
+          "One mission. Limited resources.",
+          "No certain answer.",
+          "Aerospace engineers work with constraints like these."
+        ],
+        "headline": "Explore engineering.",
+        "lines": [
+          "Discover what you can build.",
+          "Find your own wings with AltWing."
+        ],
+        "activity": "aerospace",
+        "voteNext": 2
+      }
+    },
+    {
+      "id": 2,
+      "title": "THAT SHIP IS OURS",
+      "duration": 72,
+      "composition": "Rescue-Episode2",
+      "file": "the-last-wing-episode-02-that-ship-is-ours-final.mp4",
+      "route": "CONDITIONAL ROUTE \u00b7 EPISODE 1 OPTION B",
+      "beats": [
+        {
+          "start": 0,
+          "end": 6,
+          "set": "descent",
+          "action": "Guidance transmission conflicts, attempted correction, crash and dust."
+        },
+        {
+          "start": 6,
+          "end": 16,
+          "set": "recovery",
+          "action": "Astronaut checks unresponsive Wangdoo, restores a loose equipment contact, waits, carries him clear and sets him down."
+        },
+        {
+          "start": 16,
+          "end": 28,
+          "set": "wreck",
+          "action": "Matching older ARK-07 wreck, damaged crescent pack and future flight record. Scanner reports insufficient data."
+        },
+        {
+          "start": 28,
+          "end": 36,
+          "set": "transmitter",
+          "action": "The emergency transmitter is the source. Two pulses provoke the presence; astronaut disconnects it."
+        },
+        {
+          "start": 36,
+          "end": 46,
+          "set": "safer-path",
+          "action": "Wangdoo marks a direct route. Astronaut observes unstable stones, tests a service ledge and leads him along the safer path."
+        },
+        {
+          "start": 46,
+          "end": 55,
+          "set": "cell",
+          "action": "Recover and test one compatible portable cell; compare two continuous loads."
+        },
+        {
+          "start": 55,
+          "end": 64,
+          "set": "vote",
+          "action": "Shelter pressure seal/scrubber or ship oxygen recycler; no automatic recommendation."
+        },
+        {
+          "start": 64,
+          "end": 72,
+          "set": "promotion",
+          "action": "Power-allocation diagram transitions into an actual related AltWing experiment."
+        }
+      ],
+      "choices": [
+        {
+          "key": "A",
+          "title": "POWER THE SHELTER",
+          "cost": "Unknown facility. Leave ship oxygen off.",
+          "color": "#9ed9db"
+        },
+        {
+          "key": "B",
+          "title": "RESTORE SHIP OXYGEN",
+          "cost": "Stay exposed. Lose the shelter route.",
+          "color": "#f2c89a"
+        }
+      ],
+      "panels": [
+        {
+          "at": 0.25,
+          "end": 2.8,
+          "label": "CONDITIONAL ROUTE \u00b7 EPISODE 1 OPTION B",
+          "title": "FOLLOWING THE SIGNAL",
+          "lines": [
+            "GUIDANCE DATA: CONFLICT"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 6.3,
+          "end": 9.0,
+          "label": "COMPANION STATUS",
+          "title": "NO RESPONSE",
+          "lines": [
+            "LOCAL CONTROLLER: STANDBY"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 11.6,
+          "end": 13.5,
+          "label": "LOCAL SAFETY CONTROLLER",
+          "title": "RESTART COMPLETE",
+          "lines": [
+            "SCANNER INITIALIZING"
+          ],
+          "tone": "warm"
+        },
+        {
+          "at": 16.6,
+          "end": 19.6,
+          "label": "DISTRESS SOURCE LOCATED",
+          "title": "HULL ID: ARK-07",
+          "lines": [
+            "YOUR SHIP ID: ARK-07"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 20.4,
+          "end": 23.6,
+          "label": "RECOVERED FLIGHT LOG",
+          "title": "MISSION RECORD: +06 HOURS",
+          "lines": [
+            "CURRENT MISSION: IN PROGRESS",
+            "TIMESTAMP CONFLICT"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 24.0,
+          "end": 27.6,
+          "label": "DAMAGED COMPANION PACK",
+          "title": "IDENTITY MATCH",
+          "lines": [
+            "EXPLANATION: INSUFFICIENT DATA"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 28.2,
+          "end": 30.8,
+          "label": "EMERGENCY TRANSMITTER",
+          "title": "THIS IS THE SIGNAL SOURCE",
+          "lines": [
+            "ACTIVE BROADCAST: ARK-07"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 32.0,
+          "end": 35.5,
+          "label": "TWO PULSES / TWO RESPONSES",
+          "title": "IT FOLLOWS TRANSMISSIONS",
+          "lines": [
+            "TRANSMITTER DISCONNECTED"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 36.2,
+          "end": 39.5,
+          "label": "SCANNER ROUTE: DIRECT SHELTER PATH",
+          "title": "PHYSICAL CHECK: UNSTABLE ROCK",
+          "lines": [
+            "SENSOR COVERAGE: INCOMPLETE"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 41.0,
+          "end": 45.6,
+          "label": "YOUR OBSERVATION",
+          "title": "SERVICE LEDGE: SOLID",
+          "lines": [
+            "SAFER ROUTE CONFIRMED"
+          ],
+          "tone": "warm"
+        },
+        {
+          "at": 46.2,
+          "end": 49.1,
+          "label": "PORTABLE CELL",
+          "title": "COMPATIBLE: 24 V DC",
+          "lines": [
+            "ONE SOURCE \u00b7 TWO CONTINUOUS LOADS"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 50.0,
+          "end": 54.6,
+          "label": "LOAD COMPARISON",
+          "title": "THE CELL CANNOT POWER BOTH",
+          "lines": [
+            "SOURCE: 300 W MAX",
+            "SHELTER SEAL + SCRUBBER: 180 W",
+            "SHIP OXYGEN RECYCLER: 220 W",
+            "RECOMMENDATION: INCONCLUSIVE"
+          ],
+          "tone": "alert"
+        }
+      ],
+      "promotion": {
+        "at": 64,
+        "bridge": [
+          "Two critical systems.",
+          "One available power source.",
+          "Engineers face trade-offs like this."
+        ],
+        "headline": "Don\u2019t just watch the challenge.",
+        "lines": [
+          "Learn how to solve it.",
+          "AltWing \u2014 Find your own wings."
+        ],
+        "activity": "power",
+        "voteNext": 3
+      }
+    },
+    {
+      "id": 3,
+      "title": "THIS IS NOT YOUR FIRST MISSION",
+      "duration": 73,
+      "composition": "Rescue-Episode3",
+      "file": "the-last-wing-episode-03-not-your-first-mission-final.mp4",
+      "route": "CONDITIONAL ROUTE \u00b7 EPISODE 2 OPTION A",
+      "beats": [
+        {
+          "start": 0,
+          "end": 7,
+          "set": "shelter-entry",
+          "action": "Cell stays in seal/scrubber socket. Narrow escape, shelter air verified."
+        },
+        {
+          "start": 7,
+          "end": 17,
+          "set": "archive",
+          "action": "Facility recognizes both; archived matching astronaut sent DO NOT DOCK."
+        },
+        {
+          "start": 17,
+          "end": 25,
+          "set": "researchers",
+          "action": "Seven researchers studied the anomalous relay; mission remains a rescue."
+        },
+        {
+          "start": 25,
+          "end": 35,
+          "set": "failure",
+          "action": "Established interference corrupts Wangdoo's scanner; he waits uncertainly. Astronaut initially waits too."
+        },
+        {
+          "start": 35,
+          "end": 47,
+          "set": "independent-repair",
+          "action": "Astronaut observes flicker, isolates bus, compares connector, reconnects, tests lamp and restores limited local status."
+        },
+        {
+          "start": 47,
+          "end": 55,
+          "set": "reassurance",
+          "action": "Gentle equipment-side touch, astronaut's own lamp, astronaut leads. Scanner navigation remains unavailable."
+        },
+        {
+          "start": 55,
+          "end": 65,
+          "set": "vote",
+          "action": "Send a warning and reveal location, or disconnect relay and lose communications."
+        },
+        {
+          "start": 65,
+          "end": 73,
+          "set": "promotion",
+          "action": "Guidance failure connects to an actual fault-tolerant engineering activity if verified."
+        }
+      ],
+      "choices": [
+        {
+          "key": "A",
+          "title": "SEND THE WARNING",
+          "cost": "Help future crews. Reveal your location.",
+          "color": "#9ed9db"
+        },
+        {
+          "key": "B",
+          "title": "DISCONNECT THE RELAY",
+          "cost": "Immediate safety. Lose communications.",
+          "color": "#f2c89a"
+        }
+      ],
+      "panels": [
+        {
+          "at": 0.2,
+          "end": 3.1,
+          "label": "CONDITIONAL ROUTE \u00b7 EPISODE 2 OPTION A",
+          "title": "CELL ALLOCATED: SHELTER",
+          "lines": [
+            "PRESSURE SEAL + SCRUBBER: ACTIVE"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 4.5,
+          "end": 6.8,
+          "label": "SHELTER ATMOSPHERE",
+          "title": "AIR VERIFIED",
+          "lines": [
+            "SHIP OXYGEN RECYCLER: OFF"
+          ],
+          "tone": "warm"
+        },
+        {
+          "at": 7.4,
+          "end": 10.8,
+          "label": "FACILITY ACCESS",
+          "title": "WELCOME BACK, ARK-07",
+          "lines": [
+            "CREW + COMPANION IDENTITY MATCH"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 11.2,
+          "end": 16.6,
+          "label": "ARCHIVED TRANSMISSION",
+          "title": "DO NOT DOCK.",
+          "lines": [
+            "SENDER: MATCHING ARK-07 CREW",
+            "RECORD: BEFORE YOUR ARRIVAL"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 17.2,
+          "end": 21.3,
+          "label": "SEVEN RESEARCHER RECORDS",
+          "title": "PROJECT: PHASE-SIGNAL RELAY",
+          "lines": [
+            "MISSING PERSONNEL: STILL UNLOCATED"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 21.6,
+          "end": 24.8,
+          "label": "TRACE MATCH",
+          "title": "RELAY \u2192 WRECK TRANSMITTER",
+          "lines": [
+            "SAME ANOMALOUS CARRIER"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 25.4,
+          "end": 29.6,
+          "label": "INTERFERENCE DETECTED",
+          "title": "SENSOR DATA CORRUPTED",
+          "lines": [
+            "NAVIGATION ASSISTANCE UNAVAILABLE"
+          ],
+          "tone": "alert"
+        },
+        {
+          "at": 30.1,
+          "end": 34.6,
+          "label": "GUIDANCE LOST",
+          "title": "NO RELIABLE RECOMMENDATION",
+          "lines": [
+            "LOCAL SAFETY CONTROLLER: ACTIVE"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 35.3,
+          "end": 38.0,
+          "label": "YOUR OBSERVATION",
+          "title": "LOCAL BUS: INTERMITTENT",
+          "lines": [
+            "STEP 1 / ISOLATE POWER"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 38.3,
+          "end": 41.0,
+          "label": "MANUAL DIAGNOSIS",
+          "title": "OPEN CONNECTOR FOUND",
+          "lines": [
+            "STEP 2 / INSPECT + RECONNECT"
+          ],
+          "tone": "neutral"
+        },
+        {
+          "at": 41.3,
+          "end": 44.0,
+          "label": "CONTROLLED TEST",
+          "title": "LAMP CIRCUIT: PASS",
+          "lines": [
+            "STEP 3 / TEST BEFORE RESTART"
+          ],
+          "tone": "warm"
+        },
+        {
+          "at": 44.3,
+          "end": 47.0,
+          "label": "LOCAL STATUS RESTORED",
+          "title": "LIMITED FUNCTION ONLY",
+          "lines": [
+            "NAVIGATION: STILL UNAVAILABLE"
+          ],
+          "tone": "warm"
+        },
+        {
+          "at": 50.0,
+          "end": 54.6,
+          "label": "RELAY EMERGENCY CAPACITOR",
+          "title": "ONE WARNING TRANSMISSION",
+          "lines": [
+            "FIXED FACILITY POWER \u00b7 FINITE CHARGE",
+            "ACTIVE TRANSMISSION MAY REVEAL LOCATION"
+          ],
+          "tone": "neutral"
+        }
+      ],
+      "promotion": {
+        "at": 65,
+        "bridge": [
+          "What happens when guidance fails?",
+          "Real engineers design for failure.",
+          "Practice thinking beyond the obvious answer."
+        ],
+        "headline": "Build your skills.",
+        "lines": [
+          "Discover your direction.",
+          "AltWing \u2014 Find your own wings."
+        ],
+        "activity": "sensor",
+        "voteNext": 4
+      }
+    }
+  ]
+}

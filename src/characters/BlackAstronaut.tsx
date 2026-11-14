@@ -1,4 +1,6 @@
 import React from 'react';
+import {Quaternion,Euler} from 'three';
+const rotationQuaternion=(x:number,y:number,z:number)=>new Quaternion().setFromEuler(new Euler(x,y,z)).toArray();
 import {Box, Line3D, Orb, Ring} from '../geometry';
 import {C, ease, mix} from '../config';
 import {astroState,type AstroPose} from './performance';
@@ -18,14 +20,14 @@ export const BlackAstronaut: React.FC<{time:number;action?:AstronautAction;posit
   const phase=time*(running?10:6), stride=running?.78:.43;
   const headPitch=action==='look-down'?.34:action==='wake'?mix(.65,0,ease(time/1.8)):action==='danger'?-.09:Math.sin(time*.8)*.025;
   return <group position={position} rotation={[0,rotation,0]}><AstronautRig time={time} action={action} pose={pose}>
-    <Orb p={[0,1.77,0]} s={[.48,.57,.27]} color={suit} metal={.1} rough={.87}/>
-    <Orb p={[0,1.95,.09]} s={[.445,.37,.235]} color={armor} metal={.2} rough={.8}/>
+    <Orb name="astro-torso-shell" p={[0,1.77,0]} s={[.48,.57,.27]} color={suit} metal={.1} rough={.87}/>
+    <Orb name="astro-chest-shell" p={[0,1.95,.09]} s={[.445,.37,.235]} color={armor} metal={.2} rough={.8}/>
     <Box p={[0,1.85,.342]} s={[.40,.23,.035]} color="#0a111b"/>
     <Box p={[.11,1.90,.365]} s={[.075,.012,.008]} color={C.cyan} emissive={C.cyan} glow={1.3}/>
     <Box p={[-.11,1.85,.365]} s={[.075,.012,.008]} color="#344455"/>
     <Line3D points={[[-.24,2.05,.235],[-.28,1.74,.259],[-.18,1.59,.25]]} color="#394351" glow={0} radius={.012}/>
     <Line3D points={[[.24,2.05,.235],[.28,1.74,.259],[.18,1.59,.25]]} color="#394351" glow={0} radius={.012}/>
-    <Orb p={[0,1.27,0]} s={[.36,.24,.26]} color={suit} rough={.9}/>
+    <Orb name="astro-hip-shell" p={[0,1.27,0]} s={[.36,.24,.26]} color={suit} rough={.9}/>
     <Box p={[0,1.39,.22]} s={[.59,.09,.085]} color="#29313c"/>
     <Box p={[0,1.39,.274]} s={[.12,.085,.02]} color="#101722"/>
     <Box p={[0,1.92,-.31]} s={[.61,.73,.27]} color="#101720" rough={.9}/>
@@ -35,7 +37,7 @@ export const BlackAstronaut: React.FC<{time:number;action?:AstronautAction;posit
     </React.Fragment>)}
     <group position={[0,2.48,0]} rotation={[performance?.headPitch??headPitch,performance?.headYaw??headYaw,performance?.headRoll??(action==='hesitate'?Math.sin(time*2)*.045:0)]}>
       <mesh position={[0,-.13,0]} rotation={[Math.PI/2,0,0]}><torusGeometry args={[.26,.047,12,40]}/><meshStandardMaterial color="#232d3a" metalness={.5} roughness={.5}/></mesh>
-      <Orb p={[0,.17,0]} s={[.385,.43,.355]} color="#101721" metal={.24} rough={.72}/>
+      <Orb name="astro-head-shell" p={[0,.17,0]} s={[.385,.43,.355]} color="#101721" metal={.24} rough={.72}/>
       <Orb p={[0,.17,.195]} s={[.326,.285,.215]} color="#02060b" metal={.85} rough={.2}/>
       <Line3D points={[[-.225,.34,.34],[-.10,.38,.389],[.11,.375,.388]]} color="#668b9e" radius={.009} glow={.05}/>
       {[-1,1].map(side=><Orb key={side} p={[side*.366,.12,-.012]} s={[.046,.115,.11]} color="#25303b" rough={.8}/>)}
@@ -45,28 +47,28 @@ export const BlackAstronaut: React.FC<{time:number;action?:AstronautAction;posit
       const arm=performance?.arms[index].x??(action==='reach'&&side===-1?-1.16:action==='danger'?-.40:-step*.65+.06);
       const knee=performance?.legs[index].knee??(moving?Math.max(0,-Math.sin(phase+index*Math.PI))*(running?1.08:.58):action==='wake'?(1-ease(time/2.2))*.9:.05);
       return <React.Fragment key={side}>
-        <group position={[side*.25,1.12,0]} rotation={[step,0,performance?0:side*.035]}>
+        <group position={[side*.25,1.12,0]} quaternion={performance?.legs[index].upperQ??rotationQuaternion(step,0,performance?0:side*.035)}>
           <Segment length={.52} width={.135}/>
           <Orb p={[0,-.48,.015]} s={[.145,.135,.15]} color={joint}/>
           <group position={[0,-.5,0]} rotation={[knee,0,0]}>
             <Segment length={.53} width={.12}/>
             <Orb p={[0,-.15,.09]} s={[.139,.23,.073]} color={armor} rough={.87}/>
-            <group position={[0,-.51,0]} rotation={[performance?.legs[index].ankle??0,0,performance?-performance.roll:0]}>
+            <group name={`astro-foot-${side===-1?'left':'right'}`} position={[0,-.51,0]} quaternion={performance?.legs[index].ankleQ??rotationQuaternion(performance?.legs[index].ankle??0,0,performance?-performance.roll:0)}>
               <object3D name={`astro-sole-${side===-1?'left':'right'}`} position={[0,-.135,.105]}/>
-              <Orb p={[0,0,.105]} s={[.175,.145,.30]} color="#111923" rough={.88}/>
+              <Orb p={[0,.005,.105]} s={[.175,.14,.30]} color="#111923" rough={.88}/>
               <Box p={[0,-.10,.105]} s={[.31,.07,.49]} color="#070b11"/>
             </group>
           </group>
         </group>
-        <group position={[side*.49,2.02,0]} rotation={[arm,0,side*(performance?.arms[index].spread??(action==='danger'?.24:.10))]}>
-          <Orb s={[.19,.22,.195]} color={armor} rough={.85}/>
+        <group name={`astro-upper-arm-${side===-1?'left':'right'}`} position={[side*.49,2.02,0]} quaternion={performance?.arms[index].q??rotationQuaternion(arm,0,side*(performance?.arms[index].spread??(action==='danger'?.24:.10)))}>
+          <Orb name={`astro-shoulder-${side===-1?'left':'right'}`} s={[.19,.22,.195]} color={armor} rough={.85}/>
           <Segment length={.45} width={.115}/>
           <Orb p={[0,-.42,0]} s={[.12,.12,.12]} color={joint}/>
-          <group position={[0,-.44,0]} rotation={[-(performance?.arms[index].elbow??(running?.95:.18)),0,0]}>
+          <group name={`astro-forearm-${side===-1?'left':'right'}`} position={[0,-.44,0]} rotation={[-(performance?.arms[index].elbow??(running?.95:.18)),0,0]}>
             <Segment length={.39} width={.104}/>
             <Box p={[0,-.24,.105]} s={[.15,.16,.035]} color="#25323f"/>
             <Box p={[0,-.24,.125]} s={[.083,.045,.008]} color={C.cyan} emissive={C.cyan} glow={.7}/>
-            <Orb p={[0,-.46,.012]} s={[.115,.145,.10]} color="#111820" rough={.9}/>
+            <Orb name={`astro-hand-shell-${side===-1?'left':'right'}`} p={[0,-.46,.012]} s={[.115,.145,.10]} color="#111820" rough={.9}/>
             <object3D name={`astro-grip-${side===-1?'left':'right'}`} position={[0,-.46,.012]}/>
             <Orb p={[-side*.09,-.42,.045]} s={[.045,.08,.055]} color="#1b2530"/>
           </group>

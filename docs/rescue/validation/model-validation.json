@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "models": [
+    {
+      "name": "wangdoo-plush-mentor",
+      "bytes": 238260,
+      "meshes": 21,
+      "vertices": 14965,
+      "size": [
+        0.7744818924859047,
+        1.1224,
+        0.7144000003814697
+      ],
+      "animations": [
+        "idle",
+        "guide",
+        "scan",
+        "uncertain",
+        "reassured",
+        "walk"
+      ],
+      "ok": true
+    }
+  ]
+}
