@@ -99,7 +99,7 @@ for each episode on standard Linux runners in this public repository. Only
 dedicated `render/cinematic-*` branch pushes trigger it. It has read-only repo
 permissions, does not publish or deploy, and retains artifacts for seven days.
 
-To regenerate audio, create a Python virtual environment, install `piper-tts`
+To regenerate audio, create a Python virtual environment, install `piper-tts==1.8.0`
 and `numpy`, then run `python scripts/cinematic_audio.py`. This downloads the
 public-domain LJ Speech model into the ignored work directory. Existing mixed
 audio is committed, so ordinary video rendering needs no voice service/model.

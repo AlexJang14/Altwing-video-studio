@@ -1,10 +1,11 @@
 """Assemble verified native frame ranges; use one continuous audio master."""
-import json,subprocess
+import json,subprocess,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 cfg=json.loads((ROOT/'src/cinematic/episodes.json').read_text())
 chunks=ROOT/'work/cinematic/downloads';out=ROOT/'work/cinematic/renders';out.mkdir(parents=True,exist_ok=True)
 for ep in cfg['episodes']:
+ if len(sys.argv)>1 and ep['id']!=int(sys.argv[1]):continue
  total=ep['duration']*30;lines=[]
  for start in range(0,total,450):
   end=min(total-1,start+449)
