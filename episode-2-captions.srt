@@ -1,0 +1,47 @@
+1
+00:00:00,450 --> 00:00:03,600
+WANGDOO: Captain! I don't like this part!
+
+2
+00:00:05,750 --> 00:00:07,400
+WANGDOO: Well... we landed.
+
+3
+00:00:08,000 --> 00:00:08,850
+WANGDOO: Technically.
+
+4
+00:00:09,000 --> 00:00:11,900
+NARRATOR: No fuel. Almost no oxygen. You're stranded.
+
+5
+00:00:12,650 --> 00:00:14,900
+WANGDOO: Aww! It likes me!
+
+6
+00:00:17,900 --> 00:00:19,900
+WANGDOO: Okay. It does NOT like me.
+
+7
+00:00:24,100 --> 00:00:27,300
+WANGDOO: Captain... I think I woke something up.
+
+8
+00:00:32,500 --> 00:00:34,250
+WANGDOO: Too fast! Too fast!
+
+9
+00:00:39,150 --> 00:00:41,900
+WANGDOO: One power core. Two options.
+
+10
+00:00:44,100 --> 00:00:45,300
+WANGDOO: And no time!
+
+11
+00:00:46,750 --> 00:00:49,400
+NARRATOR: Which one would you choose?
+
+12
+00:00:53,250 --> 00:00:58,750
+NARRATOR: Think you could solve this? Try real engineering challenges on AltWing.

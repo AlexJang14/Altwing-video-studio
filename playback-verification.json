@@ -1,0 +1,22 @@
+[
+  {
+    "file": "work/cinematic/renders/the-last-wing-episode-01-final.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 58,
+    "played": 0.640482,
+    "decoded": 24,
+    "seekedTo": 57,
+    "error": null
+  },
+  {
+    "file": "work/cinematic/renders/the-last-wing-episode-02-planet-route-final.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 59,
+    "played": 0.662393,
+    "decoded": 25,
+    "seekedTo": 58,
+    "error": null
+  }
+]

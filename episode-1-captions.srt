@@ -1,0 +1,55 @@
+1
+00:00:00,250 --> 00:00:04,750
+NARRATOR: You're the last astronaut awake. And your ship is dying.
+
+2
+00:00:05,300 --> 00:00:08,750
+NARRATOR: Earth hasn't responded in forty-seven days.
+
+3
+00:00:09,050 --> 00:00:11,650
+NARRATOR: And navigation just failed.
+
+4
+00:00:12,450 --> 00:00:14,050
+WANGDOO: Captain! Good news!
+
+5
+00:00:14,550 --> 00:00:16,850
+WANGDOO: I fixed the coffee machine!
+
+6
+00:00:17,550 --> 00:00:19,900
+WANGDOO: Bad news. Everything else is broken.
+
+7
+00:00:20,300 --> 00:00:23,400
+WANGDOO: Hold that cable. I'll take the switch.
+
+8
+00:00:26,150 --> 00:00:28,750
+WANGDOO: Navigation restored! Mostly.
+
+9
+00:00:29,350 --> 00:00:32,900
+NARRATOR: Two signals. Two possible ways to survive.
+
+10
+00:00:33,300 --> 00:00:35,350
+WANGDOO: That one looks fun!
+
+11
+00:00:36,250 --> 00:00:37,500
+WANGDOO: Probably.
+
+12
+00:00:39,300 --> 00:00:43,650
+WANGDOO: One jump. No return trip. Pick wisely.
+
+13
+00:00:46,650 --> 00:00:49,150
+NARRATOR: Where should we go?
+
+14
+00:00:53,120 --> 00:00:57,900
+NARRATOR: Your choices shape their story. Build your own journey with AltWing.

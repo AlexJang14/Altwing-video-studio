@@ -1,0 +1,50 @@
+[
+  {
+    "episode": 1,
+    "file": "the-last-wing-episode-01-final.mp4",
+    "duration": "58.000000",
+    "size": 18653955,
+    "video": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "nb_read_frames": "1740",
+      "color_space": "bt709"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 2
+    },
+    "fullDecode": "pass",
+    "blackEvents": [],
+    "sha256": "3179caab51c9d519b7010be44187e0e22ee54fc40d0232be9a5e2be028072f84"
+  },
+  {
+    "episode": 2,
+    "file": "the-last-wing-episode-02-planet-route-final.mp4",
+    "duration": "59.000000",
+    "size": 18638179,
+    "video": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "nb_read_frames": "1770",
+      "color_space": "bt709"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 2
+    },
+    "fullDecode": "pass",
+    "blackEvents": [
+      "black_start:4.133333 black_end:4.266667 black_duration:0.133333"
+    ],
+    "sha256": "63df4405e81fcc01af55936a4494e2df2f2d258852a460d62f47728d358fbbde"
+  }
+]
