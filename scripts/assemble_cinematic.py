@@ -17,5 +17,5 @@ for ep in cfg['episodes']:
   assert (data['width'],data['height'])==(1080,1920),name
   lines += ["file '"+str(file).replace("'","'\\''")+"'",f'duration {(end-start+1)/30:.9f}']
  listing=out/f'episode-{ep["id"]}-concat.txt';listing.write_text('\n'.join(lines)+'\n')
- subprocess.run(['ffmpeg','-v','warning','-y','-f','concat','-safe','0','-i',str(listing),'-i',str(ROOT/f'public/audio/cinematic/episode-{ep["id"]}.mp3'),'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','192k','-ar','48000','-t',str(ep['duration']),'-video_track_timescale','30000','-movflags','+faststart',str(out/ep['file'])],check=True)
+ subprocess.run(['ffmpeg','-v','warning','-y','-f','concat','-safe','0','-i',str(listing),'-i',str(ROOT/f'public/audio/cinematic/episode-{ep["id"]}.mp3'),'-map','0:v:0','-map','1:a:0','-c:v','copy','-bsf:v','setts=pts=PTS-STARTPTS:dts=DTS-STARTPTS','-c:a','aac','-b:a','192k','-ar','48000','-t',str(ep['duration']),'-video_track_timescale','30000','-movflags','+faststart',str(out/ep['file'])],check=True)
  print(out/ep['file'],flush=True)

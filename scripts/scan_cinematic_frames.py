@@ -1,6 +1,6 @@
 """Review the largest changes inside shots for accidental render flashes."""
 from pathlib import Path
-import json,subprocess,heapq
+import json,subprocess,heapq,sys
 import numpy as np
 from PIL import Image,ImageDraw,ImageFont
 ROOT=Path(__file__).resolve().parents[1]
@@ -8,6 +8,7 @@ cfg=json.loads((ROOT/'src/cinematic/episodes.json').read_text())
 cuts=[[0,5,12,17.15,20,29,33,38,46,53],[0,2.8,124/30,128/30,5,12,16.3,20,23,26.5,29,38,41,46,53]]
 font=ImageFont.truetype(str(ROOT/'public/fonts/DejaVuSans.ttf'),16)
 for ep in cfg['episodes']:
+ if len(sys.argv)>1 and ep['id']!=int(sys.argv[1]):continue
  cmd=['ffmpeg','-v','error','-i',str(ROOT/'work/cinematic/renders'/ep['file']),'-vf','scale=180:320','-an','-f','rawvideo','-pix_fmt','rgb24','-']
  p=subprocess.Popen(cmd,stdout=subprocess.PIPE);previous=None;ranked=[];metrics=[];index=0
  while True:

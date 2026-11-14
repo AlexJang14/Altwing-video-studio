@@ -3,8 +3,11 @@ import json,subprocess,hashlib,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 EPISODES=json.loads((ROOT/'src/cinematic/episodes.json').read_text())['episodes']
-out=[]
+selected=int(sys.argv[1]) if len(sys.argv)>1 else None
+report=ROOT/'work/cinematic/renders/validation.json'
+out=[r for r in json.loads(report.read_text()) if r['episode']!=selected] if selected and report.exists() else []
 for ep in EPISODES:
+ if selected and ep['id']!=selected:continue
  p=ROOT/'work/cinematic/renders'/ep['file']
  if not p.exists():raise SystemExit(f'Missing {p}')
  data=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-count_frames','-of','json',str(p)]))
@@ -14,6 +17,7 @@ for ep in EPISODES:
  assert v['r_frame_rate']=='30/1' and int(v['nb_read_frames'])==ep['duration']*30
  assert abs(float(data['format']['duration'])-ep['duration'])<.1
  assert a['codec_name']=='aac' and a['channels']==2
+ assert abs(float(v['start_time']))<.001 and abs(float(a['start_time']))<.001,'Picture/audio timestamp offset'
  assert v.get('color_space')=='bt709'
  decode=subprocess.run(['ffmpeg','-v','error','-i',str(p),'-f','null','-'],capture_output=True,text=True,check=True)
  assert not decode.stderr,decode.stderr
@@ -26,4 +30,4 @@ for ep in EPISODES:
   assert ep['id']==2 and abs(float(parts['black_start'])-124/30)<.08 and float(parts['black_duration'])<.2,line
  result={'episode':ep['id'],'file':p.name,'duration':data['format']['duration'],'size':p.stat().st_size,'video':{k:v.get(k) for k in ['codec_name','width','height','pix_fmt','r_frame_rate','nb_read_frames','color_space']},'audio':{k:a.get(k) for k in ['codec_name','sample_rate','channels']},'fullDecode':'pass','blackEvents':blackevents,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
  out.append(result);print(json.dumps(result),flush=True)
-(ROOT/'work/cinematic/renders/validation.json').write_text(json.dumps(out,indent=2)+'\n')
+report.write_text(json.dumps(sorted(out,key=lambda r:r['episode']),indent=2)+'\n')
