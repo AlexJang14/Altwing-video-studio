@@ -8,7 +8,7 @@
 | E1 CCTV | Compares two timestamps himself | Reports match/conflict/insufficient data | Mentor waits beside an unsolved problem |
 | E1 bulkhead | Turns back and guides Wangdoo through a real clear gap | Hesitates, then accepts a flipper | First reciprocal protection |
 | E1 repair | Seats, locks and tests the physical connector | Diagnoses and illuminates | Information enables the engineer's work |
-| E2 crash | Checks the companion before resuming the rescue | Recovers, stays close, gives one small bounce | The companion is valued beyond its function |
+| E2 crash | Checks the companion before resuming the rescue | Recovers, accepts help and stays close | The companion is valued beyond its function |
 | E2 pursuit | Observes a dangerous direct path, tests the ledge, leads | Revises his route from the astronaut's observation | Human judgment supplements incomplete data |
 | E3 sensor failure | Initially waits; then observes, isolates, connects and tests | Cannot provide navigation; watches the process | Comfortable silence rather than false certainty |
 | E3 recovery | Reassures, lights and leads | Local status returns; no magical full repair | Early camera/light composition reverses |
@@ -57,7 +57,11 @@ The astronaut grows on either branch, through different evidence and costs.
 
 - ARK has one controlled-descent reserve and cannot return to orbit afterward.
 - The wreck's cell has a compatible connector/voltage; its finite output is
-  displayed before allocation. It cannot supply both continuous loads.
+  displayed before allocation: 24 V DC, 300 W maximum. The shelter needs
+  180 W continuously; the ship recycler needs 220 W. Their 400 W sum exceeds
+  the source. Wangdoo's separate 24 Wh low-voltage auxiliary supports his own
+  sensors and lamp; it has neither the connector nor the continuous high-current
+  output for either life-support load.
 - Shelter power holds its pressure seal and scrubber. Removing the cell to
   power the ship would make the refuge unsafe; it is not a free door-unlock.
 - The E3 relay uses a separate **fixed** emergency capacitor. It does not
