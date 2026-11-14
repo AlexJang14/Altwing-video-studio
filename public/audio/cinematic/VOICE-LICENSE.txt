@@ -1,0 +1,7 @@
+Dialogue generated locally with Piper using the public-domain LJ Speech dataset voice.
+Model: https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ljspeech/medium/en_US-ljspeech-medium.onnx
+Dataset: https://keithito.com/LJ-Speech-Dataset/
+Piper engine: GPL-3.0, https://github.com/OHF-Voice/piper1-gpl
+Narrator pitch ratio .96; Wangdoo 1.13. These are synthetic character voices.
+All music, ambience and effects are original deterministic synthesis by cinematic_audio.py.
+No voice imitation, paid API, purchased sample, or noncommercial model used.

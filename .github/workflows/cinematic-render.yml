@@ -1,0 +1,44 @@
+name: Render cinematic episodes
+on:
+  push:
+    branches: ['render/cinematic-*']
+permissions:
+  contents: read
+jobs:
+  render:
+    # Standard Linux runners in this public repository; no paid rendering API.
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        episode: [1, 2]
+        chunk: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - name: Render native 1080 × 1920 segment
+        shell: bash
+        env:
+          EPISODE: ${{ matrix.episode }}
+          CHUNK: ${{ matrix.chunk }}
+          RENDER_CONCURRENCY: '2'
+        run: |
+          export CHROME_PATH="$(command -v google-chrome)"
+          start_frame=$(( CHUNK * 450 ))
+          end_frame=$(( start_frame + 449 ))
+          total_frames=1740
+          if [ "$EPISODE" -eq 2 ]; then total_frames=1770; fi
+          if [ "$end_frame" -ge "$total_frames" ]; then end_frame=$(( total_frames - 1 )); fi
+          node scripts/cinematic_render.mjs final "$EPISODE" "$start_frame-$end_frame"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: episode-${{ matrix.episode }}-chunk-${{ matrix.chunk }}
+          path: work/cinematic/renders/*.mp4
+          retention-days: 7
+          compression-level: 0

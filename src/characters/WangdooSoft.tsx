@@ -2,6 +2,7 @@ import React, {useMemo} from 'react';
 import * as THREE from 'three';
 import {Line3D, Ring} from '../geometry';
 import {C} from '../config';
+import {wangState,footCycle,ramp,type WangPose} from './performance';
 
 export type PenguinAction='idle'|'walk'|'run'|'wave'|'curious'|'frightened'|'project'|'bounce'|'touch'|'sniff'|'excited';
 type V3=[number,number,number];
@@ -67,36 +68,42 @@ const bodyGeometry=makeBody(),bibGeometry=makeBib(),wingGeometry=makeWing();
 const SoftOrb:React.FC<{p?:V3;s?:V3;color?:string;armor?:boolean;emissive?:string;glow?:number}> = ({p=[0,0,0],s=[1,1,1],color=IVORY,armor=false,emissive='#000000',glow=0})=><mesh geometry={smallSphere} position={p} scale={s} castShadow receiveShadow>
   <meshPhysicalMaterial color={color} roughness={armor?.32:.64} metalness={armor?.28:0} clearcoat={armor?.5:.05} clearcoatRoughness={.3} sheen={armor?0:.15} sheenColor={color} sheenRoughness={.9} emissive={emissive} emissiveIntensity={glow}/>
 </mesh>;
-export const PenguinRig:React.FC<{time:number;action:PenguinAction;look?:number;children:React.ReactNode}>=({time,action,look=0,children})=>{
+export const PenguinRig:React.FC<{time:number;action:PenguinAction;look?:number;children:React.ReactNode;pose?:WangPose}>=({time,action,look=0,children,pose})=>{
+  if(pose){const s=wangState(time,pose);return <group position={[0,.86+s.lift,0]} rotation={[s.lean,0,s.roll]} scale={[1/Math.sqrt(s.squash),s.squash,1/Math.sqrt(s.squash)]}><group position={[0,-.86,0]}>{children}</group></group>;}
   const moving=action==='walk'||action==='run';const phase=time*(action==='run'?14:8.4);
   const bob=moving?Math.abs(Math.sin(phase))*.022:action==='bounce'||action==='excited'?Math.abs(Math.sin(time*5))*.085:Math.sin(time*2.1)*.004;
   const roll=moving?Math.sin(phase)*.055:action==='curious'||action==='sniff'?Math.sin(time*1.8)*.09:Math.sin(time*1.6)*.008;
   return <group position={[0,bob,0]} rotation={[look+(action==='frightened'?-.10:0),0,roll]}>{children}</group>;
 };
 
-export const WangdooPenguin:React.FC<{time:number;action?:PenguinAction;look?:number;position?:V3;rotation?:number;scale?:number}> = ({time,action='idle',look=0,position=[0,0,0],rotation=0,scale=1})=>{
+export const WangdooPenguin:React.FC<{time:number;action?:PenguinAction;look?:number;position?:V3;rotation?:number;scale?:number;pose?:WangPose}> = ({time,action='idle',look=0,position=[0,0,0],rotation=0,scale=1,pose})=>{
+  const performance=pose?wangState(time,pose):null,panic=performance?.panic??0;
   const moving=action==='walk'||action==='run',phase=time*(action==='run'?14:8.4);
   const eyes=useMemo(()=>[-1,1].map(side=>{
     const x=side*.245;
     return [[x-.081,1.365,surfaceZ(x-.081,1.365)+.043],[x-.044,1.416,surfaceZ(x-.044,1.416)+.044],[x,1.433,surfaceZ(x,1.433)+.044],[x+.044,1.416,surfaceZ(x+.044,1.416)+.044],[x+.081,1.365,surfaceZ(x+.081,1.365)+.043]] as V3[];
   }),[]);
   return <group position={position} rotation={[0,rotation,0]} scale={scale}>
-    <PenguinRig time={time} action={action} look={look}>
+    <PenguinRig time={time} action={action} look={look} pose={pose}>
       <group scale={[1,1+Math.sin(time*2.1)*.004,1]}>
         <mesh geometry={bodyGeometry} castShadow><meshPhysicalMaterial color={NAVY} roughness={.73} metalness={0} sheen={.40} sheenColor="#8a8ea4" sheenRoughness={.95} clearcoat={.025} bumpMap={plushBump} bumpScale={.003}/></mesh>
         <mesh geometry={bibGeometry}><meshPhysicalMaterial color={IVORY} roughness={.80} metalness={0} sheen={.40} sheenColor="#fff7e5" sheenRoughness={1} bumpMap={plushBump} bumpScale={.0025}/></mesh>
-        {eyes.map((points,i)=><Line3D key={i} points={points} color="#171925" radius={.021} glow={0}/>)}
+        <group visible={panic<.65}>{eyes.map((points,i)=><Line3D key={i} points={points} color="#171925" radius={.021} glow={0} opacity={1-ramp(panic,.1,.65)}/>)}</group>
+        <group visible={panic>.01}>{[-1,1].map(side=><group key={side} scale={[panic,panic,panic]} position={[side*.245,1.40,surfaceZ(side*.245,1.40)+.054]}><SoftOrb s={[.052,.078,.013]} color="#171925"/><SoftOrb p={[-.016,.026,.014]} s={[.014,.018,.003]} color="#ffffff"/></group>)}</group>
         {[-1,1].map(side=><SoftOrb key={side} p={[side*.34,1.245,surfaceZ(side*.34,1.245)+.032]} s={[.081,.041,.011]} color="#efb7ad"/>)}
         <group position={[0,1.245,surfaceZ(0,1.245)+.034]} rotation={[-.035,0,0]}>
           <SoftOrb p={[0,.005,.062]} s={[.164,.081,.145]} color="#ffca51"/>
-          <SoftOrb p={[0,-.036,.055]} s={[.149,.052,.135]} color="#f2ac36"/>
-          <Line3D points={[[-.134,-.021,.117],[0,-.026,.194],[.134,-.021,.117]]} color="#da912d" radius={.005} glow={0}/>
+          <group position={[0,-.028,0]} rotation={[(pose?.talk??0)*.37,0,0]}>
+           <SoftOrb p={[0,-.008,.055]} s={[.149,.052,.135]} color="#f2ac36"/>
+           <Line3D points={[[-.134,.007,.117],[0,.002,.194],[.134,.007,.117]]} color="#da912d" radius={.005} glow={0}/>
+          </group>
         </group>
         {[-1,1].map((side,i)=>{
-          const raised=(action==='wave'&&side===-1)?1.05+Math.sin(time*7)*.16:(action==='touch'&&side===1)?.93*Math.min(1,time/.9):action==='excited'?.55:action==='frightened'?.40:0;
-          const swing=(action==='touch'&&side===1)?-.50*Math.min(1,time/.9):moving?Math.sin(phase+i*Math.PI)*.12:0;
+          const raised=pose?(side===-1?pose.wingL??0:pose.wingR??0):(action==='wave'&&side===-1)?1.05+Math.sin(time*7)*.16:(action==='touch'&&side===1)?.93*Math.min(1,time/.9):action==='excited'?.55:action==='frightened'?.40:0;
+          const swing=pose?((side===-1?pose.swingL:pose.swingR)??Math.sin(performance!.phase+i*Math.PI)*.12*performance!.gait):(action==='touch'&&side===1)?-.50*Math.min(1,time/.9):moving?Math.sin(phase+i*Math.PI)*.12:0;
           return <React.Fragment key={side}>
             <group position={[side*.645,1.105,-.015]} rotation={[swing,side*.08,side*(.19+raised)]}>
+              <object3D name={`wang-grip-${side===-1?'left':'right'}`} position={[0,-.49,.04]}/>
               <group scale={[side,1,1]}>
                 <mesh geometry={wingGeometry} castShadow><meshPhysicalMaterial color={GOLD} metalness={.38} roughness={.36} clearcoat={.4} emissive="#ff9f39" emissiveIntensity={.13}/></mesh>
                 <mesh geometry={wingGeometry} position={[0,-.005,.027]} scale={[.98,.983,1]} castShadow><meshPhysicalMaterial color={ARMOR} roughness={.3} metalness={.25} clearcoat={.65} clearcoatRoughness={.22}/>
@@ -113,12 +120,14 @@ export const WangdooPenguin:React.FC<{time:number;action?:PenguinAction;look?:nu
         <SoftOrb p={[0,.90,-.555]} s={[.315,.355,.098]} color="#283c54" armor/>
         <Ring p={[0,.91,-.657]} radius={.12} tube={.022} color={GOLD} glow={.6}/>
         <SoftOrb p={[0,.91,-.665]} s={[.075,.075,.012]} color="#fff0ac" emissive="#ffc560" glow={1.2}/>
+        {(pose?.thrust??0)>.01&&<group position={[0,.91,-.94]}><mesh rotation={[-Math.PI/2,0,0]} scale={[1,pose!.thrust!,1]}><coneGeometry args={[.12,.65,16]}/><meshBasicMaterial color="#ffc667" transparent opacity={.85} depthWrite={false}/></mesh><Ring p={[0,0,.25]} radius={.085} tube={.017} color="#aff0ff" glow={2}/></group>}
         <Line3D points={[[-.20,1.09,-.607],[-.23,.9,-.625],[-.19,.69,-.608]]} radius={.007} color={C.cyan} glow={1}/>
         <SoftOrb p={[0,.26,-.40]} s={[.16,.10,.24]} color={NAVY}/>
       </group>
       {[-1,1].map((side,i)=>{
-        const step=Math.sin(phase+i*Math.PI);
-        return <group key={side} position={[side*.265,moving?Math.max(0,step)*.09:0,moving?step*.14:0]} rotation={[moving?step*.15:0,side*-.06,0]}>
+        const step=Math.sin(phase+i*Math.PI),foot=performance?footCycle(performance.phase+i*Math.PI,.14+.08*performance.run,.09+.07*performance.run):null;
+        const lift=foot?foot.y*performance!.gait+Math.max(0,Math.sin(time*17+i*Math.PI))*(pose?.kick??0)*.12:moving?Math.max(0,step)*.09:0;
+        return <group key={side} position={[side*.265,lift,foot?foot.z*performance!.gait:moving?step*.14:0]} rotation={[performance?.gait?step*.10: moving?step*.15:0,side*-.06,0]}>
           <SoftOrb p={[0,.096,.135]} s={[.225,.10,.265]} color="#ffb52e"/>
           <SoftOrb p={[0,.031,.126]} s={[.226,.029,.266]} color="#3b3d4b"/>
           {[-1,1].map(toe=><Line3D key={toe} points={[[toe*.068,.11,.335],[toe*.074,.076,.371]]} color="#e1a03a" radius={.004} glow={0}/>)}

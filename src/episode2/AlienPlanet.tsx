@@ -12,25 +12,26 @@ const flowerCap=new THREE.SphereGeometry(1,24,12,0,Math.PI*2,0,Math.PI*.64);
 const rockGeo=new THREE.DodecahedronGeometry(1,1);
 
 function randomFamily(seedStart:number){let seed=seedStart;return ()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646;};}
-const AlienGroves:React.FC=()=>{
+const AlienGroves:React.FC<{clearing?:boolean}>=({clearing=false})=>{
  const stems=useRef<THREE.InstancedMesh>(null),caps=useRef<THREE.InstancedMesh>(null),leaves=useRef<THREE.InstancedMesh>(null),rocks=useRef<THREE.InstancedMesh>(null);
  useLayoutEffect(()=>{
   const rnd=randomFamily(80911),m=new THREE.Object3D();
   for(let i=0;i<54;i++){
-   const side=i%2?1:-1,x=side*(3.1+rnd()*18),h=.65+rnd()*2.6;let z=-32+rnd()*40;
+   const side=i%2?1:-1;let x=side*(3.1+rnd()*18);const h=.65+rnd()*2.6;let z=-32+rnd()*40;
+   if(clearing&&x>-12&&x<2&&z>-14&&z<7)x-=14;
    if(Math.hypot(x+7.4,z+11)<4.1)z=-28-rnd()*6;
    m.position.set(x,h*.5,z);m.rotation.set(0,rnd()*6.28,(rnd()-.5)*.13);m.scale.set(.8,h,.8);m.updateMatrix();stems.current!.setMatrixAt(i,m.matrix);
    m.position.set(x,h,z);m.rotation.set(0,rnd()*6.28,0);m.scale.set(h*.44,h*.15,h*.44);m.updateMatrix();caps.current!.setMatrixAt(i,m.matrix);
   }
   for(let i=0;i<90;i++){
-   const side=i%2?1:-1;m.position.set(side*(2.2+rnd()*15),.015,-22+rnd()*32);m.rotation.set(.05+rnd()*.35,rnd()*6.28,side*(.2+rnd()*.5));const s=.5+rnd()*1.7;m.scale.setScalar(s);m.updateMatrix();leaves.current!.setMatrixAt(i,m.matrix);
+   const side=i%2?1:-1;let x=side*(2.2+rnd()*15),z=-22+rnd()*32;if(clearing&&x>-12&&x<2&&z>-14&&z<7)x-=14;m.position.set(x,.015,z);m.rotation.set(.05+rnd()*.35,rnd()*6.28,side*(.2+rnd()*.5));const s=.5+rnd()*1.7;m.scale.setScalar(s);m.updateMatrix();leaves.current!.setMatrixAt(i,m.matrix);
   }
   for(let i=0;i<25;i++){
    const x=(i%2?1:-1)*(5+rnd()*40),z=-25-rnd()*40,h=2+rnd()*12;
    m.position.set(x,h*.3,z);m.rotation.set(rnd(),rnd()*6.28,rnd()*.25);m.scale.set(2+rnd()*5,h,2+rnd()*3);m.updateMatrix();rocks.current!.setMatrixAt(i,m.matrix);
   }
   for(const ref of [stems,caps,leaves,rocks])ref.current!.instanceMatrix.needsUpdate=true;
- },[]);
+ },[clearing]);
  return <>
   <instancedMesh ref={stems} args={[flowerStem,undefined,54]}><meshStandardMaterial color="#37616c" roughness={.9} emissive="#24676d" emissiveIntensity={.08}/></instancedMesh>
   <instancedMesh ref={caps} args={[flowerCap,undefined,54]}><meshStandardMaterial color="#8cd3cf" roughness={.64} emissive="#49a9bd" emissiveIntensity={.32} side={THREE.DoubleSide}/></instancedMesh>
@@ -38,16 +39,17 @@ const AlienGroves:React.FC=()=>{
   <instancedMesh ref={rocks} args={[rockGeo,undefined,25]}><meshStandardMaterial color="#61536f" roughness={1}/></instancedMesh>
  </>;
 };
-const Ground:React.FC=()=>{
+const Ground:React.FC<{clearing?:boolean}>=({clearing=false})=>{
  const geometry=useMemo(()=>{
   const g=new THREE.PlaneGeometry(140,140,72,72);g.rotateX(-Math.PI/2);const p=g.attributes.position,colors=[];const color=new THREE.Color();
   for(let i=0;i<p.count;i++){
    const x=p.getX(i),z=p.getZ(i),mask=Math.min(1,Math.max(0,(Math.abs(x)-2.4)/6));
-   p.setY(i,(Math.sin(x*.18+z*.16)*.55+Math.cos(z*.31)*.27)*mask);
+   const flat=clearing&&x>-12&&x<3&&z>-14&&z<7?0:mask;
+   p.setY(i,(Math.sin(x*.18+z*.16)*.55+Math.cos(z*.31)*.27)*flat);
    const n=Math.sin(x*.7+z*.3)*Math.cos(z*.6)*.5+.5;color.set('#574b66').lerp(new THREE.Color('#786581'),n*.38);colors.push(color.r,color.g,color.b);
   }
   g.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));g.computeVertexNormals();return g;
- },[]);
+ },[clearing]);
  return <mesh geometry={geometry} receiveShadow><meshStandardMaterial vertexColors roughness={.97} metalness={0}/></mesh>;
 };
 const Sky:React.FC<{time:number}>=({time})=>{
@@ -78,8 +80,8 @@ export const AncientGate:React.FC<{time:number}>=({time})=>{
   <pointLight position={[0,2,.8]} color="#5ae1d9" intensity={awake*7} distance={9}/>
  </group>;
 };
-export const AlienPlanet:React.FC<{time:number;gate?:boolean}>=({time,gate=true})=><>
- <Sky time={time}/><Ground/><AlienGroves/>
- <Line3D points={[[.6,.015,.9],[-1,.015,-3],[-4,.015,-7],[-7.4,.015,-9.3]]} color="#78c9d0" radius={.021} glow={.02+ease((time-15.7)/1.8)*.7}/>
+export const AlienPlanet:React.FC<{time:number;gate?:boolean;signal?:boolean;clearing?:boolean}>=({time,gate=true,signal=true,clearing=false})=><>
+ <Sky time={time}/><Ground clearing={clearing}/><AlienGroves clearing={clearing}/>
+ {signal&&<Line3D points={[[.6,.015,.9],[-1,.015,-3],[-4,.015,-7],[-7.4,.015,-9.3]]} color="#78c9d0" radius={.021} glow={.02+ease((time-15.7)/1.8)*.7}/>}
  {gate&&<AncientGate time={time}/>}
 </>;

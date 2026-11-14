@@ -1,0 +1,53 @@
+{
+  "brand": {"name":"AltWing","url":"https://junjang06.github.io/altwing/#/","tagline":"Your path. Your pace.","verifiedFeatures":["Find My Wing","Explore Engineering","Try Projects","Unlock Opportunities"],"capturedFrom":"Official public deployment, 2026-11-13"},
+  "episodes": [
+    {"id":1,"title":"THE LAST SIGNAL","duration":58,"file":"the-last-wing-episode-01-final.mp4","scenes":[
+      {"start":0,"end":5,"label":"LAST AWAKE","action":"Impact throws the astronaut into the corridor wall. He braces, plants his feet, then runs toward the cockpit."},
+      {"start":5,"end":12,"label":"EARTH CONNECTION LOST","action":"He reaches the cockpit, tries the dead navigation console and slams a failing restart button."},
+      {"start":12,"end":20,"label":"GOOD NEWS / BAD NEWS","action":"Wangdoo waddles out of maintenance, waves, proudly presents his repaired coffee machine, then recoils at an electrical pop."},
+      {"start":20,"end":29,"label":"STORY MISSION 01 · RESTORE NAVIGATION","action":"The astronaut kneels and holds a live cable while Wangdoo closes the switch. Sparks knock Wangdoo off balance; the astronaut catches him. The star map returns."},
+      {"start":29,"end":38,"label":"TWO SIGNALS","action":"The window shutter rises. Wangdoo jumps and points toward a purple planet; the astronaut checks the station and planet signals."},
+      {"start":38,"end":46,"label":"ONE JUMP LEFT","action":"A final power failure kills one route. The astronaut reaches for the selector, hesitates, then pulls his hand back."},
+      {"start":46,"end":53,"label":"YOU CHOOSE","action":"Both characters study the two destinations. Wangdoo tugs the astronaut's sleeve and looks between the choices."},
+      {"start":53,"end":58,"label":"BUILD YOUR OWN JOURNEY","action":"Compact voting choices remain above an authentic AltWing website insert and invitation to explore real projects."}
+    ],"dialogue":[
+      {"at":0.25,"end":4.75,"who":"narrator","text":"You're the last astronaut awake. And your ship is dying."},
+      {"at":5.3,"end":8.75,"who":"narrator","text":"Earth hasn't responded in forty-seven days."},
+      {"at":9.05,"end":11.65,"who":"narrator","text":"And navigation just failed."},
+      {"at":12.45,"end":14.05,"who":"wangdoo","text":"Captain! Good news!"},
+      {"at":14.55,"end":16.85,"who":"wangdoo","text":"I fixed the coffee machine!"},
+      {"at":17.55,"end":19.9,"who":"wangdoo","text":"Bad news. Everything else is broken."},
+      {"at":20.3,"end":23.4,"who":"wangdoo","text":"Hold that cable. I'll take the switch."},
+      {"at":26.15,"end":28.75,"who":"wangdoo","text":"Navigation restored! Mostly."},
+      {"at":29.35,"end":32.9,"who":"narrator","text":"Two signals. Two possible ways to survive."},
+      {"at":33.3,"end":35.35,"who":"wangdoo","text":"That one looks fun!"},
+      {"at":36.25,"end":37.5,"who":"wangdoo","text":"Probably."},
+      {"at":39.3,"end":43.65,"who":"wangdoo","text":"One jump. No return trip. Pick wisely."},
+      {"at":46.65,"end":49.15,"who":"narrator","text":"Where should we go?"},
+      {"at":53.12,"end":57.9,"who":"narrator","text":"Your choices shape their story. Build your own journey with AltWing."}
+    ]},
+    {"id":2,"title":"WE MADE A MISTAKE","route":"PLANET ROUTE (OPTION B)","duration":59,"file":"the-last-wing-episode-02-planet-route-final.mp4","scenes":[
+      {"start":0,"end":5,"label":"THIS IS WHAT HAPPENS IF WE CHOOSE THE PLANET","action":"The astronaut wrestles the controls. Wangdoo tumbles past him. The ship falls through violet clouds and crashes in dust, with a four-frame impact cut."},
+      {"start":5,"end":12,"label":"STRANDED","action":"They leave the damaged ship. Wangdoo stumbles, recovers and celebrates landing, until an engine pod falls off."},
+      {"start":12,"end":20,"label":"DO NOT TOUCH","action":"A friendly flower leans toward Wangdoo. He waves, sniffs and touches it despite the astronaut's warning. Its petals unfold into metal antennas and broadcast a red alarm."},
+      {"start":20,"end":29,"label":"STORY MISSION 02 · SURVIVE THE SIGNAL","action":"A visible pulse runs from the flower to the ancient gate. Towers rise; a huge mechanical foot and moving shadow approach. The astronaut takes Wangdoo's flipper and pulls him away."},
+      {"start":29,"end":38,"label":"RUN","action":"They dodge rocks. Wangdoo's emergency boost launches him too fast; the astronaut catches him, then carries him to an ancient terminal."},
+      {"start":38,"end":46,"label":"ONE CORE · TWO OUTPUTS","action":"The terminal reveals one removable core: open the gate or power the ship's oxygen recycler. The astronaut points to the ship; Wangdoo points to the gate. Another footstep interrupts."},
+      {"start":46,"end":53,"label":"YOU CHOOSE","action":"The oxygen warning falls to four percent while the machine approaches. Either choice permanently loses the other route."},
+      {"start":53,"end":59,"label":"TRY A REAL CHALLENGE","action":"The engineering dilemma leads into an authentic view of AltWing's browser projects. The two risky story choices remain visible."}
+    ],"dialogue":[
+      {"at":0.45,"end":3.6,"who":"wangdoo","text":"Captain! I don't like this part!"},
+      {"at":5.75,"end":7.4,"who":"wangdoo","text":"Well... we landed."},
+      {"at":8.0,"end":8.85,"who":"wangdoo","text":"Technically."},
+      {"at":9.0,"end":11.9,"who":"narrator","text":"No fuel. Almost no oxygen. You're stranded."},
+      {"at":12.65,"end":14.9,"who":"wangdoo","text":"Aww! It likes me!"},
+      {"at":17.9,"end":19.9,"who":"wangdoo","text":"Okay. It does NOT like me."},
+      {"at":24.1,"end":27.3,"who":"wangdoo","text":"Captain... I think I woke something up."},
+      {"at":32.5,"end":34.25,"who":"wangdoo","text":"Too fast! Too fast!"},
+      {"at":39.15,"end":41.9,"who":"wangdoo","text":"One power core. Two options."},
+      {"at":44.1,"end":45.3,"who":"wangdoo","text":"And no time!"},
+      {"at":46.75,"end":49.4,"who":"narrator","text":"Which one would you choose?"},
+      {"at":53.25,"end":58.75,"who":"narrator","text":"Think you could solve this? Try real engineering challenges on AltWing."}
+    ]}
+  ]
+}

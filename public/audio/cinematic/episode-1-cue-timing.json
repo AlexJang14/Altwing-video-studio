@@ -1,0 +1,128 @@
+[
+  {
+    "at": 0.25,
+    "end": 4.75,
+    "who": "narrator",
+    "text": "You're the last astronaut awake. And your ship is dying.",
+    "duration": 3.5269583333333334,
+    "timeCompression": 0.92,
+    "pitchRatio": 0.96
+  },
+  {
+    "at": 5.3,
+    "end": 8.75,
+    "who": "narrator",
+    "text": "Earth hasn't responded in forty-seven days.",
+    "duration": 3.0359791666666665,
+    "timeCompression": 0.92,
+    "pitchRatio": 0.96
+  },
+  {
+    "at": 9.05,
+    "end": 11.65,
+    "who": "narrator",
+    "text": "And navigation just failed.",
+    "duration": 1.9454791666666666,
+    "timeCompression": 0.92,
+    "pitchRatio": 0.96
+  },
+  {
+    "at": 12.45,
+    "end": 14.05,
+    "who": "wangdoo",
+    "text": "Captain! Good news!",
+    "duration": 1.3961041666666667,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 14.55,
+    "end": 16.85,
+    "who": "wangdoo",
+    "text": "I fixed the coffee machine!",
+    "duration": 1.3972083333333334,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 17.55,
+    "end": 19.9,
+    "who": "wangdoo",
+    "text": "Bad news. Everything else is broken.",
+    "duration": 2.251708333333333,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 20.3,
+    "end": 23.4,
+    "who": "wangdoo",
+    "text": "Hold that cable. I'll take the switch.",
+    "duration": 1.9386458333333334,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 26.15,
+    "end": 28.75,
+    "who": "wangdoo",
+    "text": "Navigation restored! Mostly.",
+    "duration": 1.7864583333333333,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 29.35,
+    "end": 32.9,
+    "who": "narrator",
+    "text": "Two signals. Two possible ways to survive.",
+    "duration": 3.4301666666666666,
+    "timeCompression": 0.92,
+    "pitchRatio": 0.96
+  },
+  {
+    "at": 33.3,
+    "end": 35.35,
+    "who": "wangdoo",
+    "text": "That one looks fun!",
+    "duration": 1.0760625,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 36.25,
+    "end": 37.5,
+    "who": "wangdoo",
+    "text": "Probably.",
+    "duration": 0.557125,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 39.3,
+    "end": 43.65,
+    "who": "wangdoo",
+    "text": "One jump. No return trip. Pick wisely.",
+    "duration": 2.4529791666666667,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 46.65,
+    "end": 49.15,
+    "who": "narrator",
+    "text": "Where should we go?",
+    "duration": 1.1439375,
+    "timeCompression": 0.92,
+    "pitchRatio": 0.96
+  },
+  {
+    "at": 53.12,
+    "end": 57.9,
+    "who": "narrator",
+    "text": "Your choices shape their story. Build your own journey with AltWing.",
+    "duration": 3.9886666666666666,
+    "timeCompression": 0.92,
+    "pitchRatio": 0.96
+  }
+]

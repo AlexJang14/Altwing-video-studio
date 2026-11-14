@@ -1,0 +1,110 @@
+[
+  {
+    "at": 0.45,
+    "end": 3.6,
+    "who": "wangdoo",
+    "text": "Captain! I don't like this part!",
+    "duration": 1.7991875,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 5.75,
+    "end": 7.4,
+    "who": "wangdoo",
+    "text": "Well... we landed.",
+    "duration": 0.8774375,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 8.0,
+    "end": 8.85,
+    "who": "wangdoo",
+    "text": "Technically.",
+    "duration": 0.6195416666666667,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 9.0,
+    "end": 11.9,
+    "who": "narrator",
+    "text": "No fuel. Almost no oxygen. You're stranded.",
+    "duration": 2.86,
+    "timeCompression": 1.159,
+    "pitchRatio": 0.96
+  },
+  {
+    "at": 12.65,
+    "end": 14.9,
+    "who": "wangdoo",
+    "text": "Aww! It likes me!",
+    "duration": 1.2060208333333333,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 17.9,
+    "end": 19.9,
+    "who": "wangdoo",
+    "text": "Okay. It does NOT like me.",
+    "duration": 1.5865416666666667,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 24.1,
+    "end": 27.3,
+    "who": "wangdoo",
+    "text": "Captain... I think I woke something up.",
+    "duration": 1.6808541666666668,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 32.5,
+    "end": 34.25,
+    "who": "wangdoo",
+    "text": "Too fast! Too fast!",
+    "duration": 1.704625,
+    "timeCompression": 0.925,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 39.15,
+    "end": 41.9,
+    "who": "wangdoo",
+    "text": "One power core. Two options.",
+    "duration": 1.9518125,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 44.1,
+    "end": 45.3,
+    "who": "wangdoo",
+    "text": "And no time!",
+    "duration": 0.8468541666666667,
+    "timeCompression": 0.92,
+    "pitchRatio": 1.13
+  },
+  {
+    "at": 46.75,
+    "end": 49.4,
+    "who": "narrator",
+    "text": "Which one would you choose?",
+    "duration": 1.6876666666666666,
+    "timeCompression": 0.92,
+    "pitchRatio": 0.96
+  },
+  {
+    "at": 53.25,
+    "end": 58.75,
+    "who": "narrator",
+    "text": "Think you could solve this? Try real engineering challenges on AltWing.",
+    "duration": 4.596333333333333,
+    "timeCompression": 0.92,
+    "pitchRatio": 0.96
+  }
+]
