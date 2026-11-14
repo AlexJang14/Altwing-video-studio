@@ -1,6 +1,26 @@
 # THE LAST WING — AltWing Video Studio
 
-## Episode 2 — First Contact
+## Cinematic rebuild — Episodes 1 and 2
+
+The current films are **The Last Signal** (58 seconds) and **We Made a
+Mistake — Planet Route B** (59 seconds), with softer Wangdoo performances,
+character teamwork, English dialogue/captions and authentic AltWing endings.
+Select `Cinematic-Episode1` or `Cinematic-Episode2` in Remotion Studio.
+
+See [the rebuild guide](CINEMATIC-REBUILD.md) for editing, timing, voice
+provenance, validation and rendering. Quick commands:
+
+```sh
+npm ci
+npm run typecheck
+npm run cinematic:motion
+npm run cinematic:render -- 1
+npm run cinematic:render -- 2
+```
+
+The earlier 25-second episodes and their commands are preserved below.
+
+## Original Episode 2 — First Contact
 
 Episode 2 follows choice B onto the unknown violet planet. The landing craft
 touches down, the crew exits, Wangdoo greets a living alien flower, and its reply
@@ -31,7 +51,7 @@ choices live in `src/episode2/config.ts`; the new model lives in
 `src/characters/WangdooSoft.tsx`. `public/models/wangdoo-soft.glb` includes ten
 baked animation clips and the fabric bump texture.
 
-Both episodes are caption-led with original music and sound effects, without
+The original 25-second episodes are caption-led with music and sound effects, without
 spoken voices. Episode 2 downloads are kept on the separate
 [`episode-2-delivery` branch](https://github.com/AlexJang14/Altwing-video-studio/tree/episode-2-delivery).
 

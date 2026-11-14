@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import {Box,Line3D,Orb,Ring} from '../geometry';
 import {ease,mix} from '../config';
 
-export const LandingCraft:React.FC<{time:number;descending?:boolean;ramp?:number}>=({time,descending=false,ramp=0})=>{
+export const LandingCraft:React.FC<{time:number;descending?:boolean;ramp?:number;damaged?:boolean}>=({time,descending=false,ramp=0,damaged=false})=>{
  const landing=descending?ease(time/3.1):1;
  const y=2.1+(1-landing)*5.5;
  const thrust=descending?1-ease((time-2.8)/.6):0;
@@ -22,9 +22,11 @@ export const LandingCraft:React.FC<{time:number;descending?:boolean;ramp?:number
     </group>
     <Line3D points={[[side*1.4,-1.4,4.03],[side*1.4,1.8,4.03],[0,1.8,4.03]]} color="#e9ad67" radius={.024} glow={.2}/>
     <Box p={[side*3.0,-.1,-.7]} s={[2.0,.28,3.8]} r={[0,0,side*-.08]} color="#34445b"/>
-    <Orb p={[side*3.15,-.35,-.55]} s={[.72,.65,1.65]} color="#2a384b" rough={.48}/>
-    <Orb p={[side*3.15,-.35,.95]} s={[.47,.45,.12]} color="#121e31" metal={.6}/>
-    <Ring p={[side*3.15,-.35,1.045]} radius={.30} tube={.028} color="#56d1e7" glow={.7}/>
+    <group visible={!(damaged&&side===1)}>
+     <Orb p={[side*3.15,-.35,-.55]} s={[.72,.65,1.65]} color="#2a384b" rough={.48}/>
+     <Orb p={[side*3.15,-.35,.95]} s={[.47,.45,.12]} color="#121e31" metal={.6}/>
+     <Ring p={[side*3.15,-.35,1.045]} radius={.30} tube={.028} color="#56d1e7" glow={.7}/>
+    </group>
     <Line3D points={[[side*2.3,-.8,-1.7],[side*2.65,-1.8,-1.5],[side*2.7,-2,-1.5]]} color="#5b6574" radius={.087} glow={0}/>
     <Line3D points={[[side*1.9,-.9,1.55],[side*2.4,-1.8,1.7],[side*2.45,-2,1.75]]} color="#606a7b" radius={.085} glow={0}/>
     {[-1.5,1.75].map(z=><Orb key={z} p={[side*(z<0?2.7:2.45),-2.015,z]} s={[.47,.09,.64]} color="#273347" rough={.88}/>)}

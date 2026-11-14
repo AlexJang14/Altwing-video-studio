@@ -4,6 +4,10 @@
   "description": "A 3D animated space-survival series created for AltWing.",
   "main": "index.js",
   "scripts": {
+    "cinematic:preview": "node scripts/cinematic_render.mjs preview",
+    "cinematic:render": "node scripts/cinematic_render.mjs final",
+    "cinematic:qa": "node scripts/cinematic_qa.mjs",
+    "cinematic:motion": "tsx scripts/cinematic_motion_test.tsx",
     "start": "remotion studio src/index.ts",
     "typecheck": "tsc --noEmit",
     "audio": "python3 scripts/make_audio.py",
@@ -46,6 +50,7 @@
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@types/three": "0.187.0",
+    "playwright-core": "1.65.1",
     "tsx": "4.23.15",
     "typescript": "7.0.2"
   },
