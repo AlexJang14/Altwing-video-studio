@@ -9,6 +9,8 @@ import {RescuePair} from './Actors';
 import {RescueLighting} from './Lighting';
 import {StationInterior,Plate} from './World';
 import {rescue1} from './motion1';
+import {handTo,worldHand,type AstroActor} from './locomotion';
+import {blendV,between} from '../characters/performance';
 const ArchiveCamera:React.FC<{mode:string}>=({mode})=>{const {camera}=useThree();useLayoutEffect(()=>{if(mode==='cctv'){camera.position.set(-1.85,3.10,.8);camera.lookAt(0,.9,-4);}else if(mode==='plush'){camera.position.set(1.6,1.2,3.2);camera.lookAt(0,.57,0);}else{camera.position.set(2.7,1.9,4.7);camera.lookAt(0,.9,0);}},[camera,mode]);return null;};
 export const ArchiveAsset:React.FC<{mode:'plush'|'training'|'cctv'}>=({mode})=>{
  const frame=useCurrentFrame(),{width,height,fps}=useVideoConfig(),dpr=usePixelDensity(),t=frame/fps,b=rescue1(mode==='cctv'?13+t:43);
@@ -30,3 +32,17 @@ export const ArchiveAsset:React.FC<{mode:'plush'|'training'|'cctv'}>=({mode})=>{
 export const PlushMemory:React.FC=()=><ArchiveAsset mode="plush"/>;
 export const TrainingMemory:React.FC=()=><ArchiveAsset mode="training"/>;
 export const SecurityFeed:React.FC=()=><ArchiveAsset mode="cctv"/>;
+const WarningCamera:React.FC=()=>{const {camera}=useThree();useLayoutEffect(()=>{camera.position.set(-1.6,2.8,1.3);camera.lookAt(0,1.15,-3.5);},[camera]);return null;};
+export const WarningFeed:React.FC=()=>{
+ const f=useCurrentFrame(),{width,height,fps}=useVideoConfig(),t=f/fps,dpr=usePixelDensity();
+ let a:AstroActor={p:[.4,0,-3.6],yaw:0,pose:{headYaw:.2}};
+ a=handTo(a,t,'right',blendV(worldHand(a,t,1),[.9,1.2,-3.25],between(t,.8,3.2,.4)));
+ return <AbsoluteFill style={{background:'#0e1824'}}><ThreeCanvas width={width} height={height} dpr={dpr} shadows camera={{fov:49,near:.1,far:80}} gl={{antialias:true,toneMapping:THREE.ACESFilmicToneMapping,toneMappingExposure:.85}}>
+  <WarningCamera/><RescueLighting center={[0,0,-3.5]}/><StationInterior time={0}/>
+  <RescuePair time={t} a={a} w={{p:[-.7,0,-3.5],yaw:Math.PI,pose:{headTilt:.06,scan:.5}}}/>
+  <Box p={[.9,.6,-3.35]} s={[.25,1.2,.2]} color="#354b56"/><Plate text="ARK-07 / TX" position={[.9,1.4,-3.23]} size={[.65,.13]}/>
+ </ThreeCanvas>
+ <div style={{position:'absolute',left:22,right:22,top:20,fontFamily:'monospace',color:'#b8d0d1',fontSize:21,letterSpacing:1}}>ARCHIVED MISSION / ARK-07 / TRANSMIT</div>
+ <div style={{position:'absolute',bottom:25,left:25,right:25,color:'#e5bcab',fontFamily:'monospace',fontSize:35,fontWeight:700,background:'#07111ee0',padding:20}}>DO NOT DOCK.<div style={{fontSize:20,marginTop:12}}>ORIGINAL WARNING / SENDER ID MATCH</div></div>
+ </AbsoluteFill>;
+};

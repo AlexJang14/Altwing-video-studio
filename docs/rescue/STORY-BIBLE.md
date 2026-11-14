@@ -84,9 +84,11 @@ random second ship with the same paint. The warning is sent by another pass
 of this astronaut; his early warning arrives too late because the relay's
 offset is uncalibrated. Logs retain both record time and arrival time.
 
-The unknown presence is the facility's damaged containment/rescue custodian.
-It responds to active transmission and pressure disturbances, following a
-repeatable rule rather than teleporting wherever the plot needs it. It is
+The unknown presences are local units of the damaged containment/rescue
+network. The station unit remains aboard HELIX-9; the surface unit remains at
+the ground facility. They share a silhouette and a corrupted protocol, not a
+magical ability to cross between orbit and the surface. They respond to active
+transmission and pressure disturbances under a repeatable rule. They are
 dangerous and initially unidentified. Wangdoo is never possessed or evil.
 His failure is measurable electromagnetic corruption of an exposed sensor
 link; his sealed local safety controller survives.

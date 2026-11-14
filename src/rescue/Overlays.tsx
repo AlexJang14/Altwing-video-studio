@@ -12,7 +12,7 @@ export const RescueOverlays:React.FC<{episode:number;time:number}>=({episode,tim
  return <AbsoluteFill style={{fontFamily:'Studio Sans,sans-serif',color:ink,pointerEvents:'none'}}>
   <AbsoluteFill style={{background:ad?'linear-gradient(180deg,#07121af5,#07121ae0 65%,#07121af5)':'linear-gradient(180deg,#081019a8,transparent 34%,transparent 72%,#08101966)'}}/>
   <div style={{position:'absolute',top:74,left:76,right:112,display:'flex',justifyContent:'space-between',...mono,fontSize:21,color:'#c3d0d5'}}><span style={{letterSpacing:3}}>ALTWING ORIGINAL</span><span>THE LAST WING / 0{episode}</span></div>
-  {!ad&&<div style={{position:'absolute',top:140,left:76,right:112,display:'flex',justifyContent:'space-between',...mono,fontSize:20,color:'#bac8cf'}}><span>{episode===1?'ARK-07 · HELIX-9 RESCUE':episode===2?'ARK-07 · PLANET SURFACE':'ARK-07 · SHELTER FACILITY'}</span><span>{episode===1?'2189':episode===2?'SUIT O₂ / '+(t<36?'12%':t<55?'8%':'5%'):'SEALED AIR / VERIFIED'}</span></div>}
+  {!ad&&<div style={{position:'absolute',top:140,left:76,right:112,display:'flex',justifyContent:'space-between',...mono,fontSize:20,color:'#bac8cf'}}><span>{episode===1?'ARK-07 · HELIX-9 RESCUE':episode===2?'ARK-07 · PLANET SURFACE':'ARK-07 · SHELTER FACILITY'}</span><span>{episode===1?'2189':episode===2?'SUIT O₂ / '+(t<36?'12%':t<55?'8%':'5%'):t<4.5?'AIRLOCK / SEALING':'SEALED AIR / VERIFIED'}</span></div>}
   {panel&&!security&&!ad&&<div style={{position:'absolute',left:76,right:112,top:episode===1&&t<4?292:240,opacity:alpha,transform:`translateY(${(1-alpha)*7}px)`}}>
    <div style={{...mono,fontSize:22,color:panel.tone==='alert'?amber:cyan,marginBottom:17,lineHeight:1.45}}>{panel.label}</div>
    <div style={{fontWeight:700,fontSize:panel.title.length>29?43:panel.title.length>23?51:episode===1&&t<4?81:61,lineHeight:1.09,letterSpacing:-1.4,textWrap:'balance',textShadow:'0 3px 28px #020713'}}>{panel.title}</div>
@@ -29,6 +29,10 @@ export const RescueOverlays:React.FC<{episode:number;time:number}>=({episode,tim
    </div>
    <div style={{display:'flex',justifyContent:'space-between',fontFamily:'Studio Mono',fontSize:26,color:ink,padding:'19px 9px 9px'}}><span>RECORDED 14:03:12</span><span>DOCKED 20:03:12</span></div></div>
    <div style={{marginTop:17,fontSize:39,fontWeight:700,lineHeight:1.25,color:t<27?cyan:amber}}>{t<25.7?'IDENTITY MATCH / SAME SUIT + CRESCENT':t<28.2?'SIX HOURS BEFORE YOUR ARRIVAL':'TIMESTAMP CONFLICT · INSUFFICIENT DATA'}</div>
+  </div>}
+  {episode===3&&t>=11.2&&t<16.9&&<div style={{position:'absolute',top:590,left:76,right:112,...card,padding:12,opacity:between(t,11.2,16.9,.2)}}>
+   <div style={{position:'relative',height:535,borderRadius:10,overflow:'hidden'}}>{t<15.1?<Sequence layout="none" from={336} durationInFrames={120}><OffthreadVideo src={staticFile('rescue/warning.mp4')} muted style={{width:'100%',height:'100%',objectFit:'cover'}}/></Sequence>:<Img src={staticFile('rescue/warning-poster.png')} style={{width:'100%',height:'100%',objectFit:'cover'}}/>}</div>
+   <div style={{fontSize:25,padding:'15px 9px 7px',color:amber,fontFamily:'Studio Mono'}}>MATCHING SUIT + CRESCENT · BEFORE YOUR ARRIVAL</div>
   </div>}
   {vote&&<div style={{position:'absolute',top:ad?210:258,left:76,right:112,opacity:ramp(t,voteStart,voteStart+.25)}}>
    {!ad&&<><div style={{...mono,color:amber,marginBottom:17}}>{episode===1?'ONE DESCENT. NO CERTAIN ANSWER.':episode===2?'ONE CELL. TWO CONTINUOUS LOADS.':'ONE WARNING. A REAL COST.'}</div><div style={{fontSize:67,fontWeight:700,lineHeight:1.1,letterSpacing:-2,marginBottom:29}}>WHAT WOULD YOU DO?</div></>}

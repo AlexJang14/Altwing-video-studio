@@ -1,4 +1,6 @@
 import React from 'react';
+import {Quaternion,Euler} from 'three';
+const rotationQuaternion=(x:number,y:number,z:number)=>new Quaternion().setFromEuler(new Euler(x,y,z)).toArray();
 import {Box, Line3D, Orb, Ring} from '../geometry';
 import {C, ease, mix} from '../config';
 import {astroState,type AstroPose} from './performance';
@@ -45,20 +47,20 @@ export const BlackAstronaut: React.FC<{time:number;action?:AstronautAction;posit
       const arm=performance?.arms[index].x??(action==='reach'&&side===-1?-1.16:action==='danger'?-.40:-step*.65+.06);
       const knee=performance?.legs[index].knee??(moving?Math.max(0,-Math.sin(phase+index*Math.PI))*(running?1.08:.58):action==='wake'?(1-ease(time/2.2))*.9:.05);
       return <React.Fragment key={side}>
-        <group position={[side*.25,1.12,0]} {...(performance?.legs[index].upperQ?{quaternion:performance.legs[index].upperQ}:{rotation:[step,0,performance?0:side*.035] as [number,number,number]})}>
+        <group position={[side*.25,1.12,0]} quaternion={performance?.legs[index].upperQ??rotationQuaternion(step,0,performance?0:side*.035)}>
           <Segment length={.52} width={.135}/>
           <Orb p={[0,-.48,.015]} s={[.145,.135,.15]} color={joint}/>
           <group position={[0,-.5,0]} rotation={[knee,0,0]}>
             <Segment length={.53} width={.12}/>
             <Orb p={[0,-.15,.09]} s={[.139,.23,.073]} color={armor} rough={.87}/>
-            <group name={`astro-foot-${side===-1?'left':'right'}`} position={[0,-.51,0]} {...(performance?.legs[index].ankleQ?{quaternion:performance.legs[index].ankleQ}:{rotation:[performance?.legs[index].ankle??0,0,performance?-performance.roll:0] as [number,number,number]})}>
+            <group name={`astro-foot-${side===-1?'left':'right'}`} position={[0,-.51,0]} quaternion={performance?.legs[index].ankleQ??rotationQuaternion(performance?.legs[index].ankle??0,0,performance?-performance.roll:0)}>
               <object3D name={`astro-sole-${side===-1?'left':'right'}`} position={[0,-.135,.105]}/>
               <Orb p={[0,.005,.105]} s={[.175,.14,.30]} color="#111923" rough={.88}/>
               <Box p={[0,-.10,.105]} s={[.31,.07,.49]} color="#070b11"/>
             </group>
           </group>
         </group>
-        <group name={`astro-upper-arm-${side===-1?'left':'right'}`} position={[side*.49,2.02,0]} {...(performance?.arms[index].q?{quaternion:performance.arms[index].q}:{rotation:[arm,0,side*(performance?.arms[index].spread??(action==='danger'?.24:.10))] as [number,number,number]})}>
+        <group name={`astro-upper-arm-${side===-1?'left':'right'}`} position={[side*.49,2.02,0]} quaternion={performance?.arms[index].q??rotationQuaternion(arm,0,side*(performance?.arms[index].spread??(action==='danger'?.24:.10)))}>
           <Orb name={`astro-shoulder-${side===-1?'left':'right'}`} s={[.19,.22,.195]} color={armor} rough={.85}/>
           <Segment length={.45} width={.115}/>
           <Orb p={[0,-.42,0]} s={[.12,.12,.12]} color={joint}/>

@@ -9,7 +9,7 @@ export const lerp=(a:number,b:number,t:number)=>a+(b-a)*t;
 export const blendV=(a:V3,b:V3,t:number):V3=>[lerp(a[0],b[0],t),lerp(a[1],b[1],t),lerp(a[2],b[2],t)];
 export const yawMix=(a:number,b:number,t:number)=>a+Math.atan2(Math.sin(b-a),Math.cos(b-a))*t;
 export const jump=(t:number,start:number,duration:number,height:number)=>{const u=(t-start)/duration;return u>0&&u<1?height*4*u*(1-u):0;};
-export type AstroPose={gait?:number;run?:number;phase?:number;crouch?:number;lean?:number;roll?:number;bodyY?:number;leftArm?:number;rightArm?:number;leftElbow?:number;rightElbow?:number;leftSpread?:number;rightSpread?:number;headPitch?:number;headYaw?:number;headRoll?:number;leftHand?:V3;rightHand?:V3;feet?:Array<{p:V3;yaw:number}>};
+export type AstroPose={gait?:number;run?:number;phase?:number;crouch?:number;lean?:number;roll?:number;bodyY?:number;leftArm?:number;rightArm?:number;leftElbow?:number;rightElbow?:number;leftSpread?:number;rightSpread?:number;headPitch?:number;headYaw?:number;headRoll?:number;leftHand?:V3;rightHand?:V3;leftPole?:V3;rightPole?:V3;feet?:Array<{p:V3;yaw:number}>};
 export type WangPose={gait?:number;run?:number;phase?:number;lean?:number;roll?:number;lift?:number;squash?:number;wingL?:number;wingR?:number;swingL?:number;swingR?:number;panic?:number;kick?:number;thrust?:number;talk?:number};
 export const footCycle=(phase:number,stride:number,height:number)=>{
  const u=((phase/(Math.PI*2))%1+1)%1;
@@ -51,7 +51,9 @@ export const astroState=(time:number,p:AstroPose)=>{
   const l1=.44,l2=.46,tip=.012,effective=Math.hypot(l2,tip),distance=Math.max(.025,Math.min(.9000,target.length()));
   const elbow=Math.PI-Math.acos(Math.max(-1,Math.min(1,(l1*l1+effective*effective-distance*distance)/(2*l1*effective))))-Math.atan2(tip,l2);
   const rest=new THREE.Vector3(0,-l1-l2*Math.cos(elbow)+tip*Math.sin(elbow),l2*Math.sin(elbow)+tip*Math.cos(elbow));
-  const quaternion=new THREE.Quaternion().setFromUnitVectors(rest.normalize(),target.normalize());
+  const axis=target.clone().normalize(),quaternion=new THREE.Quaternion().setFromUnitVectors(rest.normalize(),axis);
+  const pole=i===0?p.leftPole:p.rightPole;
+  if(pole){const current=new THREE.Vector3(0,-l1,0).applyQuaternion(quaternion),desired=new THREE.Vector3(...pole);current.addScaledVector(axis,-current.dot(axis));desired.addScaledVector(axis,-desired.dot(axis));if(current.lengthSq()>1e-10&&desired.lengthSq()>1e-10)quaternion.premultiply(new THREE.Quaternion().setFromUnitVectors(current.normalize(),desired.normalize()));}
   return {...arm,elbow,q:quaternion.toArray() as Q4};
  });
  return {bodyY,pitch,roll,legs,phase,gait,run,arms,

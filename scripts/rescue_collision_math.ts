@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 export type Ellipsoid={c:THREE.Vector3;q:THREE.Quaternion;r:THREE.Vector3};
 export function ellipsoid(o:THREE.Object3D):Ellipsoid{const c=new THREE.Vector3(),q=new THREE.Quaternion(),r=new THREE.Vector3();o.matrixWorld.decompose(c,q,r);r.set(Math.abs(r.x),Math.abs(r.y),Math.abs(r.z));return {c,q,r};}
-const support=(e:Ellipsoid,d:THREE.Vector3)=>{const n=d.clone().applyQuaternion(e.q.clone().invert()),r=e.r,den=Math.sqrt((r.x*n.x)**2+(r.y*n.y)**2+(r.z*n.z)**2)||1;return new THREE.Vector3(r.x*r.x*n.x,r.y*r.y*n.y,r.z*r.z*n.z).divideScalar(den).applyQuaternion(e.q).add(e.c);};
+export const support=(e:Ellipsoid,d:THREE.Vector3)=>{const n=d.clone().applyQuaternion(e.q.clone().invert()),r=e.r,den=Math.sqrt((r.x*n.x)**2+(r.y*n.y)**2+(r.z*n.z)**2)||1;return new THREE.Vector3(r.x*r.x*n.x,r.y*r.y*n.y,r.z*r.z*n.z).divideScalar(den).applyQuaternion(e.q).add(e.c);};
 export function intersects(a:Ellipsoid,b:Ellipsoid):boolean{
  if(a.c.distanceTo(b.c)>Math.max(...a.r.toArray())+Math.max(...b.r.toArray()))return false;
  const direction=a.c.clone().sub(b.c);if(direction.lengthSq()<1e-12)direction.set(1,0,0);

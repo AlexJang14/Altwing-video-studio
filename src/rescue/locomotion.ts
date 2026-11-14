@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import {astroState,astronautHand,between,lerp,ramp,smooth,type AstroPose,type V3} from '../characters/performance';
-import {WANG_SCALE,flipperSurface,type PlushPose} from './Wangdoo';
+import {WANG_SCALE,flipperSurface,plushHeadSurface,type PlushPose} from './Wangdoo';
 export const ASTRO_SCALE=.68;
 export type AstroActor={p:V3;yaw:number;pose:AstroPose};
 export type PlushActor={p:V3;yaw:number;pose:PlushPose};
@@ -67,5 +67,15 @@ export function helpFlipper(actor:AstroActor,time:number,w:PlushActor,weight:num
  }
  const blended=new THREE.Vector3(...rest).lerp(target,weight).toArray() as V3;
  return {a:handTo(actor,time,'left',blended),target:blended,surface:surface.p};
+}
+export function reassureHead(actor:AstroActor,time:number,w:PlushActor,weight:number){
+ const surface=plushHeadSurface(w.p,w.yaw,w.pose,new THREE.Vector3(1,.12,.08)),rest=worldHand(actor,time,-1);let target=new THREE.Vector3(...surface.p).addScaledVector(surface.normal,.08);
+ for(let i=0;i<6;i++){
+  const a=handTo(actor,time,'left',target.toArray() as V3),s=astroState(time,a.pose),arm=s.arms[0];
+  const q=new THREE.Quaternion().setFromEuler(new THREE.Euler(0,a.yaw,0)).multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(s.pitch,0,s.roll))).multiply(new THREE.Quaternion(...arm.q!)).multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(-arm.elbow,0,0)));
+  const n=surface.normal.clone().applyQuaternion(q.clone().invert()),r=new THREE.Vector3(.115,.145,.10).multiplyScalar(ASTRO_SCALE),den=Math.sqrt((r.x*n.x)**2+(r.y*n.y)**2+(r.z*n.z)**2);
+  target=new THREE.Vector3(...surface.p).add(new THREE.Vector3(r.x*r.x*n.x,r.y*r.y*n.y,r.z*r.z*n.z).divideScalar(den).applyQuaternion(q));
+ }
+ const blended=new THREE.Vector3(...rest).lerp(target,weight).toArray() as V3;return {a:handTo(actor,time,'left',blended),target:blended,surface:surface.p,normal:surface.normal.toArray() as V3};
 }
 export const move=(a:V3,b:V3,t:number,start:number,end:number):V3=>{const u=ramp(t,start,end);return [lerp(a[0],b[0],u),lerp(a[1],b[1],u),lerp(a[2],b[2],u)];};

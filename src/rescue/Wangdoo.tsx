@@ -27,7 +27,7 @@ export function plushPoint(local:V3,position:V3,yaw:number,pose:PlushPose):V3{
  const v=new THREE.Vector3(...local).applyEuler(new THREE.Euler(pose.lean??0,0,pose.bodyRoll??0)).add(new THREE.Vector3(0,pose.bob??0,0)).sub(new THREE.Vector3(0,.55,0)).applyEuler(new THREE.Euler(0,0,pose.rootRoll??0)).add(new THREE.Vector3(0,.55+(pose.rootLift??0),0)).multiplyScalar(WANG_SCALE).applyAxisAngle(new THREE.Vector3(0,1,0),yaw).add(new THREE.Vector3(...position));return v.toArray() as V3;
 }
 export const backpackPort=(p:V3,yaw:number,pose:PlushPose):V3=>plushPoint([-.21,.66,-.36],p,yaw,pose);
-export const carryGrip=(p:V3,yaw:number,pose:PlushPose):V3=>plushPoint([.21,.50,-.42],p,yaw,pose);
+export const carryGrip=(p:V3,yaw:number,pose:PlushPose):V3=>plushPoint([.21,.79,-.42],p,yaw,pose);
 export const flipperGrip=(p:V3,yaw:number,pose:PlushPose):V3=>{
  const local=new THREE.Vector3(0,-.29,.035).applyEuler(new THREE.Euler(0,0,.10+(pose.wingR??0))).add(new THREE.Vector3(.365,.72,0));
  return plushPoint(local.toArray() as V3,p,yaw,pose);
@@ -37,6 +37,26 @@ export function flipperSurface(p:V3,yaw:number,pose:PlushPose){
  const local=new THREE.Vector3(0,-.29,z).applyEuler(new THREE.Euler(0,0,angle)).add(new THREE.Vector3(.365,.72,0));
  const normal=new THREE.Vector3(0,-.10/(.255*.255),z/.01).normalize().applyEuler(new THREE.Euler(0,0,angle)).applyEuler(new THREE.Euler(pose.lean??0,0,pose.bodyRoll??0)).applyEuler(new THREE.Euler(0,0,pose.rootRoll??0)).applyAxisAngle(new THREE.Vector3(0,1,0),yaw);
  return {p:plushPoint(local.toArray() as V3,p,yaw,pose),normal};
+}
+export function plushGroundOffset(pose:PlushPose):number{
+ const root=new THREE.Matrix4().makeTranslation(0,.55,0).multiply(new THREE.Matrix4().makeRotationZ(pose.rootRoll??0)).multiply(new THREE.Matrix4().makeTranslation(0,-.55,0));
+ const body=root.clone().multiply(new THREE.Matrix4().makeTranslation(0,pose.bob??0,0)).multiply(new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(pose.lean??0,0,pose.bodyRoll??0)));
+ let minimum=Infinity;
+ const add=(matrix:THREE.Matrix4,c:V3,r:V3)=>{const m=matrix.clone().multiply(new THREE.Matrix4().makeTranslation(...c)),e=m.elements;minimum=Math.min(minimum,e[13]-Math.hypot(e[1]*r[0],e[5]*r[1],e[9]*r[2]));};
+ add(body,[0,.49,0],[.365,.43,.305]);
+ const head=body.clone().multiply(new THREE.Matrix4().makeTranslation(0,1.04,.012)).multiply(new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(pose.headPitch??0,pose.headYaw??0,pose.headTilt??0)));add(head,[0,0,0],[.402,.363,.334]);
+ add(body,[0,.57,-.296],[.206,.218,.115]);
+ for(const side of [-1,1]){
+  const wing=body.clone().multiply(new THREE.Matrix4().makeTranslation(side*.365,.72,0)).multiply(new THREE.Matrix4().makeRotationZ(side*(.1+(side===-1?pose.wingL??0:pose.wingR??0))));add(wing,[0,-.19,0],[.075,.255,.10]);
+  add(root,[side*.185,.062,.12],[.136,.062,.18]);
+ }
+ return -minimum;
+}
+export function plushHeadSurface(position:V3,yaw:number,pose:PlushPose,normal:THREE.Vector3){
+ const q=new THREE.Quaternion().setFromEuler(new THREE.Euler(0,yaw,0)).multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(0,0,pose.rootRoll??0))).multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(pose.lean??0,0,pose.bodyRoll??0))).multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(pose.headPitch??0,pose.headYaw??0,pose.headTilt??0)));
+ const n=normal.clone().normalize(),local=n.clone().applyQuaternion(q.clone().invert()),r=new THREE.Vector3(.402,.363,.334).multiplyScalar(WANG_SCALE),den=Math.sqrt((r.x*local.x)**2+(r.y*local.y)**2+(r.z*local.z)**2);
+ const offset=new THREE.Vector3(r.x*r.x*local.x,r.y*r.y*local.y,r.z*r.z*local.z).divideScalar(den).applyQuaternion(q);
+ return {p:new THREE.Vector3(...plushPoint([0,1.04,.012],position,yaw,pose)).add(offset).toArray() as V3,normal:n};
 }
 export const PlushWangdoo:React.FC<{time:number;position?:V3;yaw?:number;pose?:PlushPose;accessories?:boolean}>=({time,position=[0,0,0],yaw=0,pose={},accessories=true})=>{
  const status=pose.status??1,rootRoll=pose.rootRoll??0;
@@ -64,8 +84,8 @@ export const PlushWangdoo:React.FC<{time:number;position?:V3;yaw?:number;pose?:P
      <mesh position={[.105,-.075,-.137]}><sphereGeometry args={[.014,12,8]}/><meshStandardMaterial color={status>.1?'#8bdfdb':'#586570'} emissive="#57b4bb" emissiveIntensity={status*.8}/></mesh>
      <object3D name="plush-equipment-port" position={[-.21,.09,-.064]}/>
      <Ring p={[-.21,.09,-.064]} r={[0,Math.PI/2,0]} radius={.032} tube={.007} color="#94a1a4" glow={0}/>
-     <Ring p={[.21,-.07,-.124]} r={[0,Math.PI/2,0]} radius={.030} tube={.007} color="#84949a" glow={0}/>
-     <object3D name="plush-carry-handle" position={[.21,-.07,-.124]}/>
+     <Ring p={[.21,.22,-.124]} r={[0,Math.PI/2,0]} radius={.030} tube={.007} color="#84949a" glow={0}/>
+     <object3D name="plush-carry-handle" position={[.21,.22,-.124]}/>
      <group position={[.21,.10,-.02]}><Soft s={[.045,.06,.05]} color="#586b78"/><mesh position={[.025,.01,.035]}><sphereGeometry args={[.018,14,10]}/><meshStandardMaterial color="#82d8df" emissive="#82d8df" emissiveIntensity={(pose.scan??0)*.7}/></mesh></group>
      {pose.sealed&&<mesh position={[0,0,-.022]} scale={[.24,.25,.14]} geometry={unit}><meshPhysicalMaterial color="#dceef2" transparent opacity={.10} roughness={.13} metalness={.12} depthWrite={false}/></mesh>}
     </group>}

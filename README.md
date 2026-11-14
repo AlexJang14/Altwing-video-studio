@@ -1,8 +1,43 @@
 # THE LAST WING — AltWing Video Studio
 
-## Cinematic rebuild — Episodes 1 and 2
+## Silent rescue trilogy — current production
 
-The current films are **The Last Signal** (58 seconds) and **We Made a
+The master narrative version uses silent visual storytelling, an original atmospheric
+soundtrack and a gray-and-white plush Wangdoo. All films are vertical **1080 × 1920,
+30 fps, H.264/AAC MP4**. Earlier sources and films remain available.
+
+| Episode | Title | Length | Route |
+|---|---|---|---|
+| 1 | DO NOT DOCK | 72 s | HELIX-9 rescue |
+| 2 | THAT SHIP IS OURS | 72 s | Conditional: Episode 1 option B |
+| 3 | THIS IS NOT YOUR FIRST MISSION | 73 s | Conditional: Episode 2 option A |
+
+Select `Rescue-Episode1`, `Rescue-Episode2` or `Rescue-Episode3` in Remotion Studio.
+See [the story bible](docs/rescue/STORY-BIBLE.md), [character/clue/branch trackers](docs/rescue/TRACKERS.md)
+and [production and verification guide](docs/rescue/PRODUCTION.md).
+
+```sh
+npm ci
+npm run typecheck
+npm run rescue:collision -- 1
+npm run rescue:collision -- 2
+npm run rescue:collision -- 3
+npm run rescue:environment
+npm run rescue:preview -- 1
+npm run rescue:render -- 1
+npm run rescue:render -- 2
+npm run rescue:render -- 3
+npm run rescue:verify
+```
+
+Wangdoo's reusable rig is in `src/rescue/Wangdoo.tsx`; the GLB with six mentor
+cycles is `public/models/wangdoo-plush-mentor.glb`. The newer real plush photograph
+mentioned in the brief was not attached; this model follows the written plush
+description. The personal/training archives are original fictional story images.
+
+## Previous cinematic rebuild — Episodes 1 and 2
+
+The previous films are **The Last Signal** (58 seconds) and **We Made a
 Mistake — Planet Route B** (59 seconds), with softer Wangdoo performances,
 character teamwork, English dialogue/captions and authentic AltWing endings.
 Select `Cinematic-Episode1` or `Cinematic-Episode2` in Remotion Studio.
