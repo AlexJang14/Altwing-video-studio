@@ -18,7 +18,10 @@ for start in range(0,2100,300):
  lines += ["file '"+str(file).replace("'","'\\''")+"'",'duration 10.000000000']
 listing=out/f'concat-{mode}.txt';listing.write_text('\n'.join(lines)+'\n')
 audio=ROOT/'work/reset/audio/master.wav'
-assert audio.exists(),'Build continuous lossless master with reset_sound.py first'
+audio_args=['-c:a','aac','-b:a','192k','-ar','48000']
+if not audio.exists():
+ audio=ROOT/'public/reset/final-mix.m4a';audio_args=['-c:a','copy']
+assert audio.exists(),'Build the lossless master or use the included continuous AAC mix'
 output=out/f'{base}-{mode}.mp4'
-subprocess.run(['ffmpeg','-v','warning','-y','-f','concat','-safe','0','-i',str(listing),'-i',str(audio),'-map','0:v:0','-map','1:a:0','-c:v','copy','-bsf:v','setts=pts=PTS-STARTPTS:dts=DTS-STARTPTS','-c:a','aac','-b:a','192k','-ar','48000','-t','70','-video_track_timescale','30000','-color_primaries','bt709','-color_trc','bt709','-colorspace','bt709','-movflags','+faststart',str(output)],check=True)
+subprocess.run(['ffmpeg','-v','warning','-y','-f','concat','-safe','0','-i',str(listing),'-i',str(audio),'-map','0:v:0','-map','1:a:0','-c:v','copy','-bsf:v','setts=pts=PTS-STARTPTS:dts=DTS-STARTPTS',*audio_args,'-t','70','-video_track_timescale','30000','-color_primaries','bt709','-color_trc','bt709','-colorspace','bt709','-movflags','+faststart',str(output)],check=True)
 print(output)
