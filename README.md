@@ -1,3 +1,10 @@
+# Current production: Don't Open the Door
+
+The new **Episode 1 creative reset** is documented in [docs/reset/README.md](docs/reset/README.md).
+Open `Reset-Episode1` in Remotion Studio. It is a standalone 70-second narrated
+film with newly sculpted plush characters, an authentic AltWing activity and
+an unresolved A/B ending. Earlier projects below are preserved.
+
 # THE LAST WING — AltWing Video Studio
 
 ## Silent rescue trilogy — current production

@@ -60,9 +60,9 @@ def desk(parent,p):
  root=group('ResearchDesk',p,parent);box('DeskSurface',(0,0,.86),(.85,1.65,.07),root,trim,.03)
  for j in [-.65,.65]:box('DeskLeg',(0,j,.42),(.10,.09,.84),root,alum,.01)
  box('MonitorStem',(0,.46,1.01),(.05,.05,.25),root,alum,.008);box('Monitor',(0,.49,1.27),(.54,.06,.38),root,screen,.018)
- box('Keyboard',(0,.02,.914),(.48,.17,.018),root,dark,.006)
- for i in range(3):box('AbandonedDocument'+str(i),(-.11+i*.08,-.42+i*.04,.909+i*.004),(.29,.36,.003),root,white,.001,rot=(0,0,-.13+i*.12))
- cup(root,(.22,-.55,.91),white,'WarmCup');return root
+ box('Keyboard',(0,.02,.904),(.48,.17,.018),root,dark,.006)
+ for i in range(3):box('AbandonedDocument'+str(i),(-.11+i*.08,-.42+i*.04,.8975+i*.004),(.29,.36,.003),root,white,.001,rot=(0,0,-.13+i*.12))
+ cup(root,(.22,-.55,.896),white,'WarmCup');return root
 # SHIP: a recognizable small lived-in cockpit, not the station.
 ship=group('ResetShipInterior');box('ShipDeck',(0,-.35,-.075),(3.8,7.7,.15),ship,floor,.02)
 for side in [-1,1]:
@@ -75,10 +75,10 @@ for side in [-1,1]:
 box('ShipNose',(0,3.32,1.55),(3.7,.13,2.95),ship,wall,.04)
 # A curved dark aperture and functional rim, star view is added by the final renderer.
 cyl('FrontWindowAperture',(0,3.23,1.90),1.04,.025,ship,screen,(math.pi/2,0,0));torus('RoundShipWindow',(0,3.20,1.90),1.06,.065,ship,alum,(math.pi/2,0,0));torus('WarmWindowSeal',(0,3.15,1.90),.98,.013,ship,warm,(math.pi/2,0,0))
-box('ShipConsole',(0,2.57,.57),(2.8,.70,1.14),ship,wall,.065);box('ShipControlDesk',(0,2.43,.93),(2.85,.92,.10),ship,trim,.03,rot=(.12,0,0));box('MainShipScreen',(-.35,2.50,1.43),(1.04,.05,.35),ship,screen,.02)
+box('ShipConsole',(0,2.57,.45),(2.8,.70,.90),ship,wall,.065);box('ShipControlDesk',(0,2.43,.93),(2.85,.92,.10),ship,trim,.03,rot=(.12,0,0));box('MainShipScreen',(-.35,2.50,1.43),(1.04,.05,.35),ship,screen,.02)
 for i in range(7):box('ShipButton'+str(i),(-.72+i*.18,2.16,.994),(.075,.035,.015),ship,cool if i%3 else dark,.004)
-chair(ship,(1.05,1.76,0),'PilotSeat',teal=True);cup(ship,(1.22,2.40,1.03),mugred,'YourRedMug')
-box('DeparturePanel',(.65,2.30,1.04),(.26,.19,.035),ship,red,.012);box('DepartureButton',(.65,2.30,1.07),(.10,.065,.015),ship,rubber,.005)
+chair(ship,(1.05,1.76,0),'PilotSeat',teal=True);cup(ship,(1.22,2.40,.99),mugred,'YourRedMug')
+box('DeparturePanel',(.65,2.10,1.04),(.26,.19,.035),ship,red,.012);box('DepartureButton',(.65,2.10,1.07),(.10,.065,.015),ship,rubber,.005)
 # Usable entry frame; the open aperture never becomes a decorative solid wall.
 for side in [-1,1]:box('ShipEntryPost'+str(side),(side*.95,-3.33,1.35),(.16,.23,2.70),ship,trim,.035)
 box('ShipEntryHeader',(0,-3.33,2.75),(2.05,.23,.16),ship,trim,.035)
@@ -99,7 +99,7 @@ for y in [-4,-2,0,2,4,6,8,10]:box('DeckJoin'+str(y),(0,y,.008),(4.65,.015,.004),
 box('Ceiling',(0,2.5,3.18),(5.5,17,.12),station,wall,.02)
 desk(station,(-2.08,1.60,0));desk(station,(2.08,5.4,0));chair(station,(-2.08,.55,0),'LeftBehindChair',fallen=True);chair(station,(2.0,6.0,0),'EmptyWorkChair')
 # A recently used eating area and personal belongings in the left recess.
-box('MealTable',(-1.96,5.0,.75),(.80,1.30,.06),station,trim,.03);box('MealTableLeg',(-1.96,5,.36),(.08,.08,.72),station,alum,.01);cup(station,(-1.86,4.8,.79),white,'MealCup')
+box('MealTable',(-1.96,5.0,.75),(.80,1.30,.06),station,trim,.03);box('MealTableLeg',(-1.96,5,.36),(.08,.08,.72),station,alum,.01);cup(station,(-1.86,4.8,.781),white,'MealCup')
 box('PersonalBag',(-2.05,3.48,.21),(.43,.48,.42),station,rubber,.075);curve('BagHandle',[(-2.2,3.48,.40),(-2.20,3.48,.49),(-1.91,3.48,.49),(-1.91,3.48,.40)],.013,station,alum)
 box('PostcardFrame',(-2.51,3.45,1.55),(.045,.30,.38),station,alum,.016)
 box('SecurityCameraBase',(2.39,7.5,2.67),(.12,.18,.16),station,alum,.02);box('SecurityCamera',(2.24,7.35,2.62),(.25,.30,.15),station,dark,.04)

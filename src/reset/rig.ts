@@ -38,7 +38,7 @@ export function applyPenguin(root:THREE.Group,w:Penguin){
  for(const [index,side,label]of [[0,-1,'L'],[1,1,'R']]as const){
   node('WangWing'+label).rotation.set(.02,0,side*(p[index===0?'wingL':'wingR']??.02));
   const f=p.feet?.[index];node('WangFoot'+label).position.set(...(f?.p??[side*.108,0,.014]));node('WangFoot'+label).rotation.set(0,f?.yaw??0,0);
-  const eye=node('WangEye'+label),ey=1-(p.worry??0)*.65;eye.scale.y=ey;eye.position.y=.032*(1-ey);eye.rotation.z=side*(p.worry??0)*.07;
+  const eye=node('WangEye'+label),ey=1-(p.worry??0)*.85;eye.scale.y=ey;eye.position.y=.032*(1-ey);eye.rotation.z=side*(p.worry??0)*.36;
  }
  root.updateMatrixWorld(true);
 }
@@ -56,3 +56,8 @@ export function turnPenguin(w:Penguin,t:number,from:number,to:number,start:numbe
 }
 
 export function restGripWorld(a:Person,side:-1|1):V3{const p=a.pose,b=bodyState(p),index=side===-1?0:1,swing=Math.sin((p.phase??0)+(index===0?0:Math.PI))*.12*(p.gait??0);return localToWorld(new THREE.Vector3(side*(.242+.055),1.49-.585,.09+swing).applyQuaternion(b.q).add(new THREE.Vector3(0,b.y,0)),a).toArray()as V3;}
+
+export function turnPerson(a:Person,t:number,from:number,to:number,start:number,end:number,stance?:{from?:Foot[];to?:Foot[]}):Person{
+ const yaw=lerp(from,to,ramp(t,start,end)),middle=(start+end)/2;
+ const feet=[-1,1].map((side,i)=>{const s=i===0?start:middle,e=i===0?middle:end,u=THREE.MathUtils.clamp((t-s)/(e-s),0,1),v=ramp(t,s,e),old=new THREE.Vector3(...(stance?.from?.[i]?.p??[side*.132,.07,0])).applyAxisAngle(Y,from),next=new THREE.Vector3(...(stance?.to?.[i]?.p??[side*.132,.07,0])).applyAxisAngle(Y,to),p=old.lerp(next,v).add(new THREE.Vector3(...a.p));p.y+=.075*Math.sin(Math.PI*u)**2;return{p:worldToLocal(p.toArray()as V3,{p:a.p,yaw}).toArray()as V3,yaw:lerp(from+(stance?.from?.[i]?.yaw??0),to+(stance?.to?.[i]?.yaw??0),v)-yaw};});return{...a,yaw,pose:{...a.pose,feet}};
+}
