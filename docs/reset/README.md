@@ -61,3 +61,7 @@ The QC report distinguishes measured technical checks from subjective goals.
 
 Large finished films belong in downloadable delivery assets, not ordinary Git
 history. The source ZIP includes the editable project and reusable assets.
+
+For the optional browser playback and caption-layout checks, serve the project
+root locally with `python3 -m http.server 8092 --bind 127.0.0.1`, then run
+`node scripts/reset_playback.mjs final` or `node scripts/reset_caption_layout.mjs`.

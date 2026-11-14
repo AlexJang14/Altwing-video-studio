@@ -74,3 +74,23 @@ Actual preview contact sheets and three motion strips were inspected. The
 single focused correction reframed the exterior approach to include the whole
 rescue craft and added restrained window illumination. Geometry and camera
 origins remain unchanged. The native export follows that corrected source.
+
+The native export completed successfully in run 43629399916 from runtime source
+`b8f6c2c4f33f49435b9919d42286947c3f0b2385`. The actual final MP4 contains 2,100
+frames at 1080 × 1920 / 30 fps and lasts exactly 70.00 seconds. It is H.264,
+yuv420p, Rec.709, with 48 kHz stereo AAC. Video and audio both start at zero.
+The complete file decodes without errors; black-frame detection found no gaps.
+The continuous final AAC mix measures −17.2 LUFS and −2.4 dB true peak.
+
+All 24 subtitle phrases were measured using the actual local browser fonts and
+886-pixel text width. Every phrase fits within two lines. Native character
+surface and framing samples were inspected, including the final camera
+correction. A matching delivery preview is downsampled from the verified native
+film; the original pre-correction review preview remains preserved separately.
+
+Chromium played the assembled native file and sought successfully to 0, 15.5,
+28.5, 43, 54, 65 and 69.5 seconds with decoded frames ready and no media error.
+The final contact sheet was extracted from that actual MP4 and inspected.
+SHA-256 and byte counts for the final film and all downloadable packages are
+provided in the delivery manifest. Finished films are release assets, outside
+ordinary Git storage.

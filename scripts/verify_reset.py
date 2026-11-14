@@ -17,7 +17,7 @@ assert not decode.stderr.strip(),decode.stderr
 black=subprocess.run(['ffmpeg','-hide_banner','-i',str(file),'-an','-vf','blackdetect=d=0.12:pix_th=0.035','-f','null','-'],capture_output=True,text=True,check=True).stderr
 black_events=[line.strip()for line in black.splitlines()if'black_start:'in line]
 audio=subprocess.run(['ffmpeg','-hide_banner','-i',str(file),'-vn','-af','ebur128=peak=true','-f','null','-'],capture_output=True,text=True,check=True).stderr
-summary=audio[audio.rfind('Summary:'):].strip()
+summary=audio[audio.rfind('Summary:'):].split('[out#')[0].strip()
 report={'file':file.name,'sha256':hashlib.sha256(file.read_bytes()).hexdigest(),'bytes':file.stat().st_size,'width':v['width'],'height':v['height'],'frames':int(v['nb_read_frames']),'fps':v['r_frame_rate'],'duration':float(data['format']['duration']),'video':v['codec_name'],'pixelFormat':v['pix_fmt'],'colorSpace':v.get('color_space'),'audio':a['codec_name'],'sampleRate':a['sample_rate'],'channels':a['channels'],'videoStart':v['start_time'],'audioStart':a['start_time'],'completeDecode':'passed','blackEvents':black_events,'audioMeasurement':summary}
 (out/f'verification-{mode}.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 if black_events:raise SystemExit('Inspect black events before accepting delivery')
