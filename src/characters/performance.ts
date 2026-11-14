@@ -48,9 +48,9 @@ export const astroState=(time:number,p:AstroPose)=>{
   const hand=i===0?p.leftHand:p.rightHand;
   if(!hand)return {...arm,q:undefined as Q4|undefined};
   const target=new THREE.Vector3(...hand).sub(new THREE.Vector3((i===0?-1:1)*.49,2.02,0));
-  const distance=Math.max(.025,Math.min(.899,target.length())),l1=.44,l2=.46;
-  const elbow=Math.PI-Math.acos(Math.max(-1,Math.min(1,(l1*l1+l2*l2-distance*distance)/(2*l1*l2))));
-  const rest=new THREE.Vector3(0,-l1-l2*Math.cos(elbow),l2*Math.sin(elbow));
+  const l1=.44,l2=.46,tip=.012,effective=Math.hypot(l2,tip),distance=Math.max(.025,Math.min(.9000,target.length()));
+  const elbow=Math.PI-Math.acos(Math.max(-1,Math.min(1,(l1*l1+effective*effective-distance*distance)/(2*l1*effective))))-Math.atan2(tip,l2);
+  const rest=new THREE.Vector3(0,-l1-l2*Math.cos(elbow)+tip*Math.sin(elbow),l2*Math.sin(elbow)+tip*Math.cos(elbow));
   const quaternion=new THREE.Quaternion().setFromUnitVectors(rest.normalize(),target.normalize());
   return {...arm,elbow,q:quaternion.toArray() as Q4};
  });

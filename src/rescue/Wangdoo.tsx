@@ -27,18 +27,25 @@ export function plushPoint(local:V3,position:V3,yaw:number,pose:PlushPose):V3{
  const v=new THREE.Vector3(...local).applyEuler(new THREE.Euler(pose.lean??0,0,pose.bodyRoll??0)).add(new THREE.Vector3(0,pose.bob??0,0)).sub(new THREE.Vector3(0,.55,0)).applyEuler(new THREE.Euler(0,0,pose.rootRoll??0)).add(new THREE.Vector3(0,.55+(pose.rootLift??0),0)).multiplyScalar(WANG_SCALE).applyAxisAngle(new THREE.Vector3(0,1,0),yaw).add(new THREE.Vector3(...position));return v.toArray() as V3;
 }
 export const backpackPort=(p:V3,yaw:number,pose:PlushPose):V3=>plushPoint([-.21,.66,-.36],p,yaw,pose);
+export const carryGrip=(p:V3,yaw:number,pose:PlushPose):V3=>plushPoint([.21,.50,-.36],p,yaw,pose);
 export const flipperGrip=(p:V3,yaw:number,pose:PlushPose):V3=>{
  const local=new THREE.Vector3(0,-.29,.035).applyEuler(new THREE.Euler(0,0,.10+(pose.wingR??0))).add(new THREE.Vector3(.365,.72,0));
  return plushPoint(local.toArray() as V3,p,yaw,pose);
 };
-export const PlushWangdoo:React.FC<{time:number;position?:V3;yaw?:number;pose?:PlushPose}>=({time,position=[0,0,0],yaw=0,pose={}})=>{
+export function flipperSurface(p:V3,yaw:number,pose:PlushPose){
+ const z=.10*Math.sqrt(1-(.10/.255)**2),angle=.10+(pose.wingR??0);
+ const local=new THREE.Vector3(0,-.29,z).applyEuler(new THREE.Euler(0,0,angle)).add(new THREE.Vector3(.365,.72,0));
+ const normal=new THREE.Vector3(0,-.10/(.255*.255),z/.01).normalize().applyEuler(new THREE.Euler(0,0,angle)).applyEuler(new THREE.Euler(pose.lean??0,0,pose.bodyRoll??0)).applyEuler(new THREE.Euler(0,0,pose.rootRoll??0)).applyAxisAngle(new THREE.Vector3(0,1,0),yaw);
+ return {p:plushPoint(local.toArray() as V3,p,yaw,pose),normal};
+}
+export const PlushWangdoo:React.FC<{time:number;position?:V3;yaw?:number;pose?:PlushPose;accessories?:boolean}>=({time,position=[0,0,0],yaw=0,pose={},accessories=true})=>{
  const status=pose.status??1,rootRoll=pose.rootRoll??0;
  return <group name="rescue-wangdoo" position={position} rotation={[0,yaw,0]} scale={WANG_SCALE}>
   <group position={[0,.55+(pose.rootLift??0),0]} rotation={[0,0,rootRoll]}><group position={[0,-.55,0]}>
    <group position={[0,pose.bob??0,0]} rotation={[pose.lean??0,0,pose.bodyRoll??0]}>
-    <mesh geometry={unit} position={[0,.49,0]} scale={[.365,.43,.305]} castShadow><PlushMaterial map={bodyMap}/></mesh>
+    <mesh name="plush-torso-shell" geometry={unit} position={[0,.49,0]} scale={[.365,.43,.305]} castShadow><PlushMaterial map={bodyMap}/></mesh>
     <group name="wang-head" position={[0,1.04,.012]} rotation={[pose.headPitch??0,pose.headYaw??0,pose.headTilt??0]}>
-     <mesh geometry={unit} scale={[.402,.363,.334]} castShadow><PlushMaterial map={headMap}/></mesh>
+     <mesh name="plush-head-shell" geometry={unit} scale={[.402,.363,.334]} castShadow><PlushMaterial map={headMap}/></mesh>
      {[-1,1].map(side=><React.Fragment key={side}>
       <Line3D points={Array.from({length:9},(_,i)=>{const a=Math.PI*(.17+i/8*.66);return [side*.162+.049*Math.cos(a),.035+.042*Math.sin(a),.328] as V3;})} color="#1b1d21" radius={.013} glow={0}/>
       <Soft p={[side*.23,-.075,.301]} s={[.05,.026,.012]} color="#e4ceca"/>
@@ -50,20 +57,22 @@ export const PlushWangdoo:React.FC<{time:number;position?:V3;yaw?:number;pose?:P
      <Soft p={[0,-.19,0]} s={[.075,.255,.10]} color={GRAY}/>
      <object3D name={`plush-grip-${side===-1?'left':'right'}`} position={[0,-.29,.035]}/>
     </group>)}
-    <group name="wang-backpack" position={[0,.57,-.296]}>
+    {accessories&&<group name="wang-backpack" position={[0,.57,-.296]}>
      <Soft s={[.206,.218,.115]} color="#626e78"/>
      <Box p={[0,0,-.094]} s={[.27,.29,.06]} color="#586775" metal={.08} rough={.85}/>
      <Crescent position={[0,.045,-.129]} rotation={[0,Math.PI,0]}/>
      <mesh position={[.105,-.075,-.137]}><sphereGeometry args={[.014,12,8]}/><meshStandardMaterial color={status>.1?'#8bdfdb':'#586570'} emissive="#57b4bb" emissiveIntensity={status*.8}/></mesh>
      <object3D name="plush-equipment-port" position={[-.21,.09,-.064]}/>
      <Ring p={[-.21,.09,-.064]} r={[0,Math.PI/2,0]} radius={.032} tube={.007} color="#94a1a4" glow={0}/>
+     <Ring p={[.21,-.07,-.064]} r={[0,Math.PI/2,0]} radius={.030} tube={.007} color="#84949a" glow={0}/>
+     <object3D name="plush-carry-handle" position={[.21,-.07,-.064]}/>
      <group position={[.21,.10,-.02]}><Soft s={[.045,.06,.05]} color="#586b78"/><mesh position={[.025,.01,.035]}><sphereGeometry args={[.018,14,10]}/><meshStandardMaterial color="#82d8df" emissive="#82d8df" emissiveIntensity={(pose.scan??0)*.7}/></mesh></group>
      {pose.sealed&&<mesh position={[0,0,-.022]} scale={[.24,.25,.14]} geometry={unit}><meshPhysicalMaterial color="#dceef2" transparent opacity={.10} roughness={.13} metalness={.12} depthWrite={false}/></mesh>}
-    </group>
-    <group position={[.21,.61,.245]}>
+    </group>}
+    {accessories&&<group position={[.21,.61,.245]}>
      <mesh><cylinderGeometry args={[.024,.024,.055,16]}/><meshStandardMaterial color="#748187" roughness={.65}/></mesh>
      {(pose.light??0)>.01&&<><pointLight color="#fff0d4" intensity={(pose.light??0)*1.6} distance={4}/><mesh position={[0,0,.03]}><sphereGeometry args={[.018,12,8]}/><meshBasicMaterial color="#ffe3b6"/></mesh></>}
-    </group>
+    </group>}
    </group>
    {[-1,1].map((side,i)=>{const foot=pose.feet?.[i];return <group key={side} name={`plush-foot-${i}`} position={foot?.p??[side*.185,0,.065]} rotation={[0,foot?.yaw??0,0]}>
     <Soft p={[0,.062,.055]} s={[.136,.062,.18]} color={YELLOW}/><object3D name={`plush-sole-${i}`} position={[0,0,.055]}/>

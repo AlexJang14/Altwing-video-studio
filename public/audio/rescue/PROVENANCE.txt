@@ -1,0 +1,1 @@
+All music, air/ship ambience, pressure, mechanical impacts, chirps and footsteps are deterministic original synthesis in scripts/rescue_audio.py. No narration, dialogue, speech model, external voice service, copyrighted recording or paid API is used. Main programme mix target: -20 LUFS, -1.5 dBTP. Foot contact event files, when present, are extracted from the actual animation.
