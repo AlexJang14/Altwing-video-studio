@@ -1,5 +1,5 @@
 """Original silent-film soundscape. No recorded/generated speech is used."""
-import json,subprocess,wave
+import json,subprocess,wave,sys
 from pathlib import Path
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
@@ -16,6 +16,7 @@ events={
 2:{'impact':[4.65,5.15,31.7,35.2,38.9,43.0,58.7,62.0],'knock':[30.0,32.1,34.8,55.2,60.2],'chirp':[11.8,20.4,25.0,37.0,48.7],'servo':[(2.0,2.8),(9.4,1.3),(29.2,5.2),(47.0,2.3)],'steps':[(13.3,15.5,.53),(17.0,22.5,.49),(36.4,44.8,.34)]},
 3:{'impact':[2.8,5.0,25.0,60.0],'knock':[5.0,24.6,58.6,63.1],'chirp':[4.5,8.3,26.0,32.0,43.6,46.0],'servo':[(.8,4.5),(36.8,1.0),(39.5,2.5),(43.5,1.8)],'steps':[(1.0,4.2,.37),(8.0,11.4,.48),(18.0,21.7,.5),(48.0,52.5,.45)]}}
 for ep in CFG['episodes']:
+ if len(sys.argv)>1 and ep['id']!=int(sys.argv[1]):continue
  d=ep['duration'];rng=np.random.default_rng(8800+ep['id']);audio=np.zeros((SR*d,2));ev=events[ep['id']]
  def add(sig,at,gain=.1,pan=0):
   x=max(0,round(at*SR));y=min(len(audio),x+len(sig));a=sig[:y-x]*gain
@@ -61,6 +62,6 @@ for ep in CFG['episodes']:
  audio[-SR:]*=np.linspace(1,0,SR)[:,None]
  wav=WORK/f'episode-{ep["id"]}.wav'
  with wave.open(str(wav),'wb')as f:f.setnchannels(2);f.setsampwidth(2);f.setframerate(SR);f.writeframes((np.clip(audio,-.96,.96)*32767).astype('<i2').tobytes())
- subprocess.run(['ffmpeg','-v','error','-y','-i',str(wav),'-af','loudnorm=I=-20:TP=-1.5:LRA=11','-c:a','libmp3lame','-b:a','192k','-ar',str(SR),str(OUT/f'episode-{ep["id"]}.mp3')],check=True)
+ subprocess.run(['ffmpeg','-v','error','-y','-i',str(wav),'-af',f'loudnorm=I=-20:TP={-2.5 if ep["id"]==3 else -1.5}:LRA=11','-c:a','libmp3lame','-b:a','192k','-ar',str(SR),str(OUT/f'episode-{ep["id"]}.mp3')],check=True)
  print(ep['id'],'silent soundtrack',d,'seconds',flush=True)
 (OUT/'PROVENANCE.txt').write_text('All music, air/ship ambience, pressure, mechanical impacts, chirps and footsteps are deterministic original synthesis in scripts/rescue_audio.py. No narration, dialogue, speech model, external voice service, copyrighted recording or paid API is used. Main programme mix target: -20 LUFS, -1.5 dBTP. Foot contact event files, when present, are extracted from the actual animation.\n')
