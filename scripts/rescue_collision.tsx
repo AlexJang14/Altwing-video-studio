@@ -31,7 +31,7 @@ for(let frame=0;frame<frames;frame++){
   const p=world(sole),box=new THREE.Box3().setFromObject(obj(name),true),bottom=box.min.y;minFoot=Math.min(minFoot,bottom);
   if(bottom<-.003)errors.push({frame,type:'foot-penetration',id,bottom});
   const old=previous.get(id);
-  if(old&&t-old.time<.04&&old.height>.006&&p.y<.004&&((episode===1&&t>13&&t<40)||(episode===2&&t>16&&t<46)))steps.push({at:t,small});
+  if(old&&t-old.time<.04&&old.height>.006&&p.y<.004&&((episode===1&&t>13&&t<40)||(episode===2&&t>=12.7&&t<46)||(episode===3&&((t>=1.1&&t<7)||(t>=50.2&&t<55.2)))))steps.push({at:t,small});
   // Scene cuts may change blocking. Inside a planted stance, the actual sole
   // transform must stay fixed in world space even while the root moves.
   const cuts=episode===1?[0,4,8,13,31,40]:episode===2?[0,1.3,3.8,6,12.7,16,28,36,40.5,46]:[0,1.1,7,25,35,47,50.2];
