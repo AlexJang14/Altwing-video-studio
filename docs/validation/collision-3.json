@@ -1,0 +1,145 @@
+{
+  "frames": 2190,
+  "maxContactGap": 3.554447978966673e-15,
+  "minimumFootHeight": -3.157196726277789e-16,
+  "maximumPlantedFootSlide": 0.00022419393292594236,
+  "minimumHeadCenterSeparation": 1.3673461702339136,
+  "errors": [],
+  "contacts": [
+    {
+      "time": 0,
+      "kind": "shelter-cell-seat",
+      "gap": 0
+    },
+    {
+      "time": 0.3333333333333333,
+      "kind": "shelter-cell-seat",
+      "gap": 0
+    },
+    {
+      "time": 0.6666666666666666,
+      "kind": "shelter-cell-seat",
+      "gap": 0
+    },
+    {
+      "time": 1,
+      "kind": "shelter-cell-seat",
+      "gap": 0
+    },
+    {
+      "time": 36,
+      "kind": "isolate-local-bus",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 36.333333333333336,
+      "kind": "isolate-local-bus",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 36.666666666666664,
+      "kind": "isolate-local-bus",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 37,
+      "kind": "isolate-local-bus",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 37.333333333333336,
+      "kind": "isolate-local-bus",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 38.666666666666664,
+      "kind": "reconnect-local-bus",
+      "gap": 1.7763568394002505e-15
+    },
+    {
+      "time": 39,
+      "kind": "reconnect-local-bus",
+      "gap": 1.7763568394002505e-15
+    },
+    {
+      "time": 39.333333333333336,
+      "kind": "reconnect-local-bus",
+      "gap": 0
+    },
+    {
+      "time": 39.666666666666664,
+      "kind": "reconnect-local-bus",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 40,
+      "kind": "reconnect-local-bus",
+      "gap": 1.7798229048217483e-15
+    },
+    {
+      "time": 40.333333333333336,
+      "kind": "reconnect-local-bus",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 41.666666666666664,
+      "kind": "test-lamp-circuit",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 42,
+      "kind": "test-lamp-circuit",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 42.333333333333336,
+      "kind": "test-lamp-circuit",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 42.666666666666664,
+      "kind": "test-lamp-circuit",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 44.333333333333336,
+      "kind": "restart-limited-bus",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 44.666666666666664,
+      "kind": "restart-limited-bus",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 45,
+      "kind": "restart-limited-bus",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 45.333333333333336,
+      "kind": "restart-limited-bus",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 48,
+      "kind": "reassure-head",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 48.333333333333336,
+      "kind": "reassure-head",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 48.666666666666664,
+      "kind": "reassure-head",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 49,
+      "kind": "reassure-head",
+      "gap": 1.1102230246251565e-16
+    }
+  ]
+}

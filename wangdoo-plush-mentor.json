@@ -1,0 +1,42 @@
+{
+  "name": "Wangdoo plush exploration companion",
+  "units": "meters",
+  "height": 1.13,
+  "front": "+Z",
+  "up": "+Y",
+  "source": "src/rescue/Wangdoo.tsx",
+  "reference": "Textual gray/white plush reconstruction. The new actual plush photograph mentioned in the brief was not attached; no claim of matching an unseen photo.",
+  "animations": [
+    {
+      "name": "idle",
+      "duration": 2,
+      "tracks": 1
+    },
+    {
+      "name": "guide",
+      "duration": 2,
+      "tracks": 1
+    },
+    {
+      "name": "scan",
+      "duration": 2,
+      "tracks": 1
+    },
+    {
+      "name": "uncertain",
+      "duration": 2,
+      "tracks": 1
+    },
+    {
+      "name": "reassured",
+      "duration": 2,
+      "tracks": 1
+    },
+    {
+      "name": "walk",
+      "duration": 2,
+      "tracks": 4
+    }
+  ],
+  "note": "Film locomotion uses world-stamped feet and IK. GLB walk is an optional in-place cycle; emissive lights are controlled in source. glTF omits bumpMap, but includes the fabric color textures and roughness/sheen."
+}

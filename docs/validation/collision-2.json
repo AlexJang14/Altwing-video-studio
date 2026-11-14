@@ -1,0 +1,150 @@
+{
+  "frames": 2160,
+  "maxContactGap": 1.3322676295501878e-15,
+  "minimumFootHeight": -3.400058012914542e-16,
+  "maximumPlantedFootSlide": 0.00020639407235773546,
+  "minimumHeadCenterSeparation": 0.6880425223025454,
+  "errors": [],
+  "contacts": [
+    {
+      "time": 8.666666666666666,
+      "kind": "companion-restart",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 9,
+      "kind": "companion-restart",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 9.333333333333334,
+      "kind": "companion-restart",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 9.666666666666666,
+      "kind": "companion-restart",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 10,
+      "kind": "companion-restart",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 10.333333333333334,
+      "kind": "companion-restart",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 10.666666666666666,
+      "kind": "companion-restart",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 11,
+      "kind": "companion-restart",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 13,
+      "kind": "carry-handle",
+      "gap": 4.440892098500626e-16
+    },
+    {
+      "time": 13.333333333333334,
+      "kind": "carry-handle",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 13.666666666666666,
+      "kind": "carry-handle",
+      "gap": 1.6653345369377348e-16
+    },
+    {
+      "time": 14,
+      "kind": "carry-handle",
+      "gap": 2.2887833992611187e-16
+    },
+    {
+      "time": 14.333333333333334,
+      "kind": "carry-handle",
+      "gap": 4.996003610813204e-16
+    },
+    {
+      "time": 14.666666666666666,
+      "kind": "carry-handle",
+      "gap": 4.577566798522237e-16
+    },
+    {
+      "time": 15,
+      "kind": "carry-handle",
+      "gap": 4.965068306494546e-16
+    },
+    {
+      "time": 15.333333333333334,
+      "kind": "carry-handle",
+      "gap": 5.551115123125783e-17
+    },
+    {
+      "time": 34.666666666666664,
+      "kind": "transmitter-switch",
+      "gap": 4.965068306494546e-16
+    },
+    {
+      "time": 35,
+      "kind": "transmitter-switch",
+      "gap": 4.965068306494546e-16
+    },
+    {
+      "time": 47,
+      "kind": "cell-lift",
+      "gap": 8.881784197001252e-16
+    },
+    {
+      "time": 47.333333333333336,
+      "kind": "cell-lift",
+      "gap": 1.1102230246251565e-16
+    },
+    {
+      "time": 47.666666666666664,
+      "kind": "cell-lift",
+      "gap": 8.881784197001252e-16
+    },
+    {
+      "time": 48,
+      "kind": "cell-lift",
+      "gap": 0
+    },
+    {
+      "time": 48.333333333333336,
+      "kind": "cell-lift",
+      "gap": 0
+    },
+    {
+      "time": 48.666666666666664,
+      "kind": "cell-lift",
+      "gap": 0
+    },
+    {
+      "time": 49,
+      "kind": "cell-lift",
+      "gap": 2.220446049250313e-16
+    },
+    {
+      "time": 49.333333333333336,
+      "kind": "cell-lift",
+      "gap": 9.155133597044475e-16
+    },
+    {
+      "time": 49.666666666666664,
+      "kind": "cell-lift",
+      "gap": 9.930136612989092e-16
+    },
+    {
+      "time": 50,
+      "kind": "cell-lift",
+      "gap": 1.2560739669470201e-15
+    }
+  ]
+}

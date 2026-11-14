@@ -1,0 +1,83 @@
+[
+  {
+    "episode": 1,
+    "file": "the-last-wing-episode-01-do-not-dock-final.mp4",
+    "duration": "72.000000",
+    "size": 14921617,
+    "video": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "nb_read_frames": "2160",
+      "color_space": "bt709"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 2
+    },
+    "fullDecode": "pass",
+    "blackEvents": [],
+    "sha256": "ba5bba08990749c60b7bb3e7ae66b1c5b08f6b38291342094dcaed6fa8f8f1e5",
+    "renderSourceCommit": "afbb2ed",
+    "renderBranchCommit": "3b699a901cb18846cda826eea7f69505c311e62e",
+    "workflowRun": 43568661876,
+    "renderPictureSourceCommit": "afbb2ed",
+    "renderWorkflowRun": 43568661876,
+    "continuousAudioSourceCommit": "afbb2ed"
+  },
+  {
+    "episode": 2,
+    "file": "the-last-wing-episode-02-that-ship-is-ours-final.mp4",
+    "duration": "72.000000",
+    "size": 12127999,
+    "video": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "nb_read_frames": "2160",
+      "color_space": "bt709"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 2
+    },
+    "fullDecode": "pass",
+    "blackEvents": [],
+    "sha256": "cc52ce49abfab76e302d7a90cdb70723707186a1a30350a1509ff0a8fa8ceb72",
+    "renderPictureSourceCommit": "826a31b",
+    "renderWorkflowRun": 43571493582,
+    "continuousAudioSourceCommit": "2f5f7f9"
+  },
+  {
+    "episode": 3,
+    "file": "the-last-wing-episode-03-not-your-first-mission-final.mp4",
+    "duration": "73.000000",
+    "size": 7464001,
+    "video": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "nb_read_frames": "2190",
+      "color_space": "bt709"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 2
+    },
+    "fullDecode": "pass",
+    "blackEvents": [],
+    "sha256": "fd5cb924a1015655bc22110a81a63053895b092cc82acbd494bc792b48b707bb",
+    "renderPictureSourceCommit": "826a31b",
+    "renderWorkflowRun": 43571493582,
+    "continuousAudioSourceCommit": "b30beb3"
+  }
+]
