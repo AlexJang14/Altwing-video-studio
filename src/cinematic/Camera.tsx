@@ -26,7 +26,7 @@ export const FilmCamera:React.FC<{episode:number;time:number}>=({episode,time:t}
    else if(t<23){p=blendV([4,5.2,10],[3.2,4.8,9.3],ramp(t,20,23));look=[-4.4,1.9,-7.5];fov=49;}
    else if(t<26.5){p=[8,2.1,5.5];look=[4,5.3,-16];fov=49;}
    else if(t<29){p=[1.2,2.6,7];look=[-.15,1.6,-.8];fov=47;}
-   else if(t<38){const x=(b.a.p[0]+b.w.p[0])*.5,z=(b.a.p[2]+b.w.p[2])*.5;p=[x-.6,2.8,z-9.2];look=[x,1.5,z+.2];fov=53;}
+   else if(t<38){const x=(b.a.p[0]+b.w.p[0])*.5,z=(b.a.p[2]+b.w.p[2])*.5;p=[x-6.5,3.0,z-4.5];look=[x,1.5,z];fov=54;}
    else if(t<41){p=[-9.8,3.8,-.9];look=[-7.65,1.55,-8.0];fov=51;}
    else{p=blendV([-10.7,3.3,2.4],[-10.4,3.1,1.9],ramp(t,41,53));look=[-7.5,1.95,-8.0];fov=50;}
   }
