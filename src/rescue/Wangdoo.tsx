@@ -27,7 +27,7 @@ export function plushPoint(local:V3,position:V3,yaw:number,pose:PlushPose):V3{
  const v=new THREE.Vector3(...local).applyEuler(new THREE.Euler(pose.lean??0,0,pose.bodyRoll??0)).add(new THREE.Vector3(0,pose.bob??0,0)).sub(new THREE.Vector3(0,.55,0)).applyEuler(new THREE.Euler(0,0,pose.rootRoll??0)).add(new THREE.Vector3(0,.55+(pose.rootLift??0),0)).multiplyScalar(WANG_SCALE).applyAxisAngle(new THREE.Vector3(0,1,0),yaw).add(new THREE.Vector3(...position));return v.toArray() as V3;
 }
 export const backpackPort=(p:V3,yaw:number,pose:PlushPose):V3=>plushPoint([-.21,.66,-.36],p,yaw,pose);
-export const carryGrip=(p:V3,yaw:number,pose:PlushPose):V3=>plushPoint([.21,.50,-.36],p,yaw,pose);
+export const carryGrip=(p:V3,yaw:number,pose:PlushPose):V3=>plushPoint([.21,.50,-.42],p,yaw,pose);
 export const flipperGrip=(p:V3,yaw:number,pose:PlushPose):V3=>{
  const local=new THREE.Vector3(0,-.29,.035).applyEuler(new THREE.Euler(0,0,.10+(pose.wingR??0))).add(new THREE.Vector3(.365,.72,0));
  return plushPoint(local.toArray() as V3,p,yaw,pose);
@@ -64,8 +64,8 @@ export const PlushWangdoo:React.FC<{time:number;position?:V3;yaw?:number;pose?:P
      <mesh position={[.105,-.075,-.137]}><sphereGeometry args={[.014,12,8]}/><meshStandardMaterial color={status>.1?'#8bdfdb':'#586570'} emissive="#57b4bb" emissiveIntensity={status*.8}/></mesh>
      <object3D name="plush-equipment-port" position={[-.21,.09,-.064]}/>
      <Ring p={[-.21,.09,-.064]} r={[0,Math.PI/2,0]} radius={.032} tube={.007} color="#94a1a4" glow={0}/>
-     <Ring p={[.21,-.07,-.064]} r={[0,Math.PI/2,0]} radius={.030} tube={.007} color="#84949a" glow={0}/>
-     <object3D name="plush-carry-handle" position={[.21,-.07,-.064]}/>
+     <Ring p={[.21,-.07,-.124]} r={[0,Math.PI/2,0]} radius={.030} tube={.007} color="#84949a" glow={0}/>
+     <object3D name="plush-carry-handle" position={[.21,-.07,-.124]}/>
      <group position={[.21,.10,-.02]}><Soft s={[.045,.06,.05]} color="#586b78"/><mesh position={[.025,.01,.035]}><sphereGeometry args={[.018,14,10]}/><meshStandardMaterial color="#82d8df" emissive="#82d8df" emissiveIntensity={(pose.scan??0)*.7}/></mesh></group>
      {pose.sealed&&<mesh position={[0,0,-.022]} scale={[.24,.25,.14]} geometry={unit}><meshPhysicalMaterial color="#dceef2" transparent opacity={.10} roughness={.13} metalness={.12} depthWrite={false}/></mesh>}
     </group>}
