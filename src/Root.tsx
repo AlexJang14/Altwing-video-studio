@@ -1,4 +1,6 @@
 import React from 'react';
+import {ResetFilm}from './reset/Film';
+import {ResetCharacterGate}from './reset/CharacterGate';
 import {Composition} from 'remotion';
 import {Episode,CharacterPreview} from './Episode';
 import {EPISODE} from './config';
@@ -10,6 +12,9 @@ import {PlushLookdev} from './rescue/Lookdev';
 import {RescueEpisode1,RescueEpisode2,RescueEpisode3} from './rescue/Film';
 import {PlushMemory,TrainingMemory,SecurityFeed,WarningFeed} from './rescue/Assets';
 export const RemotionRoot:React.FC=()=><>
+  <Composition id="Reset-Episode1" component={ResetFilm} durationInFrames={2100} fps={30} width={1080} height={1920}/>
+  <Composition id="Reset-Opening" component={ResetFilm} durationInFrames={450} fps={30} width={1080} height={1920}/>
+  <Composition id="Reset-Character-Gate" component={ResetCharacterGate} durationInFrames={120} fps={30} width={1080} height={1350}/>
   <Composition id="Rescue-Episode1" component={RescueEpisode1} durationInFrames={2160} fps={30} width={1080} height={1920}/>
   <Composition id="Rescue-Episode2" component={RescueEpisode2} durationInFrames={2160} fps={30} width={1080} height={1920}/>
   <Composition id="Rescue-Episode3" component={RescueEpisode3} durationInFrames={2190} fps={30} width={1080} height={1920}/>
