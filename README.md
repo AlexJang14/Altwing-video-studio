@@ -12,6 +12,10 @@ soundtrack and a gray-and-white plush Wangdoo. All films are vertical **1080 × 
 | 2 | THAT SHIP IS OURS | 72 s | Conditional: Episode 1 option B |
 | 3 | THIS IS NOT YOUR FIRST MISSION | 73 s | Conditional: Episode 2 option A |
 
+[Watch or download all three verified films, smaller previews and contact sheets](https://github.com/AlexJang14/Altwing-video-studio/tree/master-narrative-delivery).
+The [implementation and validation report](docs/rescue/IMPLEMENTATION-AND-VALIDATION.md)
+records exported-file, audio, browser and collision evidence.
+
 Select `Rescue-Episode1`, `Rescue-Episode2` or `Rescue-Episode3` in Remotion Studio.
 See [the story bible](docs/rescue/STORY-BIBLE.md), [character/clue/branch trackers](docs/rescue/TRACKERS.md)
 and [production and verification guide](docs/rescue/PRODUCTION.md).

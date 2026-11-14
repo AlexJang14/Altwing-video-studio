@@ -1,0 +1,29 @@
+[
+  {
+    "episode": 1,
+    "file": "the-last-wing-episode-01-do-not-dock-final.mp4",
+    "integratedLUFS": -21.34,
+    "truePeakDBTP": -1.28,
+    "loudnessRangeLU": 5.6,
+    "source": "Original deterministic synthesis; no speech.",
+    "pass": true
+  },
+  {
+    "episode": 2,
+    "file": "the-last-wing-episode-02-that-ship-is-ours-final.mp4",
+    "integratedLUFS": -21.18,
+    "truePeakDBTP": -1.13,
+    "loudnessRangeLU": 6.0,
+    "source": "Original deterministic synthesis; no speech.",
+    "pass": true
+  },
+  {
+    "episode": 3,
+    "file": "the-last-wing-episode-03-not-your-first-mission-final.mp4",
+    "integratedLUFS": -21.42,
+    "truePeakDBTP": -2.08,
+    "loudnessRangeLU": 6.3,
+    "source": "Original deterministic synthesis; no speech.",
+    "pass": true
+  }
+]

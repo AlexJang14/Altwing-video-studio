@@ -1,0 +1,62 @@
+[
+  {
+    "file": "work/rescue/renders/the-last-wing-episode-01-do-not-dock-final.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 72,
+    "played": 0.647203,
+    "decoded": 24,
+    "seekedTo": 71,
+    "error": null
+  },
+  {
+    "file": "work/rescue/renders/the-last-wing-episode-02-that-ship-is-ours-final.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 72,
+    "played": 0.660082,
+    "decoded": 25,
+    "seekedTo": 71,
+    "error": null
+  },
+  {
+    "file": "work/rescue/renders/the-last-wing-episode-03-not-your-first-mission-final.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 73,
+    "played": 0.65945,
+    "decoded": 25,
+    "seekedTo": 72,
+    "error": null
+  },
+  {
+    "file": "work/rescue/renders/the-last-wing-episode-01-do-not-dock-preview.mp4",
+    "width": 360,
+    "height": 640,
+    "duration": 72,
+    "played": 0.660324,
+    "decoded": 25,
+    "seekedTo": 71,
+    "error": null
+  },
+  {
+    "file": "work/rescue/renders/the-last-wing-episode-02-that-ship-is-ours-preview.mp4",
+    "width": 360,
+    "height": 640,
+    "duration": 72,
+    "played": 0.660412,
+    "decoded": 24,
+    "seekedTo": 71,
+    "error": null
+  },
+  {
+    "file": "work/rescue/renders/the-last-wing-episode-03-not-your-first-mission-preview.mp4",
+    "width": 360,
+    "height": 640,
+    "duration": 73.002,
+    "played": 0.661024,
+    "decoded": 25,
+    "seekedTo": 72.002,
+    "error": null
+  }
+]

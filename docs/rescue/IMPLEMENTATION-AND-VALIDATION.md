@@ -11,7 +11,7 @@ support the astronaut’s development from guidance dependence to reciprocal lea
 - Episode 3: THIS IS NOT YOUR FIRST MISSION, 73 seconds; conditional on Episode 2 option A.
 - Narrative/model source: `826a31b`. Native Episode 1: source `afbb2ed`, render branch `3b699a9`, workflow run `43568661876`.
 - Native Episodes 2/3: source `826a31b`, render branch `afd50d7`, workflow run `43571493582`.
-- Later source commits add documentation and verification helpers without changing the rendered scenes.
+- Final continuous contact-timed sound masters: E2 `2f5f7f9`, E3 `b30beb3` (codec headroom). Later source commits add documentation/verification; native picture sources remain as recorded above.
 
 ## Character and environment checks
 
@@ -67,5 +67,30 @@ Episodes 2 and 3 remain explicitly conditional.
 
 ## Exported movie verification
 
-The native exported-file results, audio measurements and playback evidence are
-recorded in the delivery package after all three full-resolution renders complete.
+All three actual MP4s pass native 1080 × 1920 resolution, 30-fps H.264/yuv420p/Rec.709,
+stereo 48-kHz AAC, exact duration/frame count, zero picture/audio start timestamps,
+and a full decode. No accidental black intervals were detected. No preview was enlarged
+to make a final. Native H.264 ranges were copied into the final container; one continuous
+sound master was encoded separately to avoid seams. All 15 downloaded artifact ZIPs
+match their GitHub SHA-256 digests.
+
+| Episode | Seconds | Video frames | File MB | Integrated LUFS | True peak dBTP |
+|---|---:|---:|---:|---:|---:|
+| 1 | 72 | 2160 | 14.92 | -21.34 | -1.28 |
+| 2 | 72 | 2160 | 12.13 | -21.18 | -1.13 |
+| 3 | 73 | 2190 | 7.46 | -21.42 | -2.08 |
+
+The final encoded mixes retain at least 1 dB of true-peak headroom. Episode 3's master
+uses extra pre-encoding headroom to account for AAC reconstruction peaks. The programme
+contains no speech; its music, air, impacts, machinery, chirps and footfalls are original.
+
+All three finals and all three smaller full-length previews load in Chromium, play,
+decode moving frames and seek to their last second without errors. Contact sheets and
+the largest frame changes outside cuts were inspected from the final movies. The outliers
+show expected running, foreground parallax, closing doors, text and restored lighting;
+no render flashes or blank joins were found.
+
+See [movie metadata/checksums](validation/final-movies.json), [encoded audio measurements](validation/audio.json),
+[browser playback/seek evidence](validation/playback.json), [artifact integrity](validation/artifact-integrity.json)
+and the character/environment/model reports in the same directory. The delivery branch
+also includes `SHA256SUMS` and a separate remote-file verification record.
