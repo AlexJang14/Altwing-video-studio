@@ -1,0 +1,119 @@
+[
+  {
+    "at": 0.18,
+    "until": 3,
+    "text": "Someone in space is asking for help.",
+    "file": "reset/voice/00.wav",
+    "duration": 2.8433333333333333,
+    "synthesisSpeed": 0.9334321776155718,
+    "wordCount": 7
+  },
+  {
+    "at": 3.18,
+    "until": 7.85,
+    "text": "It's your first rescue mission. You came to find out what happened.",
+    "file": "reset/voice/01.wav",
+    "duration": 4.521333333333334,
+    "synthesisSpeed": 0.9033435003631083,
+    "wordCount": 12
+  },
+  {
+    "at": 8.22,
+    "until": 14.05,
+    "text": "Luckily, you brought Wangdoo. He helps explorers find their way.",
+    "file": "reset/voice/02.wav",
+    "duration": 5.052,
+    "synthesisSpeed": 0.86,
+    "wordCount": 10
+  },
+  {
+    "at": 15.35,
+    "until": 21.35,
+    "text": "The lights are on. The rooms are warm. But everyone is gone.",
+    "file": "reset/voice/03.wav",
+    "duration": 5.086,
+    "synthesisSpeed": 0.86,
+    "wordCount": 12
+  },
+  {
+    "at": 22.18,
+    "until": 23.95,
+    "text": "Then you hear it.",
+    "file": "reset/voice/04.wav",
+    "duration": 1.6672916666666666,
+    "synthesisSpeed": 0.86,
+    "wordCount": 4
+  },
+  {
+    "at": 27.1,
+    "until": 31.45,
+    "text": "Wangdoo checks the room. His scanner finds nobody.",
+    "file": "reset/voice/05.wav",
+    "duration": 4.355291666666667,
+    "synthesisSpeed": 0.8880540593286499,
+    "wordCount": 8
+  },
+  {
+    "at": 34.0,
+    "until": 39.1,
+    "text": "But someone keeps knocking. And Wangdoo's scanner just stopped working.",
+    "file": "reset/voice/06.wav",
+    "duration": 5.039333333333333,
+    "synthesisSpeed": 0.86,
+    "wordCount": 10
+  },
+  {
+    "at": 39.25,
+    "until": 44.75,
+    "text": "Then you check your ship's camera. Someone is inside.",
+    "file": "reset/voice/07.wav",
+    "duration": 3.9086666666666665,
+    "synthesisSpeed": 0.86,
+    "wordCount": 9
+  },
+  {
+    "at": 45.18,
+    "until": 51.65,
+    "text": "Your ship is about to leave. And opening that door could take too long.",
+    "file": "reset/voice/08.wav",
+    "duration": 5.301333333333333,
+    "synthesisSpeed": 0.86,
+    "wordCount": 14
+  },
+  {
+    "at": 52.18,
+    "until": 56.95,
+    "text": "Do you open the door? Or run back to your ship?",
+    "file": "reset/voice/09.wav",
+    "duration": 3.5332916666666665,
+    "synthesisSpeed": 0.86,
+    "wordCount": 11
+  },
+  {
+    "at": 57.25,
+    "until": 59.35,
+    "text": "Comment A or B.",
+    "file": "reset/voice/10.wav",
+    "duration": 1.862,
+    "synthesisSpeed": 0.86,
+    "wordCount": 4
+  },
+  {
+    "at": 60.45,
+    "until": 64.18,
+    "text": "Wangdoo can guide you. But the decision is yours.",
+    "file": "reset/voice/11.wav",
+    "duration": 3.7512916666666665,
+    "synthesisSpeed": 0.9941442922374418,
+    "wordCount": 9
+  },
+  {
+    "at": 64.22,
+    "until": 69.9,
+    "text": "Engineers face problems like this. Explore how they solve them on AltWing.",
+    "file": "reset/voice/12.wav",
+    "duration": 5.745958333333333,
+    "synthesisSpeed": 0.9464031249999988,
+    "wordCount": 12
+  }
+]

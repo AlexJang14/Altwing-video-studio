@@ -1,0 +1,71 @@
+name: Publish verified Door episode files
+on:
+  push:
+    branches: ['delivery/door-ep01-*']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: 43629399916
+          pattern: door-reset-*
+          merge-multiple: true
+          path: work/reset/segments-final
+      - name: Prepare media checks
+        run: |
+          if ! command -v ffmpeg; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
+          python3 -m venv /tmp/door-delivery-venv
+          /tmp/door-delivery-venv/bin/pip install pillow
+          cp docs/reset/validation/*.json work/reset/
+          python3 -m http.server 8092 --bind 127.0.0.1 > /tmp/door-player.log 2>&1 &
+      - name: Assemble existing native frames and verify delivery
+        run: |
+          export CHROME_PATH="$(command -v google-chrome)"
+          python3 scripts/assemble_reset.py final
+          python3 scripts/verify_reset.py final
+          ffmpeg -v error -y -i work/reset/renders/the-last-wing-ep01-dont-open-the-door-final.mp4 -vf scale=270:480 -c:v libx264 -crf 20 -c:a copy -movflags +faststart work/reset/renders/the-last-wing-ep01-dont-open-the-door-preview.mp4
+          python3 scripts/verify_reset.py preview
+          node scripts/reset_playback.mjs final
+          /tmp/door-delivery-venv/bin/python scripts/reset_contact_sheet.py final
+          python3 scripts/package_reset.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: door-ep01-media
+          path: |
+            work/reset/delivery/*.mp4
+            work/reset/delivery/*.jpg
+            work/reset/delivery/wangdoo-character-previews.zip
+          compression-level: 0
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: door-ep01-source
+          path: work/reset/delivery/episode1-editable-source.zip
+          compression-level: 0
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: door-ep01-evidence
+          path: |
+            work/reset/delivery/episode1-production-notes.zip
+            work/reset/delivery/MANIFEST.sha256
+            work/reset/verification-*.json
+            work/reset/playback-final.json
+          compression-level: 0
+          retention-days: 30
+      - name: Publish verified files
+        run: python3 scripts/publish_reset_release.py

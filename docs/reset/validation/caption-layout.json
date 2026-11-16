@@ -1,0 +1,129 @@
+{
+  "font": "Studio Sans / local DejaVu Sans",
+  "fontSize": 57,
+  "width": 886,
+  "captions": 24,
+  "maxLines": 2,
+  "rows": [
+    {
+      "at": 0.18,
+      "text": "Someone in space is asking for help.",
+      "lines": 2
+    },
+    {
+      "at": 3.18,
+      "text": "It's your first rescue mission.",
+      "lines": 2
+    },
+    {
+      "at": 5.208888888888886,
+      "text": "You came to find out what happened.",
+      "lines": 2
+    },
+    {
+      "at": 8.22,
+      "text": "Luckily, you brought Wangdoo.",
+      "lines": 2
+    },
+    {
+      "at": 10.340799999999998,
+      "text": "He helps explorers find their way.",
+      "lines": 2
+    },
+    {
+      "at": 15.35,
+      "text": "The lights are on.",
+      "lines": 1
+    },
+    {
+      "at": 16.72533333333333,
+      "text": "The rooms are warm.",
+      "lines": 1
+    },
+    {
+      "at": 18.420666666666666,
+      "text": "But everyone is gone.",
+      "lines": 1
+    },
+    {
+      "at": 22.18,
+      "text": "Then you hear it.",
+      "lines": 1
+    },
+    {
+      "at": 27.1,
+      "text": "Wangdoo checks the room.",
+      "lines": 1
+    },
+    {
+      "at": 28.957645833333334,
+      "text": "His scanner finds nobody.",
+      "lines": 1
+    },
+    {
+      "at": 34,
+      "text": "But someone keeps knocking.",
+      "lines": 2
+    },
+    {
+      "at": 35.69573333333334,
+      "text": "And Wangdoo's scanner just stopped working.",
+      "lines": 2
+    },
+    {
+      "at": 39.25,
+      "text": "Then you check your ship's camera.",
+      "lines": 2
+    },
+    {
+      "at": 42.165777777777784,
+      "text": "Someone is inside.",
+      "lines": 1
+    },
+    {
+      "at": 45.18,
+      "text": "Your ship is about to leave.",
+      "lines": 1
+    },
+    {
+      "at": 47.177,
+      "text": "And opening that door could take too long.",
+      "lines": 2
+    },
+    {
+      "at": 52.18,
+      "text": "Do you open the door?",
+      "lines": 1
+    },
+    {
+      "at": 53.706041666666664,
+      "text": "Or run back to your ship?",
+      "lines": 1
+    },
+    {
+      "at": 57.25,
+      "text": "Comment A or B.",
+      "lines": 1
+    },
+    {
+      "at": 60.45,
+      "text": "Wangdoo can guide you.",
+      "lines": 1
+    },
+    {
+      "at": 61.96224074074074,
+      "text": "But the decision is yours.",
+      "lines": 1
+    },
+    {
+      "at": 64.22,
+      "text": "Engineers face problems like this.",
+      "lines": 2
+    },
+    {
+      "at": 66.63914930555556,
+      "text": "Explore how they solve them on AltWing.",
+      "lines": 2
+    }
+  ]
+}

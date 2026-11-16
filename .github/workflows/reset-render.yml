@@ -1,0 +1,38 @@
+name: Render Door episode reset
+on:
+  push:
+    branches: ['render/door-preview-*', 'render/door-final-*']
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk: [0, 1, 2, 3, 4, 5, 6]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - name: Render Episode 1 frame range
+        shell: bash
+        env:
+          CHUNK: ${{ matrix.chunk }}
+          MODE: ${{ startsWith(github.ref, 'refs/heads/render/door-final-') && 'final' || 'preview' }}
+        run: |
+          export CHROME_PATH="$(command -v google-chrome)"
+          start_frame=$(( CHUNK * 300 ))
+          end_frame=$(( start_frame + 299 ))
+          node scripts/reset_render.mjs "$MODE" "$start_frame-$end_frame"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: door-reset-${{ matrix.chunk }}
+          path: work/reset/renders/*.mp4
+          retention-days: 7
+          compression-level: 0

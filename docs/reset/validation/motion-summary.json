@@ -1,0 +1,9 @@
+{
+  "frames": 2100,
+  "minFloor": -1.3052062552282306e-08,
+  "maxContact": 5.0457344721905115e-08,
+  "maxSlide": 0.0003455033447886267,
+  "environmentChecks": 4858128,
+  "cameraChecks": 73608,
+  "errors": []
+}

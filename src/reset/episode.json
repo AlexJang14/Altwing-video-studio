@@ -1,0 +1,265 @@
+{
+  "series": "THE LAST WING",
+  "title": "DON'T OPEN THE DOOR",
+  "duration": 70,
+  "fps": 30,
+  "file": "the-last-wing-ep01-dont-open-the-door-final.mp4",
+  "composition": "Reset-Episode1",
+  "shots": [
+    {
+      "at": 0,
+      "end": 1.3,
+      "name": "Three knocks",
+      "set": "station",
+      "lens": "Damaged door close-up"
+    },
+    {
+      "at": 1.3,
+      "end": 3,
+      "name": "Turn toward the sound",
+      "set": "station",
+      "lens": "Corridor reaction"
+    },
+    {
+      "at": 3,
+      "end": 5.2,
+      "name": "A call for help",
+      "set": "space",
+      "lens": "Small ship and large station"
+    },
+    {
+      "at": 5.2,
+      "end": 6.6,
+      "name": "HELP",
+      "set": "ship",
+      "lens": "Cockpit message"
+    },
+    {
+      "at": 6.6,
+      "end": 8,
+      "name": "Dock",
+      "set": "space",
+      "lens": "Docking mechanism"
+    },
+    {
+      "at": 8,
+      "end": 10.4,
+      "name": "Meet Wangdoo",
+      "set": "ship",
+      "lens": "Warm plush portrait"
+    },
+    {
+      "at": 10.4,
+      "end": 12.7,
+      "name": "Check his pack",
+      "set": "ship",
+      "lens": "Crouched contact with clear silhouettes"
+    },
+    {
+      "at": 12.7,
+      "end": 15,
+      "name": "A simple map",
+      "set": "ship",
+      "lens": "Scanner route and looking up"
+    },
+    {
+      "at": 15,
+      "end": 17.8,
+      "name": "Enter the station",
+      "set": "station",
+      "lens": "Opening airlock"
+    },
+    {
+      "at": 17.8,
+      "end": 20.4,
+      "name": "Everyone is gone",
+      "set": "station",
+      "lens": "Flashlight point of view"
+    },
+    {
+      "at": 20.4,
+      "end": 22,
+      "name": "Life left behind",
+      "set": "station",
+      "lens": "Mug, photo, running equipment"
+    },
+    {
+      "at": 22,
+      "end": 24,
+      "name": "Wangdoo freezes",
+      "set": "station",
+      "lens": "Small nervous reaction"
+    },
+    {
+      "at": 24,
+      "end": 27,
+      "name": "The same door",
+      "set": "station",
+      "lens": "Over the shoulder"
+    },
+    {
+      "at": 27,
+      "end": 31,
+      "name": "No one detected",
+      "set": "station",
+      "lens": "Scanner passes across the door"
+    },
+    {
+      "at": 31,
+      "end": 34,
+      "name": "Reach, then stop",
+      "set": "station",
+      "lens": "Hand approaches door control"
+    },
+    {
+      "at": 34,
+      "end": 36.7,
+      "name": "Scanner error",
+      "set": "station",
+      "lens": "Worried companion lowers scanner"
+    },
+    {
+      "at": 36.7,
+      "end": 39,
+      "name": "Thirty seconds to open",
+      "set": "station",
+      "lens": "Guarded manual wheel"
+    },
+    {
+      "at": 39,
+      "end": 41,
+      "name": "A wrist alarm",
+      "set": "station",
+      "lens": "Live ship feed opens"
+    },
+    {
+      "at": 41,
+      "end": 45,
+      "name": "Someone is inside",
+      "set": "station",
+      "lens": "Actual recognizable cockpit security camera"
+    },
+    {
+      "at": 45,
+      "end": 52,
+      "name": "Your only way home",
+      "set": "station",
+      "lens": "Both paths and two deliberate looks"
+    },
+    {
+      "at": 52,
+      "end": 60.25,
+      "name": "Your choice",
+      "set": "station",
+      "lens": "Live hesitation, timer and knocking"
+    },
+    {
+      "at": 60.25,
+      "end": 70,
+      "name": "What if your tools fail?",
+      "set": "station",
+      "lens": "Scanner glass becomes an authentic AltWing challenge"
+    }
+  ],
+  "narration": [
+    {
+      "at": 0.18,
+      "until": 3,
+      "text": "Someone in space is asking for help."
+    },
+    {
+      "at": 3.18,
+      "until": 7.85,
+      "text": "It's your first rescue mission. You came to find out what happened."
+    },
+    {
+      "at": 8.22,
+      "until": 14.05,
+      "text": "Luckily, you brought Wangdoo. He helps explorers find their way."
+    },
+    {
+      "at": 15.35,
+      "until": 21.35,
+      "text": "The lights are on. The rooms are warm. But everyone is gone."
+    },
+    {
+      "at": 22.18,
+      "until": 23.95,
+      "text": "Then you hear it."
+    },
+    {
+      "at": 27.1,
+      "until": 31.45,
+      "text": "Wangdoo checks the room. His scanner finds nobody."
+    },
+    {
+      "at": 34.0,
+      "until": 39.1,
+      "text": "But someone keeps knocking. And Wangdoo's scanner just stopped working."
+    },
+    {
+      "at": 39.25,
+      "until": 44.75,
+      "text": "Then you check your ship's camera. Someone is inside."
+    },
+    {
+      "at": 45.18,
+      "until": 51.65,
+      "text": "Your ship is about to leave. And opening that door could take too long."
+    },
+    {
+      "at": 52.18,
+      "until": 56.95,
+      "text": "Do you open the door? Or run back to your ship?"
+    },
+    {
+      "at": 57.25,
+      "until": 59.35,
+      "text": "Comment A or B."
+    },
+    {
+      "at": 60.45,
+      "until": 64.18,
+      "text": "Wangdoo can guide you. But the decision is yours."
+    },
+    {
+      "at": 64.22,
+      "until": 69.9,
+      "text": "Engineers face problems like this. Explore how they solve them on AltWing."
+    }
+  ],
+  "choices": [
+    {
+      "key": "A",
+      "title": "OPEN THE DOOR",
+      "cost": "Someone might need you.",
+      "direction": "door"
+    },
+    {
+      "key": "B",
+      "title": "RUN BACK TO THE SHIP",
+      "cost": "Don't lose your only way home.",
+      "direction": "ship"
+    }
+  ],
+  "departure": {
+    "starts": 45,
+    "seconds": 30
+  },
+  "brand": {
+    "name": "AltWing",
+    "url": "https://junjang06.github.io/altwing/#/",
+    "activity": "Lost Sensor",
+    "tagline": "Find your own wings.",
+    "verbs": "Explore. Experiment. Build.",
+    "cta": "LINK IN BIO"
+  },
+  "voice": {
+    "engine": "Local Kokoro ONNX",
+    "voice": "am_michael",
+    "language": "en-us",
+    "referenceAudioAccess": "Unavailable; no claim of listening or imitation.",
+    "charactersSpeak": false
+  },
+  "scope": "Only this Episode 1. Prior films preserved. No future episode rendered."
+}
