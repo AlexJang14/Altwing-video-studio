@@ -1,0 +1,7 @@
+{
+  "source": "Final continuous AAC mix measured with ffmpeg loudnorm; no human-by-ear audition claimed",
+  "integratedLUFS": -16.6,
+  "truePeakDBTP": -1.52,
+  "loudnessRangeLU": 7.4,
+  "clippingDetected": false
+}

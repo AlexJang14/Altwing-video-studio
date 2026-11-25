@@ -8,7 +8,7 @@ for i,t in enumerate(times):
  p=frames/f'{t:05.2f}.jpg';subprocess.run(['ffmpeg','-v','error','-y','-ss',str(t),'-i',str(film),'-frames:v','1','-vf',f'scale={w}:{h}',str(p)],check=True);im=Image.open(p).convert('RGB');x=i%4*w;y=i//4*(h+34);sheet.paste(im,(x,y));draw.text((x+10,y+h+9),f'{t:05.2f} s',(231,224,207),font=font)
 sheet.save(out/f'episode1-contact-sheet-{mode}.jpg',quality=90);print(out/f'episode1-contact-sheet-{mode}.jpg')
 # Preserve each of the four independent reference views and combine them for review.
-folder=ROOT/'work/empty-room/characters'
+folder=ROOT/'docs/empty-room/characters'
 if folder.exists():
  gallery=Image.new('RGB',(1080,1350),(16,18,22))
  for i,n in enumerate(['front','three-quarter','beside-astronaut','ship-lighting']):

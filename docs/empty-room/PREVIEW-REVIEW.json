@@ -1,0 +1,45 @@
+{
+  "fullPreview": {
+    "run": 45539669907,
+    "durationSeconds": 68,
+    "resolution": [
+      540,
+      960
+    ],
+    "frameCount": 2040,
+    "fullyDecoded": true,
+    "contactSheetFramesInspected": 24
+  },
+  "focusedCorrectionReview": {
+    "run": 45705882562,
+    "timesSeconds": [
+      8.8,
+      32.8,
+      44.1,
+      55.6,
+      63.5,
+      67
+    ],
+    "issuesResolved": [
+      "Docking ship was obscured by the station; camera now shows the recognizable pressure hull and port.",
+      "Timer no longer exceeds30seconds; starts at the actual42.2s activation.",
+      "Native UI capture follows its actual region after keyboard focus scroll; film uses contain so no real labels or values are cropped.",
+      "Scanner failure narration/subtitle starts with the visible error."
+    ],
+    "actualAllSixFramesViewed": true
+  },
+  "characterComparison": {
+    "fourActualViewsInspected": true,
+    "modelsModifiedDuringResume": false,
+    "missingPhoto": "No image attachment arrived in the message or accessible workspace. Exact photographic likeness remains UNVERIFIED."
+  },
+  "artifactIntegrity": "All downloaded Actions ZIP SHA256 digests matched their server-provided values.",
+  "websiteChanged": false,
+  "productCapture": {
+    "officialURL": "https://altwing.org/#/aerospace-build?wing=gnc",
+    "isolatedBrowser": true,
+    "analyticsOptedOut": true,
+    "productionWrites": 0
+  },
+  "scope": "Complete only68-second Episode1; no separate web player or further episodes."
+}

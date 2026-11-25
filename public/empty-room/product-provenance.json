@@ -1,6 +1,6 @@
 {
   "officialURL": "https://altwing.org/#/aerospace-build?wing=gnc",
-  "capturedAtUTC": "2026-11-25T03:25:11.768Z",
+  "capturedAtUTC": "2026-11-25T21:37:19.767Z",
   "source": "Actual published AltWing V1, unmodified public frontend",
   "lab": "Lost Sensor",
   "productionWrites": 0,
@@ -13,7 +13,7 @@
       "allowed": true
     },
     {
-      "url": "https://altwing.org/assets/index-X-84DX9_.js",
+      "url": "https://altwing.org/assets/index-CoUk-JRr.js",
       "method": "GET",
       "allowed": true
     },
@@ -33,7 +33,7 @@
       "allowed": true
     },
     {
-      "url": "https://altwing.org/assets/BuildEngine-DSksAb9O.js",
+      "url": "https://altwing.org/assets/BuildEngine-C76zeaYC.js",
       "method": "GET",
       "allowed": true
     },
@@ -43,12 +43,12 @@
       "allowed": true
     },
     {
-      "url": "https://altwing.org/assets/CosmicPackVault-f0WJuhZW.js",
+      "url": "https://altwing.org/assets/CosmicPackVault-CsKxZ3-5.js",
       "method": "GET",
       "allowed": true
     },
     {
-      "url": "https://altwing.org/assets/useDialogFocus-B3gB27Zz.js",
+      "url": "https://altwing.org/assets/useDialogFocus-LVCr6ORH.js",
       "method": "GET",
       "allowed": true
     },
@@ -73,12 +73,12 @@
       "allowed": true
     },
     {
-      "url": "https://altwing.org/brand/altwing-penguin.png",
+      "url": "https://altwing.org/favicon.svg",
       "method": "GET",
       "allowed": true
     },
     {
-      "url": "https://altwing.org/favicon.svg",
+      "url": "https://altwing.org/brand/altwing-penguin.png",
       "method": "GET",
       "allowed": true
     }
@@ -91,7 +91,13 @@
         "20",
         "30"
       ],
-      "estimate": "1497 m"
+      "estimate": "1497 m",
+      "clip": {
+        "x": 61,
+        "y": 623,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 1,
@@ -100,7 +106,13 @@
         "20",
         "30"
       ],
-      "estimate": "1499 m"
+      "estimate": "1499 m",
+      "clip": {
+        "x": 61,
+        "y": 532,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 2,
@@ -109,7 +121,13 @@
         "20",
         "30"
       ],
-      "estimate": "1500 m"
+      "estimate": "1500 m",
+      "clip": {
+        "x": 61,
+        "y": 512,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 3,
@@ -118,7 +136,13 @@
         "20",
         "30"
       ],
-      "estimate": "1502 m"
+      "estimate": "1502 m",
+      "clip": {
+        "x": 61,
+        "y": 501,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 4,
@@ -127,7 +151,13 @@
         "20",
         "30"
       ],
-      "estimate": "1504 m"
+      "estimate": "1504 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 5,
@@ -136,7 +166,13 @@
         "20",
         "30"
       ],
-      "estimate": "1506 m"
+      "estimate": "1506 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 6,
@@ -145,7 +181,13 @@
         "20",
         "30"
       ],
-      "estimate": "1508 m"
+      "estimate": "1508 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 7,
@@ -154,7 +196,13 @@
         "20",
         "30"
       ],
-      "estimate": "1510 m"
+      "estimate": "1510 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 8,
@@ -163,7 +211,13 @@
         "20",
         "30"
       ],
-      "estimate": "1512 m"
+      "estimate": "1512 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 9,
@@ -172,7 +226,13 @@
         "20",
         "30"
       ],
-      "estimate": "1514 m"
+      "estimate": "1514 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 10,
@@ -181,7 +241,13 @@
         "20",
         "30"
       ],
-      "estimate": "1516 m"
+      "estimate": "1516 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 11,
@@ -190,7 +256,13 @@
         "20",
         "30"
       ],
-      "estimate": "1519 m"
+      "estimate": "1519 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 12,
@@ -199,7 +271,13 @@
         "20",
         "30"
       ],
-      "estimate": "1521 m"
+      "estimate": "1521 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 13,
@@ -208,7 +286,13 @@
         "20",
         "30"
       ],
-      "estimate": "1524 m"
+      "estimate": "1524 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 14,
@@ -217,7 +301,13 @@
         "20",
         "30"
       ],
-      "estimate": "1527 m"
+      "estimate": "1527 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 15,
@@ -226,7 +316,13 @@
         "20",
         "30"
       ],
-      "estimate": "1530 m"
+      "estimate": "1530 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 16,
@@ -235,7 +331,13 @@
         "20",
         "30"
       ],
-      "estimate": "1533 m"
+      "estimate": "1533 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 17,
@@ -244,7 +346,13 @@
         "20",
         "30"
       ],
-      "estimate": "1537 m"
+      "estimate": "1537 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 18,
@@ -253,7 +361,13 @@
         "20",
         "30"
       ],
-      "estimate": "1540 m"
+      "estimate": "1540 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 19,
@@ -262,7 +376,13 @@
         "20",
         "30"
       ],
-      "estimate": "1540 m"
+      "estimate": "1540 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 20,
@@ -271,7 +391,13 @@
         "22",
         "30"
       ],
-      "estimate": "1544 m"
+      "estimate": "1544 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 21,
@@ -280,7 +406,13 @@
         "24",
         "30"
       ],
-      "estimate": "1548 m"
+      "estimate": "1548 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 22,
@@ -289,7 +421,13 @@
         "26",
         "30"
       ],
-      "estimate": "1551 m"
+      "estimate": "1551 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 23,
@@ -298,7 +436,13 @@
         "28",
         "30"
       ],
-      "estimate": "1555 m"
+      "estimate": "1555 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 24,
@@ -307,7 +451,13 @@
         "30",
         "30"
       ],
-      "estimate": "1558 m"
+      "estimate": "1558 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 25,
@@ -316,7 +466,13 @@
         "32",
         "30"
       ],
-      "estimate": "1561 m"
+      "estimate": "1561 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 26,
@@ -325,7 +481,13 @@
         "34",
         "30"
       ],
-      "estimate": "1564 m"
+      "estimate": "1564 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 27,
@@ -334,7 +496,13 @@
         "36",
         "30"
       ],
-      "estimate": "1566 m"
+      "estimate": "1566 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 28,
@@ -343,7 +511,13 @@
         "38",
         "30"
       ],
-      "estimate": "1569 m"
+      "estimate": "1569 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 29,
@@ -352,7 +526,13 @@
         "40",
         "30"
       ],
-      "estimate": "1571 m"
+      "estimate": "1571 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 30,
@@ -361,7 +541,13 @@
         "42",
         "30"
       ],
-      "estimate": "1573 m"
+      "estimate": "1573 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 31,
@@ -370,7 +556,13 @@
         "44",
         "30"
       ],
-      "estimate": "1576 m"
+      "estimate": "1576 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 32,
@@ -379,7 +571,13 @@
         "46",
         "30"
       ],
-      "estimate": "1578 m"
+      "estimate": "1578 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 33,
@@ -388,7 +586,13 @@
         "48",
         "30"
       ],
-      "estimate": "1580 m"
+      "estimate": "1580 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 34,
@@ -397,7 +601,13 @@
         "50",
         "30"
       ],
-      "estimate": "1582 m"
+      "estimate": "1582 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 35,
@@ -406,7 +616,13 @@
         "52",
         "30"
       ],
-      "estimate": "1584 m"
+      "estimate": "1584 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 36,
@@ -415,7 +631,13 @@
         "54",
         "30"
       ],
-      "estimate": "1585 m"
+      "estimate": "1585 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 37,
@@ -424,7 +646,13 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 38,
@@ -433,7 +661,13 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 39,
@@ -442,7 +676,13 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 40,
@@ -451,7 +691,13 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 41,
@@ -460,7 +706,13 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 42,
@@ -469,7 +721,13 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 43,
@@ -478,7 +736,13 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 44,
@@ -487,7 +751,13 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 45,
@@ -496,7 +766,13 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 46,
@@ -505,7 +781,13 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     },
     {
       "frame": 47,
@@ -514,16 +796,22 @@
         "56",
         "30"
       ],
-      "estimate": "1587 m"
+      "estimate": "1587 m",
+      "clip": {
+        "x": 61,
+        "y": 500,
+        "width": 778,
+        "height": 566
+      }
     }
   ],
   "fictionalDoorScenePlayable": false,
   "actualLabText": "ARES-9 · DESCENT NAVIGATION\nThree estimates. One spacecraft.\n\nSeconds before a descent maneuver, the spacecraft's altitude sources disagree. Decide how much confidence to give each source.\n\nSIMPLIFIED LEARNING MODEL\n\nThis is a fictional sensor-fusion exercise, not a NASA flight navigation algorithm or Kalman filter. It demonstrates the idea of combining multiple uncertain navigation inputs.\n\nRADAR\n1,420 m\n\nDirect altitude measurement, but dust and terrain can affect observations.\n\nINERTIAL\n1,670 m\n\nMotion-based estimate. Small accumulated errors can grow over time.\n\nTRAJECTORY MODEL\n1,510 m\n\nWhere the spacecraft was predicted to be before the disagreement appeared.\n\nTRUST RADAR\n50\nTRUST INERTIAL\n20\nTRUST MODEL\n30\nYOUR CURRENT ESTIMATE\n1497 m\nRUN NAVIGATION ESTIMATE →",
   "clip": {
     "x": 61,
-    "y": 650,
+    "y": 723,
     "width": 778,
-    "height": 606
+    "height": 566
   },
   "video": "altwing-lost-sensor.mp4",
   "browser": "157.0.8103.78"

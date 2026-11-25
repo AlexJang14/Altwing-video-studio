@@ -1,5 +1,5 @@
 {
-  "mode": "qa",
+  "mode": "final",
   "episode": 1,
   "title": "THE EMPTY ROOM",
   "duration": 68,
@@ -12,7 +12,15 @@
   "productionWebsiteReadOnly": true,
   "priorFilmsPreserved": true,
   "request": "Complete full episode; intermediate checks are internal, not approval stops.",
-  "recaptureProduct": true,
+  "recaptureProduct": false,
   "checkpoint": "Full68-second preview completed in45539669907. Fix only timer, docking framing, real-UI capture/crop and scanner narration alignment. No timeline rewrite or separate player.",
-  "workflowMetadataShellValidated": true
+  "workflowMetadataShellValidated": true,
+  "finalResolution": [
+    1080,
+    1920
+  ],
+  "reviewedFullPreviewRun": 45539669907,
+  "reviewedCorrectionsRun": 45705882562,
+  "originalReferencePhotoAvailable": false,
+  "sourceFrozenForFinal": true
 }
