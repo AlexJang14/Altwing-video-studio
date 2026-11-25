@@ -1,0 +1,162 @@
+[
+  {
+    "at": 0.06,
+    "end": 1.169333,
+    "duration": 1.1093333333333333,
+    "text": "Someone's knocking.",
+    "file": "empty-room/voice/00-00.wav",
+    "synthesisSpeed": 1.1085529782732069
+  },
+  {
+    "at": 1.289333,
+    "end": 3.342125,
+    "duration": 2.052791666666667,
+    "text": "But the scanner says that room is empty.",
+    "file": "empty-room/voice/00-01.wav",
+    "synthesisSpeed": 1.1085529782732069
+  },
+  {
+    "at": 3.65,
+    "end": 6.41825,
+    "duration": 2.76825,
+    "text": "You came here to rescue a missing astronaut.",
+    "file": "empty-room/voice/01-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 6.59825,
+    "end": 8.841708,
+    "duration": 2.2434583333333333,
+    "text": "But when you arrived, something was wrong.",
+    "file": "empty-room/voice/01-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 10.15,
+    "end": 13.072667,
+    "duration": 2.9226666666666667,
+    "text": "This is Wangdoo. Your tiny AI guide.",
+    "file": "empty-room/voice/02-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 13.252667,
+    "end": 15.78525,
+    "duration": 2.532583333333333,
+    "text": "He helps you explore, but you make the choices.",
+    "file": "empty-room/voice/02-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 17.45,
+    "end": 19.968542,
+    "duration": 2.5185416666666667,
+    "text": "The lights are on. The rooms are warm.",
+    "file": "empty-room/voice/03-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 20.148542,
+    "end": 21.592,
+    "duration": 1.4434583333333333,
+    "text": "But everyone is gone.",
+    "file": "empty-room/voice/03-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 27.15,
+    "end": 29.953792,
+    "duration": 2.8037916666666667,
+    "text": "Wangdoo checks the room. Nobody's there.",
+    "file": "empty-room/voice/04-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 30.133792,
+    "end": 31.824875,
+    "duration": 1.6910833333333333,
+    "text": "Then the scanner stops working.",
+    "file": "empty-room/voice/04-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 36.5,
+    "end": 38.209208,
+    "duration": 1.7092083333333334,
+    "text": "Then you check your ship's camera.",
+    "file": "empty-room/voice/05-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 38.389208,
+    "end": 39.830125,
+    "duration": 1.4409166666666666,
+    "text": "Someone is inside.",
+    "file": "empty-room/voice/05-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 46.2,
+    "end": 47.960833,
+    "duration": 1.7608333333333333,
+    "text": "Your ship is about to leave.",
+    "file": "empty-room/voice/06-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 48.140833,
+    "end": 50.303667,
+    "duration": 2.1628333333333334,
+    "text": "And someone might still need your help.",
+    "file": "empty-room/voice/06-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 54.1,
+    "end": 55.487,
+    "duration": 1.387,
+    "text": "Do you open the door?",
+    "file": "empty-room/voice/07-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 55.607,
+    "end": 57.137458,
+    "duration": 1.5304583333333333,
+    "text": "Or run back to your ship?",
+    "file": "empty-room/voice/07-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 58.75,
+    "end": 60.057958,
+    "duration": 1.3079583333333333,
+    "text": "Comment A or B.",
+    "file": "empty-room/voice/08-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 61.02,
+    "end": 62.498458,
+    "duration": 1.4784583333333334,
+    "text": "Wangdoo can guide you.",
+    "file": "empty-room/voice/09-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 62.618458,
+    "end": 64.164708,
+    "duration": 1.54625,
+    "text": "But the choice is yours.",
+    "file": "empty-room/voice/09-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 64.65,
+    "end": 67.841708,
+    "duration": 3.191708333333333,
+    "text": "Try making those decisions yourself on AltWing.",
+    "file": "empty-room/voice/10-00.wav",
+    "synthesisSpeed": 0.99
+  }
+]

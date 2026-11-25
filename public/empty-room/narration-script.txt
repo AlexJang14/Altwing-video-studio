@@ -1,0 +1,20 @@
+0.060–1.169 Someone's knocking.
+1.289–3.342 But the scanner says that room is empty.
+3.650–6.418 You came here to rescue a missing astronaut.
+6.598–8.842 But when you arrived, something was wrong.
+10.150–13.073 This is Wangdoo. Your tiny AI guide.
+13.253–15.785 He helps you explore, but you make the choices.
+17.450–19.969 The lights are on. The rooms are warm.
+20.149–21.592 But everyone is gone.
+27.150–29.954 Wangdoo checks the room. Nobody's there.
+30.134–31.825 Then the scanner stops working.
+36.500–38.209 Then you check your ship's camera.
+38.389–39.830 Someone is inside.
+46.200–47.961 Your ship is about to leave.
+48.141–50.304 And someone might still need your help.
+54.100–55.487 Do you open the door?
+55.607–57.137 Or run back to your ship?
+58.750–60.058 Comment A or B.
+61.020–62.498 Wangdoo can guide you.
+62.618–64.165 But the choice is yours.
+64.650–67.842 Try making those decisions yourself on AltWing.

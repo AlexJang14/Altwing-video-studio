@@ -1,0 +1,666 @@
+# THE LAST WING — EPISODE 1: THE EMPTY ROOM
+## Final Production Brief for AltWing Version 1
+
+You are the creative director, suspense screenwriter, 3D character artist, cinematographer, motion designer, sound designer, short-form video strategist, and senior Remotion engineer for THE LAST WING.
+
+Your task is to **produce one exceptional, fully rendered animated Instagram Reel and YouTube Short** that entertains viewers and motivates them to explore the real AltWing website.
+
+This is an implementation assignment, not a request for another plan.
+
+**Prioritize one excellent Episode 1. Do not produce Episode 2 or Episode 3.**
+
+## 1. Project context
+
+Video production repository:
+
+`AlexJang14/Altwing-video-studio`
+
+Actual platform:
+
+https://altwing.org
+
+Production website source:
+
+`AlexJang14/altwing-production`
+
+The video studio already contains animation work on branches such as `render/rescue-episode1` and `render/rescue-episodes23`. Inspect the existing branches and use the most relevant working implementation. The default `main` branch may not contain the complete animation application.
+
+Preserve existing work in Git.
+
+Create a dedicated working branch for this new episode.
+
+The production website repository must be treated as READ-ONLY. Do not change, deploy, or publish the AltWing website.
+
+## 2. Why this video exists
+
+AltWing V1 is a real platform for students to explore engineering, investigate their interests, try interactive challenges, and build projects.
+
+The website includes:
+
+- Find My Wing: eight decision scenarios.
+- Explore Engineering.
+- Six aerospace engineering labs.
+- Three starter projects.
+- My Universe and progress-based rewards.
+- Engineering-related college and program information.
+
+Do not make AltWing look like a fictional space-survival video game.
+
+The Last Wing is an original entertainment series inspired by AltWing's philosophy.
+
+Wangdoo represents a guide who helps explorers understand their options and discover their abilities.
+
+The astronaut represents a young explorer learning to make decisions independently.
+
+The video should create this emotional connection:
+
+**Wangdoo helps you explore. You decide your path.**
+
+The immediate marketing goal is to convert interested viewers into visitors who try the actual Lost Sensor Lab or Find My Wing experience.
+
+## 3. Creative direction
+
+Genre: accessible, cinematic, interactive space-survival mystery.
+
+Length: approximately 68 seconds.
+
+Target audience: teenagers and young adults, including people with no previous interest in engineering.
+
+Visual style: polished, atmospheric 3D animated game cinematic.
+
+Tone: exciting, mysterious, slightly frightening, occasionally charming.
+
+Storytelling: simple enough for a ten-year-old to follow.
+
+Avoid complicated science-fiction lore, technical jargon, multiple timelines, unexplained technology, and excessive mission data.
+
+A single episode must contain:
+
+- One instantly understandable opening mystery.
+- A clear reason for the protagonist's presence.
+- A memorable introduction to Wangdoo.
+- Increasing suspense.
+- A surprising visual reveal.
+- One urgent decision.
+- Two choices with different consequences.
+- A meaningful connection to a real AltWing experience.
+
+Do not copy existing survival-animation creators' characters, scenes, scripts, or visual designs.
+
+## 4. Mandatory Wangdoo character reference
+
+Use the supplied photograph of my actual gray-and-white penguin plush as the definitive reference.
+
+Inspect it before creating or modifying the character.
+
+Wangdoo should have:
+
+- A large, rounded light-gray head.
+- Soft white cheeks.
+- Small closed, curved smiling eyes.
+- Small pale-yellow beak.
+- Large white belly.
+- Gray hanging flippers.
+- Short pale-yellow feet.
+- A soft, cuddly, plush-like silhouette.
+- Gentle fabric materials and subtle surface texture.
+
+He should look adorable and immediately recognizable.
+
+Not metallic. Not egg-shaped. Not a generic robot. Not an assembly of visibly intersecting primitives.
+
+Wangdoo is a small AI exploration companion with a removable miniature scanner and backpack.
+
+He communicates through body language and equipment indicators.
+
+He does not speak.
+
+Design a consistent 3D model and appropriate rig.
+
+Create an actual reference comparison preview before committing to animation.
+
+At minimum, render:
+
+1. Front view.
+2. Three-quarter view.
+3. Side-by-side with the astronaut.
+4. A close-up under spaceship lighting.
+
+Correct poor resemblance, proportions, shading, or facial appearance before proceeding.
+
+Do not claim the reference has been matched without examining the rendered result.
+
+## 5. Astronaut design
+
+Create a mysterious but believable astronaut wearing a completely matte-black futuristic spacesuit.
+
+The character should have:
+
+- Realistic humanoid proportions.
+- Black helmet and reflective visor.
+- No visible face.
+- Flexible dark fabric around joints.
+- Detailed gloves and boots.
+- Functional life-support backpack.
+- Restrained cyan equipment indicators.
+- Natural walking, reaching, running, and reacting animations.
+
+The astronaut must remain predominantly black.
+
+Use carefully placed rim lighting to make the silhouette visible.
+
+Avoid toy-like proportions, stiff limbs, floating feet, and overly simplified geometry.
+
+## 6. Production environment
+
+Reuse existing working Remotion and Three.js infrastructure.
+
+Target:
+
+- 1080 × 1920.
+- 9:16 vertical.
+- 30 FPS.
+- H.264 MP4.
+- One consistent English narrator.
+- Cinematic environmental audio.
+- Clear English subtitles.
+
+Improve environmental detail and lighting rather than relying on excessive effects.
+
+Spaceship and station interiors should feature:
+
+- Believable metallic structural details.
+- Practical lighting.
+- Research equipment.
+- Human belongings.
+- Worn flooring.
+- Mechanical doors.
+- Distinct corridors.
+- Security cameras.
+- Directional flashlight beams.
+
+The station should appear recently abandoned.
+
+Do not build a generic blue hallway filled with decorative glowing rectangles.
+
+## 7. Narration
+
+Use one natural, engaging English narrator throughout.
+
+Reference for broad pacing and storytelling approach:
+
+https://www.youtube.com/watch?v=l6p_Np_-GxQ
+
+Do not imitate or clone a specific person's recognizable voice without authorization.
+
+Use an original, licensed, conversational American English voice.
+
+The narrator should sound like someone telling an interesting story to a friend.
+
+Not a movie trailer announcer.
+
+Not an exaggerated robotic narrator.
+
+Use second-person storytelling.
+
+Avoid technical vocabulary.
+
+Example:
+
+"The scanner says nobody is there. But someone keeps knocking."
+
+Do not replace it with complicated engineering language.
+
+Let suspenseful sounds and visual reveals occasionally interrupt the narration.
+
+Wangdoo and the astronaut remain nonverbal.
+
+## 8. Final Episode 1 script
+
+### 0:00–0:03 — The hook
+
+Open immediately on a locked metal door inside a dark space station.
+
+Three heavy knocks come from the other side.
+
+Wangdoo's scanner displays:
+
+"NO ONE DETECTED."
+
+The astronaut slowly turns toward the door.
+
+Narrator:
+
+"Someone's knocking. But the scanner says that room is empty."
+
+Cut sharply to the events leading to this moment.
+
+### 0:03–0:10 — Why you're here
+
+Show a small rescue spacecraft approaching the station.
+
+A distress message reads:
+
+"HELP."
+
+The astronaut checks a simple rescue assignment and docks.
+
+Narrator:
+
+"You came here to rescue a missing astronaut. But when you arrived, something was wrong."
+
+Make the rescue purpose visually unambiguous.
+
+### 0:10–0:17 — Meet Wangdoo
+
+Introduce Wangdoo inside the rescue spacecraft.
+
+Use an attractive close-up of his rounded face.
+
+Wangdoo waddles to the astronaut and activates his tiny scanner.
+
+The astronaut gently checks Wangdoo's backpack.
+
+Narrator:
+
+"This is Wangdoo. Your tiny AI guide. He helps you explore, but you make the choices."
+
+Communicate their friendship through natural gestures.
+
+### 0:17–0:27 — The station
+
+The astronaut and Wangdoo explore the station.
+
+Lights remain on.
+
+A cup sits on a desk.
+
+A chair has fallen over.
+
+Personal belongings remain behind.
+
+But no one is there.
+
+Narrator:
+
+"The lights are on. The rooms are warm. But everyone is gone."
+
+The astronaut notices a door at the end of the corridor.
+
+Wangdoo stops walking.
+
+The three knocks return.
+
+### 0:27–0:36 — Something isn't right
+
+The astronaut approaches the door.
+
+Wangdoo scans the room.
+
+"NO ONE DETECTED."
+
+Another knock.
+
+The scanner flickers.
+
+"SCANNER ERROR."
+
+Wangdoo steps backward and looks at the astronaut.
+
+Narrator:
+
+"Wangdoo checks the room. Nobody's there. Then the scanner stops working."
+
+The astronaut reaches toward the manual door control.
+
+The door display says:
+
+"MANUAL RELEASE: 30 SECONDS."
+
+### 0:36–0:46 — The plot twist
+
+A warning sounds from the astronaut's wrist.
+
+He opens a live security camera feed from his rescue spacecraft.
+
+Show the same recognizable cockpit from the opening.
+
+An unidentified person enters the cockpit and activates the departure system.
+
+Narrator:
+
+"Then you check your ship's camera. Someone is inside."
+
+Display:
+
+"DEPARTURE IN 30 SECONDS."
+
+The astronaut looks in disbelief.
+
+The camera briefly shows the figure turning toward the security camera.
+
+Do not reveal its identity.
+
+### 0:46–0:54 — The impossible situation
+
+The astronaut looks toward the route back to the ship.
+
+Then toward the locked door.
+
+The knocking continues.
+
+Wangdoo displays both routes on a simple map.
+
+One leads toward the ship.
+
+One leads through the locked door.
+
+Narrator:
+
+"Your ship is about to leave. And someone might still need your help."
+
+The astronaut cannot investigate both before departure.
+
+Make this spatial and time constraint clear.
+
+### 0:54–1:01 — Audience decision
+
+Show a strong cinematic composition:
+
+Left: locked rescue door.
+
+Right: corridor leading to the ship.
+
+The astronaut and Wangdoo stand between them.
+
+Display:
+
+A — OPEN THE DOOR
+
+Someone might need rescuing.
+
+B — SAVE YOUR SHIP
+
+Don't lose your only way home.
+
+Narrator:
+
+"Do you open the door? Or run back to your ship?"
+
+Then:
+
+"Comment A or B."
+
+Hold the choices while the countdown continues.
+
+Make viewers genuinely hesitate.
+
+Do not resolve the decision.
+
+### 1:01–1:08 — AltWing connection
+
+Transition directly from Wangdoo's failed scanner.
+
+Narrator:
+
+"Wangdoo can guide you. But the choice is yours."
+
+Display the question:
+
+"WHAT IF YOUR SENSORS ARE WRONG?"
+
+Then:
+
+"That's a challenge engineers face, too."
+
+Transition into authentic footage of AltWing's Lost Sensor Lab.
+
+Show a real interaction where different sensor estimates are compared and adjusted.
+
+Narrator:
+
+"Try making those decisions yourself on AltWing."
+
+Final screen:
+
+"ALTWING"
+
+"EXPLORE. EXPERIMENT. BUILD."
+
+"YOUR PATH. YOUR PACE."
+
+"altwing.org"
+
+"LINK IN BIO"
+
+Keep the final visual clean and recognizable.
+
+The story must lead naturally to the real platform.
+
+## 9. Actual AltWing integration
+
+Use only genuine product assets from the AltWing production repository or authorized browser recordings.
+
+Relevant real URL:
+
+https://altwing.org/#/aerospace-build?wing=gnc
+
+The GNC Lost Sensor Lab is a simplified educational exercise about interpreting multiple uncertain altitude estimates.
+
+It includes radar, inertial, and trajectory-model estimates.
+
+Users can change how much confidence they assign to each source.
+
+This is thematically related to Wangdoo's unreliable scanner but not the exact same fictional survival scenario.
+
+Do not claim that the locked-door scene itself is playable on AltWing.
+
+Use authentic footage showing the real lab's sliders and results.
+
+If live capture is unavailable, inspect and run the website locally from authorized source code, then record the actual UI.
+
+Do not invent screenshots.
+
+Do not change the production website.
+
+Do not use any administrator dashboard, private user data, or analytics screens in promotional footage.
+
+## 10. Visual quality controls
+
+Avoid the weaknesses observed in earlier versions:
+
+- Unattractive penguin model.
+- Flat, plastic-looking materials.
+- Stiff astronaut animation.
+- Repeated frontal character shots.
+- Empty-looking spaceship environments.
+- Poorly timed camera cuts.
+- Unreadable text.
+- Characters passing through each other.
+- Excessively dark images.
+- Unclear scene geography.
+
+Use real cinematic compositions rather than generic motion graphics.
+
+Emphasize:
+
+- Close-up emotional reactions.
+- Genuine depth and lighting.
+- Believable walking and running.
+- Meaningful character interaction.
+- Environmental suspense.
+- Strong camera framing.
+- Natural sound effects.
+- A visually clear plot twist.
+
+## 11. Collision and animation validation
+
+Wangdoo and the astronaut must never unintentionally pass through each other.
+
+Use appropriate collision bounds and independently coordinated movement paths.
+
+Validate:
+
+- Character-body separation.
+- Flipper and leg clearance.
+- Foot placement.
+- Door interaction.
+- Floor contact.
+- Movement around corridors.
+- Safe screen-space silhouettes.
+
+Test movement between keyframes, not just at keyframes.
+
+Create coordinated animations for intentional contact.
+
+Avoid teleporting character positions.
+
+## 12. Audio direction
+
+Create a suspenseful but restrained soundtrack.
+
+Use:
+
+- Mechanical station ambience.
+- Heavy footsteps.
+- Wangdoo's gentle waddling.
+- Three recognizable metal knocks.
+- Scanner sounds.
+- Scanner failure distortion.
+- Security-camera interference.
+- Departure alarm.
+- Low cinematic bass.
+- Strategic silence.
+
+Do not play intense music continuously.
+
+The knocking should become a recurring recognizable sound motif.
+
+Keep voiceover audible and natural.
+
+Use properly licensed audio.
+
+Do not spend money on external generation APIs without approval.
+
+## 13. Efficient quality-gated production
+
+I have limited Codex usage and do not want another complete but disappointing episode.
+
+Use the following sequence:
+
+### Gate 1 — Character approval package
+
+Create and inspect Wangdoo reference renders.
+
+Verify that he looks like the uploaded real penguin plush.
+
+Check the astronaut's black suit.
+
+Do not spend a full final-video render on poor characters.
+
+### Gate 2 — Opening preview
+
+Build and render the first 17 seconds.
+
+Evaluate:
+
+- The hook.
+- Rescue mission clarity.
+- Wangdoo appearance.
+- Narration.
+- Environmental quality.
+- Animation.
+
+If this preview is not compelling, fix it before creating the rest of the film.
+
+### Gate 3 — Complete low-resolution episode
+
+Build all scenes.
+
+Render an approximately 540 × 960 preview.
+
+Inspect representative frames and relevant moving sequences.
+
+Verify the plot twist and final choice are understandable.
+
+### Gate 4 — Real product integration
+
+Capture and verify actual AltWing Lab footage.
+
+Check that the transition from the story into the real product is smooth.
+
+### Gate 5 — Final render
+
+Once the preview passes meaningful quality checks, render the final 1080 × 1920 MP4.
+
+Verify video duration, frame rate, audio, and playback.
+
+Do not render several full-resolution versions merely to test minor changes.
+
+Keep all useful output files accessible.
+
+## 14. Required deliverables
+
+Deliver:
+
+1. `the-last-wing-ep01-the-empty-room-final.mp4`
+2. A lower-resolution preview.
+3. Wangdoo character comparison images.
+4. A complete contact sheet.
+5. Editable Remotion project files.
+6. Narration script and timing.
+7. Original or properly licensed audio assets.
+8. The real AltWing product footage used.
+9. A concise quality-control report.
+10. An Instagram/YouTube caption and pinned comment.
+11. An Episode 2 continuity note describing what must happen under each possible vote.
+
+Do not generate Episode 2.
+
+Do not invent audience voting results.
+
+Preserve earlier video versions.
+
+Commit source changes to a reviewable branch.
+
+Do not claim that a render succeeded unless the actual MP4 exists and has been inspected.
+
+## 15. Final creative standard
+
+The audience must be able to answer:
+
+Why did the astronaut come here?
+
+Who is Wangdoo?
+
+What went wrong?
+
+Why is the scanner unreliable?
+
+Who might be inside the ship?
+
+What are the two choices?
+
+Why is AltWing worth visiting?
+
+They must understand the story without scientific knowledge.
+
+They must care about Wangdoo.
+
+They must feel suspense.
+
+They must want to participate.
+
+And they must understand that AltWing is a real place where they can explore engineering through actual challenges.
+
+The core philosophy:
+
+**Wangdoo guides. The astronaut decides. The viewer participates. AltWing helps people build the skills behind their choices.**
+
+Build an episode that is worth watching even without the promotion.
+
+Then make the promotional connection feel like a natural extension of the experience.
+
+Prioritize quality over quantity.
+
+Begin actual implementation. Do not stop at a plan.

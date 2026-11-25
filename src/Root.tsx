@@ -1,3 +1,6 @@
+import {EmptyRoomFilm}from './emptyRoom/Film';
+import {RoomCharacterGate}from './emptyRoom/CharacterGate';
+import {RoomShipLive}from './emptyRoom/ShipLive';
 import React from 'react';
 import {ResetFilm}from './reset/Film';
 import {ResetCharacterGate}from './reset/CharacterGate';
@@ -13,6 +16,9 @@ import {PlushLookdev} from './rescue/Lookdev';
 import {RescueEpisode1,RescueEpisode2,RescueEpisode3} from './rescue/Film';
 import {PlushMemory,TrainingMemory,SecurityFeed,WarningFeed} from './rescue/Assets';
 export const RemotionRoot:React.FC=()=><>
+  <Composition id="Empty-Room-Episode1" component={EmptyRoomFilm} durationInFrames={2040} fps={30} width={1080} height={1920}/>
+  <Composition id="Empty-Room-Characters" component={RoomCharacterGate} durationInFrames={120} fps={30} width={1080} height={1350}/>
+  <Composition id="Empty-Room-Ship-Live" component={RoomShipLive} durationInFrames={300} fps={30} width={960} height={720}/>
   <Composition id="Reset-Episode1" component={ResetFilm} durationInFrames={2100} fps={30} width={1080} height={1920}/>
   <Composition id="Reset-Opening" component={ResetFilm} durationInFrames={450} fps={30} width={1080} height={1920}/>
   <Composition id="Reset-Character-Gate" component={ResetCharacterGate} durationInFrames={120} fps={30} width={1080} height={1350}/>

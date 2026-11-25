@@ -1,0 +1,79 @@
+1
+00:00:00,060 --> 00:00:01,169
+Someone's knocking.
+
+2
+00:00:01,289 --> 00:00:03,342
+But the scanner says that room is empty.
+
+3
+00:00:03,650 --> 00:00:06,418
+You came here to rescue a missing astronaut.
+
+4
+00:00:06,598 --> 00:00:08,842
+But when you arrived, something was wrong.
+
+5
+00:00:10,150 --> 00:00:13,073
+This is Wangdoo. Your tiny AI guide.
+
+6
+00:00:13,253 --> 00:00:15,785
+He helps you explore, but you make the choices.
+
+7
+00:00:17,450 --> 00:00:19,969
+The lights are on. The rooms are warm.
+
+8
+00:00:20,149 --> 00:00:21,592
+But everyone is gone.
+
+9
+00:00:27,150 --> 00:00:29,954
+Wangdoo checks the room. Nobody's there.
+
+10
+00:00:30,134 --> 00:00:31,825
+Then the scanner stops working.
+
+11
+00:00:36,500 --> 00:00:38,209
+Then you check your ship's camera.
+
+12
+00:00:38,389 --> 00:00:39,830
+Someone is inside.
+
+13
+00:00:46,200 --> 00:00:47,961
+Your ship is about to leave.
+
+14
+00:00:48,141 --> 00:00:50,304
+And someone might still need your help.
+
+15
+00:00:54,100 --> 00:00:55,487
+Do you open the door?
+
+16
+00:00:55,607 --> 00:00:57,137
+Or run back to your ship?
+
+17
+00:00:58,750 --> 00:01:00,058
+Comment A or B.
+
+18
+00:01:01,020 --> 00:01:02,498
+Wangdoo can guide you.
+
+19
+00:01:02,618 --> 00:01:04,165
+But the choice is yours.
+
+20
+00:01:04,650 --> 00:01:07,842
+Try making those decisions yourself on AltWing.

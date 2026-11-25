@@ -1,0 +1,80 @@
+name: Render The Empty Room — complete Episode 1
+on:
+  push:
+    branches: [codex/the-empty-room-episode1]
+    paths: [docs/empty-room/RENDER-REQUEST.json]
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run typecheck
+      - name: Ensure local free media utilities
+        run: command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+      - name: Render four actual character comparison views
+        run: CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/render.mjs characters
+      - name: Capture actual public Lost Sensor lab or reuse verified capture
+        run: |
+          if [ ! -s public/empty-room/altwing-lost-sensor.mp4 ]; then
+            CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/capture-product.mjs
+          fi
+      - name: Render actual cockpit security-camera performance
+        run: |
+          if [ ! -s public/empty-room/ship-live.mp4 ]; then
+            CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/render.mjs ship
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: empty-room-support-assets
+          path: |
+            public/empty-room/ship-live.mp4
+            public/empty-room/altwing-lost-sensor*
+            public/empty-room/product-provenance.json
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: empty-room-character-views
+          path: work/empty-room/characters/
+          retention-days: 30
+  render:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk: [0,1,2,3,4,5,6]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - uses: actions/download-artifact@v4
+        with:
+          name: empty-room-support-assets
+          path: public/empty-room
+      - name: Render full episode consecutive range at requested native resolution
+        env:
+          CHUNK: ${{ matrix.chunk }}
+        run: |
+          MODE=$(node -p "JSON.parse(require('fs').readFileSync('docs/empty-room/RENDER-REQUEST.json')).mode")
+          CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/render.mjs "$MODE" "$CHUNK"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: empty-room-chunk-${{ matrix.chunk }}
+          path: work/empty-room/renders/*.mp4
+          retention-days: 30
+          compression-level: 0
