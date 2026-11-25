@@ -4,7 +4,7 @@ export function camera(t:number):{p:V3;look:V3;fov:number}{
  if(t<3)return{p:[1.90,1.75,-9.6],look:[.48,1.28,-8.95],fov:51};
  if(t<5.2)return{p:blendV([-3,29,-43],[-2,26,-38],ramp(t,3,5.2)),look:[0,3,-8],fov:58};
  if(t<6.6)return{p:[-.80,1.45,-.65],look:[-.35,1.43,-2.47],fov:43};
- if(t<8)return{p:[-17,12,-19],look:[0,3,-7],fov:58};
+ if(t<8)return{p:[9.5,5.5,-23.5],look:[0,1.8,-10.2],fov:62};
  if(t<10.4){const x=blocking(t).w.p[0];return{p:[x+.32,.72,.60],look:[x,.44,-1.3],fov:33};}
  if(t<12.7)return{p:[1.20,1.20,.65],look:[.17,.68,-1.35],fov:50};
  if(t<15)return{p:[.65,1.35,2.45],look:[.15,.95,-1.35],fov:44};

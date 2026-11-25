@@ -26,6 +26,7 @@ for number,entry in enumerate(cfg['narration']):
  if duration>limit+.03:raise RuntimeError(f'Cue{number}: {duration:.2f}s exceeds{limit:.2f}s at natural synthesis speed{speed:.3f}')
  at=entry['at']
  for j,(text,a,sr) in enumerate(takes):
+  at=entry.get('phraseTimes',[at]*len(takes))[j] if 'phraseTimes'in entry else at
   name=f'{number:02d}-{j:02d}.wav';save(out/name,a,sr);r={'at':round(at,6),'end':round(at+len(a)/sr,6),'duration':len(a)/sr,'text':text,'file':'empty-room/voice/'+name,'synthesisSpeed':speed};records.append(r);captions.append({k:r[k]for k in ['at','end','text']});at+=len(a)/sr+gap
  print(number,round(duration,3),round(speed,3),'/ slot',round(limit,2),flush=True)
 (ROOT/'public/empty-room/voice-timing.json').write_text(json.dumps(records,indent=2)+'\n');(ROOT/'public/empty-room/captions.json').write_text(json.dumps(captions,indent=2)+'\n')

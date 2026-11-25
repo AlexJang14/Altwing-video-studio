@@ -4,6 +4,7 @@ import {camera}from '../src/emptyRoom/Camera';import{OBB}from 'three/addons/math
 Object.assign(globalThis,{self:globalThis,createImageBitmap:async(b:Blob)=>loadImage(Buffer.from(await b.arrayBuffer()))});
 async function load(file:string){const b=fs.readFileSync(file);return (await new Promise<any>((resolve,reject)=>new GLTFLoader().parse(new Uint8Array(b).buffer,'',resolve,reject))).scene as THREE.Group;}
 const a=await load('public/empty-room/astronaut-tailored.glb'),w=await load('public/empty-room/wangdoo-sculpted.glb'),errors:any[]=[],contacts:any[]=[],steps:any[]=[],prev=new Map<string,{p:THREE.Vector3;h:number}>();
+const scanner=new THREE.Mesh(new THREE.BoxGeometry(.072,.105,.021),new THREE.MeshStandardMaterial());scanner.name='PracticalScannerQA';scanner.position.set(.025,-.137,.04);w.getObjectByName('WangWingR')!.add(scanner);
 const station=await load('public/empty-room/station-interior.glb'),ship=await load('public/empty-room/ship-interior.glb');station.updateMatrixWorld(true);ship.updateMatrixWorld(true);
 const solids=(root:THREE.Group,pattern:RegExp)=>{const out:{name:string;box:THREE.Box3;object:THREE.Object3D}[]=[];root.traverse(o=>{if((o as THREE.Mesh).isMesh&&pattern.test(o.name))out.push({name:o.name,box:new THREE.Box3().setFromObject(o,true),object:o});});return out;};
 const occupied=(a:THREE.Object3D,b:THREE.Object3D)=>{const obb=(o:THREE.Object3D)=>{const m=o as THREE.Mesh;if(!m.geometry.boundingBox)m.geometry.computeBoundingBox();const box=new OBB().fromBox3(m.geometry.boundingBox!).applyMatrix4(m.matrixWorld);box.halfSize.subScalar(.001);return box;};return obb(a).intersectsOBB(obb(b));};
@@ -13,9 +14,9 @@ const point=(root:THREE.Group,name:string)=>find(root,name).getWorldPosition(new
 function ellipse(root:THREE.Group,name:string){const o=find(root,name)as THREE.Mesh;o.geometry.computeBoundingBox();const box=o.geometry.boundingBox!,c=box.getCenter(new THREE.Vector3()).applyMatrix4(o.matrixWorld),r=box.getSize(new THREE.Vector3()).multiplyScalar(.5),scale=new THREE.Vector3(),q=new THREE.Quaternion();o.matrixWorld.decompose(new THREE.Vector3(),q,scale);r.multiply(scale);return{c,q,r};}
 const frames=Number(process.argv[2]??2040);let samples=0;let minFloor=Infinity,maxContact=0,maxSlide=0;
 for(let f=0;f<frames;f+=.5){
- samples++;const time=f/30,t=sceneTime(time),b=blocking(t);applyPerson(a,b.a);applyPenguin(w,b.w);
+ samples++;const time=f/30,t=sceneTime(time),b=blocking(t);applyPerson(a,b.a);applyPenguin(w,b.w);w.getObjectByName('WangWingR')!.rotation.x=.02-.78*(b.w.pose.scanner??0);scanner.visible=(b.w.pose.scanner??0)>.025;w.updateMatrixWorld(true);
  if(b.contact){const gap=point(a,'AstroGrip'+b.contact.side).distanceTo(new THREE.Vector3(...b.contact.target));maxContact=Math.max(gap,maxContact);if(gap>.003)errors.push({f,type:'contact-gap',gap});contacts.push({f,kind:b.contact.kind,gap});}
- const shells=['WangHeadCloth','WangTorso','WangFlipperL','WangFlipperR'].map(name=>({name,e:ellipse(w,name)}));
+ const shells=['WangHeadCloth','WangTorso','WangFlipperL','WangFlipperR',...(scanner.visible?['PracticalScannerQA']:[])].map(name=>({name,e:ellipse(w,name)}));
  for(const name of ['HelmetShell','SuitTrunk','TailoredGloveL','TailoredGloveR'])for(const p of shells)if(intersects(ellipse(a,name),p.e))errors.push({f,type:'shell-intersection',a:name,w:p.name});
  for(const side of ['L','R']){
   const shoulder=point(a,'AstroUpperArm'+side),elbow=point(a,'AstroForearm'+side),wrist=point(a,'AstroGrip'+side);

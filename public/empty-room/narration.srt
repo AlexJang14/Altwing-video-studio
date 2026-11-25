@@ -35,7 +35,7 @@ But everyone is gone.
 Wangdoo checks the room. Nobody's there.
 
 10
-00:00:30,134 --> 00:00:31,825
+00:00:32,300 --> 00:00:33,991
 Then the scanner stops working.
 
 11

@@ -1,0 +1,282 @@
+{
+  "frames": 2040,
+  "samples": 4080,
+  "minFloor": -1.3052062552282306e-8,
+  "maxContact": 5.0457344721905115e-8,
+  "maxSlide": 0.00042763996143602157,
+  "environmentChecks": 9224694,
+  "cameraChecks": 137682,
+  "errors": [],
+  "contacts": [
+    {
+      "f": 395.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 396,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 396.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 397,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 397.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 398,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 398.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 399,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 399.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 400,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 400.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 401,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 401.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 402,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 402.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 403,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 403.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 404,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 404.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 405,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 405.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 406,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 406.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 407,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 407.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 408,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 408.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 409,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 409.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 410,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 410.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 411,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 411.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 412,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 412.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 413,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 413.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 414,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 414.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 415,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 415.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 416,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 416.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 417,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 417.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 418,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 418.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 419,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 419.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 420,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 420.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 421,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 421.5,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    },
+    {
+      "f": 422,
+      "kind": "backpack-check",
+      "gap": 5.0457344721905115e-8
+    }
+  ]
+}

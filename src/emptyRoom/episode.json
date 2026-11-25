@@ -1,26 +1,181 @@
 {
-  "series":"THE LAST WING","title":"THE EMPTY ROOM","duration":68,"fps":30,"width":1080,"height":1920,
-  "file":"the-last-wing-ep01-the-empty-room-final.mp4",
-  "reference":{"definitivePlushPhotographAvailable":false,"basis":"Supplied detailed gray-and-white plush description plus existing rendered character work","exactPhotographicLikeness":"UNVERIFIED"},
-  "narration":[
-    {"at":0.06,"until":3.35,"phrases":["Someone's knocking.","But the scanner says that room is empty."]},
-    {"at":3.65,"until":9.90,"phrases":["You came here to rescue a missing astronaut.","But when you arrived, something was wrong."]},
-    {"at":10.15,"until":16.85,"phrases":["This is Wangdoo. Your tiny AI guide.","He helps you explore, but you make the choices."]},
-    {"at":17.45,"until":24.40,"phrases":["The lights are on. The rooms are warm.","But everyone is gone."]},
-    {"at":27.15,"until":34.95,"phrases":["Wangdoo checks the room. Nobody's there.","Then the scanner stops working."]},
-    {"at":36.50,"until":43.80,"phrases":["Then you check your ship's camera.","Someone is inside."]},
-    {"at":46.20,"until":53.25,"phrases":["Your ship is about to leave.","And someone might still need your help."]},
-    {"at":54.10,"until":58.20,"phrases":["Do you open the door?","Or run back to your ship?"]},
-    {"at":58.75,"until":60.85,"phrases":["Comment A or B."]},
-    {"at":61.02,"until":64.45,"phrases":["Wangdoo can guide you.","But the choice is yours."]},
-    {"at":64.65,"until":67.93,"phrases":["Try making those decisions yourself on AltWing."]}
+  "series": "THE LAST WING",
+  "title": "THE EMPTY ROOM",
+  "duration": 68,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "file": "the-last-wing-ep01-the-empty-room-final.mp4",
+  "reference": {
+    "definitivePlushPhotographAvailable": false,
+    "basis": "Supplied detailed gray-and-white plush description plus existing rendered character work",
+    "exactPhotographicLikeness": "UNVERIFIED"
+  },
+  "narration": [
+    {
+      "at": 0.06,
+      "until": 3.35,
+      "phrases": [
+        "Someone's knocking.",
+        "But the scanner says that room is empty."
+      ]
+    },
+    {
+      "at": 3.65,
+      "until": 9.9,
+      "phrases": [
+        "You came here to rescue a missing astronaut.",
+        "But when you arrived, something was wrong."
+      ]
+    },
+    {
+      "at": 10.15,
+      "until": 16.85,
+      "phrases": [
+        "This is Wangdoo. Your tiny AI guide.",
+        "He helps you explore, but you make the choices."
+      ]
+    },
+    {
+      "at": 17.45,
+      "until": 24.4,
+      "phrases": [
+        "The lights are on. The rooms are warm.",
+        "But everyone is gone."
+      ]
+    },
+    {
+      "at": 27.15,
+      "until": 34.95,
+      "phrases": [
+        "Wangdoo checks the room. Nobody's there.",
+        "Then the scanner stops working."
+      ],
+      "phraseTimes": [
+        27.15,
+        32.3
+      ]
+    },
+    {
+      "at": 36.5,
+      "until": 43.8,
+      "phrases": [
+        "Then you check your ship's camera.",
+        "Someone is inside."
+      ]
+    },
+    {
+      "at": 46.2,
+      "until": 53.25,
+      "phrases": [
+        "Your ship is about to leave.",
+        "And someone might still need your help."
+      ]
+    },
+    {
+      "at": 54.1,
+      "until": 58.2,
+      "phrases": [
+        "Do you open the door?",
+        "Or run back to your ship?"
+      ]
+    },
+    {
+      "at": 58.75,
+      "until": 60.85,
+      "phrases": [
+        "Comment A or B."
+      ]
+    },
+    {
+      "at": 61.02,
+      "until": 64.45,
+      "phrases": [
+        "Wangdoo can guide you.",
+        "But the choice is yours."
+      ]
+    },
+    {
+      "at": 64.65,
+      "until": 67.93,
+      "phrases": [
+        "Try making those decisions yourself on AltWing."
+      ]
+    }
   ],
-  "chapters":[
-    {"at":0,"end":3,"name":"The empty-room hook"},{"at":3,"end":10,"name":"Rescue a missing astronaut"},{"at":10,"end":17,"name":"Meet Wangdoo"},{"at":17,"end":27,"name":"Recently abandoned station"},{"at":27,"end":36,"name":"Scanner contradiction and manual release"},{"at":36,"end":46,"name":"The intruder on your ship"},{"at":46,"end":54,"name":"Two routes, one deadline"},{"at":54,"end":61,"name":"Audience decision"},{"at":61,"end":68,"name":"The real Lost Sensor Lab and AltWing"}
+  "chapters": [
+    {
+      "at": 0,
+      "end": 3,
+      "name": "The empty-room hook"
+    },
+    {
+      "at": 3,
+      "end": 10,
+      "name": "Rescue a missing astronaut"
+    },
+    {
+      "at": 10,
+      "end": 17,
+      "name": "Meet Wangdoo"
+    },
+    {
+      "at": 17,
+      "end": 27,
+      "name": "Recently abandoned station"
+    },
+    {
+      "at": 27,
+      "end": 36,
+      "name": "Scanner contradiction and manual release"
+    },
+    {
+      "at": 36,
+      "end": 46,
+      "name": "The intruder on your ship"
+    },
+    {
+      "at": 46,
+      "end": 54,
+      "name": "Two routes, one deadline"
+    },
+    {
+      "at": 54,
+      "end": 61,
+      "name": "Audience decision"
+    },
+    {
+      "at": 61,
+      "end": 68,
+      "name": "The real Lost Sensor Lab and AltWing"
+    }
   ],
-  "choices":[{"key":"A","title":"OPEN THE DOOR","consequence":"Someone might need rescuing."},{"key":"B","title":"SAVE YOUR SHIP","consequence":"Don't lose your only way home."}],
-  "departureStarts":44.8,"departureSeconds":30,
-  "brand":{"url":"https://altwing.org","lab":"https://altwing.org/#/aerospace-build?wing=gnc","tagline":"YOUR PATH. YOUR PACE.","verbs":"EXPLORE. EXPERIMENT. BUILD.","fictionalDoorScenePlayable":false},
-  "voice":{"engine":"Local Kokoro ONNX","voice":"am_michael","language":"en-us","identityCloning":false},
-  "scope":"Only Episode1. Do not render Episode2 or Episode3. MP4 includes A/B comment prompt; companion HTML provides actual clickable choices without fabricating audience results."
+  "choices": [
+    {
+      "key": "A",
+      "title": "OPEN THE DOOR",
+      "consequence": "Someone might need rescuing."
+    },
+    {
+      "key": "B",
+      "title": "SAVE YOUR SHIP",
+      "consequence": "Don't lose your only way home."
+    }
+  ],
+  "departureStarts": 42.2,
+  "departureSeconds": 30,
+  "brand": {
+    "url": "https://altwing.org",
+    "lab": "https://altwing.org/#/aerospace-build?wing=gnc",
+    "tagline": "YOUR PATH. YOUR PACE.",
+    "verbs": "EXPLORE. EXPERIMENT. BUILD.",
+    "fictionalDoorScenePlayable": false
+  },
+  "voice": {
+    "engine": "Local Kokoro ONNX",
+    "voice": "am_michael",
+    "language": "en-us",
+    "identityCloning": false
+  },
+  "scope": "Only Episode1. Do not render Episode2 or Episode3. MP4 includes an unresolved A/B audience comment prompt; no fabricated audience results."
 }

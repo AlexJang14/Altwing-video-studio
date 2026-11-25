@@ -9,28 +9,33 @@ jobs:
   prepare:
     runs-on: ubuntu-24.04
     timeout-minutes: 35
+    outputs:
+      mode: ${{ steps.request.outputs.mode }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
+      - id: request
+        run: echo "mode=$(node -p \"JSON.parse(require('fs').readFileSync('docs/empty-room/RENDER-REQUEST.json')).mode\")" >> "$GITHUB_OUTPUT"
       - run: npm ci --no-audit --no-fund
       - run: npm run typecheck
-      - name: Ensure local free media utilities
+      - name: Ensure free media utilities
         run: command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
-      - name: Render four actual character comparison views
-        run: CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/render.mjs characters
-      - name: Capture actual public Lost Sensor lab or reuse verified capture
+      - name: Capture actual public Lost Sensor lab only when requested
         run: |
-          if [ ! -s public/empty-room/altwing-lost-sensor.mp4 ]; then
+          RECAPTURE=$(node -p "Boolean(JSON.parse(require('fs').readFileSync('docs/empty-room/RENDER-REQUEST.json')).recaptureProduct)")
+          if [ "$RECAPTURE" = "true" ] || [ ! -s public/empty-room/altwing-lost-sensor.mp4 ]; then
             CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/capture-product.mjs
           fi
-      - name: Render actual cockpit security-camera performance
+      - name: Reuse actual recorded cockpit, render only if absent
         run: |
           if [ ! -s public/empty-room/ship-live.mp4 ]; then
             CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/render.mjs ship
           fi
+      - name: Inspect focused corrections before full-resolution rendering
+        run: CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/render.mjs qa
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -43,11 +48,12 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: empty-room-character-views
-          path: work/empty-room/characters/
+          name: empty-room-reviewed-stills
+          path: work/empty-room/qa/
           retention-days: 30
   render:
     needs: prepare
+    if: needs.prepare.outputs.mode != 'qa'
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     strategy:
@@ -65,12 +71,11 @@ jobs:
         with:
           name: empty-room-support-assets
           path: public/empty-room
-      - name: Render full episode consecutive range at requested native resolution
+      - name: Render consecutive native frame range
         env:
           CHUNK: ${{ matrix.chunk }}
-        run: |
-          MODE=$(node -p "JSON.parse(require('fs').readFileSync('docs/empty-room/RENDER-REQUEST.json')).mode")
-          CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/render.mjs "$MODE" "$CHUNK"
+          MODE: ${{ needs.prepare.outputs.mode }}
+        run: CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/render.mjs "$MODE" "$CHUNK"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -78,3 +83,55 @@ jobs:
           path: work/empty-room/renders/*.mp4
           retention-days: 30
           compression-level: 0
+  finish:
+    needs: [prepare,render]
+    if: needs.prepare.outputs.mode == 'final'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: empty-room-chunk-*
+          merge-multiple: true
+          path: work/empty-room/segments-final
+      - uses: actions/download-artifact@v4
+        with:
+          name: empty-room-support-assets
+          path: public/empty-room
+      - name: Media verification dependencies
+        run: |
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+          python3 -m venv /tmp/empty-room-tools
+          /tmp/empty-room-tools/bin/pip install pillow
+      - name: Assemble and fully decode native MP4
+        run: |
+          python3 scripts/empty-room/assemble.py final
+          ffmpeg -v error -y -i work/empty-room/deliverables/the-last-wing-ep01-the-empty-room-final.mp4 -vf scale=540:960 -c:v libx264 -crf 21 -c:a copy -movflags +faststart work/empty-room/deliverables/the-last-wing-ep01-the-empty-room-preview.mp4
+          /tmp/empty-room-tools/bin/python scripts/empty-room/contact-sheet.py final
+      - name: Verify actual browser playback
+        run: |
+          python3 -m http.server 8097 --directory work/empty-room/deliverables --bind 127.0.0.1 > /tmp/empty-room-http.log 2>&1 &
+          CHROME_PATH=$(command -v google-chrome) node scripts/empty-room/playback.mjs
+      - name: Package editable source, included audio and concise verification
+        run: python3 scripts/empty-room/package.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: The-Last-Wing-Episode1-Complete-Delivery
+          path: work/empty-room/deliverables/
+          retention-days: 30
+          compression-level: 0
+      - name: Deliver verified MP4 through existing video-studio releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="empty-room-ep01-${GITHUB_SHA:0:8}"
+          gh release create "$TAG" --target "$GITHUB_SHA" --title "The Last Wing — Episode 1: The Empty Room" --notes-file work/empty-room/deliverables/quality-control-report.txt work/empty-room/deliverables/the-last-wing-ep01-the-empty-room-final.mp4 work/empty-room/deliverables/the-last-wing-ep01-the-empty-room-preview.mp4 work/empty-room/deliverables/the-last-wing-ep01-the-empty-room-editable-source.zip work/empty-room/deliverables/episode1-contact-sheet-final.jpg work/empty-room/deliverables/wangdoo-character-reference-views.jpg work/empty-room/deliverables/quality-control-report.txt work/empty-room/deliverables/quality-control-report.json work/empty-room/deliverables/narration.srt work/empty-room/deliverables/altwing-lost-sensor-authentic-footage.mp4 work/empty-room/deliverables/MANIFEST.json

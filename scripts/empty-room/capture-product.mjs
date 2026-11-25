@@ -16,8 +16,9 @@ try{
  for(let i=0;i<48;i++){
   if(i>0&&i<19){await sliders.nth(0).focus();await page.keyboard.press('ArrowLeft');await page.keyboard.press('ArrowLeft');}
   if(i>=20&&i<38){await sliders.nth(1).focus();await page.keyboard.press('ArrowRight');await page.keyboard.press('ArrowRight');}
-  const weights=await sliders.evaluateAll(xs=>xs.map(x=>x.value));const estimate=await page.locator('.gnclab-live-estimate strong').innerText();record.frames.push({frame:i,weights,estimate});await page.mouse.move(890,1680);await page.screenshot({path:`${dir}/${String(i).padStart(3,'0')}.jpg`,clip,type:'jpeg',quality:94});
+  const sensorNow=await page.locator('.gnclab-sensors').boundingBox(),estimateNow=await page.locator('.gnclab-live-estimate').boundingBox();const frameClip={...clip,y:Math.max(0,Math.floor(sensorNow.y)-8)};if(frameClip.y+frameClip.height>1700||sensorNow.y<0)throw Error('Capture ROI scrolled out of viewport');
+  const weights=await sliders.evaluateAll(xs=>xs.map(x=>x.value));const estimate=await page.locator('.gnclab-live-estimate strong').innerText();record.frames.push({frame:i,weights,estimate,clip:frameClip});await page.mouse.move(890,1680);await page.screenshot({path:`${dir}/${String(i).padStart(3,'0')}.jpg`,clip:frameClip,type:'jpeg',quality:94});
  }
- await page.screenshot({path:'public/empty-room/altwing-lost-sensor-last.png',clip});if(record.frames[0].estimate===record.frames.at(-1).estimate)throw Error('Actual estimate did not change');if(record.requests.some(x=>!x.allowed))throw Error('Unexpected non-read-only request');
+ await page.screenshot({path:'public/empty-room/altwing-lost-sensor-last.png',clip:record.frames.at(-1).clip});if(record.frames[0].estimate===record.frames.at(-1).estimate)throw Error('Actual estimate did not change');if(record.requests.some(x=>!x.allowed))throw Error('Unexpected non-read-only request');
  execFileSync('ffmpeg',['-v','error','-y','-framerate','12','-i',dir+'/%03d.jpg','-r','30','-c:v','libx264','-crf','17','-pix_fmt','yuv420p','-movflags','+faststart','public/empty-room/altwing-lost-sensor.mp4']);record.video='altwing-lost-sensor.mp4';record.browser=browser.version();fs.writeFileSync('public/empty-room/product-provenance.json',JSON.stringify(record,null,2));
 }finally{await browser.close();}

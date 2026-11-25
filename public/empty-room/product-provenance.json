@@ -1,0 +1,530 @@
+{
+  "officialURL": "https://altwing.org/#/aerospace-build?wing=gnc",
+  "capturedAtUTC": "2026-11-25T03:25:11.768Z",
+  "source": "Actual published AltWing V1, unmodified public frontend",
+  "lab": "Lost Sensor",
+  "productionWrites": 0,
+  "authenticatedSession": false,
+  "statsOptedOut": true,
+  "requests": [
+    {
+      "url": "https://altwing.org/",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/assets/index-X-84DX9_.js",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/assets/index-DPk25_Do.css",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/brand/altwing-penguin.png",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/assets/spacegrotesk-latin-BhU9QXUp.woff2",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/assets/BuildEngine-DSksAb9O.js",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/assets/motion-B1YbXatd.js",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/assets/CosmicPackVault-f0WJuhZW.js",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/assets/useDialogFocus-B3gB27Zz.js",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/assets/CosmicPackVault-C1_Sw8Ah.css",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/assets/BuildEngine-C9zEHvzj.css",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/assets/manrope-latin-B6Sd7_ZV.woff2",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/brand/altwing-penguin.png",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/brand/altwing-penguin.png",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "url": "https://altwing.org/favicon.svg",
+      "method": "GET",
+      "allowed": true
+    }
+  ],
+  "frames": [
+    {
+      "frame": 0,
+      "weights": [
+        "50",
+        "20",
+        "30"
+      ],
+      "estimate": "1497 m"
+    },
+    {
+      "frame": 1,
+      "weights": [
+        "48",
+        "20",
+        "30"
+      ],
+      "estimate": "1499 m"
+    },
+    {
+      "frame": 2,
+      "weights": [
+        "46",
+        "20",
+        "30"
+      ],
+      "estimate": "1500 m"
+    },
+    {
+      "frame": 3,
+      "weights": [
+        "44",
+        "20",
+        "30"
+      ],
+      "estimate": "1502 m"
+    },
+    {
+      "frame": 4,
+      "weights": [
+        "42",
+        "20",
+        "30"
+      ],
+      "estimate": "1504 m"
+    },
+    {
+      "frame": 5,
+      "weights": [
+        "40",
+        "20",
+        "30"
+      ],
+      "estimate": "1506 m"
+    },
+    {
+      "frame": 6,
+      "weights": [
+        "38",
+        "20",
+        "30"
+      ],
+      "estimate": "1508 m"
+    },
+    {
+      "frame": 7,
+      "weights": [
+        "36",
+        "20",
+        "30"
+      ],
+      "estimate": "1510 m"
+    },
+    {
+      "frame": 8,
+      "weights": [
+        "34",
+        "20",
+        "30"
+      ],
+      "estimate": "1512 m"
+    },
+    {
+      "frame": 9,
+      "weights": [
+        "32",
+        "20",
+        "30"
+      ],
+      "estimate": "1514 m"
+    },
+    {
+      "frame": 10,
+      "weights": [
+        "30",
+        "20",
+        "30"
+      ],
+      "estimate": "1516 m"
+    },
+    {
+      "frame": 11,
+      "weights": [
+        "28",
+        "20",
+        "30"
+      ],
+      "estimate": "1519 m"
+    },
+    {
+      "frame": 12,
+      "weights": [
+        "26",
+        "20",
+        "30"
+      ],
+      "estimate": "1521 m"
+    },
+    {
+      "frame": 13,
+      "weights": [
+        "24",
+        "20",
+        "30"
+      ],
+      "estimate": "1524 m"
+    },
+    {
+      "frame": 14,
+      "weights": [
+        "22",
+        "20",
+        "30"
+      ],
+      "estimate": "1527 m"
+    },
+    {
+      "frame": 15,
+      "weights": [
+        "20",
+        "20",
+        "30"
+      ],
+      "estimate": "1530 m"
+    },
+    {
+      "frame": 16,
+      "weights": [
+        "18",
+        "20",
+        "30"
+      ],
+      "estimate": "1533 m"
+    },
+    {
+      "frame": 17,
+      "weights": [
+        "16",
+        "20",
+        "30"
+      ],
+      "estimate": "1537 m"
+    },
+    {
+      "frame": 18,
+      "weights": [
+        "14",
+        "20",
+        "30"
+      ],
+      "estimate": "1540 m"
+    },
+    {
+      "frame": 19,
+      "weights": [
+        "14",
+        "20",
+        "30"
+      ],
+      "estimate": "1540 m"
+    },
+    {
+      "frame": 20,
+      "weights": [
+        "14",
+        "22",
+        "30"
+      ],
+      "estimate": "1544 m"
+    },
+    {
+      "frame": 21,
+      "weights": [
+        "14",
+        "24",
+        "30"
+      ],
+      "estimate": "1548 m"
+    },
+    {
+      "frame": 22,
+      "weights": [
+        "14",
+        "26",
+        "30"
+      ],
+      "estimate": "1551 m"
+    },
+    {
+      "frame": 23,
+      "weights": [
+        "14",
+        "28",
+        "30"
+      ],
+      "estimate": "1555 m"
+    },
+    {
+      "frame": 24,
+      "weights": [
+        "14",
+        "30",
+        "30"
+      ],
+      "estimate": "1558 m"
+    },
+    {
+      "frame": 25,
+      "weights": [
+        "14",
+        "32",
+        "30"
+      ],
+      "estimate": "1561 m"
+    },
+    {
+      "frame": 26,
+      "weights": [
+        "14",
+        "34",
+        "30"
+      ],
+      "estimate": "1564 m"
+    },
+    {
+      "frame": 27,
+      "weights": [
+        "14",
+        "36",
+        "30"
+      ],
+      "estimate": "1566 m"
+    },
+    {
+      "frame": 28,
+      "weights": [
+        "14",
+        "38",
+        "30"
+      ],
+      "estimate": "1569 m"
+    },
+    {
+      "frame": 29,
+      "weights": [
+        "14",
+        "40",
+        "30"
+      ],
+      "estimate": "1571 m"
+    },
+    {
+      "frame": 30,
+      "weights": [
+        "14",
+        "42",
+        "30"
+      ],
+      "estimate": "1573 m"
+    },
+    {
+      "frame": 31,
+      "weights": [
+        "14",
+        "44",
+        "30"
+      ],
+      "estimate": "1576 m"
+    },
+    {
+      "frame": 32,
+      "weights": [
+        "14",
+        "46",
+        "30"
+      ],
+      "estimate": "1578 m"
+    },
+    {
+      "frame": 33,
+      "weights": [
+        "14",
+        "48",
+        "30"
+      ],
+      "estimate": "1580 m"
+    },
+    {
+      "frame": 34,
+      "weights": [
+        "14",
+        "50",
+        "30"
+      ],
+      "estimate": "1582 m"
+    },
+    {
+      "frame": 35,
+      "weights": [
+        "14",
+        "52",
+        "30"
+      ],
+      "estimate": "1584 m"
+    },
+    {
+      "frame": 36,
+      "weights": [
+        "14",
+        "54",
+        "30"
+      ],
+      "estimate": "1585 m"
+    },
+    {
+      "frame": 37,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    },
+    {
+      "frame": 38,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    },
+    {
+      "frame": 39,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    },
+    {
+      "frame": 40,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    },
+    {
+      "frame": 41,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    },
+    {
+      "frame": 42,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    },
+    {
+      "frame": 43,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    },
+    {
+      "frame": 44,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    },
+    {
+      "frame": 45,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    },
+    {
+      "frame": 46,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    },
+    {
+      "frame": 47,
+      "weights": [
+        "14",
+        "56",
+        "30"
+      ],
+      "estimate": "1587 m"
+    }
+  ],
+  "fictionalDoorScenePlayable": false,
+  "actualLabText": "ARES-9 · DESCENT NAVIGATION\nThree estimates. One spacecraft.\n\nSeconds before a descent maneuver, the spacecraft's altitude sources disagree. Decide how much confidence to give each source.\n\nSIMPLIFIED LEARNING MODEL\n\nThis is a fictional sensor-fusion exercise, not a NASA flight navigation algorithm or Kalman filter. It demonstrates the idea of combining multiple uncertain navigation inputs.\n\nRADAR\n1,420 m\n\nDirect altitude measurement, but dust and terrain can affect observations.\n\nINERTIAL\n1,670 m\n\nMotion-based estimate. Small accumulated errors can grow over time.\n\nTRAJECTORY MODEL\n1,510 m\n\nWhere the spacecraft was predicted to be before the disagreement appeared.\n\nTRUST RADAR\n50\nTRUST INERTIAL\n20\nTRUST MODEL\n30\nYOUR CURRENT ESTIMATE\n1497 m\nRUN NAVIGATION ESTIMATE →",
+  "clip": {
+    "x": 61,
+    "y": 650,
+    "width": 778,
+    "height": 606
+  },
+  "video": "altwing-lost-sensor.mp4",
+  "browser": "157.0.8103.78"
+}

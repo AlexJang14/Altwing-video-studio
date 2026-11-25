@@ -72,8 +72,8 @@
     "synthesisSpeed": 0.99
   },
   {
-    "at": 30.133792,
-    "end": 31.824875,
+    "at": 32.3,
+    "end": 33.991083,
     "duration": 1.6910833333333333,
     "text": "Then the scanner stops working.",
     "file": "empty-room/voice/04-01.wav",
