@@ -13,5 +13,6 @@
   "priorFilmsPreserved": true,
   "request": "Complete full episode; intermediate checks are internal, not approval stops.",
   "recaptureProduct": true,
-  "checkpoint": "Full68-second preview completed in45539669907. Fix only timer, docking framing, real-UI capture/crop and scanner narration alignment. No timeline rewrite or separate player."
+  "checkpoint": "Full68-second preview completed in45539669907. Fix only timer, docking framing, real-UI capture/crop and scanner narration alignment. No timeline rewrite or separate player.",
+  "workflowMetadataShellValidated": true
 }

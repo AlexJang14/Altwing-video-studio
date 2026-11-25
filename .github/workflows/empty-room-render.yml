@@ -18,7 +18,9 @@ jobs:
           node-version: '22'
           cache: npm
       - id: request
-        run: echo "mode=$(node -p \"JSON.parse(require('fs').readFileSync('docs/empty-room/RENDER-REQUEST.json')).mode\")" >> "$GITHUB_OUTPUT"
+        run: |
+          MODE=$(node -p "JSON.parse(require('fs').readFileSync('docs/empty-room/RENDER-REQUEST.json')).mode")
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
       - run: npm ci --no-audit --no-fund
       - run: npm run typecheck
       - name: Ensure free media utilities
