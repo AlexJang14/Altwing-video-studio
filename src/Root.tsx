@@ -1,3 +1,5 @@
+import{ThreeKnocksFilm}from'./threeKnocks/Film';
+import{Security,SecurityFinale,MissingPortrait,ScoutLook}from'./threeKnocks/Security';
 import {EmptyRoomFilm}from './emptyRoom/Film';
 import {RoomCharacterGate}from './emptyRoom/CharacterGate';
 import {RoomShipLive}from './emptyRoom/ShipLive';
@@ -16,6 +18,12 @@ import {PlushLookdev} from './rescue/Lookdev';
 import {RescueEpisode1,RescueEpisode2,RescueEpisode3} from './rescue/Film';
 import {PlushMemory,TrainingMemory,SecurityFeed,WarningFeed} from './rescue/Assets';
 export const RemotionRoot:React.FC=()=><>
+  <Composition id="Three-Knocks-Episode1" component={ThreeKnocksFilm} durationInFrames={2160} fps={30} width={1080} height={1920}/>
+  <Composition id="Three-Knocks-Security-Entry" component={Security} durationInFrames={300} fps={30} width={960} height={720}/>
+  <Composition id="Three-Knocks-Security-Finale" component={SecurityFinale} durationInFrames={120} fps={30} width={960} height={720}/>
+  <Composition id="Three-Knocks-Missing-Portrait" component={MissingPortrait} durationInFrames={30} fps={30} width={960} height={1080}/>
+  <Composition id="Three-Knocks-Scout-Look" component={ScoutLook} durationInFrames={30} fps={30} width={1080} height={1350}/>
+
   <Composition id="Empty-Room-Episode1" component={EmptyRoomFilm} durationInFrames={2040} fps={30} width={1080} height={1920}/>
   <Composition id="Empty-Room-Characters" component={RoomCharacterGate} durationInFrames={120} fps={30} width={1080} height={1350}/>
   <Composition id="Empty-Room-Ship-Live" component={RoomShipLive} durationInFrames={300} fps={30} width={960} height={720}/>

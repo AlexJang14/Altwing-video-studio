@@ -1,0 +1,18 @@
+0.030–1.270 Someone's knocking.
+1.390–3.609 But Wangdoo says the room is empty.
+3.800–6.950 You came here to rescue an astronaut who went missing.
+10.150–11.419 This is Wangdoo.
+11.599–13.145 Your little AI guide.
+16.400–18.625 But when you arrive, everyone is gone.
+25.150–27.675 His Scout Wing searches for signs of life.
+31.600–33.568 But even Scout Wing can be wrong.
+35.200–36.389 Your ship's camera.
+36.569–38.010 Someone is inside.
+39.800–40.483 Wait.
+40.603–42.715 That's the astronaut you came to save.
+50.100–51.338 You go back for him.
+54.150–56.516 You can't save everyone and stop the ship.
+56.636–57.762 What do you do?
+60.000–61.308 Comment A or B.
+62.100–64.084 Wangdoo can show you the clues.
+64.264–65.810 But the choice is yours.

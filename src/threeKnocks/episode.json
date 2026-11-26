@@ -1,0 +1,196 @@
+{
+  "series": "THE LAST WING",
+  "title": "THREE KNOCKS",
+  "duration": 72,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "file": "the-last-wing-ep01-three-knocks-final.mp4",
+  "reference": {
+    "definitivePlushPhotographAvailable": false,
+    "basis": "Supplied detailed gray-and-white plush description plus existing rendered character work",
+    "exactPhotographicLikeness": "UNVERIFIED"
+  },
+  "narration": [
+    {
+      "at": 0.03,
+      "until": 3.6,
+      "phrases": [
+        "Someone's knocking.",
+        "But Wangdoo says the room is empty."
+      ]
+    },
+    {
+      "at": 3.8,
+      "until": 9.7,
+      "phrases": [
+        "You came here to rescue an astronaut who went missing."
+      ]
+    },
+    {
+      "at": 10.15,
+      "until": 15.3,
+      "phrases": [
+        "This is Wangdoo.",
+        "Your little AI guide."
+      ]
+    },
+    {
+      "at": 16.4,
+      "until": 21,
+      "phrases": [
+        "But when you arrive, everyone is gone."
+      ]
+    },
+    {
+      "at": 25.15,
+      "until": 29,
+      "phrases": [
+        "His Scout Wing searches for signs of life."
+      ]
+    },
+    {
+      "at": 31.6,
+      "until": 34.7,
+      "phrases": [
+        "But even Scout Wing can be wrong."
+      ]
+    },
+    {
+      "at": 35.2,
+      "until": 38.8,
+      "phrases": [
+        "Your ship's camera.",
+        "Someone is inside."
+      ]
+    },
+    {
+      "at": 39.8,
+      "until": 44.3,
+      "phrases": [
+        "Wait.",
+        "That's the astronaut you came to save."
+      ]
+    },
+    {
+      "at": 50.1,
+      "until": 53.1,
+      "phrases": [
+        "You go back for him."
+      ]
+    },
+    {
+      "at": 54.15,
+      "until": 59.7,
+      "phrases": [
+        "You can't save everyone and stop the ship.",
+        "What do you do?"
+      ]
+    },
+    {
+      "at": 60,
+      "until": 61.8,
+      "phrases": [
+        "Comment A or B."
+      ]
+    },
+    {
+      "at": 62.1,
+      "until": 67.7,
+      "phrases": [
+        "Wangdoo can show you the clues.",
+        "But the choice is yours."
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "at": 0,
+      "end": 3,
+      "name": "Three knocks / flashforward"
+    },
+    {
+      "at": 3,
+      "end": 10,
+      "name": "Rescue briefing / orange patch"
+    },
+    {
+      "at": 10,
+      "end": 16,
+      "name": "Wangdoo and route"
+    },
+    {
+      "at": 16,
+      "end": 25,
+      "name": "Empty station"
+    },
+    {
+      "at": 25,
+      "end": 35,
+      "name": "Scout Wing / uncertain signals"
+    },
+    {
+      "at": 35,
+      "end": 45,
+      "name": "Missing astronaut aboard your ship"
+    },
+    {
+      "at": 45,
+      "end": 54,
+      "name": "Run, stumble, return and help"
+    },
+    {
+      "at": 54,
+      "end": 62,
+      "name": "Two paths / astronaut decides"
+    },
+    {
+      "at": 62,
+      "end": 68,
+      "name": "Clues / integrated real AltWing challenge"
+    },
+    {
+      "at": 68,
+      "end": 72,
+      "name": "Synchronized knocks / cut to black"
+    }
+  ],
+  "choices": [
+    {
+      "key": "A",
+      "title": "OPEN THE DOOR",
+      "consequence": "Someone might need your help."
+    },
+    {
+      "key": "B",
+      "title": "SAVE YOUR SHIP",
+      "consequence": "Don't lose your only way home."
+    }
+  ],
+  "departureStarts": 42,
+  "departureSeconds": 30,
+  "brand": {
+    "url": "https://altwing.org",
+    "lab": "https://altwing.org/#/aerospace-build?wing=gnc",
+    "tagline": "YOUR PATH. YOUR PACE.",
+    "verbs": "EXPLORE. EXPERIMENT. BUILD.",
+    "fictionalDoorScenePlayable": false
+  },
+  "voice": {
+    "engine": "Local Kokoro ONNX",
+    "voice": "am_michael",
+    "language": "en-us",
+    "identityCloning": false
+  },
+  "scope": "Only Episode1. Do not render Episode2 or Episode3. MP4 includes an unresolved A/B audience comment prompt; no fabricated audience results.",
+  "wingSystem": {
+    "revealed": [
+      "scout"
+    ],
+    "oneActiveAtATime": true,
+    "activationAt": 25.15,
+    "interferenceAt": 31.35,
+    "releaseAt": 32.15,
+    "finalChoice": "astronaut"
+  }
+}

@@ -1,0 +1,71 @@
+1
+00:00:00,030 --> 00:00:01,270
+Someone's knocking.
+
+2
+00:00:01,390 --> 00:00:03,609
+But Wangdoo says the room is empty.
+
+3
+00:00:03,800 --> 00:00:06,950
+You came here to rescue an astronaut who went missing.
+
+4
+00:00:10,150 --> 00:00:11,419
+This is Wangdoo.
+
+5
+00:00:11,599 --> 00:00:13,145
+Your little AI guide.
+
+6
+00:00:16,400 --> 00:00:18,625
+But when you arrive, everyone is gone.
+
+7
+00:00:25,150 --> 00:00:27,675
+His Scout Wing searches for signs of life.
+
+8
+00:00:31,600 --> 00:00:33,568
+But even Scout Wing can be wrong.
+
+9
+00:00:35,200 --> 00:00:36,389
+Your ship's camera.
+
+10
+00:00:36,569 --> 00:00:38,010
+Someone is inside.
+
+11
+00:00:39,800 --> 00:00:40,483
+Wait.
+
+12
+00:00:40,603 --> 00:00:42,715
+That's the astronaut you came to save.
+
+13
+00:00:50,100 --> 00:00:51,338
+You go back for him.
+
+14
+00:00:54,150 --> 00:00:56,516
+You can't save everyone and stop the ship.
+
+15
+00:00:56,636 --> 00:00:57,762
+What do you do?
+
+16
+00:01:00,000 --> 00:01:01,308
+Comment A or B.
+
+17
+00:01:02,100 --> 00:01:04,084
+Wangdoo can show you the clues.
+
+18
+00:01:04,264 --> 00:01:05,810
+But the choice is yours.

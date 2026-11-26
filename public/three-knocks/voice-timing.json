@@ -1,0 +1,146 @@
+[
+  {
+    "at": 0.03,
+    "end": 1.270292,
+    "duration": 1.2402916666666666,
+    "text": "Someone's knocking.",
+    "file": "three-knocks/voice/00-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 1.390292,
+    "end": 3.608958,
+    "duration": 2.2186666666666666,
+    "text": "But Wangdoo says the room is empty.",
+    "file": "three-knocks/voice/00-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 3.8,
+    "end": 6.949542,
+    "duration": 3.1495416666666665,
+    "text": "You came here to rescue an astronaut who went missing.",
+    "file": "three-knocks/voice/01-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 10.15,
+    "end": 11.419167,
+    "duration": 1.2691666666666668,
+    "text": "This is Wangdoo.",
+    "file": "three-knocks/voice/02-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 11.599167,
+    "end": 13.144708,
+    "duration": 1.5455416666666666,
+    "text": "Your little AI guide.",
+    "file": "three-knocks/voice/02-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 16.4,
+    "end": 18.624583,
+    "duration": 2.2245833333333334,
+    "text": "But when you arrive, everyone is gone.",
+    "file": "three-knocks/voice/03-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 25.15,
+    "end": 27.675458,
+    "duration": 2.5254583333333334,
+    "text": "His Scout Wing searches for signs of life.",
+    "file": "three-knocks/voice/04-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 31.6,
+    "end": 33.568083,
+    "duration": 1.9680833333333334,
+    "text": "But even Scout Wing can be wrong.",
+    "file": "three-knocks/voice/05-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 35.2,
+    "end": 36.388875,
+    "duration": 1.188875,
+    "text": "Your ship's camera.",
+    "file": "three-knocks/voice/06-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 36.568875,
+    "end": 38.009792,
+    "duration": 1.4409166666666666,
+    "text": "Someone is inside.",
+    "file": "three-knocks/voice/06-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 39.8,
+    "end": 40.48325,
+    "duration": 0.68325,
+    "text": "Wait.",
+    "file": "three-knocks/voice/07-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 40.60325,
+    "end": 42.715292,
+    "duration": 2.112041666666667,
+    "text": "That's the astronaut you came to save.",
+    "file": "three-knocks/voice/07-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 50.1,
+    "end": 51.338375,
+    "duration": 1.238375,
+    "text": "You go back for him.",
+    "file": "three-knocks/voice/08-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 54.15,
+    "end": 56.515583,
+    "duration": 2.3655833333333334,
+    "text": "You can't save everyone and stop the ship.",
+    "file": "three-knocks/voice/09-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 56.635583,
+    "end": 57.761833,
+    "duration": 1.12625,
+    "text": "What do you do?",
+    "file": "three-knocks/voice/09-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 60,
+    "end": 61.307958,
+    "duration": 1.3079583333333333,
+    "text": "Comment A or B.",
+    "file": "three-knocks/voice/10-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 62.1,
+    "end": 64.084,
+    "duration": 1.984,
+    "text": "Wangdoo can show you the clues.",
+    "file": "three-knocks/voice/11-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 64.264,
+    "end": 65.81025,
+    "duration": 1.54625,
+    "text": "But the choice is yours.",
+    "file": "three-knocks/voice/11-01.wav",
+    "synthesisSpeed": 0.99
+  }
+]

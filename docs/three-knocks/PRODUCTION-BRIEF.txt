@@ -1,0 +1,542 @@
+# THE LAST WING — EPISODE 1: THREE KNOCKS
+## Suspense, Retention, Cliffhanger & AltWing Integration Overhaul
+
+You are the creative director, suspense filmmaker, short-form storytelling specialist, professional editor, 3D animation director, and senior Remotion engineer for THE LAST WING.
+
+I have watched the completed 68-second Episode 1, THE EMPTY ROOM.
+
+The video is technically complete, but the story is not exciting enough. The sense of danger is weak, character reactions are limited, and the ending does not create enough desire to watch Episode 2.
+
+The existing ending also loses tension when it transitions from the audience's decision to a separate AltWing advertisement.
+
+**Your task is to transform the existing completed episode into a dramatically more exciting, understandable, and suspenseful Episode 1.**
+
+Build and render the entire revised episode. Do not stop at a script or preview.
+
+## 1. Preserve the existing project
+
+Repository: `AlexJang14/Altwing-video-studio`
+
+Locate the existing `Empty-Room-Episode1` Remotion composition and associated code.
+
+Reuse existing functional infrastructure, sound assets, environment models, and working animation components.
+
+Preserve the original episode as an archive.
+
+Do not rebuild the entire application.
+
+Create a revision branch.
+
+Only produce Episode 1.
+
+Target duration: 68–72 seconds.
+
+Format: 1080 × 1920, 30 FPS, vertical MP4.
+
+## 2. Current weaknesses observed
+
+The current episode has several specific problems:
+
+- The opening lacks an immediately visible threat.
+- Too much time is spent on static environments and information screens.
+- Wangdoo's character design remains too simplified and pale compared with the original plush.
+- The astronaut does not physically react enough to danger.
+- Knocking and scanner errors do not meaningfully escalate.
+- The person entering the ship is not connected strongly enough to the original rescue mission.
+- The audience does not receive a memorable final revelation.
+- The astronaut appears relatively passive during the emergency.
+- The A/B ending loses energy.
+- The separate AltWing end card removes suspense instead of reinforcing it.
+
+Do not fix these issues by merely adding dramatic captions or louder music.
+
+Change the actual visible action, camera direction, character behavior, and narrative reveals.
+
+## 3. New guiding principle
+
+Every 4–7 seconds, something meaningful should happen.
+
+A discovery.
+
+An unexpected event.
+
+A physical reaction.
+
+A new danger.
+
+A consequential action.
+
+A revelation that changes what the viewer believes.
+
+Do not introduce random plot twists.
+
+Each twist must follow logically from earlier events.
+
+The audience should never be confused about where the astronaut is, why the mission exists, or what the immediate danger is.
+
+## 4. New story — THREE KNOCKS
+
+### Scene 1: 0–3 seconds — Immediate hook
+
+Begin with three loud metallic knocks.
+
+A heavy locked station door visibly shakes.
+
+Wangdoo's scanner says:
+
+"NO ONE DETECTED."
+
+Show the black astronaut recoiling slightly.
+
+Narrator:
+
+"Someone's knocking. But Wangdoo says the room is empty."
+
+Cut to an earlier moment.
+
+No lengthy opening titles.
+
+### Scene 2: 3–10 seconds — The rescue mission
+
+Show the spacecraft approaching the station.
+
+A rescue briefing displays a photograph of one missing astronaut.
+
+IMPORTANT VISUAL CLUE:
+
+The missing astronaut has a distinctive BRIGHT ORANGE SHOULDER PATCH.
+
+Make this patch easily recognizable.
+
+The narrator explains:
+
+"You came here to rescue an astronaut who went missing."
+
+Do not introduce a complicated mission backstory.
+
+Show the protagonist docking.
+
+### Scene 3: 10–16 seconds — Wangdoo
+
+Show Wangdoo inside the cockpit.
+
+He is a soft gray-and-white plush-like penguin with small yellow feet, a rounded gray head, small smiling eyes, and a tiny scanner backpack.
+
+He waddles to the black astronaut.
+
+The astronaut gently checks his equipment.
+
+Narrator:
+
+"This is Wangdoo. Your little AI guide."
+
+Wangdoo displays a route to the missing astronaut's last known location.
+
+Make Wangdoo noticeably more appealing than the current simple model.
+
+Use the uploaded real penguin reference where available.
+
+### Scene 4: 16–25 seconds — Empty station
+
+Show the astronaut and Wangdoo walking through the station.
+
+The station appears recently occupied.
+
+A cup remains on a desk.
+
+An abandoned flashlight rolls slowly across the floor.
+
+A chair is overturned.
+
+The astronaut looks into an empty room.
+
+Narrator:
+
+"But when you arrive, everyone is gone."
+
+The three knocks return.
+
+Wangdoo stops walking.
+
+His scanner activates.
+
+### Scene 5: 25–35 seconds — Escalating danger
+
+Wangdoo scans the locked door.
+
+"NO ONE DETECTED."
+
+Another three knocks.
+
+This time, the metal door visibly flexes.
+
+The astronaut steps backward.
+
+Wangdoo hides behind his leg without intersecting the model.
+
+The corridor lights flicker.
+
+"SCANNER ERROR."
+
+The astronaut activates a flashlight.
+
+The knocking becomes faster.
+
+Do not simply repeat the same scanner graphic.
+
+The physical environment must respond.
+
+### Scene 6: 35–45 seconds — The rescue becomes a trap
+
+A warning appears on the astronaut's wrist device.
+
+"SHIP SECURITY ALERT."
+
+The astronaut opens the live camera from his own spacecraft.
+
+An unidentified person is entering the cockpit.
+
+The figure activates the ship's departure system.
+
+Cut to a close-up of the person's shoulder.
+
+The same ORANGE PATCH from the rescue briefing is visible.
+
+Repeat the briefing photograph very briefly if needed for instant recognition.
+
+Narrator:
+
+"Wait. That's the astronaut you came to save."
+
+A departure countdown begins.
+
+The missing astronaut appears to be stealing the only spacecraft that can take the protagonist home.
+
+Make the visual match unambiguous.
+
+Do not explain the person's motivation.
+
+### Scene 7: 45–54 seconds — Actual action
+
+The protagonist immediately runs toward the spacecraft.
+
+Use a dynamic tracking camera.
+
+The departure alarm intensifies.
+
+Wangdoo waddles as fast as he can but falls behind.
+
+He stumbles near a doorway.
+
+The astronaut stops.
+
+He looks toward the spacecraft.
+
+Then back toward Wangdoo.
+
+He chooses to return and help Wangdoo.
+
+Animate this physical action convincingly.
+
+No geometry intersection.
+
+Show that the astronaut cares about his companion.
+
+The decision costs valuable time.
+
+The countdown continues.
+
+The locked door begins shaking again.
+
+### Scene 8: 54–62 seconds — The dilemma
+
+The protagonist reaches the junction between:
+
+- The corridor back to his spacecraft.
+- The locked room where somebody might be trapped.
+
+The manual door release takes time.
+
+The spacecraft departure countdown is nearly complete.
+
+Wangdoo's scanner cannot determine who is behind the door.
+
+Wangdoo presents the two possible paths.
+
+He cannot make the decision.
+
+Narrator:
+
+"You can't save everyone and stop the ship. What do you do?"
+
+Display:
+
+A — OPEN THE DOOR
+
+Someone might need your help.
+
+B — SAVE YOUR SHIP
+
+Don't lose your only way home.
+
+Use large mobile-readable choices.
+
+### Scene 9: 62–68 seconds — Integrated AltWing branding
+
+Keep the dramatic decision scene visible.
+
+Do not cut to a plain black advertising screen.
+
+Show discreet but clear AltWing branding integrated with the decision interface.
+
+Narrator:
+
+"Wangdoo can show you the clues. But the choice is yours."
+
+Display:
+
+"WHAT IF YOUR SENSORS ARE WRONG?"
+
+"Try a real sensor challenge on AltWing."
+
+"altwing.org"
+
+"COMMENT A OR B"
+
+Use the real AltWing brand assets.
+
+The promotional copy must be readable without replacing the story.
+
+The real Lost Sensor Lab involves comparing uncertain altitude measurements. Do not falsely suggest that the fictional door scenario is directly playable.
+
+If there is room for an authentic miniature Lost Sensor Lab visual, use one, but only when it does not obscure the A/B choices.
+
+Do not create a separate seven-second advertising end card.
+
+### Scene 10: 68–72 seconds — Final shocking reveal
+
+Return to the spacecraft's live security camera.
+
+The person with the orange shoulder patch slowly turns toward the camera.
+
+Without speaking, the figure raises one hand.
+
+The figure knocks three times on the cockpit camera housing.
+
+Simultaneously, the locked door in the station produces the SAME THREE KNOCKS.
+
+The two sounds are perfectly synchronized.
+
+The astronaut turns toward the locked door in disbelief.
+
+Cut to black immediately.
+
+End.
+
+No additional advertising screen.
+
+Do not explain the connection between the sounds.
+
+The viewer should wonder why the person in the ship appears connected to the knocking at the station door.
+
+This is the cliffhanger that motivates Episode 2.
+
+## 5. Retention and suspense requirements
+
+The opening three seconds must be immediately interesting.
+
+Avoid extended introductions.
+
+Use action and visual evidence instead of technical exposition.
+
+Create suspense through:
+
+- Quiet anticipation.
+- Sudden movement.
+- Environmental changes.
+- A recognizable recurring sound.
+- Contradictory information.
+- Real physical consequences.
+- A clear countdown.
+- Emotional concern for Wangdoo.
+- A surprising final revelation.
+
+Do not rely solely on text overlays.
+
+Do not include long static shots where characters stand still and the narrator explains what is happening.
+
+Each important reveal must be visible.
+
+Use simple, everyday English.
+
+## 6. Wangdoo quality
+
+The new Wangdoo must resemble the real plush penguin:
+
+- Rounded gray head.
+- White face and belly.
+- Small curved smiling eyes.
+- Yellow beak.
+- Short yellow feet.
+- Gray hanging flippers.
+- Soft, cuddly fabric-like appearance.
+
+Do not make Wangdoo a generic spherical robot or white egg.
+
+His role is to help the astronaut find clues, not make every decision.
+
+Give him expressive physical reactions:
+
+- Freezing at the knocking.
+- Hiding when afraid.
+- Running with short steps.
+- Stumbling.
+- Looking back at the astronaut.
+- Showing relief when helped.
+
+Check that Wangdoo and the astronaut do not intersect during the running and rescue sequence.
+
+## 7. Camera and editing
+
+Use stronger visual storytelling.
+
+Create:
+
+- A close-up of the vibrating door.
+- A close-up of Wangdoo's frightened reaction.
+- A low-angle corridor shot.
+- A dynamic astronaut-running shot.
+- A security-camera perspective.
+- A close-up of the orange shoulder patch.
+- A strong two-character interaction.
+- A final synchronized-knocking reveal.
+
+Use foreground/background depth.
+
+Keep shots short when danger escalates.
+
+Use silence and longer holds only when they increase suspense.
+
+Avoid generic camera pans, unnecessary rotations, and repeated static frontal character poses.
+
+## 8. Sound design
+
+Use one consistent, natural English narrator.
+
+Use appropriately licensed narration, not unauthorized voice cloning.
+
+Wangdoo and the astronaut do not speak.
+
+Make the three knocks an iconic recurring sound motif.
+
+Include:
+
+- Station mechanical ambience.
+- Distant equipment vibration.
+- Heavy metal knocks.
+- Scanner activation.
+- Scanner malfunction.
+- Astronaut footsteps.
+- Wangdoo's footsteps.
+- Ship security alarm.
+- Departure countdown.
+- Sudden silence before the final synchronized knocks.
+
+Do not play loud dramatic music continuously.
+
+The final three knocks should be one of the most memorable moments in the entire episode.
+
+## 9. AltWing marketing
+
+The goal is not just to get views.
+
+The goal is to motivate viewers to visit the actual platform.
+
+Use authentic AltWing branding and actual product information.
+
+Actual product: https://altwing.org
+
+Related activity: Lost Sensor Lab in the aerospace engineering section.
+
+The promotion should communicate:
+
+"The story is fictional, but engineers really do have to make decisions when information is uncertain."
+
+"Wangdoo guides. You decide."
+
+"Try engineering challenges on AltWing."
+
+Do not falsely describe AltWing as a game where viewers can control this animated story.
+
+The AltWing invitation should be integrated into the narrative rather than appended after the cliffhanger.
+
+The audience must finish the video thinking about the story, not a static advertisement.
+
+Create a separate promotional caption and pinned comment with a verified Lost Sensor Lab link.
+
+## 10. Production efficiency
+
+Use the existing working project.
+
+Do not start from scratch.
+
+Reuse useful environments, rigs, character components, audio, and render configuration.
+
+Prioritize:
+
+1. Stronger story and final twist.
+2. Wangdoo's appeal and physical animation.
+3. Real visual danger.
+4. Coherent camera direction.
+5. Sound and editing.
+6. Natural branding.
+
+Render one complete low-resolution preview.
+
+Inspect the actual rendered motion.
+
+Correct meaningful problems.
+
+Then produce the full-resolution final MP4.
+
+Do not stop at a partial episode or storyboard.
+
+## 11. Final deliverables
+
+Deliver:
+
+- `the-last-wing-ep01-three-knocks-final.mp4`
+- Editable Remotion source code.
+- Updated Wangdoo model and animation.
+- Updated narration and subtitles.
+- Improved sound design.
+- Contact sheet.
+- Quality-control report.
+- Instagram caption and pinned comment.
+- A short continuity note for Episode 2.
+
+Do not generate Episode 2.
+
+Do not change the actual AltWing production website.
+
+Do not claim the final episode is complete unless the entire MP4 has actually been rendered and verified.
+
+## Final creative instruction
+
+The audience must understand the story immediately.
+
+They must care about Wangdoo.
+
+They must believe the astronaut is in actual danger.
+
+They must recognize that the person stealing the ship is the same astronaut the protagonist came to rescue.
+
+They must see that the astronaut sacrifices precious time to protect Wangdoo.
+
+They must genuinely hesitate between opening the locked door and saving the ship.
+
+And when the mysterious figure repeats the same three knocks, they should immediately want to know what happens next.
+
+**Create a memorable interactive survival story, not another technical demonstration or slideshow.**
+
+Complete the entire revised Episode 1.

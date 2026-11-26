@@ -1,0 +1,14 @@
+import React from'react';import{ramp}from'../characters/performance';import{blocking}from'./motion';import{Astronaut,Wangdoo}from'./Characters';import{KnocksSet,Exterior}from'./Environment';import{RoomStationLights,RoomShipRoom,TargetSpot}from'../emptyRoom/Stage';import{ContactShadow}from'../emptyRoom/Lighting';import{Plate}from'../rescue/World';import{Box,Orb,Line3D}from'../geometry';import{wingStateAt,EPISODE1_WING_COMMANDS}from'../characters/wings/system';
+export const Stage:React.FC<{time:number}>=({time})=>{const t=time<3?29+time*.7:time,b=blocking(time),ship=t>=5.2&&t<16;
+ if((t>=3&&t<5.2)||(t>=8.8&&t<10))return<Exterior time={t<5.2?t:6.6+(t-8.8)*1.15}/>;
+ const scan=wingStateAt(t,EPISODE1_WING_COMMANDS),flicker=t>=31.35&&t<33.9&&Math.sin(t*37)>.1;
+ return<><color attach="background" args={[ship?'#101923':'#09131d']}/>{ship?<RoomShipRoom time={t}/>:<><group visible={!flicker}><RoomStationLights/></group>{flicker&&<ambientLight color="#4d6473" intensity={.12}/>}<KnocksSet name="station-interior" time={t}/><Plate text="MANUAL RELEASE: 30 SECONDS" position={[1.36,1.68,-10.61]} size={[.77,.16]} color="#e3c6ac" bg="#121c23"/><Plate text="← SHIP" position={[-2.54,1.6,-7]} rotation={[0,Math.PI/2,0]} size={[.8,.24]}/><Plate text="SHIP" position={[0,2.65,5.35]} rotation={[0,Math.PI,0]} size={[1.1,.26]}/><pointLight position={[0,2,5.2]} intensity={6} color="#dfd6c2" distance={6}/><group position={[0,-.002,8.85]} rotation={[0,Math.PI,0]}><KnocksSet name="ship-interior"/><pointLight position={[-.4,2.1,-1.2]} color="#f2dbb9" intensity={15} distance={5}/></group>
+ <group position={[-.35+.27*ramp(t,19,23),.035,-5.52]} rotation={[0,0,-(t>=19?Math.min(t-19,4)*1.8:0)]}><mesh rotation={[0,0,Math.PI/2]} castShadow><cylinderGeometry args={[.027,.031,.16,16]}/><meshStandardMaterial color="#3c4953" roughness={.7}/></mesh><Orb p={[.08,0,0]} s={[.006,.028,.028]} color="#d3d5bb" metal={0} rough={.45}/></group>
+ {t>=18&&t<20.8&&<TargetSpot p={[.2,1.65,-.65]} look={[-2,.95,-1.6-(t-18)*.5]} color="#f2dfbb" intensity={22}/>}
+ </>}
+ <Astronaut actor={b.a} hidden={b.hideHuman}/><Wangdoo actor={b.w} time={t}/><ContactShadow p={b.a.p}/><ContactShadow p={b.w.p} small/>
+ {scan.active&&t>=25.8&&t<31.35&&<group><Line3D points={[[b.w.p[0]-.4,.40,b.w.p[2]-.1],[0,.65,-10.56],[.78,1.95,-10.56]]} color="#45d9ff" radius={.003} glow={.9} opacity={.28}/><pointLight position={[b.w.p[0],.65,b.w.p[2]-.2]} color="#45d9ff" intensity={.30} distance={1.5}/></group>}
+ {t>=32&&t<35&&<TargetSpot p={[b.a.p[0]-.15,1.28,b.a.p[2]-.2]} look={[.3,1.5,-10.8]} color="#ffe1ad" intensity={27}/>}
+ {t>=13.6&&t<16&&<group position={[-.13,1.04,-.92]}><Box s={[.64,.36,.015]} color="#142a34" rough={.9}/><Line3D points={[[-.23,-.07,.012],[-.11,-.07,.012],[-.11,.055,.012],[.20,.055,.012]]} radius={.007} color="#a6d2d2" glow={.4}/><Plate text="SHIP     LAST SIGNAL" position={[0,-.137,.014]} size={[.56,.07]}/></group>}
+ </>;
+};

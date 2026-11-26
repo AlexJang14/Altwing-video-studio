@@ -1,0 +1,130 @@
+name: Render Three Knocks — Scout Wing Episode 1
+on:
+  push:
+    branches: [codex/three-knocks-scout-wing]
+    paths: [docs/three-knocks/RENDER-REQUEST.json]
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    outputs:
+      mode: ${{ steps.request.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - id: request
+        run: |
+          MODE=$(node -p "JSON.parse(require('fs').readFileSync('docs/three-knocks/RENDER-REQUEST.json')).mode")
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+      - run: npm ci --no-audit --no-fund
+      - run: npm run typecheck
+      - run: command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+      - name: Render orange-patch camera footage, briefing portrait and Scout look
+        run: CHROME_PATH=$(command -v google-chrome) node scripts/three-knocks/render.mjs support
+      - name: Render actual narrative inspection frames
+        run: CHROME_PATH=$(command -v google-chrome) node scripts/three-knocks/render.mjs qa
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: three-knocks-support
+          path: |
+            public/three-knocks/security-*.mp4
+            public/three-knocks/missing-portrait.png
+            public/three-knocks/scout-character.png
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: three-knocks-inspection
+          path: work/three-knocks/qa/
+          retention-days: 30
+  render:
+    needs: prepare
+    if: needs.prepare.outputs.mode != 'qa'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk: [0,1,2,3,4,5,6,7]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - uses: actions/download-artifact@v4
+        with:
+          name: three-knocks-support
+          path: public/three-knocks
+      - env:
+          CHUNK: ${{ matrix.chunk }}
+          MODE: ${{ needs.prepare.outputs.mode }}
+        run: CHROME_PATH=$(command -v google-chrome) node scripts/three-knocks/render.mjs "$MODE" "$CHUNK"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: three-knocks-chunk-${{ matrix.chunk }}
+          path: work/three-knocks/renders/*.mp4
+          retention-days: 30
+          compression-level: 0
+  finish:
+    needs: [prepare,render]
+    if: needs.prepare.outputs.mode != 'qa'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: three-knocks-chunk-*
+          merge-multiple: true
+          path: work/three-knocks/segments-${{ needs.prepare.outputs.mode }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: three-knocks-support
+          path: public/three-knocks
+      - run: |
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+          python3 -m venv /tmp/three-knocks-tools
+          /tmp/three-knocks-tools/bin/pip install pillow
+      - name: Assemble, count and fully decode all 2160 frames
+        env:
+          MODE: ${{ needs.prepare.outputs.mode }}
+        run: |
+          python3 scripts/three-knocks/assemble.py "$MODE"
+          /tmp/three-knocks-tools/bin/python scripts/three-knocks/contact-sheet.py "$MODE"
+      - name: Final actual browser playback and editable delivery
+        if: needs.prepare.outputs.mode == 'final'
+        run: |
+          ffmpeg -v error -y -i work/three-knocks/deliverables/the-last-wing-ep01-three-knocks-final.mp4 -vf scale=540:960 -c:v libx264 -crf 21 -c:a copy -movflags +faststart work/three-knocks/deliverables/the-last-wing-ep01-three-knocks-preview.mp4
+          python3 -m http.server 8097 --directory work/three-knocks/deliverables --bind 127.0.0.1 > /tmp/three-knocks-http.log 2>&1 &
+          CHROME_PATH=$(command -v google-chrome) node scripts/three-knocks/playback.mjs
+          python3 scripts/three-knocks/package.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Three-Knocks-Episode1-${{ needs.prepare.outputs.mode }}
+          path: work/three-knocks/deliverables/
+          retention-days: 30
+          compression-level: 0
+      - name: Deliver completed video through video-studio release assets
+        if: needs.prepare.outputs.mode == 'final'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="three-knocks-ep01-${GITHUB_SHA:0:8}"
+          gh release create "$TAG" --target "$GITHUB_SHA" --title "The Last Wing — Episode 1: Three Knocks" --notes-file work/three-knocks/deliverables/quality-control-report.txt work/three-knocks/deliverables/the-last-wing-ep01-three-knocks-final.mp4 work/three-knocks/deliverables/the-last-wing-ep01-three-knocks-preview.mp4 work/three-knocks/deliverables/the-last-wing-ep01-three-knocks-editable-source.zip work/three-knocks/deliverables/episode1-contact-sheet-final.jpg work/three-knocks/deliverables/quality-control-report.txt work/three-knocks/deliverables/quality-control-report.json work/three-knocks/deliverables/narration.srt work/three-knocks/deliverables/caption-and-continuity.txt work/three-knocks/deliverables/CHARACTER-BIBLE.md work/three-knocks/deliverables/MANIFEST.json
