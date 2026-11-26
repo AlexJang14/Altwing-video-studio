@@ -1,6 +1,6 @@
 {
   "mode": "final",
-  "revision": "three-knocks-scout-wing-05-final",
+  "revision": "three-knocks-scout-wing-06-final",
   "scope": "Final native1080x1920 export; complete72s Episode1 only; original Empty Room and website preserved. Reuse inspected security footage.",
   "focusedTimes": [
     25.8,
@@ -16,5 +16,6 @@
     69.8,
     70.5,
     71.2
-  ]
+  ],
+  "runnerMediaTools": "Use binaries from pinned Remotion dependency; no external system package repository"
 }

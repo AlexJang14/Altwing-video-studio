@@ -14,6 +14,6 @@ subprocess.run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',str(li
 s=json.loads(subprocess.check_output(['ffprobe','-v','error','-count_frames','-show_streams','-show_format','-of','json',str(file)]));v=next(x for x in s['streams']if x['codec_type']=='video');a=next(x for x in s['streams']if x['codec_type']=='audio')
 assert int(v['nb_read_frames'])==2160;assert v['r_frame_rate']=='30/1';assert v['codec_name']=='h264';assert v['pix_fmt']=='yuv420p';assert abs(float(s['format']['duration'])-72)<.05;assert a['codec_name']=='aac'and a['sample_rate']=='48000'
 # Decode every video/audio frame, rather than relying on a header-only probe.
-subprocess.run(['ffmpeg','-v','error','-i',str(file),'-f','null','-'],check=True)
+subprocess.run(['ffmpeg','-v','error','-i',str(file),'-c:v','rawvideo','-c:a','pcm_s16le','-f','null','-'],check=True)
 r={'file':file.name,'mode':mode,'duration':s['format']['duration'],'frames':2160,'fps':30,'width':v['width'],'height':v['height'],'codec':v['codec_name'],'pixelFormat':v['pix_fmt'],'audioCodec':a['codec_name'],'audioRate':a['sample_rate'],'sha256':hashlib.sha256(file.read_bytes()).hexdigest(),'decodedAllFrames':True,'segments':checks}
 (out/f'verification-{mode}.json').write_text(json.dumps(r,indent=2)+'\n');print(json.dumps(r,indent=2))

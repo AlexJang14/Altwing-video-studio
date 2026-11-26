@@ -23,7 +23,12 @@ jobs:
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
       - run: npm ci --no-audit --no-fund
       - run: npm run typecheck
-      - run: command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+      - name: Use lockfile-pinned Remotion media tools
+        run: |
+          MEDIA_BIN="$PWD/node_modules/@remotion/compositor-linux-x64-gnu"
+          test -x "$MEDIA_BIN/ffmpeg"
+          test -x "$MEDIA_BIN/ffprobe"
+          echo "$MEDIA_BIN" >> "$GITHUB_PATH"
       - name: Verify Wing rules, deterministic socket, motion and physical contact
         run: |
           npx tsx scripts/three-knocks/check-wings.ts
@@ -103,8 +108,12 @@ jobs:
         with:
           name: three-knocks-support
           path: public/three-knocks
-      - run: |
-          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+      - name: Use bundled media tools and install image-review dependency
+        run: |
+          MEDIA_BIN="$PWD/node_modules/@remotion/compositor-linux-x64-gnu"
+          test -x "$MEDIA_BIN/ffmpeg"
+          test -x "$MEDIA_BIN/ffprobe"
+          echo "$MEDIA_BIN" >> "$GITHUB_PATH"
           python3 -m venv /tmp/three-knocks-tools
           /tmp/three-knocks-tools/bin/pip install pillow
       - name: Assemble, count and fully decode all 2160 frames
