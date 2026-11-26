@@ -1,5 +1,6 @@
 {
   "mode": "preview",
-  "revision": "three-knocks-scout-wing-02",
-  "scope": "Complete 72-second low-resolution preview. Reuse verified orange-patch entry footage; render corrected camera-housing finale. Original film and website unchanged."
+  "revision": "three-knocks-scout-wing-03",
+  "scope": "Complete 72-second low-resolution preview. Reuse verified orange-patch entry footage; render corrected camera-housing finale. Original film and website unchanged.",
+  "freshRunnerFix": "Create validation output directory before geometry checks"
 }

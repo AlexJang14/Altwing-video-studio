@@ -1,0 +1,16 @@
+{
+  "initialStillRun": 45906534005,
+  "initialSource": "ca2584e01d20d5c66f27d03ef20f885700649597",
+  "reviewMethod": "Direct inspection of 26 actual rendered frames and separate character/portrait PNGs",
+  "observed": {
+    "orangePatchMatch": "PASS in rendered entry/portrait views",
+    "readableChoicesAndIntegratedAltWingInvitation": "PASS in rendered choice and invitation frames",
+    "ScoutFaceHotspot": "FAIL in initial render; point light removed; updated render pending",
+    "FlickerReadability": "FAIL in initial render; independent fill added; updated render pending",
+    "FinalCameraHousingOcclusion": "FAIL in initial render; housing repositioned and resized; updated render pending"
+  },
+  "fullPreviewRun": 45907647755,
+  "fullPreviewReview": "PENDING",
+  "exactPlushPhoto": "UNVERIFIED \u2014 original photo inaccessible",
+  "byEarAudioReview": "UNVERIFIED \u2014 technical measurements only"
+}

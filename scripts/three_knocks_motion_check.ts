@@ -1,6 +1,7 @@
 import{updateWingSocket}from'../src/characters/wings/socket';import{EPISODE1_WING_COMMANDS,wingStateAt}from'../src/characters/wings/system';
 import fs from 'node:fs';import * as THREE from 'three';import {GLTFLoader}from 'three/addons/loaders/GLTFLoader.js';import {loadImage}from '@napi-rs/canvas';import {applyPerson,applyPenguin}from '../src/reset/rig';import {blocking,securityEntry as intruderBlocking}from '../src/threeKnocks/motion';import {intersects,capsuleClearance}from './rescue_collision_math';
 import {camera}from '../src/threeKnocks/Camera';import{OBB}from 'three/addons/math/OBB.js';
+fs.mkdirSync('work/three-knocks',{recursive:true});
 Object.assign(globalThis,{self:globalThis,createImageBitmap:async(b:Blob)=>loadImage(Buffer.from(await b.arrayBuffer()))});
 async function load(file:string){const b=fs.readFileSync(file);return (await new Promise<any>((resolve,reject)=>new GLTFLoader().parse(new Uint8Array(b).buffer,'',resolve,reject))).scene as THREE.Group;}
 const a=await load('public/empty-room/astronaut-tailored.glb'),w=await load('public/three-knocks/wangdoo-sculpted.glb'),errors:any[]=[],contacts:any[]=[],steps:any[]=[],prev=new Map<string,{p:THREE.Vector3;h:number}>();
