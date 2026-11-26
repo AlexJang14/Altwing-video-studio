@@ -1,0 +1,175 @@
+{
+  "verifiedAt": "2026-11-26T18:37:00.598275-05:00",
+  "renderSourceCommit": "6b1cfa266228acf3a18e4d373d031184a9a86ac0",
+  "actionsRun": "https://github.com/AlexJang14/Altwing-video-studio/actions/runs/45909974734",
+  "actionsResults": {
+    "successfulJobs": 10,
+    "failedJobs": 0
+  },
+  "release": "https://github.com/AlexJang14/Altwing-video-studio/releases/tag/three-knocks-ep01-6b1cfa26",
+  "video": {
+    "file": "the-last-wing-ep01-three-knocks-final.mp4",
+    "mode": "final",
+    "duration": "72.000000",
+    "frames": 2160,
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "audioRate": "48000",
+    "sha256": "e5ed8247ea1dd58ae347d7321da3337242709ee65c8db1c771adf6754c7896f0",
+    "decodedAllFrames": true,
+    "segments": [
+      {
+        "file": "three-knocks-final-0-269.mp4",
+        "frames": 270,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "file": "three-knocks-final-270-539.mp4",
+        "frames": 270,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "file": "three-knocks-final-540-809.mp4",
+        "frames": 270,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "file": "three-knocks-final-810-1079.mp4",
+        "frames": 270,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "file": "three-knocks-final-1080-1349.mp4",
+        "frames": 270,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "file": "three-knocks-final-1350-1619.mp4",
+        "frames": 270,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "file": "three-knocks-final-1620-1889.mp4",
+        "frames": 270,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "file": "three-knocks-final-1890-2159.mp4",
+        "frames": 270,
+        "width": 1080,
+        "height": 1920
+      }
+    ]
+  },
+  "actualChromePlayback": {
+    "atUTC": "2026-11-26T23:33:19.675Z",
+    "audioHumanAudition": false,
+    "samples": [
+      {
+        "requested": 1,
+        "actual": 1,
+        "readyState": 4
+      },
+      {
+        "requested": 11,
+        "actual": 11,
+        "readyState": 4
+      },
+      {
+        "requested": 24,
+        "actual": 24,
+        "readyState": 4
+      },
+      {
+        "requested": 27,
+        "actual": 27,
+        "readyState": 4
+      },
+      {
+        "requested": 33,
+        "actual": 33,
+        "readyState": 4
+      },
+      {
+        "requested": 41,
+        "actual": 41,
+        "readyState": 4
+      },
+      {
+        "requested": 47,
+        "actual": 47,
+        "readyState": 4
+      },
+      {
+        "requested": 51,
+        "actual": 51,
+        "readyState": 4
+      },
+      {
+        "requested": 56,
+        "actual": 56,
+        "readyState": 4
+      },
+      {
+        "requested": 64,
+        "actual": 64,
+        "readyState": 4
+      },
+      {
+        "requested": 69,
+        "actual": 69,
+        "readyState": 4
+      },
+      {
+        "requested": 71,
+        "actual": 71,
+        "readyState": 4
+      }
+    ],
+    "errors": [],
+    "duration": 72,
+    "width": 1080,
+    "height": 1920,
+    "playedTo": 0.500722,
+    "error": null,
+    "status": "PASS"
+  },
+  "publicDownload": {
+    "status": 200,
+    "bytes": 16071491,
+    "sha256": "e5ed8247ea1dd58ae347d7321da3337242709ee65c8db1c771adf6754c7896f0",
+    "expectedSHA256": "e5ed8247ea1dd58ae347d7321da3337242709ee65c8db1c771adf6754c7896f0",
+    "matchesLocalVerifiedFinal": true
+  },
+  "editableArchive": {
+    "files": 382,
+    "CRC": "PASS",
+    "requiredModelsAudioSourcePresent": true,
+    "frozenTypeScriptSourceComparison": "PASS",
+    "sha256": "18dd00222794f088db97519ea2eda7157f1b0337500b24e6edb4014e6e21fd35"
+  },
+  "originalEmptyRoomFinalSHA256": "65f25ec351f33fd6993dbab6d40538703343bdf561dfd33efca822e9bb580e49",
+  "earlierFilmUnchanged": true,
+  "productionWebsiteModified": false,
+  "onlyEpisode1Produced": true,
+  "onScreenWingReveals": [
+    "Scout"
+  ],
+  "sixWingCharacterBibleAndReusableRules": true,
+  "knownUnverified": [
+    "Exact plush-photo likeness: original photograph unavailable",
+    "Independent human-by-ear audio review not performed"
+  ],
+  "scope": "Post-render verification record only. No film, application, data or hosting changes."
+}

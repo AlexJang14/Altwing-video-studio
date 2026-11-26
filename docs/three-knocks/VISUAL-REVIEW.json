@@ -51,6 +51,29 @@
     "FrightenedFaceVisible": "PASS \u2014 actual31.80s frame",
     "FinalFigurePatchHandHousing": "PASS \u2014 actual69.10s frame: glove and labeled housing visible",
     "cameraKnockContact": "240 simulated samples; no penetrating vertices; 2.14mm nearest surface gap; hand visible from camera",
-    "finalAdditionalCameraChecks": "Pending final render inspection; no pose changes"
+    "finalAdditionalCameraChecks": {
+      "status": "REVIEWED",
+      "source": "6b1cfa266228acf3a18e4d373d031184a9a86ac0",
+      "framesActuallyInspected": [
+        25.8,
+        29.4,
+        51.6,
+        52.4,
+        63.8,
+        68.1
+      ],
+      "notes": "Both Scout attachments fit the wide reveal. Backpack help is visible from the pack side. Reaction uses close framing, including partial character crops. No further film changes."
+    }
+  },
+  "nativeFinalReview": {
+    "source": "6b1cfa266228acf3a18e4d373d031184a9a86ac0",
+    "run": 45909974734,
+    "nativeFramesInspected": [
+      27.2,
+      69.1
+    ],
+    "method": "Actual final MP4 frames extracted at native1080x1920; entire output decoded; real Chrome playback and twelve seeks verified in CI.",
+    "exactPhotoMatch": "UNVERIFIED",
+    "humanByEarAudioReview": "UNVERIFIED"
   }
 }
