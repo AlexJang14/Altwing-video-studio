@@ -1,7 +1,7 @@
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 import subprocess,sys,json
-ROOT=Path(__file__).resolve().parents[2];mode=sys.argv[1]if len(sys.argv)>1 else'preview';out=ROOT/'work/three-knocks/deliverables';film=out/f'the-last-wing-ep01-the-three-knocks-{mode}.mp4';frames=ROOT/f'work/three-knocks/review-{mode}';frames.mkdir(exist_ok=True,parents=True)
+ROOT=Path(__file__).resolve().parents[2];mode=sys.argv[1]if len(sys.argv)>1 else'preview';out=ROOT/'work/three-knocks/deliverables';film=out/f'the-last-wing-ep01-three-knocks-{mode}.mp4';frames=ROOT/f'work/three-knocks/review-{mode}';frames.mkdir(exist_ok=True,parents=True)
 times=[.6,2,6,10.9,12.8,19.7,23.7,25.8,27.2,29.3,31.8,33.7,37,41.5,44,46.8,48.6,49.5,51.65,53,55.7,63.8,69.1,71.2]
 w,h=270,480;sheet=Image.new('RGB',(w*4,(h+34)*6),(16,18,22));draw=ImageDraw.Draw(sheet);font=ImageFont.truetype(str(ROOT/'public/fonts/DejaVuSans.ttf'),14)
 for i,t in enumerate(times):

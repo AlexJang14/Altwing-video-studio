@@ -30,6 +30,9 @@ power swaps. Model sockets are driven by state, not independent visual toggles.
 appearance is authored/revealed on screen in this episode; catalog descriptions
 of future forms are production constraints, not completed future-episode assets.
 All values are fictional story units, not engineering performance claims.
+Carry remaining energy and cooldown history across continuous story time. Show a
+charging opportunity before replenishing energy; do not silently reset it for a
+convenient new Wing reveal. The canonical replay accepts an initial energy budget.
 
 ## Episode 1 continuity
 

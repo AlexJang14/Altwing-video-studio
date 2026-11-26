@@ -1,5 +1,5 @@
 """Blender source: shaped cloth surfaces, reusable articulated character parts.
-Run: blender -b --python scripts/build_reset_characters.py
+Run: blender -b --python scripts/build_three_knocks_characters.py
 Coordinates are Blender Z-up / -Y front; glTF exports Y-up / +Z front.
 """
 import bpy, math, os, json, random
@@ -207,4 +207,4 @@ bpy.ops.file.make_paths_relative()
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(OUT,'three-knocks-characters.blend'))
 meta={'front':'+Z','up':'+Y','units':'meters','wangdooHeight':.763,'astronautHeight':1.953,'reference':'Refined from the supplied gray-and-white plush description and existing project renders. Definitive plush photograph unavailable; exact photographic match UNVERIFIED.','parts':'Tailored continuous surfaces, articulated groups, sculpted unified glove, baked woven normal maps.','models':['wangdoo-sculpted.glb','astronaut-tailored.glb']}
 open(os.path.join(OUT,'character-assets.json'),'w').write(json.dumps(meta,indent=2)+'\n')
-print('RESET CHARACTER ASSETS COMPLETE',flush=True)
+print('THREE KNOCKS CHARACTER ASSETS COMPLETE',flush=True)

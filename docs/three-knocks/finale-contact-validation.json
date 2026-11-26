@@ -1,0 +1,23 @@
+{
+  "frames": 120,
+  "samples": 240,
+  "maxReachGap": 4.7086914489680774e-8,
+  "knockContacts": [
+    {
+      "t": 1.1,
+      "minimumGloveHousingGap": 0.0016546481293451265,
+      "penetratingVertices": 0
+    },
+    {
+      "t": 1.8,
+      "minimumGloveHousingGap": 0.0016546481293451265,
+      "penetratingVertices": 0
+    },
+    {
+      "t": 2.5,
+      "minimumGloveHousingGap": 0.0016546481293451265,
+      "penetratingVertices": 0
+    }
+  ],
+  "errors": []
+}

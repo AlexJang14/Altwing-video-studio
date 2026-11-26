@@ -17,6 +17,7 @@ for(let f=0;f<frames;f+=.5){
  samples++;const time=f/30,t=time,b=blocking(t);applyPerson(a,b.a);applyPenguin(w,b.w);w.getObjectByName('WangWingR')!.rotation.x=.02-.78*(b.w.pose.scanner??0);scanner.visible=(b.w.pose.scanner??0)>.025;w.getObjectByName('WangBody')!.rotation.x=b.w.bodyPitch??0;updateWingSocket(w,wingStateAt(t<3?29+t*.7:t,EPISODE1_WING_COMMANDS),t<3?29+t*.7:t);w.updateMatrixWorld(true);
  if(b.contact){const gap=point(a,'AstroGrip'+b.contact.side).distanceTo(new THREE.Vector3(...b.contact.target));maxContact=Math.max(gap,maxContact);if(gap>.003)errors.push({f,type:'contact-gap',gap});contacts.push({f,kind:b.contact.kind,gap});}
  const shells=['WangHeadCloth','WangTorso','WangFlipperL','WangFlipperR',...(scanner.visible?['PracticalScannerQA']:[])].map(name=>({name,e:ellipse(w,name)}));
+ w.traverse(o=>{if(o.name.startsWith('ModularEnergyFeather')&&wingStateAt(t<3?29+t*.7:t,EPISODE1_WING_COMMANDS).active)shells.push({name:o.name,e:ellipse(w,o.name)});});
  for(const name of ['HelmetShell','SuitTrunk','TailoredGloveL','TailoredGloveR'])for(const p of shells)if(intersects(ellipse(a,name),p.e))errors.push({f,type:'shell-intersection',a:name,w:p.name});
  for(const side of ['L','R']){
   const shoulder=point(a,'AstroUpperArm'+side),elbow=point(a,'AstroForearm'+side),wrist=point(a,'AstroGrip'+side);

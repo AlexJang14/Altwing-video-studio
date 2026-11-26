@@ -10,14 +10,14 @@ export const WINGS:Record<WingId,WingSpec>={
  builder:{name:'Builder Wing',color:'#47c7ae',symbol:'creativity',abilities:['repair','assemble','reroute circuits','temporary mechanisms'],limitation:'Requires available materials, time and focused setup.',activationCost:10,drainPerSecond:4,maxSeconds:12,cooldownSeconds:8,shape:'tool'},
 };
 export type WingCommand={at:number;action:'activate'|'interference'|'release';wing?:WingId};
-export type WingState={active:WingId|null;energy:number;activatedAt:number|null;releasedAt:number|null;interference:boolean;cooldowns:Partial<Record<WingId,number>>;rejected:{at:number;reason:string}[]};
+export type WingState={active:WingId|null;equipped:WingId|null;energy:number;activatedAt:number|null;releasedAt:number|null;interference:boolean;cooldowns:Partial<Record<WingId,number>>;rejected:{at:number;reason:string}[]};
 export function wingStateAt(time:number,commands:readonly WingCommand[],initialEnergy=100):WingState{
- const s:WingState={active:null,energy:initialEnergy,activatedAt:null,releasedAt:null,interference:false,cooldowns:{},rejected:[]};let cursor=0;
+ const s:WingState={active:null,equipped:null,energy:initialEnergy,activatedAt:null,releasedAt:null,interference:false,cooldowns:{},rejected:[]};let cursor=0;
  const release=(at:number)=>{if(!s.active)return;s.cooldowns[s.active]=at+WINGS[s.active].cooldownSeconds;s.active=null;s.releasedAt=at;s.interference=false;};
  const advance=(to:number)=>{if(s.active){const c=WINGS[s.active],expiry=Math.min((s.activatedAt??0)+c.maxSeconds,cursor+s.energy/c.drainPerSecond),until=Math.min(to,expiry);s.energy=Math.max(0,s.energy-(until-cursor)*c.drainPerSecond);if(expiry<=to)release(expiry);}cursor=to;};
  for(const cmd of [...commands].sort((a,b)=>a.at-b.at)){if(cmd.at>time)break;advance(cmd.at);if(cmd.action==='activate'){
   const id=cmd.wing??'scout',c=WINGS[id];const reason=s.active?'one-wing-only':(s.cooldowns[id]??0)>cmd.at?'cooldown':s.energy<c.activationCost?'insufficient-energy':null;
-  if(reason)s.rejected.push({at:cmd.at,reason});else{s.active=id;s.energy-=c.activationCost;s.activatedAt=cmd.at;s.interference=false;s.releasedAt=null;}
+  if(reason)s.rejected.push({at:cmd.at,reason});else{s.active=id;s.equipped=id;s.energy-=c.activationCost;s.activatedAt=cmd.at;s.interference=false;s.releasedAt=null;}
  }else if(cmd.action==='interference'){if(s.active)s.interference=true;}else release(cmd.at);}
  advance(Math.max(cursor,time));return s;
 }
