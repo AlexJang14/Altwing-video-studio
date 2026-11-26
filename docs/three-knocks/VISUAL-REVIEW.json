@@ -9,8 +9,15 @@
     "FlickerReadability": "FAIL in initial render; independent fill added; updated render pending",
     "FinalCameraHousingOcclusion": "FAIL in initial render; housing repositioned and resized; updated render pending"
   },
-  "fullPreviewRun": 45907647755,
+  "fullPreviewRun": 45907849560,
   "fullPreviewReview": "PENDING",
   "exactPlushPhoto": "UNVERIFIED \u2014 original photo inaccessible",
-  "byEarAudioReview": "UNVERIFIED \u2014 technical measurements only"
+  "byEarAudioReview": "UNVERIFIED \u2014 technical measurements only",
+  "secondStillInspection": {
+    "source": "c58b04226b04aa3c6bfe10ed3a200f679f8c2860",
+    "ScoutFaceHotspot": "PASS \u2014 hotspot absent in actual 25.80s frame",
+    "FinalFigureAndOrangePatchVisible": "PASS \u2014 actual 69.10s frame",
+    "KnockingHandVisibility": "FAIL \u2014 foreground housing still hides most of gesture; moved contact to visible side, actual corrected render pending",
+    "ScoutPairAndFearFraming": "Needs improvement \u2014 separate back-to-front unfold and frightened face shots now implemented; actual render pending"
+  }
 }

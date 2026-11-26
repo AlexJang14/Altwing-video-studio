@@ -1,6 +1,16 @@
 {
-  "mode": "preview",
-  "revision": "three-knocks-scout-wing-03",
-  "scope": "Complete 72-second low-resolution preview. Reuse verified orange-patch entry footage; render corrected camera-housing finale. Original film and website unchanged.",
-  "freshRunnerFix": "Create validation output directory before geometry checks"
+  "mode": "qa",
+  "revision": "three-knocks-scout-wing-04",
+  "scope": "Focused rendered corrections only. Full preview continues on c58b042. No additional episode or website edits.",
+  "focusedTimes": [
+    25.8,
+    26.8,
+    31.8,
+    68.1,
+    68.6,
+    69.1,
+    69.8,
+    70.5,
+    71.2
+  ]
 }

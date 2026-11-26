@@ -33,4 +33,9 @@ export function blocking(time:number):Blocking{
  return{a,w,contact,hideHuman:t>=18&&t<20.8};
 }
 export function securityEntry(t:number):Person{const route:V3[]=[[.15,0,1.9],[-.55,0,0],[.30,0,-1.55]];let a=t<4.7?personWalk(t,route,.5,4.7):turnPerson(personWalk(4.7,route,.5,4.7),t,walk(4.7,route,.5,4.7).yaw,Math.PI,4.7,5.2,{from:walk(4.7,route,.5,4.7).feet});a.pose.lamp=0;a.pose.headPitch=.12;a.pose.leftTarget=targetBlend(restGripWorld(a,-1),[.65,1.09,-2.06],ramp(t,5.35,6.0));return a;}
-export function securityFinale(t:number):Person{const a:Person={p:[-.45,0,2.13],yaw:-.42*ramp(t,0,.75),pose:{bodyY:-.115,headYaw:-.12,headPitch:-.08,lamp:0}};let impact=0;for(const k of[1.1,1.8,2.5])impact=Math.max(impact,between(t,k-.18,k+.15,.15));const target:V3=[-.86,1.82,2.406-.075*(1-impact)];a.pose.leftTarget=targetBlend(restGripWorld(a,-1),target,ramp(t,.4,.95));a.pose.leftPole=[-1,0,1];return a;}
+export function securityFinale(t:number):Person{
+ const a=turnPerson({p:[-.45,0,2.26],yaw:Math.PI,pose:{bodyY:-.115,headYaw:-.12,headPitch:-.08,lamp:0}},t,Math.PI,Math.PI*2-.42,0,.85);
+ let impact=0;for(const k of[1.1,1.8,2.5])impact=Math.max(impact,between(t,k-.18,k+.15,.15));
+ const target:V3=[-.899+.075*(1-impact),1.83,2.49];
+ a.pose.leftTarget=targetBlend(restGripWorld(a,-1),target,ramp(t,.85,1.07));a.pose.leftPole=[-1,0,1];return a;
+}

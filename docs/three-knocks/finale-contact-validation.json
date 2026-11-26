@@ -1,22 +1,28 @@
 {
   "frames": 120,
   "samples": 240,
-  "maxReachGap": 4.513332255657389e-8,
+  "maxReachGap": 4.0646928259227204e-8,
   "knockContacts": [
     {
       "t": 1.1,
-      "minimumGloveHousingGap": 0.0026230957167654445,
-      "penetratingVertices": 0
+      "minimumGloveHousingGap": 0.0021395863036804963,
+      "penetratingVertices": 0,
+      "gloveVerticesVisibleFromCamera": 3230,
+      "gloveVertexCount": 3230
     },
     {
       "t": 1.8,
-      "minimumGloveHousingGap": 0.0026230957167654445,
-      "penetratingVertices": 0
+      "minimumGloveHousingGap": 0.0021395863036804963,
+      "penetratingVertices": 0,
+      "gloveVerticesVisibleFromCamera": 3230,
+      "gloveVertexCount": 3230
     },
     {
       "t": 2.5,
-      "minimumGloveHousingGap": 0.0026230957167654445,
-      "penetratingVertices": 0
+      "minimumGloveHousingGap": 0.0021395863036804963,
+      "penetratingVertices": 0,
+      "gloveVerticesVisibleFromCamera": 3230,
+      "gloveVertexCount": 3230
     }
   ],
   "errors": []
