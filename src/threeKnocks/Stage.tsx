@@ -6,7 +6,7 @@ export const Stage:React.FC<{time:number}>=({time})=>{const t=time<3?29+time*.7:
  <group position={[-.35+.27*ramp(t,19,23),.035,-5.52]} rotation={[0,0,-(t>=19?Math.min(t-19,4)*1.8:0)]}><mesh rotation={[0,0,Math.PI/2]} castShadow><cylinderGeometry args={[.027,.031,.16,16]}/><meshStandardMaterial color="#3c4953" roughness={.7}/></mesh><Orb p={[.08,0,0]} s={[.006,.028,.028]} color="#d3d5bb" metal={0} rough={.45}/></group>
  {t>=18&&t<20.8&&<TargetSpot p={[.2,1.65,-.65]} look={[-2,.95,-1.6-(t-18)*.5]} color="#f2dfbb" intensity={22}/>}
  </>}
- <Astronaut actor={b.a} hidden={b.hideHuman}/><Wangdoo actor={b.w} time={t}/><ContactShadow p={b.a.p}/><ContactShadow p={b.w.p} small/>
+ {t>=50.7&&t<53&&<TargetSpot p={[-1.1,1.6,-7]} look={[.08,.55,-5.97]} color="#d3dce4" intensity={12}/>}<Astronaut actor={b.a} hidden={b.hideHuman}/><Wangdoo actor={b.w} time={t}/><ContactShadow p={b.a.p}/><ContactShadow p={b.w.p} small/>
  {scan.active&&t>=25.8&&t<31.35&&<group><Line3D points={[[b.w.p[0]-.4,.40,b.w.p[2]-.1],[0,.65,-10.56],[.78,1.95,-10.56]]} color="#45d9ff" radius={.003} glow={.9} opacity={.28}/></group>}
  {t>=32&&t<35&&<TargetSpot p={[b.a.p[0]-.15,1.28,b.a.p[2]-.2]} look={[.3,1.5,-10.8]} color="#ffe1ad" intensity={27}/>}
  {t>=13.6&&t<16&&<group position={[-.13,1.04,-.92]}><Box s={[.64,.36,.015]} color="#142a34" rough={.9}/><Line3D points={[[-.23,-.07,.012],[-.11,-.07,.012],[-.11,.055,.012],[.20,.055,.012]]} radius={.007} color="#a6d2d2" glow={.4}/><Plate text="SHIP     LAST SIGNAL" position={[0,-.137,.014]} size={[.56,.07]}/></group>}

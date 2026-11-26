@@ -10,7 +10,31 @@
     "FinalCameraHousingOcclusion": "FAIL in initial render; housing repositioned and resized; updated render pending"
   },
   "fullPreviewRun": 45907849560,
-  "fullPreviewReview": "PENDING",
+  "fullPreviewReview": {
+    "status": "COMPLETE",
+    "source": "c58b04226b04aa3c6bfe10ed3a200f679f8c2860",
+    "run": 45907849560,
+    "durationSeconds": 72,
+    "frames": 2160,
+    "decodedAllFrames": true,
+    "sha256": "c36b2ad10b3f174ded3b54655bb9bcdef3350af1a3fdb31d7bf4a314048e5f2e",
+    "method": "24 whole-episode frame samples plus six chronological six-frame strips extracted from the actual assembled MP4",
+    "motionObserved": [
+      "run",
+      "stumble",
+      "return",
+      "backpack help",
+      "recoil",
+      "Scout unfold",
+      "orange-patch match",
+      "ending"
+    ],
+    "correctionsAfterInspection": [
+      "Two-shot for the recoil/hiding movement",
+      "Backpack-side view and local fill for helping contact",
+      "Slightly wider Scout pair reveal"
+    ]
+  },
   "exactPlushPhoto": "UNVERIFIED \u2014 original photo inaccessible",
   "byEarAudioReview": "UNVERIFIED \u2014 technical measurements only",
   "secondStillInspection": {
@@ -19,5 +43,14 @@
     "FinalFigureAndOrangePatchVisible": "PASS \u2014 actual 69.10s frame",
     "KnockingHandVisibility": "FAIL \u2014 foreground housing still hides most of gesture; moved contact to visible side, actual corrected render pending",
     "ScoutPairAndFearFraming": "Needs improvement \u2014 separate back-to-front unfold and frightened face shots now implemented; actual render pending"
+  },
+  "focusedCorrectionReview": {
+    "run": 45908909875,
+    "source": "0f5d7210daceb0ad6f37b290c254571531dc0bfa",
+    "ScoutPairVisible": "PASS \u2014 actual25.80s frame shows both attachments; final framing widened slightly",
+    "FrightenedFaceVisible": "PASS \u2014 actual31.80s frame",
+    "FinalFigurePatchHandHousing": "PASS \u2014 actual69.10s frame: glove and labeled housing visible",
+    "cameraKnockContact": "240 simulated samples; no penetrating vertices; 2.14mm nearest surface gap; hand visible from camera",
+    "finalAdditionalCameraChecks": "Pending final render inspection; no pose changes"
   }
 }
