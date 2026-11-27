@@ -67,7 +67,7 @@ def desk(parent,p):
 # Physical recorded-SOS apparatus behind a real inspection hatch.
 door=group('FakeSOSDoor')
 leaf=group('FakeLockedLeaf',(0,10.80,0),door)
-for name,p,size in [('LeftDoorSlab',(-.90,0,1.46),(.26,.16,2.92)),('RightDoorSlab',(.90,0,1.46),(.26,.16,2.92)),('TopDoorSlab',(0,0,2.24),(1.58,.16,1.36)),('LowerDoorSlab',(0,0,.31),(1.58,.16,.62))]:box(name,p,size,leaf,wall,.025)
+for name,p,size in [('LeftDoorSlab',(-.90,0,1.46),(.26,.16,2.92)),('RightDoorSlab',(.90,0,1.46),(.26,.16,2.92)),('TopDoorSlab',(0,0,2.24),(1.58,.16,1.36)),('LowerDoorSlab',(0,0,.365),(1.58,.16,.51)),('WireNotchLeft',(-.585,0,.055),(.41,.16,.11)),('WireNotchRight',(.235,0,.055),(1.11,.16,.11))]:box(name,p,size,leaf,wall,.025)
 for x in [-.80,.80]:box('InspectionFrameSide'+str(x),(x,-.12,1.09),(.045,.06,.97),leaf,alum,.009)
 for z in [.62,1.56]:box('InspectionFrameEdge'+str(z),(0,-.12,z),(1.64,.06,.045),leaf,alum,.009)
 hatch=group('InspectionShutter',(0,-.155,.62),leaf);box('InspectionCover',(0,0,.47),(1.53,.045,.91),hatch,trim,.025)
@@ -97,6 +97,7 @@ for side in [-1,1]:
 box('PlaybackButton',(0,-.148,-.128),(.14,.022,.062),rec,warm,.009)
 curve('RecordingSignalWire',[(-.33,10.93,.83),(-.21,10.88,.77),(-.02,10.88,.77),(.15,10.93,.83),(.19,11.02,.86)],.013,door,mat('Signal cable orange insulation',(.75,.27,.042),.9))
 curve('CommunicationsUplink',[(.66,11.04,1.05),(.79,11.18,1.06),(.78,11.35,1.55),(.4,11.53,1.65)],.016,door,rubber)
+curve('ExposedSignalLead',[(-.33,10.93,.83),(-.35,10.85,.40),(-.35,10.80,.07),(-.35,10.62,.055),(-.42,10.35,.055)],.013,door,mat('Orange clue cable',(.75,.27,.042),.9))
 # Industrial docking platform; bevels, grating, rails and service details.
 dock=group('DockingVestibule')
 for j in range(8):

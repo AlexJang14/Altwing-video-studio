@@ -1,4 +1,4 @@
-name: Render The Fake SOS — expressive Episode 1
+name: Render The Fake SOS — complete Episode 1
 on:
   push:
     branches: [codex/the-fake-sos-episode1]
@@ -6,9 +6,56 @@ on:
 permissions:
   contents: read
 jobs:
-  characters:
+  prepare:
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 45
+    outputs:
+      mode: ${{ steps.request.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - id: request
+        run: |
+          MODE=$(node -p "JSON.parse(require('fs').readFileSync('docs/fake-sos/RENDER-REQUEST.json')).mode")
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+      - run: npm ci --no-audit --no-fund
+      - run: npm run typecheck
+      - name: Use lockfile-pinned media binaries
+        run: echo "$PWD/node_modules/@remotion/compositor-linux-x64-gnu" >> "$GITHUB_PATH"
+      - name: Check physical contact, planted feet, environment and Wing energy
+        run: npx tsx scripts/fake-sos/check-motion.ts
+      - run: CHROME_PATH=$(command -v google-chrome) node scripts/fake-sos/render.mjs support
+      - run: CHROME_PATH=$(command -v google-chrome) node scripts/fake-sos/render.mjs qa
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fake-sos-support
+          path: |
+            public/fake-sos/security-entry.mp4
+            public/fake-sos/missing-portrait.png
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fake-sos-inspection
+          path: |
+            work/fake-sos/qa/
+            work/fake-sos/characters/
+            work/fake-sos/*validation.json
+            work/fake-sos/footsteps.json
+          retention-days: 30
+  render:
+    needs: prepare
+    if: needs.prepare.outputs.mode != 'qa'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk: [0,1,2,3,4,5,6,7]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -16,11 +63,76 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --no-audit --no-fund
-      - run: npm run typecheck
-      - run: CHROME_PATH=$(command -v google-chrome) node scripts/fake-sos/render.mjs characters
+      - uses: actions/download-artifact@v4
+        with:
+          name: fake-sos-support
+          path: public/fake-sos
+      - env:
+          MODE: ${{ needs.prepare.outputs.mode }}
+          CHUNK: ${{ matrix.chunk }}
+        run: CHROME_PATH=$(command -v google-chrome) node scripts/fake-sos/render.mjs "$MODE" "$CHUNK"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: fake-sos-character-expressions
-          path: work/fake-sos/characters/
+          name: fake-sos-chunk-${{ matrix.chunk }}
+          path: work/fake-sos/renders/*.mp4
+          compression-level: 0
           retention-days: 30
+  finish:
+    needs: [prepare,render]
+    if: needs.prepare.outputs.mode != 'qa'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: fake-sos-chunk-*
+          merge-multiple: true
+          path: work/fake-sos/segments-${{ needs.prepare.outputs.mode }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: fake-sos-support
+          path: public/fake-sos
+      - uses: actions/download-artifact@v4
+        with:
+          name: fake-sos-inspection
+          path: work/fake-sos
+      - name: Use bundled media tools and image-review dependency
+        run: |
+          echo "$PWD/node_modules/@remotion/compositor-linux-x64-gnu" >> "$GITHUB_PATH"
+          python3 -m venv /tmp/fake-sos-tools
+          /tmp/fake-sos-tools/bin/pip install pillow
+      - env:
+          MODE: ${{ needs.prepare.outputs.mode }}
+        run: |
+          python3 scripts/fake-sos/assemble.py "$MODE"
+          /tmp/fake-sos-tools/bin/python scripts/fake-sos/contact-sheet.py "$MODE"
+      - name: Browser-playback check and editable delivery
+        if: needs.prepare.outputs.mode == 'final'
+        run: |
+          ffmpeg -v error -y -i work/fake-sos/deliverables/the-last-wing-ep01-the-fake-sos-final.mp4 -vf scale=540:960 -c:v libx264 -crf 21 -c:a copy -movflags +faststart work/fake-sos/deliverables/the-last-wing-ep01-the-fake-sos-preview.mp4
+          python3 -m http.server 8097 --directory work/fake-sos/deliverables --bind 127.0.0.1 > /tmp/fake-sos-http.log 2>&1 &
+          CHROME_PATH=$(command -v google-chrome) node scripts/fake-sos/playback.mjs
+          python3 scripts/fake-sos/package.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: The-Fake-SOS-Episode1-${{ needs.prepare.outputs.mode }}
+          path: work/fake-sos/deliverables/
+          compression-level: 0
+          retention-days: 30
+      - name: Deliver completed Episode 1 in video-studio release assets
+        if: needs.prepare.outputs.mode == 'final'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="fake-sos-ep01-${GITHUB_SHA:0:8}"
+          gh release create "$TAG" --target "$GITHUB_SHA" --title "The Last Wing — Episode 1: The Fake SOS" --notes-file work/fake-sos/deliverables/quality-control-report.txt work/fake-sos/deliverables/the-last-wing-ep01-the-fake-sos-final.mp4 work/fake-sos/deliverables/the-last-wing-ep01-the-fake-sos-preview.mp4 work/fake-sos/deliverables/the-last-wing-ep01-the-fake-sos-editable-source.zip work/fake-sos/deliverables/episode1-contact-sheet-final.jpg work/fake-sos/deliverables/wangdoo-expression-contact-sheet.jpg work/fake-sos/deliverables/quality-control-report.txt work/fake-sos/deliverables/quality-control-report.json work/fake-sos/deliverables/narration.srt work/fake-sos/deliverables/narration-script.txt work/fake-sos/deliverables/caption-and-branches.txt work/fake-sos/deliverables/MANIFEST.json

@@ -1,3 +1,5 @@
+import{FakeSOSFilm}from'./fakeSOS/Film';
+import{Security as FakeSOSSecurity,MissingPortrait as FakeSOSPortrait}from'./fakeSOS/Security';
 import{ExpressionGate as FakeSOSExpressions}from'./fakeSOS/ExpressionGate';
 import{ThreeKnocksFilm}from'./threeKnocks/Film';
 import{Security,SecurityFinale,MissingPortrait,ScoutLook}from'./threeKnocks/Security';
@@ -19,6 +21,9 @@ import {PlushLookdev} from './rescue/Lookdev';
 import {RescueEpisode1,RescueEpisode2,RescueEpisode3} from './rescue/Film';
 import {PlushMemory,TrainingMemory,SecurityFeed,WarningFeed} from './rescue/Assets';
 export const RemotionRoot:React.FC=()=><>
+  <Composition id="Fake-SOS-Episode1" component={FakeSOSFilm} durationInFrames={2160} fps={30} width={1080} height={1920}/>
+  <Composition id="Fake-SOS-Security" component={FakeSOSSecurity} durationInFrames={270} fps={30} width={960} height={720}/>
+  <Composition id="Fake-SOS-Portrait" component={FakeSOSPortrait} durationInFrames={30} fps={30} width={960} height={1080}/>
   <Composition id="Fake-SOS-Expressions" component={FakeSOSExpressions} durationInFrames={180} fps={30} width={1080} height={1350}/>
   <Composition id="Three-Knocks-Episode1" component={ThreeKnocksFilm} durationInFrames={2160} fps={30} width={1080} height={1920}/>
   <Composition id="Three-Knocks-Security-Entry" component={Security} durationInFrames={300} fps={30} width={960} height={720}/>
