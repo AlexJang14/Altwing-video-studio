@@ -24,17 +24,17 @@ export const packPoint=(w:Plush):V3=>localToWorld(new THREE.Vector3(.081,.46,-.3
 export const flipperPoint=(w:Plush):V3=>localToWorld(new THREE.Vector3(.025,-.155,.035).applyEuler(new THREE.Euler(w.flipperPitch??.02,0,w.pose.wingR??.02)).add(new THREE.Vector3(.178,.382,-.004)).applyEuler(new THREE.Euler(w.bodyPitch??0,0,w.pose.bodyRoll??0)).add(new THREE.Vector3(0,w.pose.bob??0,0)),w).toArray()as V3;
 export const LAMP_RELEASE=14.05,LAMP_CATCH=14.32;
 function introPlush(t:number):Plush{let w:Plush;if(t<13.1)w=plushWalk(t,[[-.90,0,.65],[-.28,0,.25]],12.0,13.1);else w=turnPenguin({p:[-.28,0,.25],yaw:Math.PI/2,pose:{}},t,travel(13.1,[[-.90,0,.65],[-.28,0,.25]],12,13.1,'small').yaw,Math.PI/2,13.1,13.55,{from:travel(13.1,[[-.90,0,.65],[-.28,0,.25]],12,13.1,'small').feet});
- w.pose.headYaw=-.38;w.pose.headRoll=.035;w.pose.headPitch=-.12*between(t,14.35,18,.4);w.pose.wingR=-.45*between(t,12.8,14.35,.3);w.pose.wingL=-.14*between(t,12.8,14.35,.3);w.flipperPitch=-1.30*between(t,12.8,14.35,.3);w.pose.bodyRoll=(w.pose.bodyRoll??0)+.045*Math.sin((t-13.7)*12)*between(t,13.7,14.7,.15);w.pat=between(t,16.2,17.2,.25);return w;}
-export function droppedLamp(t:number):V3{const p=flipperPoint(introPlush(LAMP_RELEASE)),target:V3=[.12,.30,.20],d=LAMP_CATCH-LAMP_RELEASE,u=THREE.MathUtils.clamp(t-LAMP_RELEASE,0,d);return[p[0]+(target[0]-p[0])*u/d,p[1]+((target[1]-p[1]+4.9*d*d)/d)*u-4.9*u*u,p[2]+(target[2]-p[2])*u/d];}
+ w.pose.headYaw=-.38+.53*ramp(t,15.3,15.85);w.pose.headRoll=.035;w.pose.headPitch=-.12*between(t,14.35,18,.4);w.pose.wingR=-.45*between(t,12.8,14.35,.3);w.pose.wingL=-.14*between(t,12.8,14.35,.3);w.flipperPitch=-1.30*between(t,12.8,14.35,.3);w.pose.bodyRoll=(w.pose.bodyRoll??0)+.045*Math.sin((t-13.7)*12)*between(t,13.7,14.7,.15);w.pat=between(t,16.2,17.2,.25);return w;}
+export function droppedLamp(t:number):V3{const p=flipperPoint(introPlush(LAMP_RELEASE)),target:V3=[-.08,.36,.52],d=LAMP_CATCH-LAMP_RELEASE,u=THREE.MathUtils.clamp(t-LAMP_RELEASE,0,d);return[p[0]+(target[0]-p[0])*u/d,p[1]+((target[1]-p[1]+4.9*d*d)/d)*u-4.9*u*u,p[2]+(target[2]-p[2])*u/d];}
 export type Motion={a:Person;w:Plush;contact?:{side:'L'|'R';target:V3;kind:string};ship:boolean;exterior:boolean};
 const backA:V3[]=[[.65,0,-9.55],[.55,0,-2]],backW:V3[]=[[-.35,0,-9.0],[-.35,0,-1.3]],runA:V3[]=[[.55,0,-2],[.55,0,6.28]],runW:V3[]=[[-.35,0,-1.3],[-.22,0,4.92]],returnA:V3[]=[[.55,0,6.28],[.82,0,5.30],[.35,0,4.50]],pushA:V3[]=[[.35,0,4.50],[.35,0,6.50]],pushW:V3[]=[[-.22,0,4.92],[-.22,0,6.92]];
 export function blocking(display:number):Motion{const t=storyTime(display);let a:Person={p:[.30,0,.16],yaw:-Math.PI/2,pose:{bodyY:-.115,headPitch:.2}},w:Plush={p:[-.28,0,.25],yaw:Math.PI/2,pose:{headRoll:.03,headYaw:-.3}};let contact:Motion['contact'];
  const ship=t>=6.8&&t<19,exterior=(t>=4&&t<6.8)||(t>=9&&t<12);
  if(t>=12&&t<19){w=introPlush(t);const kneel=between(t,13.3,18.8,.5);a.pose.crouch=kneel;a.pose.bodyY=-.115-.045*kneel;a.pose.headPitch=.32;a.pose.headYaw=.25;
-  const catchTarget:V3=[.12,.30,.20];const catchWeight=ramp(t,13.85,LAMP_CATCH);a.pose.rightTarget=blendV(restGripWorld(a,1),catchTarget,catchWeight);
-  if(t>=LAMP_CATCH){a.pose.rightTarget=blendV(catchTarget,[.18,.60,.23],ramp(t,LAMP_CATCH,15.4));if(t>=17.6)a.pose.rightTarget=blendV([.18,.60,.23],posePoint([.13,1.25,.185],a),ramp(t,17.6,18.35));}
-  a.pose.rightPole=[.5,0,1];const pat=between(t,15.85,17.55,.35),hover:V3=[.02,1.05,.10],target:V3=[-.22,.842-.012*between(t,16.2,17.2,.25),.17];
-  if(t>=15.25&&t<18.1){a.pose.leftTarget=t<15.85?blendV(restGripWorld(a,-1),hover,ramp(t,15.25,15.85)):t<17.55?blendV(hover,target,pat):blendV(hover,restGripWorld(a,-1),ramp(t,17.55,18.1));a.pose.leftPole=[-.8,1,.6];if(pat>.999)contact={side:'L',target,kind:'gentle-head-pat'};}
+  const catchTarget:V3=[-.08,.36,.52];const catchWeight=ramp(t,13.85,LAMP_CATCH);a.pose.rightTarget=blendV(restGripWorld(a,1),catchTarget,catchWeight);
+  if(t>=LAMP_CATCH){a.pose.rightTarget=blendV(catchTarget,[.50,.57,.34],ramp(t,LAMP_CATCH,15.4));if(t>=17.6)a.pose.rightTarget=blendV([.50,.57,.34],posePoint([.13,1.25,.185],a),ramp(t,17.6,18.35));}
+  a.pose.rightPole=[.5,0,1];const pat=between(t,15.85,17.55,.35),hover:V3=[.02,1.05,.10],target:V3=[-.22,.822-.012*between(t,16.2,17.2,.25),.17];
+  if(t>=15.25&&t<18.1){a.pose.leftTarget=t<15.85?blendV(restGripWorld(a,-1),hover,ramp(t,15.25,15.85)):t<17.55?blendV(hover,target,pat):blendV(hover,restGripWorld(a,-1),ramp(t,17.55,18.1));a.pose.leftPole=[-.8,2,.6];if(pat>.999)contact={side:'L',target,kind:'gentle-head-pat'};}
 
  }
  else if(t>=19&&t<21){a=humanWalk(t,[[.58,0,6.2],[.58,0,3.8]],19,21);w=plushWalk(t,[[-.36,0,6.6],[-.36,0,4.9]],19,21);}
@@ -51,7 +51,7 @@ export function blocking(display:number):Motion{const t=storyTime(display);let a
  else if(t>=50.8){
   if(t<54.7){a=humanWalk(t,pushA,51.25,54.7,'crouch');w=plushWalk(t,pushW,51.25,54.7);w.bodyPitch=.40*(1-ramp(t,51.0,51.65));w.pose.headPitch=.10*(1-ramp(t,51.1,51.8));w.pose.headYaw=.5*ramp(t,51.6,52.5);w.pose.wingL=.12;w.pose.wingR=.12;}
   else{a={p:[.35,0,6.50],yaw:0,pose:{crouch:.88,bodyY:-.02,feet:travel(54.7,pushA,51.25,54.7,'crouch').feet,headPitch:.28}};w={p:[-.22,0,6.92],yaw:0,pose:{feet:travel(54.7,pushW,51.25,54.7,'small').feet,headPitch:-.18,headYaw:.5}};
-   a=turnPerson(a,t,0,-.94,55.2,56.0,{from:a.pose.feet});if(t>=57.2)w=turnPenguin(w,t,0,Math.PI,57.2,58.45,{from:w.pose.feet});w.pose.headYaw=t<57.2?.4:.6;w.pose.headPitch=-.18;
+   a=turnPerson(a,t,0,-.94,55.2,56.0,{from:a.pose.feet});if(t>=57.2)w=turnPenguin(w,t,0,Math.PI,57.2,58.45,{from:w.pose.feet});w.pose.headYaw=t<57.2?.4:.4-1.12*ramp(t,57.2,58.45);w.pose.headPitch=-.27;
   }
   const help=between(t,50.8,55.4,.25);if(help>0){const target=packPoint(w);a.pose.leftTarget=blendV(restGripWorld(a,-1),target,help);a.pose.leftPole=[-.4,0,-1];if(help>.999)contact={side:'L',target,kind:'barrier-rescue-support'};}
   if(t>=56){a.pose.headYaw=-.05+.30*between(t,60,63,.5);a.pose.headPitch=.28;}

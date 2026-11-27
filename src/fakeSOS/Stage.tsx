@@ -4,7 +4,7 @@ export const Stage:React.FC<{time:number}>=({time})=>{const t=storyTime(time),b=
  if(time>=4&&time<6.8)return<Arrival time={3.4+(time-4)*.50}/>;if(time>=9&&time<12)return<Arrival time={6.6+(time-9)*.35}/>;
  if(time>=6.8&&time<19)return<><ShipRoom time={0}/><Astronaut actor={b.a}/><Wangdoo actor={b.w} time={t}/><Lamp time={time} motion={b}/><ContactShadow p={b.a.p}/><ContactShadow p={b.w.p} small/></>;
  return<><Space/>{t>=54.8?<DockLights/>:<StationLights time={t}/>}<StationSet time={t}/><ShipExterior time={t}/><Astronaut actor={b.a}/><Wangdoo actor={b.w} time={t}/><Lamp time={time} motion={b}/><ModuleTray time={t} motion={b}/><ContactShadow p={b.a.p}/><ContactShadow p={b.w.p} small/>
- {scan.active&&t>=24.65&&t<31.8&&<group><Line3D points={[[b.w.p[0]-.16,.35,b.w.p[2]-.25],[-.35,.07,-10.35],[.38,.97,-10.65]]} color="#45d9ff" radius={.003} glow={.30} opacity={.32}/><group position={[-.1,.95,-10.64]}><Ring radius={.42+.06*Math.sin(t*3)} tube={.0025} color="#57c8dd" glow={.32}/></group></group>}
- {t>=29&&t<36.7&&<TargetSpot p={[b.a.p[0]-.15,1.10,b.a.p[2]+.12]} look={[-.1,1.10,-11.12]} color="#ffe1ad" intensity={17}/>}<pointLight position={[0,.9,6.2]} color="#e4d9c0" intensity={7} distance={5}/>
+ {scan.active&&t>=24.65&&t<30.8&&<group><Line3D points={[[b.w.p[0]-.16,.35,b.w.p[2]-.25],[-.35,.07,-10.35],[.38,.97,-10.65]]} color="#45d9ff" radius={.003} glow={.30} opacity={.32}/><group position={[-.1,.95,-10.64]}><Ring radius={.42+.06*Math.sin(t*3)} tube={.0025} color="#57c8dd" glow={.32}/></group></group>}
+ {t>=29&&t<36.7&&<TargetSpot p={[b.a.p[0]-.15,1.10,b.a.p[2]+.12]} look={[-.1,1.10,-11.12]} color="#ffe1ad" intensity={17}/>}<pointLight position={[-1.6,2.7,6.1]} color="#e4d9c0" intensity={4} distance={5}/>
  {t>=37&&t<46&&<group position={b.a.pose.rightTarget} rotation={[-.5,0,0]}><Box s={[.16,.10,.025]} color="#33434e" rough={.7}/><Plate text="SHIP" position={[0,0,.014]} size={[.11,.055]} color="#f4bb89" bg="#182532"/></group>}
  </>;};

@@ -7,7 +7,7 @@ export function updateScout(root:THREE.Group,t:number){const state=scoutState(t)
    for(let i=0;i<4;i++){const part=new THREE.Group();part.position.set(side*(.035+i*.022),-.055+i*.041,-.012*i);part.rotation.z=side*(-.18+i*.26);part.scale.x=side;hinge.add(part);const L=[.31,.29,.26,.22][i],W=[.085,.10,.10,.085][i];const frame=new THREE.Mesh(feather(L,W),new THREE.MeshStandardMaterial({color:'#536975',roughness:.70,metalness:.22}));frame.name=`ScoutPanel${side<0?'L':'R'}${i}`;frame.castShadow=true;part.add(frame);const inlay=new THREE.Mesh(feather(L*.88,W*.65),new THREE.MeshStandardMaterial({color:'#58bcd3',emissive:'#13758e',emissiveIntensity:.22,roughness:.65,metalness:.1}));inlay.position.set(.013,.002,-.007);part.add(inlay);}
   }
  }
- const deployment=state.active?ramp(t,23.8,24.65):1-ramp(t,31.8,32.4);socket.visible=deployment>.001;
+ const deployment=t<23.8?0:state.active?ramp(t,23.8,24.65):1-ramp(t,31.8,32.4);socket.visible=deployment>.001;
  for(const side of[-1,1]){const h=socket.getObjectByName(side<0?'ScoutHingeL':'ScoutHingeR')!;h.rotation.y=side*(1-deployment)*1.42;h.rotation.z=side*(1-deployment)*.70;h.scale.setScalar(.36+.64*deployment);}
  root.updateMatrixWorld(true);return state;
 }
