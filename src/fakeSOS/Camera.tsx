@@ -32,7 +32,7 @@ export function camera(t:number):Shot{
  if(t<57.2)return{p:[-.38,.62,5.75],look:[-.22,.39,6.68],fov:44};
  if(t<59.2)return{p:[-.22,.82,5.20],look:[-.22,.54,6.92],fov:48};
  if(t<68.5)return{p:blendV([-.70,.77,3.65],[-.55,.75,3.8],ramp(t,59.2,69.8)),look:[0,.73,7.15],fov:58};
- return{p:[-20,4.7,12],look:[0,1.2,14.5],fov:90};
+ return{p:[-1.6,2.6,9.5],look:[0,-.8,22.5],fov:55};
 }
 export const FilmCamera:React.FC<{time:number}>=({time})=>{const{camera:c}=useThree();useLayoutEffect(()=>{const k=camera(time);c.position.set(...k.p);c.lookAt(...k.look);(c as THREE.PerspectiveCamera).fov=k.fov;c.near=.045;c.far=600;c.updateProjectionMatrix();},[c,time]);return null;};
 export function securityCamera(t:number,portrait=false):Shot{if(portrait)return{p:[1.15,1.55,2.8],look:[.03,1.25,0],fov:33};if(t>=4.3&&t<5.5)return{p:[1.0,1.75,-1.15],look:[.65,1.10,-2.08],fov:45};if(t>=5.5&&t<7.5){const a=thief(t),p=localToWorld(new THREE.Vector3(.27,1.375,-.01),a);return{p:[-.85,2.2,1.8],look:p.toArray()as V3,fov:19};}return{p:[-.85,2.2,2.75],look:[.12,1.15,-1.55],fov:62};}

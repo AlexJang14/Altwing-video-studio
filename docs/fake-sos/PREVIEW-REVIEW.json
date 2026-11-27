@@ -1,0 +1,16 @@
+{
+  "episode": "THE FAKE SOS",
+  "fullPreview": {"commit":"82e9484904f3389a6098ebbe8b1ad086647cef48","run":45951711541,"seconds":72,"frames":2160,"resolution":"540x960","fps":30,"sha256":"fb4d0bde3d735f1402a7e9b775be8851a1e8d758216bae09a78497a3c3951e65","decodedAllFrames":true},
+  "review": "Inspected all34 narrative stills plus half-second warmth and rescue strips extracted from the full preview. This is sampled visual review, not a claim of independent frame-by-frame human viewing or listening.",
+  "corrections": [
+    "Scout deployment was visible before activation. Hidden until23.8s, including after non-sequential frame evaluation; actual folded introductory frames inspected.",
+    "Reframed head pat from the clear side; raised approach and physically fitted glove contact; moved flashlight arc out of both bodies.",
+    "Wide wired-speaker/recorder reveal, then separate close details. Removed scan ring from exposed hardware.",
+    "Reduced near-field light that had whitened the black suit and gray plush. Corrected physical ship orientation and rear airlock.",
+    "Moved tracking camera through the clear doorway and kept the worried-eye close-up clear of the astronaut's arm.",
+    "Shortened shuttle fin tails before the nozzles; use closer departing-ship shot after the closing-barrier view, instead of an excessively distant final wide shot."
+  ],
+  "focusedRenderRuns":[45953943529,45955421959],
+  "focusedActualObservations": ["Flashlight visibly released14.20s and caught14.45s.","Head pat16.60s with both crescent eyes clear.","Physical speaker and wired reels31.20s.","Doorway tracking47.50s clear of jamb.","Worried eyes58.50s visible without astronaut occlusion."],
+  "limitations": ["Original plush photograph unavailable; exact photographic likeness unverified.","No independent human-by-ear audio audition claimed.","Final MP4 requires its own native-resolution count, decode and browser playback check."]
+}
