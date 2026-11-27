@@ -1,0 +1,73 @@
+{
+  "atUTC": "2026-11-27T07:38:47.836Z",
+  "audioHumanAudition": false,
+  "samples": [
+    {
+      "requested": 1,
+      "actual": 1,
+      "readyState": 4
+    },
+    {
+      "requested": 11,
+      "actual": 11,
+      "readyState": 4
+    },
+    {
+      "requested": 24,
+      "actual": 24,
+      "readyState": 4
+    },
+    {
+      "requested": 27,
+      "actual": 27,
+      "readyState": 4
+    },
+    {
+      "requested": 33,
+      "actual": 33,
+      "readyState": 4
+    },
+    {
+      "requested": 41,
+      "actual": 41,
+      "readyState": 4
+    },
+    {
+      "requested": 47,
+      "actual": 47,
+      "readyState": 4
+    },
+    {
+      "requested": 51,
+      "actual": 51,
+      "readyState": 4
+    },
+    {
+      "requested": 56,
+      "actual": 56,
+      "readyState": 4
+    },
+    {
+      "requested": 64,
+      "actual": 64,
+      "readyState": 4
+    },
+    {
+      "requested": 69,
+      "actual": 69,
+      "readyState": 4
+    },
+    {
+      "requested": 71,
+      "actual": 71,
+      "readyState": 4
+    }
+  ],
+  "errors": [],
+  "duration": 72,
+  "width": 1080,
+  "height": 1920,
+  "playedTo": 0.506769,
+  "error": null,
+  "status": "PASS"
+}

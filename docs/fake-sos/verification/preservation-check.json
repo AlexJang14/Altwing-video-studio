@@ -1,0 +1,19 @@
+{
+  "baseline": "aa4f1b8",
+  "source": "139fc2e640cefe52584a52c47254578d98f291fc",
+  "earlierFilms": [
+    {
+      "file": "work/three-knocks/deliverables/the-last-wing-ep01-three-knocks-final.mp4",
+      "sha256": "e5ed8247ea1dd58ae347d7321da3337242709ee65c8db1c771adf6754c7896f0",
+      "unchanged": true
+    },
+    {
+      "file": "work/empty-room/deliverables/the-last-wing-ep01-the-empty-room-final.mp4",
+      "sha256": "65f25ec351f33fd6993dbab6d40538703343bdf561dfd33efca822e9bb580e49",
+      "unchanged": true
+    }
+  ],
+  "previousSourceFilesPreserved": true,
+  "onlyNewEpisodeFilesAndCompositionRegistrationChanged": true,
+  "websiteChanges": false
+}

@@ -1,0 +1,6 @@
+THE FAKE SOS — complete editable studio
+Requires Node22+, npm, Chrome/Chromium. npm ci; npm start; select Fake-SOS-Episode1. Baked audio/models are included. No paid service or credentials required.
+Render: CHROME_PATH=/path/to/chrome node scripts/fake-sos/render.mjs support, then final CHUNK (0..7). Collect outputs in work/fake-sos/segments-final and run python3 scripts/fake-sos/assemble.py final. For media binaries use node_modules/@remotion/compositor-linux-x64-gnu or system ffmpeg. GitHub Actions automates all steps.
+Focused check: npx tsx scripts/fake-sos/check-motion.ts. Typecheck:npm run typecheck. Character Blender source and scripts included at public/fake-sos/ and scripts/build_fake_sos_characters.py; optional rebuild requires Blender4.3.2.
+Audio regeneration is optional; stock baked narrator files work without installing a model. Python requirements: pip install numpy pillow (Pillow is used for contact sheets). For voice.py:kokoro_onnx0.6.1,onnxruntime1.20.1,soundfile,espeak-ng. Licensed model download sources are in docs/fake-sos/LICENSES.md.
+No separate web player is required. Earlier films/source remain intact. altwing.org was not modified.

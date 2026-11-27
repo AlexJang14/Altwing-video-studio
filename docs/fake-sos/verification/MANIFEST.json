@@ -1,0 +1,70 @@
+{
+  "wangdoo-expression-contact-sheet.jpg": {
+    "bytes": 123036,
+    "sha256": "f7ec005b5fe4c07ce20c63516c2bc920a54f3b0ada1ee090de0cc5abe9db3877"
+  },
+  "narration-script.txt": {
+    "bytes": 646,
+    "sha256": "d43895d317958f980db9d1df079561688cadaa14f85f067ee3fa88e3c75de5a3"
+  },
+  "README.txt": {
+    "bytes": 1175,
+    "sha256": "07f1c33c38e3829c67534a8873936d68ce08c17aae4dabbd406d312a2f39ff7f"
+  },
+  "browser-playback.jpg": {
+    "bytes": 52422,
+    "sha256": "32342f0d071797c5d71ec9f38c9bb857bbae22410027721ec0b3f546597c9506"
+  },
+  "caption-and-branches.txt": {
+    "bytes": 1065,
+    "sha256": "a1b131e910edc9821033044f8905f15df244a4ce220dac090e81ba9568152226"
+  },
+  "quality-control-report.json": {
+    "bytes": 5059,
+    "sha256": "564c811619f02a961c779789e2ccb1b7a9e20ab270beee92cc93480bc1b67c76"
+  },
+  "voice-timing.json": {
+    "bytes": 2695,
+    "sha256": "7002692fccb3ba9cf574be7db88d37e279f3ccbdf8b35db3265c33a920b86876"
+  },
+  "verification-final.json": {
+    "bytes": 1359,
+    "sha256": "9d9953488bd3cce90038521d25f5ff9f1152da707c56433624ed396a5a0a02cb"
+  },
+  "the-last-wing-ep01-the-fake-sos-preview.mp4": {
+    "bytes": 5898115,
+    "sha256": "efd39689793473ad02342cde5e64e697b429ef7679b51dc87819b5a4f8a1a3a5"
+  },
+  "episode1-contact-sheet-final.jpg": {
+    "bytes": 709313,
+    "sha256": "a4a5f3051d22fe05d55f8ac60f256bcde8dab8c7df033b347375ab90f2ea2065"
+  },
+  "quality-control-report.txt": {
+    "bytes": 1056,
+    "sha256": "6b6e74ed0a9cfa86e11fa29582ce244a4e6c4bc4f476799b87bdd18eb2ba2bbe"
+  },
+  "the-last-wing-ep01-the-fake-sos-final.mp4": {
+    "bytes": 22501726,
+    "sha256": "b64740d13f501b11bbe23cfd8cb64302ce05ef307c2b3617890d5720e912b07e"
+  },
+  "the-last-wing-ep01-the-fake-sos-editable-source.zip": {
+    "bytes": 64728367,
+    "sha256": "48611cd55a9d2df21aeaf980bc2112cf6dee2da125b309e10797739631bf8171"
+  },
+  "LICENSES.md": {
+    "bytes": 2231,
+    "sha256": "597899b760812593f7c27f1bee0bd09b9315c9b61e4b0d29e333df302577aa8c"
+  },
+  "CHARACTER-BIBLE.md": {
+    "bytes": 1771,
+    "sha256": "502a487dcc7156b0ba4371e95abd0d07f629508f360e411e2c11288d8fd7990d"
+  },
+  "narration.srt": {
+    "bytes": 896,
+    "sha256": "ff46d8fb8275254fc3d13a4b44524f325869cf94a94fa4e4359bf75b42020467"
+  },
+  "playback-verification.json": {
+    "bytes": 1155,
+    "sha256": "7bd7de70aec0a7e97c7629662109a0113072c0838c2c0f4e2d236c73c3e5e406"
+  }
+}

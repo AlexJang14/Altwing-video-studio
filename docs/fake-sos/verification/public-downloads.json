@@ -1,0 +1,90 @@
+[
+  {
+    "name": "caption-and-branches.txt",
+    "httpStatus": 200,
+    "bytes": 1065,
+    "sha256": "a1b131e910edc9821033044f8905f15df244a4ce220dac090e81ba9568152226",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/caption-and-branches.txt"
+  },
+  {
+    "name": "episode1-contact-sheet-final.jpg",
+    "httpStatus": 200,
+    "bytes": 709313,
+    "sha256": "a4a5f3051d22fe05d55f8ac60f256bcde8dab8c7df033b347375ab90f2ea2065",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/episode1-contact-sheet-final.jpg"
+  },
+  {
+    "name": "MANIFEST.json",
+    "httpStatus": 200,
+    "bytes": 2376,
+    "sha256": "c440104784f7c7a521425d35127e0f5272a1c9d20cea6456c421bd2ff780cdd0",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/MANIFEST.json"
+  },
+  {
+    "name": "narration-script.txt",
+    "httpStatus": 200,
+    "bytes": 646,
+    "sha256": "d43895d317958f980db9d1df079561688cadaa14f85f067ee3fa88e3c75de5a3",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/narration-script.txt"
+  },
+  {
+    "name": "narration.srt",
+    "httpStatus": 200,
+    "bytes": 896,
+    "sha256": "ff46d8fb8275254fc3d13a4b44524f325869cf94a94fa4e4359bf75b42020467",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/narration.srt"
+  },
+  {
+    "name": "quality-control-report.json",
+    "httpStatus": 200,
+    "bytes": 5059,
+    "sha256": "564c811619f02a961c779789e2ccb1b7a9e20ab270beee92cc93480bc1b67c76",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/quality-control-report.json"
+  },
+  {
+    "name": "quality-control-report.txt",
+    "httpStatus": 200,
+    "bytes": 1056,
+    "sha256": "6b6e74ed0a9cfa86e11fa29582ce244a4e6c4bc4f476799b87bdd18eb2ba2bbe",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/quality-control-report.txt"
+  },
+  {
+    "name": "the-last-wing-ep01-the-fake-sos-editable-source.zip",
+    "httpStatus": 200,
+    "bytes": 64728367,
+    "sha256": "48611cd55a9d2df21aeaf980bc2112cf6dee2da125b309e10797739631bf8171",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/the-last-wing-ep01-the-fake-sos-editable-source.zip"
+  },
+  {
+    "name": "the-last-wing-ep01-the-fake-sos-final.mp4",
+    "httpStatus": 200,
+    "bytes": 22501726,
+    "sha256": "b64740d13f501b11bbe23cfd8cb64302ce05ef307c2b3617890d5720e912b07e",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/the-last-wing-ep01-the-fake-sos-final.mp4"
+  },
+  {
+    "name": "the-last-wing-ep01-the-fake-sos-preview.mp4",
+    "httpStatus": 200,
+    "bytes": 5898115,
+    "sha256": "efd39689793473ad02342cde5e64e697b429ef7679b51dc87819b5a4f8a1a3a5",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/the-last-wing-ep01-the-fake-sos-preview.mp4"
+  },
+  {
+    "name": "wangdoo-expression-contact-sheet.jpg",
+    "httpStatus": 200,
+    "bytes": 123036,
+    "sha256": "f7ec005b5fe4c07ce20c63516c2bc920a54f3b0ada1ee090de0cc5abe9db3877",
+    "verified": true,
+    "url": "https://github.com/AlexJang14/Altwing-video-studio/releases/download/fake-sos-ep01-139fc2e6/wangdoo-expression-contact-sheet.jpg"
+  }
+]

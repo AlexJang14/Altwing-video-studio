@@ -1,0 +1,65 @@
+{
+  "file": "the-last-wing-ep01-the-fake-sos-final.mp4",
+  "mode": "final",
+  "duration": "72.000000",
+  "frames": 2160,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "codec": "h264",
+  "pixelFormat": "yuv420p",
+  "audioCodec": "aac",
+  "audioRate": "48000",
+  "sha256": "b64740d13f501b11bbe23cfd8cb64302ce05ef307c2b3617890d5720e912b07e",
+  "decodedAllFrames": true,
+  "segments": [
+    {
+      "file": "fake-sos-final-0-269.mp4",
+      "frames": 270,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "file": "fake-sos-final-270-539.mp4",
+      "frames": 270,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "file": "fake-sos-final-540-809.mp4",
+      "frames": 270,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "file": "fake-sos-final-810-1079.mp4",
+      "frames": 270,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "file": "fake-sos-final-1080-1349.mp4",
+      "frames": 270,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "file": "fake-sos-final-1350-1619.mp4",
+      "frames": 270,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "file": "fake-sos-final-1620-1889.mp4",
+      "frames": 270,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "file": "fake-sos-final-1890-2159.mp4",
+      "frames": 270,
+      "width": 1080,
+      "height": 1920
+    }
+  ]
+}
