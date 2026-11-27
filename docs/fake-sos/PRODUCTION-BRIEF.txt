@@ -1,0 +1,397 @@
+# THE LAST WING — EPISODE 1: THE FAKE SOS
+## Fundamental Story, Character and Animation Rebuild
+
+I have reviewed the rendered 72-second "THREE KNOCKS" video.
+
+The video is technically functional but fails creatively.
+
+It lacks suspense, emotional connection, expressive character animation, attractive character design, and a coherent cause-and-effect structure.
+
+**Do not add more unrelated plot twists, effects, or technical interface overlays. Fix the underlying experience.**
+
+Your assignment is to fully revise and render ONE complete Episode 1.
+
+## 1. Existing project
+
+Repository: AlexJang14/Altwing-video-studio
+
+Find and inspect the existing Three Knocks implementation, its render configuration, character models, and assets.
+
+Preserve previous versions.
+
+Reuse functional rendering code.
+
+Create a separate revision branch.
+
+Target length: 65–72 seconds.
+
+Output: 1080×1920, 30 FPS, H.264 MP4, synchronized English narration, captions, original or licensed music and sound effects.
+
+Do not build Episode 2.
+
+## 2. New story premise
+
+Title: THE FAKE SOS
+
+An astronaut and his little AI penguin companion, Wangdoo, travel to a space station to rescue a missing astronaut.
+
+But the distress call is a trap.
+
+While the protagonist investigates a fake SOS, the missing astronaut steals the rescue spacecraft.
+
+The protagonist and Wangdoo must escape before the ship leaves.
+
+The story must be understandable to a child with no science-fiction background.
+
+Every major incident must relate to this single rescue trap.
+
+No time loops, duplicate astronauts, unexplained technologies, or unrelated monsters.
+
+## 3. Opening — 0–4 seconds
+
+Start with an unmistakably dramatic visual:
+
+An unidentified astronaut with a bright orange shoulder patch activates the protagonist's spacecraft departure controls.
+
+A red warning appears:
+
+"YOUR SHIP IS LEAVING."
+
+Cut to the black-suited protagonist urgently watching the security feed, Wangdoo beside him.
+
+Narration:
+
+"You came to rescue him. Now he's stealing your ship."
+
+Cut to:
+
+"ONE MINUTE EARLIER."
+
+Use only this one clearly labeled flashback.
+
+## 4. Rescue mission — 4–12 seconds
+
+Show a simple rescue briefing.
+
+One missing astronaut.
+
+A recognizable bright orange shoulder patch.
+
+A distress signal coming from an abandoned station.
+
+The protagonist docks with the station.
+
+Wangdoo accompanies him.
+
+No complicated mission history.
+
+The audience must recognize the orange shoulder patch when it reappears.
+
+## 5. Make Wangdoo genuinely lovable — 12–19 seconds
+
+The current Wangdoo model looks too simple and emotionally flat.
+
+Completely improve his face and proportions using the uploaded gray-and-white plush reference.
+
+Requirements:
+
+- Large rounded head with recognizable gray and white facial markings.
+- Soft plump belly.
+- Small yellow beak and feet.
+- Rounded cheeks.
+- Soft fabric-like material.
+- Expressive face rig.
+- Bigger, more readable eyes.
+- Cute but controlled emotional expressions.
+
+CRITICAL: His eyes must not remain tiny permanently closed black arcs throughout the entire episode.
+
+Create facial states for:
+
+1. Happy — larger smiling crescent eyes.
+2. Curious — attentive open eyes.
+3. Surprised — large round eyes with visible highlights.
+4. Afraid — wide eyes and worried posture.
+5. Relieved — softly smiling eyes.
+
+Preserve the identity of the original plush, rather than turning him into an anime character.
+
+Show a brief, affectionate interaction:
+
+Wangdoo waddles to the astronaut, excitedly shows a small useful object, nearly drops it, and the astronaut catches it.
+
+Wangdoo reacts with relief and excitement.
+
+The astronaut gently pats his head.
+
+The moment must feel emotionally natural, warm, and appealing.
+
+Do not use mechanical floating or stiff sliding.
+
+## 6. Locked room — 19–29 seconds
+
+The astronaut and Wangdoo enter the deserted station.
+
+They hear three knocks behind a locked door.
+
+Wangdoo equips his SCOUT WING.
+
+The wing must physically unfold and look like an attractive, recognizable pair of modular wings, not thin glowing rods.
+
+Show clearly how the Wing attaches to Wangdoo's backpack.
+
+The Wing activates a cyan scanning effect.
+
+The scanner initially detects what appears to be a human distress signal behind the door.
+
+The astronaut approaches to rescue that person.
+
+Wangdoo notices something unusual.
+
+## 7. The first real twist — 29–37 seconds
+
+Wangdoo performs a closer scan.
+
+Reveal that the knocking comes from a small electronic speaker.
+
+The SOS signal is prerecorded.
+
+The wire from the speaker leads to the station's communications equipment.
+
+Wangdoo looks frightened.
+
+Narration:
+
+"There's nobody behind the door. The call for help was fake."
+
+This must be shown physically, not merely stated through a floating text box.
+
+The audience realizes someone deliberately lured the protagonist away from the spacecraft.
+
+## 8. The real trap — 37–46 seconds
+
+The protagonist receives a security alert.
+
+Show a clear, large live camera feed from the rescue spacecraft.
+
+The missing astronaut enters the cockpit.
+
+Show a distinct close-up of the SAME orange shoulder patch from the briefing.
+
+The person activates the ship's departure sequence.
+
+Narration:
+
+"The missing astronaut didn't need rescuing. He needed your ship."
+
+Make the visual evidence unmistakable.
+
+This is the main plot twist.
+
+The audience should understand it immediately.
+
+## 9. Physical danger and Wangdoo's importance — 46–56 seconds
+
+The protagonist and Wangdoo run toward the ship.
+
+Use a genuinely dynamic tracking shot.
+
+The ship's departing engines cause a station security barrier to begin closing.
+
+The astronaut reaches for the emergency door.
+
+Wangdoo slips as the barrier closes.
+
+The astronaut turns back instead of abandoning him.
+
+Show the astronaut physically helping Wangdoo escape the closing barrier.
+
+Use believable coordinated character animation.
+
+No clipping, mesh intersections, teleportation, or floating feet.
+
+Wangdoo is frightened.
+
+The astronaut checks whether he is safe.
+
+This is a crucial emotional beat.
+
+Show the bond through action, not explanatory narration.
+
+The Scout Wing is nearly out of energy.
+
+## 10. Final dilemma — 56–65 seconds
+
+The ship is leaving.
+
+The station is no longer safe.
+
+Wangdoo's backpack contains two compatible emergency Wing modules.
+
+Only one can be powered with the remaining energy.
+
+Show clearly:
+
+A — BOOST WING
+
+Use the remaining power to attempt to catch the departing spacecraft.
+
+Danger: if the attempt fails, the battery will be empty.
+
+B — SHIELD WING
+
+Protect Wangdoo and the astronaut inside the damaged station.
+
+Danger: the spacecraft escapes, leaving them stranded.
+
+Explain the consequences in everyday language.
+
+The decision must be easy to understand.
+
+The astronaut looks toward Wangdoo.
+
+Wangdoo looks up with large, worried eyes.
+
+The decision belongs to the astronaut and viewer.
+
+Hold the options for approximately five to six seconds, with the departing ship visible in the background.
+
+## 11. Cliffhanger and AltWing — 65–72 seconds
+
+Do not interrupt the action with a long advertising screen.
+
+Display:
+
+"WHICH WING WOULD YOU CHOOSE?"
+
+"COMMENT A OR B"
+
+Include restrained but legible branding:
+
+"THE LAST WING — AN ALTWING ORIGINAL"
+
+"Discover your own Wing."
+
+"Explore real engineering challenges at altwing.org"
+
+Do not suggest that the physical Wing powers are playable on AltWing.
+
+The actual platform helps students explore engineering, try challenges, and build projects.
+
+Use a genuine AltWing product visual only if it fits without obscuring the dramatic climax.
+
+End with the station barrier rapidly closing and the departing spacecraft moving away.
+
+Cut to black before revealing the chosen Wing.
+
+Do not add an unrelated last-second monster or another random mystery.
+
+The viewer should want Episode 2 because the characters face a real unresolved problem.
+
+## 12. Animation and visual quality
+
+The existing video resembles a simple 3D prototype.
+
+Improve production quality through:
+
+- Better character geometry.
+- More detailed textures.
+- Softer, better-integrated lighting.
+- Expressive facial animation.
+- Physically grounded movement.
+- Improved camera framing.
+- Meaningful environmental motion.
+- Dynamic running and rescue sequences.
+- Clear shot-to-shot continuity.
+- Effective close-ups.
+- Proper cinematic depth.
+
+Do not use flat static scenes, excessive HUD cards, or simple geometric placeholders.
+
+Prioritize Wangdoo's face and movement.
+
+Do not rely on prompt instructions alone to achieve a premium 3D character.
+
+Inspect available Blender models and assets.
+
+Where technically feasible, improve the actual mesh, topology, facial rig, materials, and character poses.
+
+Do not claim photographic likeness to the plush unless visual comparison supports it.
+
+## 13. Mandatory character checks
+
+Before the final export, inspect:
+
+- Wangdoo's face in a large close-up.
+- His happy expression.
+- His startled expression.
+- His worried expression.
+- The Scout Wing attachment.
+- His running animation.
+- His rescue interaction with the astronaut.
+
+Ensure his eyes look sufficiently expressive on a phone screen.
+
+Validate character-to-character clearance and collision during all close interactions.
+
+Do not allow Wangdoo to intersect the astronaut's legs or arms.
+
+## 14. Audio
+
+Use one natural, expressive narrator.
+
+Simple conversational American English.
+
+No robotic character dialogue.
+
+Use sound effects for:
+
+- Station ambience.
+- Fake knocks.
+- Scanner activation.
+- The discovery of the hidden speaker.
+- Security alert.
+- Ship departure.
+- Running footsteps.
+- Closing emergency barrier.
+- Wangdoo's panic.
+- Wing module selection.
+
+Use musical tension and silence strategically.
+
+Avoid constant dramatic music that makes every moment feel identical.
+
+Do not clone a third-party narrator's voice without authorization.
+
+## 15. Quality and delivery
+
+I want the entire revised Episode 1 completed in one task.
+
+Perform internal previews and inspections without stopping the task to request approval.
+
+Render a complete low-resolution version first.
+
+Check story comprehension, character appeal, pacing, audio, and collision problems.
+
+Fix significant issues.
+
+Then render the final 1080×1920 MP4.
+
+Verify it exists and plays.
+
+Preserve all existing work and commit the revised source code on a separate branch.
+
+Deliver:
+
+- `the-last-wing-ep01-the-fake-sos-final.mp4`
+- Character-expression contact sheet.
+- Episode contact sheet.
+- Editable source project.
+- Quality-control report.
+- Narration script.
+- A/B voting caption.
+- A concise note explaining the two potential Episode 2 branches.
+
+Do not produce another incomplete prototype.
+
+**The main priority is no longer adding more technology. It is producing one entertaining story with an adorable, expressive penguin, a clear betrayal, real physical danger, and an ending that makes viewers care what happens next.**

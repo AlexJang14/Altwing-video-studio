@@ -1,0 +1,13 @@
+{
+  "front": "+Z",
+  "up": "+Y",
+  "units": "meters",
+  "wangdooHeight": 0.77,
+  "astronautHeight": 1.953,
+  "reference": "Refined from the supplied gray-and-white plush description and existing project renders. Definitive plush photograph unavailable; exact photographic match UNVERIFIED.",
+  "parts": "New padded cheek mesh, larger open-eye groups and highlights, crescent eyes, brows, plumper torso, shorter yellow feet, articulated plush flippers and glove rigs; baked woven normal maps.",
+  "models": [
+    "wangdoo-sculpted.glb",
+    "astronaut-tailored.glb"
+  ]
+}

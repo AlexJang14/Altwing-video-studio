@@ -1,0 +1,161 @@
+{
+  "series": "THE LAST WING",
+  "title": "THE FAKE SOS",
+  "episode": 1,
+  "duration": 72,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "file": "the-last-wing-ep01-the-fake-sos-final.mp4",
+  "reference": {
+    "originalPlushPhotographAvailable": false,
+    "basis": "User-supplied gray/white plush description; actual new sculpt and expressions inspected in rendered frames. No exact photographic resemblance claim."
+  },
+  "narration": [
+    {
+      "at": 0.05,
+      "until": 3.9,
+      "phrases": [
+        "You came to rescue him.",
+        "Now he's stealing your ship."
+      ]
+    },
+    {
+      "at": 4.65,
+      "until": 10.95,
+      "phrases": [
+        "A missing astronaut. One call for help.",
+        "You and Wangdoo follow the signal."
+      ]
+    },
+    {
+      "at": 12.1,
+      "until": 13.8,
+      "phrases": [
+        "Your co-pilot? Wangdoo."
+      ]
+    },
+    {
+      "at": 24.7,
+      "until": 28.7,
+      "phrases": [
+        "His Scout Wing picks up a call for help."
+      ]
+    },
+    {
+      "at": 31.35,
+      "until": 36.7,
+      "phrases": [
+        "There's nobody behind the door.",
+        "The call for help was fake."
+      ]
+    },
+    {
+      "at": 39.0,
+      "until": 45.6,
+      "phrases": [
+        "The missing astronaut didn't need rescuing.",
+        "He needed your ship."
+      ]
+    },
+    {
+      "at": 56.35,
+      "until": 59.05,
+      "phrases": [
+        "Only enough power for one Wing."
+      ]
+    },
+    {
+      "at": 59.3,
+      "until": 64.5,
+      "phrases": [
+        "Boost to catch the ship?",
+        "Or Shield, and stay here?"
+      ]
+    },
+    {
+      "at": 65.25,
+      "until": 68.8,
+      "phrases": [
+        "Which Wing would you choose?"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "at": 0,
+      "end": 4,
+      "name": "Your ship is leaving"
+    },
+    {
+      "at": 4,
+      "end": 12,
+      "name": "One clearly labeled flashback: rescue mission"
+    },
+    {
+      "at": 12,
+      "end": 19,
+      "name": "Flashlight catch and affectionate head pat"
+    },
+    {
+      "at": 19,
+      "end": 29,
+      "name": "Recorded knocks and Scout signal"
+    },
+    {
+      "at": 29,
+      "end": 37,
+      "name": "Physical speaker, wire and prerecorded SOS reveal"
+    },
+    {
+      "at": 37,
+      "end": 46,
+      "name": "The missing astronaut steals the ship"
+    },
+    {
+      "at": 46,
+      "end": 56,
+      "name": "Run, emergency hold, return and barrier rescue"
+    },
+    {
+      "at": 56,
+      "end": 65,
+      "name": "One charge; Boost or Shield"
+    },
+    {
+      "at": 65,
+      "end": 72,
+      "name": "Choose before the station seals and ship escapes"
+    }
+  ],
+  "wings": {
+    "initialEnergy": 74,
+    "commands": [
+      {
+        "at": 23.8,
+        "action": "activate",
+        "wing": "scout"
+      }
+    ],
+    "onlyActivated": [
+      "scout"
+    ],
+    "availableEmergencyModules": [
+      "boost",
+      "shield"
+    ],
+    "finalChoiceRevealed": false,
+    "remainingEnergy": 26
+  },
+  "product": {
+    "url": "https://altwing.org",
+    "statement": "Explore engineering, try challenges and build projects. The physical Wing powers and animated rescue are fictional, not playable AltWing modes."
+  },
+  "voice": {
+    "engine": "Kokoro ONNX",
+    "voice": "am_michael",
+    "language": "en-us",
+    "identityCloning": false
+  },
+  "scope": "One complete Episode1 only. Earlier films and production website unchanged."
+}

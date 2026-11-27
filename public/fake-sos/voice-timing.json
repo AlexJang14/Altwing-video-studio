@@ -1,0 +1,114 @@
+[
+  {
+    "at": 0.05,
+    "end": 1.457875,
+    "duration": 1.407875,
+    "text": "You came to rescue him.",
+    "file": "fake-sos/voice/00-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 1.577875,
+    "end": 3.090875,
+    "duration": 1.513,
+    "text": "Now he's stealing your ship.",
+    "file": "fake-sos/voice/00-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 4.65,
+    "end": 7.326583,
+    "duration": 2.6765833333333333,
+    "text": "A missing astronaut. One call for help.",
+    "file": "fake-sos/voice/01-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 7.506583,
+    "end": 9.764125,
+    "duration": 2.2575416666666666,
+    "text": "You and Wangdoo follow the signal.",
+    "file": "fake-sos/voice/01-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 12.1,
+    "end": 13.771083,
+    "duration": 1.6710833333333333,
+    "text": "Your co-pilot? Wangdoo.",
+    "file": "fake-sos/voice/02-00.wav",
+    "synthesisSpeed": 1.1241312230452203
+  },
+  {
+    "at": 24.7,
+    "end": 27.058875,
+    "duration": 2.358875,
+    "text": "His Scout Wing picks up a call for help.",
+    "file": "fake-sos/voice/03-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 31.35,
+    "end": 33.434,
+    "duration": 2.084,
+    "text": "There's nobody behind the door.",
+    "file": "fake-sos/voice/04-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 33.614,
+    "end": 35.212417,
+    "duration": 1.5984166666666666,
+    "text": "The call for help was fake.",
+    "file": "fake-sos/voice/04-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 39.0,
+    "end": 41.597458,
+    "duration": 2.5974583333333334,
+    "text": "The missing astronaut didn't need rescuing.",
+    "file": "fake-sos/voice/05-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 41.777458,
+    "end": 43.054417,
+    "duration": 1.2769583333333334,
+    "text": "He needed your ship.",
+    "file": "fake-sos/voice/05-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 56.35,
+    "end": 58.325,
+    "duration": 1.975,
+    "text": "Only enough power for one Wing.",
+    "file": "fake-sos/voice/06-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 59.3,
+    "end": 60.7365,
+    "duration": 1.4365,
+    "text": "Boost to catch the ship?",
+    "file": "fake-sos/voice/07-00.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 60.8565,
+    "end": 62.449667,
+    "duration": 1.5931666666666666,
+    "text": "Or Shield, and stay here?",
+    "file": "fake-sos/voice/07-01.wav",
+    "synthesisSpeed": 0.99
+  },
+  {
+    "at": 65.25,
+    "end": 66.692792,
+    "duration": 1.4427916666666667,
+    "text": "Which Wing would you choose?",
+    "file": "fake-sos/voice/08-00.wav",
+    "synthesisSpeed": 0.99
+  }
+]

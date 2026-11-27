@@ -1,0 +1,13 @@
+import *as THREE from'three';import{ramp}from'../characters/performance';import{wingStateAt,type WingCommand}from'../characters/wings/system';
+export const SCOUT_COMMANDS:readonly WingCommand[]=[{at:23.8,action:'activate',wing:'scout'}];export const INITIAL_ENERGY=74;export const scoutState=(t:number)=>wingStateAt(t,SCOUT_COMMANDS,INITIAL_ENERGY);
+function feather(length:number,width:number){const s=new THREE.Shape();s.moveTo(0,-width*.25);s.bezierCurveTo(length*.34,-width*.5,length*.82,-width*.36,length,-width*.08);s.bezierCurveTo(length*1.05,width*.1,length*.92,width*.44,length*.75,width*.46);s.bezierCurveTo(length*.4,width*.42,length*.06,width*.35,0,width*.18);s.closePath();return new THREE.ExtrudeGeometry(s,{depth:.014,bevelEnabled:true,bevelSegments:3,steps:1,bevelSize:.005,bevelThickness:.004,curveSegments:14});}
+export function updateScout(root:THREE.Group,t:number){const state=scoutState(t),body=root.getObjectByName('WangBody')!;let socket=body.getObjectByName('ScoutModule')as THREE.Group|undefined;
+ if(!socket){socket=new THREE.Group();socket.name='ScoutModule';socket.position.set(0,.35,-.254);body.add(socket);const mount=new THREE.Mesh(new THREE.BoxGeometry(.22,.075,.105),new THREE.MeshStandardMaterial({color:'#45535b',roughness:.87,metalness:.08}));mount.position.z=.022;socket.add(mount);
+  for(const side of[-1,1]){const hinge=new THREE.Group();hinge.name=side<0?'ScoutHingeL':'ScoutHingeR';hinge.position.x=side*.105;socket.add(hinge);const hub=new THREE.Mesh(new THREE.SphereGeometry(.031,20,12),new THREE.MeshStandardMaterial({color:'#78878e',roughness:.68,metalness:.22}));hinge.add(hub);
+   for(let i=0;i<4;i++){const part=new THREE.Group();part.position.set(side*(.035+i*.022),-.055+i*.041,-.012*i);part.rotation.z=side*(-.18+i*.26);part.scale.x=side;hinge.add(part);const L=[.31,.29,.26,.22][i],W=[.085,.10,.10,.085][i];const frame=new THREE.Mesh(feather(L,W),new THREE.MeshStandardMaterial({color:'#536975',roughness:.70,metalness:.22}));frame.name=`ScoutPanel${side<0?'L':'R'}${i}`;frame.castShadow=true;part.add(frame);const inlay=new THREE.Mesh(feather(L*.88,W*.65),new THREE.MeshStandardMaterial({color:'#58bcd3',emissive:'#13758e',emissiveIntensity:.22,roughness:.65,metalness:.1}));inlay.position.set(.013,.002,-.007);part.add(inlay);}
+  }
+ }
+ const deployment=state.active?ramp(t,23.8,24.65):1-ramp(t,31.8,32.4);socket.visible=deployment>.001;
+ for(const side of[-1,1]){const h=socket.getObjectByName(side<0?'ScoutHingeL':'ScoutHingeR')!;h.rotation.y=side*(1-deployment)*1.42;h.rotation.z=side*(1-deployment)*.70;h.scale.setScalar(.36+.64*deployment);}
+ root.updateMatrixWorld(true);return state;
+}

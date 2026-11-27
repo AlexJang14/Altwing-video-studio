@@ -1,0 +1,14 @@
+0.050–1.458 You came to rescue him.
+1.578–3.091 Now he's stealing your ship.
+4.650–7.327 A missing astronaut. One call for help.
+7.507–9.764 You and Wangdoo follow the signal.
+12.100–13.771 Your co-pilot? Wangdoo.
+24.700–27.059 His Scout Wing picks up a call for help.
+31.350–33.434 There's nobody behind the door.
+33.614–35.212 The call for help was fake.
+39.000–41.597 The missing astronaut didn't need rescuing.
+41.777–43.054 He needed your ship.
+56.350–58.325 Only enough power for one Wing.
+59.300–60.736 Boost to catch the ship?
+60.856–62.450 Or Shield, and stay here?
+65.250–66.693 Which Wing would you choose?

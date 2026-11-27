@@ -1,0 +1,26 @@
+name: Render The Fake SOS — expressive Episode 1
+on:
+  push:
+    branches: [codex/the-fake-sos-episode1]
+    paths: [docs/fake-sos/RENDER-REQUEST.json]
+permissions:
+  contents: read
+jobs:
+  characters:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run typecheck
+      - run: CHROME_PATH=$(command -v google-chrome) node scripts/fake-sos/render.mjs characters
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fake-sos-character-expressions
+          path: work/fake-sos/characters/
+          retention-days: 30
