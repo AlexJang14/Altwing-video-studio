@@ -1,19 +1,15 @@
 {
   "mode": "qa",
-  "revision": "inspected-full-preview-corrections",
+  "revision": "final-physical-contact-framing",
   "focusedTimes": [
-    2.5,
+    13.55,
     14.2,
+    14.45,
     16.6,
     18,
-    24.8,
-    31.2,
-    32.4,
-    33.4,
-    51.7,
+    46.25,
+    47.5,
     58.5,
-    61,
-    69,
     71.2
   ]
 }
